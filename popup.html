@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<script src="Chart.js" type="text/javascript"></script>
+<link rel="stylesheet" href="popup.css">
+    
+</head>
+  
+<body>
+    
+ <div class="header"> 
+<div class="topLine">
+<img id="icon" src="/images/Globemallow_Icon_32_SQ.png" style='height:32px'>
+
+<p id= 'title'>Globemallow</p> 
+<div id="viewButtons">
+
+<button id="factButton" type="factView">
+Fact View </button>
+
+<button onClick="devButton" id="devButton" type="devView">
+Dev View </button>
+</div>
+
+ </div>
+ </div>   
+    
+    
+    
+<div class="bodyHTML">
+<div class = "grade">Sustainability Grade:
+    <span class="tooltiptextGrade">Calculated from development best practices</span>
+    </div>
+  <div1 class="ScoreGraph">
+<div class="item html">
+<h2 id = "scoreHTML">A+</h2>
+    
+    
+<canvas id="myChart" style="width:100%;max-width:160px;"></canvas>
+</div>
+</div1>
+  
+  <div id= "factoids">
+  <p id="fact">Fact: </p>
+  <p id="actualFact">Open a new URL to see report</p>
+  </div>
+  
+<div id= "emissionsLine">
+  <div id="kwhID">
+  <p id= "kwhScore">kWh Emitted: </p>
+  <p id='kwhTotal'>.001 </p>
+  </div>
+  <div id="co2ID">
+  <p id="co2Score">CO2 Emissions:</p>
+    <p id="co2Total">1g</p>
+    </div>
+  </div>
+
+//////////////////////////////////// Graphs
+     <div class ='wholeTable'>  
+<table>
+<tr>
+     <td class = 'hoverClass' class= 'barLabel'>Lazy Loaded<br>Images
+    <span class="tooltiptextGrade">% of Images Lazy Loaded</span></td>
+      <td>
+        <div  class="row" id = "lazyBar">90%</div>
+      </td>
+</tr>
+<tr>
+   <td class = 'hoverClass' class= 'barLabel'>Image<br>Formats<span class="tooltiptextGrade">% of img src that are AVIF, WebP, and SVG</span></td>
+      <td>
+<!--<div  class="row" id = "svgBar" style='background-color:#64c5dd;'>80%</div>-->
+          <div  class="row" id = "svgBar">80%</div>
+      </td>
+</tr>
+<tr>
+   <td class = 'hoverClass' class= 'barLabel'>Total Byte<br>Size<span class="tooltiptextGrade">Total size of page uploaded to server</span></td>
+      <td>
+       <div class="row" id = "byteSizeBar">750 kb</div>
+      </td>
+</tr>
+<tr>
+   <td class = 'hoverClass' class= 'barLabel' >Page Load<br>Time</td>
+     <td>
+       <div  class="row" id = "loadBar">2.6 sec</div>
+   </td>
+</tr>
+<tr>
+   <td class = 'hoverClass' class= 'barLabel' >JS HeapSize<span class="tooltiptextGrade">Used JavaScript heap size</span></td>
+      <td>
+        <div class="row" id = "jsBar">2 mb</div>
+      </td>
+</tr>
+<tr>
+   <td class = 'hoverClass' class= 'barLabel' >Imported Fonts<span class="tooltiptextGrade">Looking for imported font files</span></td>
+      <td>
+        <div  class="row" id = "fontBar">Yes</div>
+      </td>
+</tr>
+<tr>
+   <td class = 'hoverClass' class= 'barLabel' >HTML Length<span class="tooltiptextGrade">Amount of HTML loaded on page</span></td>
+      <td>
+        <div  class="row" id = "htmlBar">Yes</div>
+      </td>
+</tr>
+<tr>
+   <td class = 'hoverClass' class= 'barLabel' >Transfer<br>Size<span class="tooltiptextGrade">Data transferred from server on load</span></td>
+      <td>
+        <div  class="row" id = "transferBar">1 mb</div>
+      </td>
+</tr>
+<tr>
+   <td class = 'hoverClass' class= 'barLabel' >Responsive<br>Images<span class="tooltiptextGrade">Looking for images loaded with srcset attribute and picture html tag</span></td>
+      <td>
+        <div  class="row" id = "resImgBar">100 %</div>
+      </td>
+</tr>
+</table>
+ </div> 
+    
+    ////////////
+    
+    /////////////// Recommendations
+    
+    <p id= "major">Recommendations for Page Sustainability:</p>
+
+<p id= "m1"></p>
+<p id= "m2"></p>
+<p id= "m3"></p>
+    
+<!--<p id= "reco">Recommendations for Page:</p>
+    
+<p id= "r1"></p>
+<p id= "r2"></p>
+<p id= "r3"></p>-->
+    
+<p id= "praise">Praise:</p>
+    
+<p id= "p1"></p>
+<p id= "p2"></p>
+    
+    /////////////////////
+  <div id= "footer">    
+
+<a id="donate" href='https://ko-fi.com/U6U46R9FA' target='_blank'>Buy Me a Coffee</a>
+      
+
+  </div>
+    </div>   
+
+<script src="popup.js"></script>
+</body>
+</html>
