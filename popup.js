@@ -1225,3 +1225,40 @@ switch (resImgChart >= 0){
         });
     
 });
+
+//////////////New Code from UpWork
+
+
+/* The function use to show and hide the selected content as per button click  */
+function openDiv(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+/* button clicks calls */
+document.getElementById("factButton").onclick = function(evt) {
+	 console.log('factview is clciked'); 
+	 localStorage.setItem('selectedButtonId', 'factButton'); 
+	 openDiv(evt,'Example1Div'); 
+}
+document.getElementById("devButton").onclick = function(evt) {
+	 console.log('devview is clciked'); 
+	 localStorage.setItem('selectedButtonId', 'devButton'); 
+	 openDiv(evt,'Example2Div'); 
+}
+
+/* This selection tab will persist when browsing and default fact view will be active*/
+var selectedTab = localStorage.getItem('selectedButtonId');  
+if(selectedTab)
+	document.getElementById(selectedTab).click();
+else
+	document.getElementById("factButton").click();

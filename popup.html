@@ -17,10 +17,10 @@
 <p id= 'title'>Globemallow</p> 
 <div id="viewButtons">
 
-<button id="factButton" type="factView">
+<button id="factButton" class="tablinks" type="factView">
 Fact View </button>
 
-<button onClick="devButton" id="devButton" type="devView">
+<button id="devButton" class="tablinks" type="devView">
 Dev View </button>
 </div>
 
@@ -41,6 +41,11 @@ Dev View </button>
 <canvas id="myChart" style="width:100%;max-width:160px;"></canvas>
 </div>
 </div1>
+    
+ <!--/////////////////////////////
+//This Div does not display on Dev View  
+/////////////////////////////-->   
+<div id = "Example1Div" class="tabcontent">
   
   <div id= "factoids">
   <p id="fact">Fact: </p>
@@ -57,8 +62,15 @@ Dev View </button>
     <p id="co2Total">1g</p>
     </div>
   </div>
+</div>
+    
+<!--//////////////////////////////////// Graphs-->
 
-//////////////////////////////////// Graphs
+<!--/////////////////////////////
+//Block this code out on Fact View. Show on Dev View   
+/////////////////////////////-->
+
+<div id = "Example2Div" class="tabcontent">
      <div class ='wholeTable'>  
 <table>
 <tr>
@@ -120,9 +132,7 @@ Dev View </button>
 </table>
  </div> 
     
-    ////////////
-    
-    /////////////// Recommendations
+<!--    /////////////// Recommendations -->
     
     <p id= "major">Recommendations for Page Sustainability:</p>
 
@@ -141,7 +151,9 @@ Dev View </button>
 <p id= "p1"></p>
 <p id= "p2"></p>
     
-    /////////////////////
+
+    </div>
+    
   <div id= "footer">    
 
 <a id="donate" href='https://ko-fi.com/U6U46R9FA' target='_blank'>Buy Me a Coffee</a>

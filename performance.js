@@ -138,6 +138,15 @@ var jssSizeLabel = '';
 
 var pagebytes = document.querySelector('html').innerHTML.length;
 
+pagebytes = parseFloat(pagebytes);
+
+lengthArray = ['mil', 'k'];
+    
+ if (pagebytes/1000000 > 1){
+ pagebytesLabel = (((pagebytes/1000000).toPrecision(2)).toString() + lengthArray[0]);
+ } else {
+ pagebytesLabel = (((pagebytes/1000).toPrecision(3)).toString() + lengthArray[1]);
+ }
 answerArray.push(pagebytes);
 
 ////////////////////////////////////////////////////
@@ -194,6 +203,21 @@ for (let i in imgB){
 transferSize1 = parseFloat(transferSize1);
 
 answerArray.push(transferSize1);
+ 
+var transferLabel = 0;
+    
+ if (transferSize1/1024/1024/1024 > 1){
+ transferLabel = (((transferSize1/1024/1024/1024).toPrecision(3)).toString() + arrayLabel[3]);
+ } else if (transferSize1/1024/1024 > 1){
+ transferLabel = (((transferSize1/1024/1024).toPrecision(3)).toString() + arrayLabel[2]);
+ } else if (transferSize1/1024 > 1){
+ transferLabel = (((transferSize1/1024).toPrecision(3)).toString() + arrayLabel[1]);
+ } else if (transferSize1 > 1){
+ transferLabel = (((transferSize1).toPrecision(3)).toString() + arrayLabel[0]);
+ }
+   else{
+     transferLabel = (transferSize1).toString() + arrayLabel[0];
+ }
 
 ////////////////////////////////////////////////////
 
@@ -529,8 +553,10 @@ var htmlChart = answerArray[4];
 var loadTimeChart = answerArray[5];
 var importChart = answerArray[6];
 var transferSizeChart = answerArray[7];
+var lengthK = pagebytesLabel;
+var resImgChart = (answerArray[8]*100).toPrecision(3);
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel}
 
 chrome.runtime.sendMessage(counts);
     
