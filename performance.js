@@ -18,9 +18,7 @@ var answerArray = [];
 const imgTag = performance.getEntriesByType('resource');
 
 for (var i = 0; i < imgTag.length; i++) {
-    //if ((imgTag[i].initiatorType == "img") || (imgTag[i].initiatorType == "iframe") || (imgTag[i].initiatorType == "script")){
         imgA.push(imgTag[i].decodedBodySize);
-   // }
 }
 for (let i in imgA){
 decodedSize += imgA[i];
@@ -53,9 +51,8 @@ let x1 = document.querySelector('body').outerHTML;
 var regEX = /loading="lazy"/;
 var result = "";
 
-//5 is an arbitrary number that sounded good
+//5 is the best suggested number
 if (imgCount.length > 5){
-//console.log("at least 1 image");
 for (var i = 0; i < imgCount.length; i++){
 var y = imgCount[i].outerHTML;
 if (y.match(regEX)){
@@ -70,7 +67,6 @@ answerArray.push(ratioLL);
 }
 else{
 answerArray.push(1.1);
-//console.log("0 images on page");
 }
 
 /////////////////////////////////////////////////////
@@ -91,16 +87,13 @@ if(imgs.length > 5){
 for (var i = 0; i < imgs.length; i++) {
 var pencil = imgs[i].src;
 if (pencil.match(regSVG)){
-    //imgSrcs.push(pencil);
     numSVG++;
 }
 else if(pencil.match(regAVIF)){
-    //imgSrcs.push(pencil);
     numSVG++;
     numAVIF++;
 }
 else if(pencil.match(regWEBP)){
-     //imgSrcs.push(pencil);
      numSVG++;
      numWEBP++;
 }
@@ -113,7 +106,6 @@ answerArray.push(ratioSVG);
 }
 else{
 answerArray.push(1.1);
-//console.log("0 images on page");
 }
     
 /////////////////////////////////////////////////////
@@ -236,10 +228,9 @@ var ratio1 = 0;
 if (picTagCount > 0){
 ratio1 = picTagCount/img1Count.length;
 answerArray.push(ratio1);
-//console.log("Picture Tags: "+ ratio1);
+
 }
 else if (img1Count.length >= 1){
-//console.log("at least 1 image");
 for (var i = 0; i < img1Count.length; i++){
 var y = img1Count[i].outerHTML;
     if (y.match(regSRC)){
@@ -250,7 +241,7 @@ var y = img1Count[i].outerHTML;
     }
 var ratioSS = x1Array.length/img1Count.length;
 answerArray.push(ratioSS);
-//console.log("Srcset Array: " + ratioSS);
+
 }
 else{
 answerArray.push(1.1);
@@ -260,8 +251,6 @@ answerArray.push(1.1);
 var scoreArray = [];
 var finalScore = 0;
 
-//console.log(answerArray[0])
-//console.log(answerArray[1])
 
 // Decoded Body Size
 
@@ -399,7 +388,6 @@ switch (answerArray[4] >= 0){
         break;
 
 }
-//console.log("Before Page Load Time Score: " + finalScore)
 
 //Page Loadtime
 switch (answerArray[5] >= 0){
@@ -424,8 +412,6 @@ switch (answerArray[5] >= 0){
         break;
 
 }
-
-//console.log("Before Imported Font Score: " + finalScore)
 
 //Imported Fonts
 switch (answerArray[6] >= 0){
@@ -495,8 +481,6 @@ case answerArray[8] == 0:
     finalScore += 0;
     break;
 }
-
-//console.log(finalScore + " :After Imported Font score")
 
 finalScore = finalScore/13.6;
 
