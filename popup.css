@@ -87,7 +87,11 @@ body {
 }
 
 #Example2Div{
-    padding-top: 50%;
+    padding-top: 43%;
+}
+
+#tableHeader{
+  font-size: 18px;
 }
 
 #factoids{
@@ -153,7 +157,7 @@ body {
 .hoverClass {
   position: relative;
   display: inline-block;
-
+  border-top: 1px dotted gray;
 }
 
 .hoverClass .tooltiptextGrade {
@@ -215,6 +219,11 @@ table .row{
   text-align: left;
   padding-right: 6px;
   color: #606060;
+}
+
+.wholeTable{
+   border-right: 1px solid gray;
+    
 }
 
 

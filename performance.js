@@ -26,17 +26,20 @@ for (let i in imgA){
 decodedSize += imgA[i];
 }
 
-var arrayLabel = ['bytes','kb','mb','gb'];
+var arrayLabel = [' bytes','kb','mb','gb'];
 var sizeLabel = '';
 
  if (decodedSize/1024/1024/1024 > 1){
- sizeLabel = (((decodedSize/1024/1024/1024).toPrecision(3)).toString() +' '+ arrayLabel[3]);
+ sizeLabel = (((decodedSize/1024/1024/1024).toPrecision(3)).toString() + arrayLabel[3]);
  } else if (decodedSize/1024/1024 > 1){
- sizeLabel = (((decodedSize/1024/1024).toPrecision(3)).toString() +' '+ arrayLabel[2]);
+ sizeLabel = (((decodedSize/1024/1024).toPrecision(3)).toString() + arrayLabel[2]);
  } else if (decodedSize/1024 > 1){
- sizeLabel = (((decodedSize/1024).toPrecision(3)).toString() +' '+ arrayLabel[1]);
+ sizeLabel = (((decodedSize/1024).toPrecision(3)).toString() + arrayLabel[1]);
  } else if (decodedSize > 1){
- sizeLabel = (((decodedSize).toPrecision(3)).toString() +' '+ arrayLabel[0]);
+ sizeLabel = (((decodedSize).toPrecision(3)).toString() + arrayLabel[0]);
+ }
+ else{
+     sizeLabel = (decodedSize).toString() + arrayLabel[0];
  }
 
 answerArray.push(parseFloat(decodedSize));
@@ -66,16 +69,15 @@ var ratioLL = xArray.length/imgCount.length;
 answerArray.push(ratioLL);
 }
 else{
-answerArray.push(1);
+answerArray.push(1.1);
 //console.log("0 images on page");
 }
 
 /////////////////////////////////////////////////////
-//Low-load images
+//Responsive & low-load images
 
  var imgs = document.getElementsByTagName("img");
- //var picTagCount = document.getElementsByTagName("picture").length;
- //|| picTagCount/imgs.length < .6
+
  var imgSrcs = [];
  var regWEBP = /(webp)/;
  var regSVG = /(svg)/;
@@ -84,7 +86,7 @@ answerArray.push(1);
  var numWEBP = 0;
  var numAVIF = 0;
 
-//5 is an arbitrary number that sounded good
+//5 is the best suggested number
 if(imgs.length > 5){
 for (var i = 0; i < imgs.length; i++) {
 var pencil = imgs[i].src;
@@ -110,7 +112,7 @@ var ratioSVG = numSVG/imgs.length;
 answerArray.push(ratioSVG);
 }
 else{
-answerArray.push(1);
+answerArray.push(1.1);
 //console.log("0 images on page");
 }
     
@@ -124,13 +126,13 @@ answerArray.push(JSHeapSize);
 var jssSizeLabel = '';
 
  if (JSHeapSize/1024/1024/1024 > 1){
- jssSizeLabel = (((JSHeapSize/1024/1024/1024).toPrecision(3)).toString() +' '+ arrayLabel[3]);
+ jssSizeLabel = (((JSHeapSize/1024/1024/1024).toPrecision(3)).toString() + arrayLabel[3]);
  } else if (JSHeapSize/1024/1024 > 1){
- jssSizeLabel = (((JSHeapSize/1024/1024).toPrecision(3)).toString() +' '+ arrayLabel[2]);
+ jssSizeLabel = (((JSHeapSize/1024/1024).toPrecision(3)).toString() + arrayLabel[2]);
  } else if (JSHeapSize/1024 > 1){
- jssSizeLabel = (((JSHeapSize/1024).toPrecision(3)).toString() +' '+ arrayLabel[1]);
+ jssSizeLabel = (((JSHeapSize/1024).toPrecision(3)).toString() + arrayLabel[1]);
  } else if (JSHeapSize > 1){
- jssSizeLabel = (((JSHeapSize).toPrecision(3)).toString() +' '+ arrayLabel[0]);
+ jssSizeLabel = (((JSHeapSize).toPrecision(3)).toString() + arrayLabel[0]);
  }
 
 ////////////////////////////////////////////////////
@@ -251,7 +253,7 @@ answerArray.push(ratioSS);
 //console.log("Srcset Array: " + ratioSS);
 }
 else{
-//nothin
+answerArray.push(1.1);
 }   
     
 
