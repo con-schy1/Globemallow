@@ -14,13 +14,16 @@ body {
   background-color: #F77616;
   line-height: 0px;
   height: 40px;
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 #icon{
   padding-left: 5px;
-  padding-top: 10px;
+  padding-top: 4px;
   padding-right: 5px;
+  background: radial-gradient(circle at center, white 46%, transparent 61%);
+  padding-bottom: 4px;
 }
 
 #title{
@@ -29,6 +32,7 @@ body {
   line-height:0px;
   color: #FFFFFF;
   letter-spacing: 0.1em;
+  padding-left: 5px;
 }
 
 #viewButtons{
@@ -159,6 +163,7 @@ body {
   display: inline-block;
   border-top: 1px dotted gray;
   padding: 3px 0;
+  padding-right: 3px;
 }
 
 .hoverClass .tooltiptextGrade {

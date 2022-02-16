@@ -4,7 +4,7 @@ chrome.tabs.query({
 }).then(tabs => {
     var tab = tabs[0];
     chrome.storage.local.get("tab"+tab.id).then(data => {
-        //try{
+        try{
  var x = data["tab"+tab.id];
             
             
@@ -90,7 +90,7 @@ var barColors = [
 var ctx = document.getElementById('myChart').getContext('2d');
 var yValues = [5 , 5];
 var barColors = [
-  "#f18931",
+  "#F77616",
   "#f2f2f2",
 
 ];
@@ -100,7 +100,7 @@ case x.finalScore >= 55:
 var ctx = document.getElementById('myChart').getContext('2d');
 var yValues = [4 , 6];
 var barColors = [
-  "#f18931",
+  "#F77616",
   "#f2f2f2",
 
 ];
@@ -1218,10 +1218,10 @@ switch (resImgChart >= 0){
      //document.getElementById("p1").innerHTML = "";
  }
         
-       /* }
+       }
         catch(e) {
             //alert("Page is almost loaded")
-        }*/
+        }
         });
     
 });

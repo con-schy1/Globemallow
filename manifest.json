@@ -1,15 +1,14 @@
 {
-  "name": "Globemallow - Full View",
-  "description": "Get a sustainability grade for websites you visit, and see rough estimations of the amount of energy & CO2 produced on page load",
-  "version": "0.0.1.0",
+  "name": "Globemallow",
+  "description": "Get a sustainability grade calculated for visited websites, and see estimations of the amount of energy & CO2 produced on page load.",
+  "version": "0.0.1.1",
   "manifest_version": 3,
   "action":{
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "/images/Globemallow_Icon_16_SQ.png",
-            "32": "/images/Globemallow_Icon_32_SQ.png",
-            "48": "/images/Globemallow_Icon_48_SQ.png",
-            "128": "/images/Globemallow_Icon_128_SQ.png"
+            "16": "/images/16x16.png",
+            "32": "/images/32x32.png",
+            "128": "/images/128x128.png"
         }
     },
   "content_scripts": [
@@ -31,10 +30,9 @@
     "activeTab" 
 ],
 "icons": {
-      "16": "/images/Globemallow_Icon_16_SQ.png",
-      "32": "/images/Globemallow_Icon_32_SQ.png",
-      "48": "/images/Globemallow_Icon_48_SQ.png",
-      "128": "/images/Globemallow_Icon_128_SQ.png"
+      "16": "/images/16x16.png",
+      "32": "/images/32x32.png",
+      "128": "/images/128x128.png"
     }
 }
 
