@@ -22,7 +22,7 @@ chrome.runtime.onMessage.addListener((request, sender) => {
                 var colorString = "#f4e03a";
         }
         else if (request.finalScore >= 55){
-                var colorString = "#f18931";
+                var colorString = "#F77616";
         }
         else {
                 var colorString = "#ff0d21";

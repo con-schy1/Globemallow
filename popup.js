@@ -712,89 +712,89 @@ var loadTimeChart = x.loadTimeChart;
 
 switch (loadTimeChart >= 0){
 
-    case loadTimeChart < 1:
+    case loadTimeChart <= 1:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "260px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
         greenArray.push("This page is loading really fast!");
         break;
-     case loadTimeChart < 1.5:
+     case loadTimeChart <= 1.5:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "240px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
         greenArray.push("This page is loading really fast!");
         break;
-    case loadTimeChart < 2:
+    case loadTimeChart <= 2:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "220px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
         greenArray.push("Great job with your page load time!");
         break;
-    case loadTimeChart < 2.5:
+    case loadTimeChart <= 2.5:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "200px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
         greenArray.push("Great job with your page load time!");
         break;
-    case loadTimeChart < 3:
+    case loadTimeChart <= 3:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "180px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
         greenArray.push("Great job with your page load time!");
         break;
-    case loadTimeChart < 3.5:
+    case loadTimeChart <= 3.5:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "160px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
         break;
-    case loadTimeChart < 4:
+    case loadTimeChart <= 4:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "140px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
         break;
-    case loadTimeChart < 5:
+    case loadTimeChart <= 5:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "120px";
         document.getElementById("loadBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid yellow';
         orangeArray.push(loadTimeOEntry);
         break;
-    case loadTimeChart < 6:
+    case loadTimeChart <= 6:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "100px";
         document.getElementById("loadBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid yellow';
         orangeArray.push(loadTimeOEntry);
         break;
-    case loadTimeChart < 7:
+    case loadTimeChart <= 7:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "80px";
         document.getElementById("loadBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid yellow';
         orangeArray.push(loadTimeOEntry);
         break;
-    case loadTimeChart < 8:
+    case loadTimeChart <= 8:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "60px";
         document.getElementById("loadBar").style.background = 'rgba(241, 137, 49, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid orange';
         orangeArray.push(loadTimeOEntry);
         break;
-    case loadTimeChart < 10:
+    case loadTimeChart <= 10:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "45px";
         document.getElementById("loadBar").style.background = 'rgba(241, 137, 49, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid orange';
         orangeArray.push(loadTimeOEntry);
         break;
-    case loadTimeChart >10:
+    case loadTimeChart > 10:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "35px";
         document.getElementById("loadBar").style.background = 'rgba(241, 137, 49, 0.5)';
@@ -809,55 +809,55 @@ var jsChart = x.jsChart;
 
 switch (jsChart >= 0){
 
-    case jsChart < 10000000:
+    case jsChart <= 10000000:
         document.getElementById("jsBar").innerHTML = x.jssSizeLabel;
         document.getElementById("jsBar").style.width = "260px";
         document.getElementById("jsBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("jsBar").style.border = '1px solid green';
         greenArray.push("Great job limiting the amount of Javascript running!");
         break;
-    case jsChart < 15000000:
+    case jsChart <= 15000000:
         document.getElementById("jsBar").innerHTML = x.jssSizeLabel;
         document.getElementById("jsBar").style.width = "240px";
         document.getElementById("jsBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("jsBar").style.border = '1px solid green';
         greenArray.push("Great job limiting the amount of Javascript running!");
         break;
-    case jsChart < 20000000:
+    case jsChart <= 20000000:
         document.getElementById("jsBar").innerHTML = x.jssSizeLabel;
         document.getElementById("jsBar").style.width = "220px";
         document.getElementById("jsBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("jsBar").style.border = '1px solid green';
         greenArray.push("Great job limiting the amount of Javascript running!");
         break;
-    case jsChart < 25000000:
+    case jsChart <= 25000000:
         document.getElementById("jsBar").innerHTML = x.jssSizeLabel;
         document.getElementById("jsBar").style.width = "200px";
         document.getElementById("jsBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("jsBar").style.border = '1px solid green';
         break;
-    case jsChart < 30000000:
+    case jsChart <= 30000000:
         document.getElementById("jsBar").innerHTML = x.jssSizeLabel;
         document.getElementById("jsBar").style.width = "180px";
         document.getElementById("jsBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("jsBar").style.border = '1px solid yellow';
         orangeArray.push(jsOEntry);
         break;
-    case jsChart < 35000000:
+    case jsChart <= 35000000:
         document.getElementById("jsBar").innerHTML = x.jssSizeLabel;
         document.getElementById("jsBar").style.width = "160px";
         document.getElementById("jsBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("jsBar").style.border = '1px solid yellow';
         orangeArray.push(jsOEntry);
         break;
-    case jsChart < 40000000:
+    case jsChart <= 40000000:
         document.getElementById("jsBar").innerHTML = x.jssSizeLabel;
         document.getElementById("jsBar").style.width = "140px";
         document.getElementById("jsBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("jsBar").style.border = '1px solid yellow';
         orangeArray.push(jsOEntry);
         break;
-    case jsChart < 45000000:
+    case jsChart <= 45000000:
         document.getElementById("jsBar").innerHTML = x.jssSizeLabel;
         document.getElementById("jsBar").style.width = "120px";
         document.getElementById("jsBar").style.background = 'rgba(241, 137, 49, 0.5)';
@@ -911,68 +911,68 @@ var htmlChart = x.htmlChart;
 
 switch (htmlChart >= 0){
 
-    case htmlChart < 200001:
+    case htmlChart <= 200001:
         document.getElementById("htmlBar").innerHTML = x.lengthK;
         document.getElementById("htmlBar").style.width = "260px";
         document.getElementById("htmlBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("htmlBar").style.border = '1px solid green';
         greenArray.push("Looks like your page is loading a minimal amount of content, this is better for the planet, and your users!");
         break;
-    case htmlChart < 250001:
+    case htmlChart <= 250001:
         document.getElementById("htmlBar").innerHTML = x.lengthK;
         document.getElementById("htmlBar").style.width = "240px";
         document.getElementById("htmlBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("htmlBar").style.border = '1px solid green';
         greenArray.push("Looks like your page is loading a minimal amount of content, this is better for the planet, and your users!");
         break;
-    case htmlChart < 300001:
+    case htmlChart <= 300001:
         document.getElementById("htmlBar").innerHTML = x.lengthK;
         document.getElementById("htmlBar").style.width = "220px";
         document.getElementById("htmlBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("htmlBar").style.border = '1px solid green';
         greenArray.push("Looks like your page is loading a minimal amount of content, this is better for the planet, and your users!");
         break;
-    case htmlChart < 350001:
+    case htmlChart <= 350001:
         document.getElementById("htmlBar").innerHTML = x.lengthK;
         document.getElementById("htmlBar").style.width = "200px";
         document.getElementById("htmlBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("htmlBar").style.border = '1px solid green';
         break;
-   case htmlChart < 400001:
+   case htmlChart <= 400001:
         document.getElementById("htmlBar").innerHTML = x.lengthK;
         document.getElementById("htmlBar").style.width = "180px";
         document.getElementById("htmlBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("htmlBar").style.border = '1px solid green';
         break;
-   case htmlChart < 500001:
+   case htmlChart <= 500001:
         document.getElementById("htmlBar").innerHTML = x.lengthK;
         document.getElementById("htmlBar").style.width = "160px";
         document.getElementById("htmlBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("htmlBar").style.border = '1px solid yellow';
         orangeArray.push(htmlOEntry);
         break;
-   case htmlChart < 750001:
+   case htmlChart <= 750001:
         document.getElementById("htmlBar").innerHTML = x.lengthK;
         document.getElementById("htmlBar").style.width = "140px";
         document.getElementById("htmlBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("htmlBar").style.border = '1px solid yellow';
         orangeArray.push(htmlOEntry);
         break;
-   case htmlChart < 1000001:
+   case htmlChart <= 1000001:
         document.getElementById("htmlBar").innerHTML = x.lengthK;
         document.getElementById("htmlBar").style.width = "120px";
         document.getElementById("htmlBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("htmlBar").style.border = '1px solid yellow';
         orangeArray.push(htmlOEntry);
         break;
-    case htmlChart < 2500000:
+    case htmlChart <= 2500000:
         document.getElementById("htmlBar").innerHTML = x.lengthK;
         document.getElementById("htmlBar").style.width = "100px";
         document.getElementById("htmlBar").style.background = 'rgba(241, 137, 49, 0.5)';
         document.getElementById("htmlBar").style.border = '1px solid orange';
         orangeArray.push(htmlOEntry);
         break;
-   case htmlChart < 4000000:
+   case htmlChart <= 4000000:
         document.getElementById("htmlBar").innerHTML = x.lengthK;
         document.getElementById("htmlBar").style.width = "80px";
         document.getElementById("htmlBar").style.background = 'rgba(241, 137, 49, 0.5)';
