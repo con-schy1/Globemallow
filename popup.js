@@ -1,8 +1,10 @@
-
 chrome.tabs.query({
     active: true,currentWindow: true
 }).then(tabs => {
     var tab = tabs[0];
+    var url  = tabs[0]['url'];
+    let domain = (new URL(url));
+	domain = domain.hostname;
     chrome.storage.local.get("tab"+tab.id).then(data => {
         try{
  var x = data["tab"+tab.id];
@@ -377,7 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
 var orangeArray = [];
 var yellowArray = [];
-var greenArray = [];  
+var greenArray = [];
         
 //Random Numbers
 function getRandomInt(max) {
@@ -1166,8 +1168,39 @@ switch (resImgChart >= 0){
         orangeArray.push(resImgOEntry);
         break;
 }
+  
+/////////////////////////////////////////////////////////////////////////////
+//Green Hosting Search
             
-          
+	fetch('https://admin.thegreenwebfoundation.org/api/v3/greencheck/'+domain).then(function(response) {
+	  response.json().then(function(resData) {
+		if(resData.green == true){
+			document.getElementById("greenBar").style.width = "260px"; document.getElementById("greenBar").style.background = 'rgba(142, 202, 46, 0.5)';
+            document.getElementById("greenBar").style.border = '1px solid green';
+            document.getElementById("greenBar").innerHTML = 'Yes';
+            
+		}
+		else if(resData.green == false){
+			document.getElementById("greenBar").style.width = "30px"; document.getElementById("greenBar").style.background = 'rgba(241, 137, 49, 0.5)';
+            document.getElementById("greenBar").style.border = '1px solid orange';
+            document.getElementById("greenBar").innerHTML = 'No';
+            
+		}
+	  });
+	}).catch(function(err) {
+		//console.log('Fetch Error :-S', err);
+	});
+ 
+if(document.getElementById("greenBar").innerHTML.indexOf("Yes") != -1) {
+    greenArray.push("Your website is hosted with green energy sources!");
+}
+ else{
+     orangeArray.push("Try finding a data center to host your website with renewable energy."); 
+ }
+    
+//////////////////////////////////////////////////////////////////////////////////
+            
+
             
  if (orangeArray.length == 1) {
   document.getElementById("m1").innerHTML = orangeArray[0];
@@ -1185,7 +1218,7 @@ switch (resImgChart >= 0){
      document.getElementById("m1").innerHTML = "No Major Recommendations, good work!";
  }
         
- if (yellowArray.length == 1) {
+/* if (yellowArray.length == 1) {
   document.getElementById("r1").innerHTML = yellowArray[0];
 } else if (yellowArray.length == 2) {
   document.getElementById("r1").innerHTML = yellowArray[0];
@@ -1199,10 +1232,10 @@ switch (resImgChart >= 0){
 }
  else{
      //document.getElementById("r1").innerHTML = "";
- }        
+ }   */     
         
 
- if (greenArray.length == 1) {
+/*if (greenArray.length == 1) {
   document.getElementById("p1").innerHTML = greenArray[0];
 } else if (greenArray.length == 2) {
   document.getElementById("p1").innerHTML = greenArray[0];
@@ -1216,7 +1249,10 @@ switch (resImgChart >= 0){
 }
  else{
      //document.getElementById("p1").innerHTML = "";
- }
+ }*/
+            
+document.getElementById("p1").innerHTML = greenArray;
+            
         
        }
         catch(e) {
@@ -1225,8 +1261,6 @@ switch (resImgChart >= 0){
         });
     
 });
-
-//////////////New Code from UpWork
 
 
 /* The function use to show and hide the selected content as per button click  */
