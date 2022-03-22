@@ -1175,29 +1175,23 @@ switch (resImgChart >= 0){
 	fetch('https://admin.thegreenwebfoundation.org/api/v3/greencheck/'+domain).then(function(response) {
 	  response.json().then(function(resData) {
 		if(resData.green == true){
-			document.getElementById("greenBar").style.width = "260px"; document.getElementById("greenBar").style.background = 'rgba(142, 202, 46, 0.5)';
+			document.getElementById("greenBar").style.width = "260px"; 
+            document.getElementById("greenBar").style.background = 'rgba(142, 202, 46, 0.5)';
             document.getElementById("greenBar").style.border = '1px solid green';
             document.getElementById("greenBar").innerHTML = 'Yes';
+            document.getElementById("p3").innerHTML = 'Your website is hosted with green energy sources!';
             
 		}
 		else if(resData.green == false){
-			document.getElementById("greenBar").style.width = "30px"; document.getElementById("greenBar").style.background = 'rgba(241, 137, 49, 0.5)';
+			document.getElementById("greenBar").style.width = "30px"; 
+            document.getElementById("greenBar").style.background = 'rgba(241, 137, 49, 0.5)';
             document.getElementById("greenBar").style.border = '1px solid orange';
-            document.getElementById("greenBar").innerHTML = 'No';
-            
+            document.getElementById("greenBar").innerHTML = 'No'; 
+            document.getElementById("m3").innerHTML = 'Try finding a data center to host your website with renewable energy.';
 		}
 	  });
-	}).catch(function(err) {
-		//console.log('Fetch Error :-S', err);
 	});
- 
-if(document.getElementById("greenBar").innerHTML.indexOf("Yes") != -1) {
-    greenArray.push("Your website is hosted with green energy sources!");
-}
- else{
-     orangeArray.push("Try finding a data center to host your website with renewable energy."); 
- }
-    
+
 //////////////////////////////////////////////////////////////////////////////////
             
 
@@ -1235,7 +1229,7 @@ if(document.getElementById("greenBar").innerHTML.indexOf("Yes") != -1) {
  }   */     
         
 
-/*if (greenArray.length == 1) {
+if (greenArray.length == 1) {
   document.getElementById("p1").innerHTML = greenArray[0];
 } else if (greenArray.length == 2) {
   document.getElementById("p1").innerHTML = greenArray[0];
@@ -1249,9 +1243,7 @@ if(document.getElementById("greenBar").innerHTML.indexOf("Yes") != -1) {
 }
  else{
      //document.getElementById("p1").innerHTML = "";
- }*/
-            
-document.getElementById("p1").innerHTML = greenArray;
+ }
             
         
        }

@@ -304,6 +304,10 @@ table .row{
     padding-left: 8px;
 }
 
+#m3{
+    padding-left: 8px;
+}
+
 #praise{
     font-size: 18px;
 }
@@ -313,6 +317,10 @@ table .row{
 }
 
 #p2{
+    padding-left: 8px;
+}
+
+#p3{
     padding-left: 8px;
 }
 
@@ -335,3 +343,24 @@ table .row{
     background: #F2F2F2;
     color: #000;
 }
+
+/* Ukraine Donation */
+#supportUA{
+  display: flex;
+  line-height: 0px;
+}
+
+#uaFlag{
+    padding-left: 145px;
+    padding-right: 5px;
+    padding-top: 4px;
+}
+
+#supportText{
+    padding-top: 10px;
+}
+
+
+
+
+
