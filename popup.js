@@ -9,6 +9,32 @@ chrome.tabs.query({
         try{
  var x = data["tab"+tab.id];
             
+  
+/////////////////////////////////////////////////////////////////////////////
+//Green Hosting Search
+            
+	fetch('https://admin.thegreenwebfoundation.org/api/v3/greencheck/'+domain).then(function(response) {
+	  response.json().then(function(resData) {
+		if(resData.green == true){
+			document.getElementById("greenBar").style.width = "260px"; 
+            document.getElementById("greenBar").style.background = 'rgba(142, 202, 46, 0.5)';
+            document.getElementById("greenBar").style.border = '1px solid green';
+            document.getElementById("greenBar").innerHTML = 'Yes';
+            document.getElementById("p3").innerHTML = 'Your website is hosted with green energy sources!';
+            
+		}
+		else if(resData.green == false){
+			document.getElementById("greenBar").style.width = "30px"; 
+            document.getElementById("greenBar").style.background = 'rgba(241, 137, 49, 0.5)';
+            document.getElementById("greenBar").style.border = '1px solid orange';
+            document.getElementById("greenBar").innerHTML = 'No'; 
+            document.getElementById("m3").innerHTML = 'Try finding a method to host your website with renewable energy.';
+		}
+	  });
+	});
+
+//////////////////////////////////////////////////////////////////////////////////
+            
             
 document.getElementById("scoreHTML").innerHTML = x.finalGrade;
             
@@ -1168,31 +1194,6 @@ switch (resImgChart >= 0){
         orangeArray.push(resImgOEntry);
         break;
 }
-  
-/////////////////////////////////////////////////////////////////////////////
-//Green Hosting Search
-            
-	fetch('https://admin.thegreenwebfoundation.org/api/v3/greencheck/'+domain).then(function(response) {
-	  response.json().then(function(resData) {
-		if(resData.green == true){
-			document.getElementById("greenBar").style.width = "260px"; 
-            document.getElementById("greenBar").style.background = 'rgba(142, 202, 46, 0.5)';
-            document.getElementById("greenBar").style.border = '1px solid green';
-            document.getElementById("greenBar").innerHTML = 'Yes';
-            document.getElementById("p3").innerHTML = 'Your website is hosted with green energy sources!';
-            
-		}
-		else if(resData.green == false){
-			document.getElementById("greenBar").style.width = "30px"; 
-            document.getElementById("greenBar").style.background = 'rgba(241, 137, 49, 0.5)';
-            document.getElementById("greenBar").style.border = '1px solid orange';
-            document.getElementById("greenBar").innerHTML = 'No'; 
-            document.getElementById("m3").innerHTML = 'Try finding a data center to host your website with renewable energy.';
-		}
-	  });
-	});
-
-//////////////////////////////////////////////////////////////////////////////////
             
 
             
