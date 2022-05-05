@@ -1195,6 +1195,92 @@ switch (resImgChart >= 0){
         break;
 }
             
+var intStyleSheet = x.intStyleSheet;
+
+switch (intStyleSheet >= 0){
+
+    case intStyleSheet == 0:
+        document.getElementById("intStyleBar").innerHTML = "0 found";
+        document.getElementById("intStyleBar").style.width = "260px";
+        document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("intStyleBar").style.border = '1px solid green';
+        greenArray.push("No inline style sheets found. Great job!");
+        break;
+    case intStyleSheet == 1:
+        document.getElementById("intStyleBar").innerHTML = "1";
+        document.getElementById("intStyleBar").style.width = "260px";
+        document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("intStyleBar").style.border = '1px solid green';
+        greenArray.push("Only 1 internal style sheet found!");
+        break;
+    case intStyleSheet == 2:
+        document.getElementById("intStyleBar").innerHTML = "2";
+        document.getElementById("intStyleBar").style.width = "240px";
+        document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("intStyleBar").style.border = '1px solid green';
+        break;
+    case intStyleSheet == 3:
+        document.getElementById("intStyleBar").innerHTML = "3";
+        document.getElementById("intStyleBar").style.width = "220px";
+        document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("intStyleBar").style.border = '1px solid green';
+        break;
+    case intStyleSheet == 4:
+        document.getElementById("intStyleBar").innerHTML = "4";
+        document.getElementById("intStyleBar").style.width = "200px";
+        document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("intStyleBar").style.border = '1px solid green';
+        break;
+    case intStyleSheet == 5:
+        document.getElementById("intStyleBar").innerHTML = "5";
+        document.getElementById("intStyleBar").style.width = "140px";
+        document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("intStyleBar").style.border = '1px solid green';
+        break;
+    case intStyleSheet == 6:
+        document.getElementById("intStyleBar").innerHTML = "6";
+        document.getElementById("intStyleBar").style.width = "120px";
+        document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("intStyleBar").style.border = '1px solid yellow';
+        orangeArray.push(resImgOEntry);
+        break;
+    case intStyleSheet == 7:
+        document.getElementById("intStyleBar").innerHTML = "7";
+        document.getElementById("intStyleBar").style.width = "100px";
+        document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("intStyleBar").style.border = '1px solid yellow';
+        orangeArray.push(resImgOEntry);
+        break;
+    case intStyleSheet == 8:
+        document.getElementById("intStyleBar").innerHTML = "8";
+        document.getElementById("intStyleBar").style.width = "80px";
+        document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("intStyleBar").style.border = '1px solid yellow';
+        orangeArray.push(resImgOEntry);
+        break;
+    case intStyleSheet == 9:
+        document.getElementById("intStyleBar").innerHTML = "9";
+        document.getElementById("intStyleBar").style.width = "60px";
+        document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("intStyleBar").style.border = '1px solid yellow';
+        orangeArray.push(resImgOEntry);
+        break;
+    case intStyleSheet == 10:
+        document.getElementById("intStyleBar").innerHTML = "10";
+        document.getElementById("intStyleBar").style.width = "50px";
+        document.getElementById("intStyleBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("intStyleBar").style.border = '1px solid orange';
+        orangeArray.push(resImgOEntry);
+        break;
+    case intStyleSheet > 10:
+        document.getElementById("intStyleBar").innerHTML = ">10";
+        document.getElementById("intStyleBar").style.width = "30px";
+        document.getElementById("intStyleBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("intStyleBar").style.border = '1px solid orange';
+        orangeArray.push(resImgOEntry);
+        break;
+}
+            
 
             
  if (orangeArray.length == 1) {

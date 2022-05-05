@@ -15,7 +15,6 @@ body {
   line-height: 0px;
   height: 40px;
   border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
 
 #icon{
@@ -214,7 +213,8 @@ table .row{
   padding-top: 3px;
   padding-bottom: 3px;
   padding-left: 1px;
-  line-height:25px;
+  line-height:20px;
+  border-radius: 15px;
 }
 
 .tableLine{
@@ -360,7 +360,27 @@ table .row{
     padding-top: 10px;
 }
 
+/*Scroll Bar CSS*/ 
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 15px;
+}
 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+</style>
 

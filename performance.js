@@ -246,11 +246,62 @@ answerArray.push(ratioSS);
 else{
 answerArray.push(1.1);
 }   
+
+
+////////////////////////////////////////////
+//Internal Stylesheets
+    
+var intStyleSheet = document.getElementsByTagName('style').length;
+    
+answerArray.push(intStyleSheet);
     
 
+////////////////////////////////////////////
+//# of Style Sheets Files Found
+  
+var numStyleSheet = document.styleSheets.length;
+
+answerArray.push(numStyleSheet);    
+
+////////////////////////////////////////////
+//# of External HTTP Requests
+    
+var httpRequests = window.performance.getEntriesByType("resources").length;
+
+answerArray.push(httpRequests);
+    
+////////////////////////////////////////////
+//Site Redirects
+    
+var redirects = window.performance.navigation.redirectCount;
+
+answerArray.push(redirects);
+    
+////////////////////////////////////////////
+//Amount of Cookies
+    
+var theCookies = document.cookie.split(';');
+var aString = '';
+var cookieArray = [];
+var cookieLen = 0;
+  for (var i = 1 ; i <= theCookies.length; i++) {
+        //aString += i + ' ' + theCookies[i-1] + "\n";
+       cookieArray.push(aString);
+    }
+    
+cookieLen = cookieArray.length;
+answerArray.push(cookieLen);
+
+    
+////////////////////////////////////////////
+//Amount of Empty URLs
+var emptyURL = document.querySelectorAll('img[src=""]').length + document.querySelectorAll('script[src=""]').length + document.querySelectorAll('link[rel=stylesheet][href=""]').length + document.querySelectorAll('button[href=""]').length + document.querySelectorAll('a[href=""]').length;
+    
+answerArray.push(emptyURL);
+    
+/////////////////////
 var scoreArray = [];
 var finalScore = 0;
-
 
 // Decoded Body Size
 
@@ -481,8 +532,111 @@ case answerArray[8] == 0:
     finalScore += 0;
     break;
 }
+    
+// Internal Stylesheets
 
-finalScore = finalScore/13.6;
+switch (answerArray[9] >= 0){
+
+case answerArray[9] <= 2:
+    finalScore += .2;
+    break;
+case answerArray[9] <= 5:
+    finalScore += .1;
+    break;
+case answerArray[9] >= 5:
+    finalScore += 0;
+    break;
+}
+    
+// Number of Stylesheet Files
+
+switch (answerArray[10] >= 0){
+
+case answerArray[10] <= 2:
+    finalScore += .2;
+    break;
+case answerArray[10] <= 5:
+    finalScore += .1;
+    break;
+case answerArray[10] >= 5:
+    finalScore += 0;
+    break;
+}
+    
+// Number of Requests Sent
+
+switch (answerArray[11] >= 0){
+
+case answerArray[11] <= 20:
+    finalScore += .4;
+    break;
+case answerArray[11] <= 50:
+    finalScore += .3;
+    break;
+case answerArray[11] <= 75:
+    finalScore += .2;
+    break;
+case answerArray[11] <= 100:
+    finalScore += .1;
+    break;
+case answerArray[11] > 100:
+    finalScore += 0;
+    break;
+}
+    
+// Number of Redirects
+
+switch (answerArray[12] >= 0){
+
+case answerArray[12] == 0:
+    finalScore += .2;
+    break;
+case answerArray[12] <= 1:
+    finalScore += .1;
+    break;
+case answerArray[12] >= 2:
+    finalScore += 0;
+    break;
+}
+
+ // Amount of Cookies
+
+switch (answerArray[13] >= 0){
+
+case answerArray[13] <=3:
+    finalScore += .4;
+    break;
+case answerArray[13] <= 7:
+    finalScore += .3;
+    break;
+case answerArray[13] <= 10:
+    finalScore += .2;
+    break;
+case answerArray[13] <= 20:
+    finalScore += .1;
+    break;
+case answerArray[13] >= 21:
+    finalScore += 0;
+    break;
+}
+        
+        
+ // Empty SRC Tags
+
+switch (answerArray[14] >= 0){
+
+case answerArray[14] <= 2:
+    finalScore += .2;
+    break;
+case answerArray[14] <= 4:
+    finalScore += .1;
+    break;
+case answerArray[14] >= 5:
+    finalScore += 0;
+    break;
+} 
+
+finalScore = finalScore/14.8;
 
 finalScore = Math.round(finalScore*100)
 
@@ -542,7 +696,8 @@ var transferSizeChart = answerArray[7];
 var lengthK = pagebytesLabel;
 var resImgChart = (answerArray[8]*100).toPrecision(3);
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel}
+
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, httpRequests, cookieLen, emptyURL}
 
 chrome.runtime.sendMessage(counts);
     
