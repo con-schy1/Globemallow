@@ -1281,7 +1281,242 @@ switch (intStyleSheet >= 0){
         break;
 }
             
+var numStyleSheet = x.numStyleSheet;
 
+switch (numStyleSheet >= 0){
+
+    case numStyleSheet <= 1:
+        document.getElementById("numStyleBar").innerHTML = "1";
+        document.getElementById("numStyleBar").style.width = "260px";
+        document.getElementById("numStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("numStyleBar").style.border = '1px solid green';
+        greenArray.push("Only 1 Style Sheet File!");
+        break;
+    case numStyleSheet == 2:
+        document.getElementById("numStyleBar").innerHTML = "2";
+        document.getElementById("numStyleBar").style.width = "240px";
+        document.getElementById("numStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("numStyleBar").style.border = '1px solid green';
+        break;
+    case numStyleSheet == 3:
+        document.getElementById("numStyleBar").innerHTML = "3";
+        document.getElementById("numStyleBar").style.width = "220px";
+        document.getElementById("numStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("numStyleBar").style.border = '1px solid green';
+        break;
+    case numStyleSheet == 4:
+        document.getElementById("numStyleBar").innerHTML = "4";
+        document.getElementById("numStyleBar").style.width = "200px";
+        document.getElementById("numStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("numStyleBar").style.border = '1px solid green';
+        break;
+    case numStyleSheet == 5:
+        document.getElementById("numStyleBar").innerHTML = "5";
+        document.getElementById("numStyleBar").style.width = "140px";
+        document.getElementById("numStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("numStyleBar").style.border = '1px solid green';
+        break;
+    case numStyleSheet == 6:
+        document.getElementById("numStyleBar").innerHTML = "6";
+        document.getElementById("numStyleBar").style.width = "120px";
+        document.getElementById("numStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("numStyleBar").style.border = '1px solid yellow';
+        orangeArray.push(resImgOEntry);
+        break;
+    case numStyleSheet == 7:
+        document.getElementById("numStyleBar").innerHTML = "7";
+        document.getElementById("numStyleBar").style.width = "100px";
+        document.getElementById("numStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("numStyleBar").style.border = '1px solid yellow';
+        orangeArray.push(resImgOEntry);
+        break;
+    case numStyleSheet == 8:
+        document.getElementById("numStyleBar").innerHTML = "8";
+        document.getElementById("numStyleBar").style.width = "80px";
+        document.getElementById("numStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("numStyleBar").style.border = '1px solid yellow';
+        orangeArray.push(resImgOEntry);
+        break;
+    case numStyleSheet == 9:
+        document.getElementById("numStyleBar").innerHTML = "9";
+        document.getElementById("numStyleBar").style.width = "60px";
+        document.getElementById("numStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("numStyleBar").style.border = '1px solid yellow';
+        orangeArray.push(resImgOEntry);
+        break;
+    case numStyleSheet == 10:
+        document.getElementById("numStyleBar").innerHTML = "10";
+        document.getElementById("numStyleBar").style.width = "50px";
+        document.getElementById("numStyleBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("numStyleBar").style.border = '1px solid orange';
+        orangeArray.push(resImgOEntry);
+        break;
+    case numStyleSheet > 10:
+        document.getElementById("numStyleBar").innerHTML = ">10";
+        document.getElementById("numStyleBar").style.width = "30px";
+        document.getElementById("numStyleBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("numStyleBar").style.border = '1px solid orange';
+        orangeArray.push(resImgOEntry);
+        break;
+}
+            
+var redirects = x.redirects;
+
+
+switch (redirects >= 0){
+
+    case redirects == 0:
+        document.getElementById("redirectBar").style.width = "260px";
+        document.getElementById("redirectBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("redirectBar").style.border = '1px solid green';
+        document.getElementById("redirectBar").innerHTML = 'No redirects';
+        greenArray.push("No redirects!");
+        break;
+    case redirects >= 1:
+        document.getElementById("redirectBar").style.width = "30px";
+        document.getElementById("redirectBar").style.background = 'rgba(241, 137, 49, 0.5)';
+        document.getElementById("redirectBar").style.border = '1px solid orange';
+        document.getElementById("redirectBar").innerHTML = 'Yes';
+        orangeArray.push(fontOEntry);
+        break;
+}
+            
+var cookieLen = x.cookieLen;
+
+switch (cookieLen >= 0){
+
+    case cookieLen <= 2:
+        document.getElementById("cookieBar").innerHTML = cookieLen;
+        document.getElementById("cookieBar").style.width = "260px";
+        document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("cookieBar").style.border = '1px solid green';
+        greenArray.push("Only 1 Style Sheet File!");
+        break;
+    case cookieLen <= 3:
+        document.getElementById("cookieBar").innerHTML = cookieLen;
+        document.getElementById("cookieBar").style.width = "240px";
+        document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("cookieBar").style.border = '1px solid green';
+        break;
+    case cookieLen <= 4:
+        document.getElementById("cookieBar").innerHTML = cookieLen;
+        document.getElementById("cookieBar").style.width = "220px";
+        document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("cookieBar").style.border = '1px solid green';
+        break;
+    case cookieLen <= 5:
+        document.getElementById("cookieBar").innerHTML = cookieLen;
+        document.getElementById("cookieBar").style.width = "200px";
+        document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("cookieBar").style.border = '1px solid green';
+        break;
+    case cookieLen <= 6:
+        document.getElementById("cookieBar").innerHTML = cookieLen;
+        document.getElementById("cookieBar").style.width = "140px";
+        document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("cookieBar").style.border = '1px solid green';
+        break;
+    case cookieLen <= 7:
+        document.getElementById("cookieBar").innerHTML = cookieLen;
+        document.getElementById("cookieBar").style.width = "120px";
+        document.getElementById("cookieBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("cookieBar").style.border = '1px solid yellow';
+        orangeArray.push(resImgOEntry);
+        break;
+    case cookieLen <= 8:
+        document.getElementById("cookieBar").innerHTML = cookieLen;
+        document.getElementById("cookieBar").style.width = "100px";
+        document.getElementById("cookieBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("cookieBar").style.border = '1px solid yellow';
+        orangeArray.push(resImgOEntry);
+        break;
+    case cookieLen <= 9:
+        document.getElementById("cookieBar").innerHTML = cookieLen;
+        document.getElementById("cookieBar").style.width = "80px";
+        document.getElementById("cookieBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("cookieBar").style.border = '1px solid yellow';
+        orangeArray.push(resImgOEntry);
+        break;
+    case cookieLen <= 10:
+        document.getElementById("cookieBar").innerHTML = cookieLen;
+        document.getElementById("cookieBar").style.width = "60px";
+        document.getElementById("cookieBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("cookieBar").style.border = '1px solid yellow';
+        orangeArray.push(resImgOEntry);
+        break;
+    case cookieLen <= 12:
+        document.getElementById("cookieBar").innerHTML = cookieLen;
+        document.getElementById("cookieBar").style.width = "50px";
+        document.getElementById("cookieBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("cookieBar").style.border = '1px solid orange';
+        orangeArray.push(resImgOEntry);
+        break;
+    case cookieLen >= 13:
+        document.getElementById("cookieBar").innerHTML = cookieLen;
+        document.getElementById("cookieBar").style.width = "30px";
+        document.getElementById("cookieBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("cookieBar").style.border = '1px solid orange';
+        orangeArray.push(resImgOEntry);
+        break;
+}
+            
+var emptyURL = x.emptyURL;
+
+switch (emptyURL >= 0){
+
+    case emptyURL == 0:
+        document.getElementById("srcBar").innerHTML = emptyURL;
+        document.getElementById("srcBar").style.width = "260px";
+        document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid green';
+        greenArray.push("Only 1 Style Sheet File!");
+        break;
+    case emptyURL == 1:
+        document.getElementById("srcBar").innerHTML = emptyURL;
+        document.getElementById("srcBar").style.width = "240px";
+        document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid green';
+        break;
+    case emptyURL == 2:
+        document.getElementById("srcBar").innerHTML = emptyURL;
+        document.getElementById("srcBar").style.width = "220px";
+        document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid green';
+        break;
+    case emptyURL == 3:
+        document.getElementById("srcBar").innerHTML = emptyURL;
+        document.getElementById("srcBar").style.width = "200px";
+        document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid green';
+        break;
+    case emptyURL == 4:
+        document.getElementById("srcBar").innerHTML = emptyURL;
+        document.getElementById("srcBar").style.width = "140px";
+        document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid green';
+        break;
+    case emptyURL == 5:
+        document.getElementById("srcBar").innerHTML = emptyURL;
+        document.getElementById("srcBar").style.width = "100px";
+        document.getElementById("srcBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid yellow';
+        orangeArray.push(resImgOEntry);
+        break;
+    case emptyURL >= 6:
+        document.getElementById("srcBar").innerHTML = emptyURL;
+        document.getElementById("srcBar").style.width = "50px";
+        document.getElementById("srcBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("srcBar").style.border = '1px solid orange';
+        orangeArray.push(resImgOEntry);
+        break;
+    case emptyURL >= 10:
+        document.getElementById("srcBar").innerHTML = ">10";
+        document.getElementById("srcBar").style.width = "30px";
+        document.getElementById("srcBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("srcBar").style.border = '1px solid orange';
+        orangeArray.push(resImgOEntry);
+        break;
+}
             
  if (orangeArray.length == 1) {
   document.getElementById("m1").innerHTML = orangeArray[0];

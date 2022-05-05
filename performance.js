@@ -262,13 +262,6 @@ answerArray.push(intStyleSheet);
 var numStyleSheet = document.styleSheets.length;
 
 answerArray.push(numStyleSheet);    
-
-////////////////////////////////////////////
-//# of External HTTP Requests
-    
-var httpRequests = window.performance.getEntriesByType("resources").length;
-
-answerArray.push(httpRequests);
     
 ////////////////////////////////////////////
 //Site Redirects
@@ -563,59 +556,35 @@ case answerArray[10] >= 5:
     break;
 }
     
-// Number of Requests Sent
+// Number of Redirects
 
 switch (answerArray[11] >= 0){
 
-case answerArray[11] <= 20:
-    finalScore += .4;
-    break;
-case answerArray[11] <= 50:
-    finalScore += .3;
-    break;
-case answerArray[11] <= 75:
-    finalScore += .2;
-    break;
-case answerArray[11] <= 100:
+case answerArray[11] == 0:
     finalScore += .1;
     break;
-case answerArray[11] > 100:
-    finalScore += 0;
-    break;
-}
-    
-// Number of Redirects
-
-switch (answerArray[12] >= 0){
-
-case answerArray[12] == 0:
-    finalScore += .2;
-    break;
-case answerArray[12] <= 1:
-    finalScore += .1;
-    break;
-case answerArray[12] >= 2:
+case answerArray[11] <= 1:
     finalScore += 0;
     break;
 }
 
  // Amount of Cookies
 
-switch (answerArray[13] >= 0){
+switch (answerArray[12] >= 0){
 
-case answerArray[13] <=3:
+case answerArray[12] <=3:
     finalScore += .4;
     break;
-case answerArray[13] <= 7:
+case answerArray[12] <= 7:
     finalScore += .3;
     break;
-case answerArray[13] <= 10:
+case answerArray[12] <= 10:
     finalScore += .2;
     break;
-case answerArray[13] <= 20:
+case answerArray[12] <= 15:
     finalScore += .1;
     break;
-case answerArray[13] >= 21:
+case answerArray[12] >= 16:
     finalScore += 0;
     break;
 }
@@ -623,20 +592,20 @@ case answerArray[13] >= 21:
         
  // Empty SRC Tags
 
-switch (answerArray[14] >= 0){
+switch (answerArray[13] >= 0){
 
-case answerArray[14] <= 2:
+case answerArray[13] <= 2:
     finalScore += .2;
     break;
-case answerArray[14] <= 4:
+case answerArray[13] <= 4:
     finalScore += .1;
     break;
-case answerArray[14] >= 5:
+case answerArray[13] >= 5:
     finalScore += 0;
     break;
 } 
 
-finalScore = finalScore/14.8;
+finalScore = finalScore/14.3;
 
 finalScore = Math.round(finalScore*100)
 
@@ -697,7 +666,7 @@ var lengthK = pagebytesLabel;
 var resImgChart = (answerArray[8]*100).toPrecision(3);
 
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, httpRequests, cookieLen, emptyURL}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL}
 
 chrome.runtime.sendMessage(counts);
     
