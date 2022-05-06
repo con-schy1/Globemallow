@@ -29,7 +29,7 @@ Dev View </button>
     
     
 <div class="bodyHTML">
-<div class = "grade">Sustainability Grade:
+<div class = "grade"><h3>Sustainability Grade:</h3>
     <span class="tooltiptextGrade">Calculated from development best practices</span>
     </div>
   <div1 class="ScoreGraph">
@@ -37,7 +37,7 @@ Dev View </button>
 <h2 id = "scoreHTML">A+</h2>
     
     
-<canvas id="myChart" style="width:100%;max-width:160px;"></canvas>
+<canvas id="myChart" style="width:100%;max-width:170px;"></canvas>
 </div>
 </div1>
     
@@ -70,9 +70,72 @@ Dev View </button>
 /////////////////////////////-->
 
 <div id = "Example2Div" class="tabcontent">
-    <p id="tableHeader">Sustainability Grade Metrics:</p>
+ <h3 id="tableHeader">Sustainability Grade Metrics:</h3>
      <div class ='wholeTable'>  
-<table>
+<table class= 'tableClass'>
+    
+    
+<h3>Design</h3>
+    
+    
+<tr>
+   <td class = 'hoverClass' class= 'barLabel' >Page<br>Bytes<span class="tooltiptextGrade">Amount of content loaded on page</span></td>
+      <td>
+        <div  class="row" id = "htmlBar">Yes</div>
+      </td>
+</tr>    
+
+<tr>
+   <td class = 'hoverClass' class= 'barLabel'>Image<br>Formats<span class="tooltiptextGrade">% of img src that are AVIF, WebP, and SVG</span></td>
+      <td>
+          <div  class="row" id = "svgBar">80%</div>
+      </td>
+</tr>
+    
+<tr>
+   <td class = 'hoverClass' class= 'barLabel'>Total Byte<br>Size<span class="tooltiptextGrade">Total size of page uploaded to server</span></td>
+      <td>
+       <div class="row" id = "byteSizeBar">750 kb</div>
+      </td>
+</tr>
+    
+<tr>
+   <td class = 'hoverClass' class= 'barLabel' >Imported Fonts<span class="tooltiptextGrade">Looking for imported font files</span></td>
+      <td>
+        <div  class="row" id = "fontBar">Yes</div>
+      </td>
+</tr>
+    
+<tr>
+   <td class = 'hoverClass' class= 'barLabel' >Responsive<br>Images<span class="tooltiptextGrade">Looking for images loaded with srcset attribute and picture html tag</span></td>
+      <td>
+        <div  class="row" id = "resImgBar">100 %</div>
+      </td>
+</tr>
+    
+<tr>
+   <td class = 'hoverClass' class= 'intStyleLabel' >Internal<br>Style Sheet<span class="tooltiptextGrade"> Internal Style Sheet</span></td>
+      <td>
+        <div  class="row" id = "intStyleBar">Loading...</div>
+      </td>
+</tr>
+    
+<tr>
+   <td class = 'hoverClass' class= 'numStyleLabel' >Style Sheet<br>Files<span class="tooltiptextGrade"> Style Sheet Files</span></td>
+      <td>
+        <div  class="row" id = "numStyleBar">Loading...</div>
+      </td>
+</tr>
+    
+</table>    
+
+
+<h3>Development</h3>    
+
+         
+         
+<table class= 'tableClass'>
+    
 <tr>
      <td class = 'hoverClass' class= 'barLabel'>Lazy Loaded<br>Images
     <span class="tooltiptextGrade">% of Images Lazy Loaded</span></td>
@@ -80,97 +143,62 @@ Dev View </button>
         <div  class="row" id = "lazyBar">90%</div>
       </td>
 </tr>
-<tr>
-   <td class = 'hoverClass' class= 'barLabel'>Image<br>Formats<span class="tooltiptextGrade">% of img src that are AVIF, WebP, and SVG</span></td>
-      <td>
-<!--<div  class="row" id = "svgBar" style='background-color:#64c5dd;'>80%</div>-->
-          <div  class="row" id = "svgBar">80%</div>
-      </td>
-</tr>
-<tr>
-   <td class = 'hoverClass' class= 'barLabel'>Total Byte<br>Size<span class="tooltiptextGrade">Total size of page uploaded to server</span></td>
-      <td>
-       <div class="row" id = "byteSizeBar">750 kb</div>
-      </td>
-</tr>
+    
 <tr>
    <td class = 'hoverClass' class= 'barLabel' >Page Load<br>Time</td>
      <td>
        <div  class="row" id = "loadBar">2.6 sec</div>
    </td>
 </tr>
-<tr>
-   <td class = 'hoverClass' class= 'barLabel' >JS HeapSize<span class="tooltiptextGrade">Used JavaScript heap size</span></td>
-      <td>
-        <div class="row" id = "jsBar">2 mb</div>
-      </td>
-</tr>
-<tr>
-   <td class = 'hoverClass' class= 'barLabel' >Imported Fonts<span class="tooltiptextGrade">Looking for imported font files</span></td>
-      <td>
-        <div  class="row" id = "fontBar">Yes</div>
-      </td>
-</tr>
-<tr>
-   <td class = 'hoverClass' class= 'barLabel' >HTML Length<span class="tooltiptextGrade">Amount of HTML loaded on page</span></td>
-      <td>
-        <div  class="row" id = "htmlBar">Yes</div>
-      </td>
-</tr>
+
 <tr>
    <td class = 'hoverClass' class= 'barLabel' >Transfer<br>Size<span class="tooltiptextGrade">Data transferred from server on load</span></td>
       <td>
         <div  class="row" id = "transferBar">1 mb</div>
       </td>
 </tr>
+    
 <tr>
-   <td class = 'hoverClass' class= 'barLabel' >Responsive<br>Images<span class="tooltiptextGrade">Looking for images loaded with srcset attribute and picture html tag</span></td>
+   <td class = 'hoverClass' class= 'barLabel' >JS HeapSize<span class="tooltiptextGrade">Used JavaScript heap size</span></td>
       <td>
-        <div  class="row" id = "resImgBar">100 %</div>
+        <div class="row" id = "jsBar">2 mb</div>
       </td>
-</tr>
+</tr>   
+
 <tr>
    <td class = 'hoverClass' class= 'barLabel' >Green<br>Hosted<span class="tooltiptextGrade">If website is hosted by renewable energy sources according to thegreenwebfoundation.org</span></td>
       <td>
         <div  class="row" id = "greenBar">Loading...</div>
       </td>
 </tr>
+    
 <tr>
-   <td class = 'hoverClass' class= 'intStyleLabel' >Internal<br>Style Sheet<span class="tooltiptextGrade"> Internal Style Sheet</span></td>
-      <td>
-        <div  class="row" id = "intStyleBar">Loading...</div>
-      </td>
-</tr>
-<tr>
-   <td class = 'hoverClass' class= 'numStyleLabel' >Style Sheet<br>Files<span class="tooltiptextGrade"> Style Sheet Files</span></td>
-      <td>
-        <div  class="row" id = "numStyleBar">Loading...</div>
-      </td>
-</tr>
-<tr>
-   <td class = 'hoverClass' class= 'redirectLabel' >Redirects<span class="tooltiptextGrade">Number of HTTP Requests</span></td>
+   <td class = 'hoverClass' class= 'redirectLabel' >Redirects<span class="tooltiptextGrade">Whether or not page redirects</span></td>
       <td>
         <div  class="row" id = "redirectBar">Loading...</div>
       </td>
 </tr>
+    
 <tr>
    <td class = 'hoverClass' class= 'cookieLabel' >Cookies<span class="tooltiptextGrade">Number Cookies</span></td>
       <td>
         <div  class="row" id = "cookieBar">Loading...</div>
       </td>
 </tr>
+    
 <tr>
    <td class = 'hoverClass' class= 'srcLabel' >Empty<br>SRC Tags<span class="tooltiptextGrade">Empty SRC Tags</span></td>
       <td>
         <div  class="row" id = "srcBar">Loading...</div>
       </td>
 </tr>
+      
 </table>
  </div> 
     
 <!--    /////////////// Recommendations -->
     
-    <p id= "major">Recommendations for Page Sustainability:</p>
+    <h3 id= "major">Recommendations:</h3>
 
 <p id= "m1"></p>
 <p id= "m2"></p>
@@ -182,7 +210,7 @@ Dev View </button>
 <p id= "r2"></p>
 <p id= "r3"></p>-->
     
-<p id= "praise">Praise:</p>
+<h3 id= "praise">Praise:</h3>
     
 <p id= "p1"></p>
 <p id= "p2"></p>

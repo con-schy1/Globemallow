@@ -1,5 +1,5 @@
 body {
-  font-family: Tahoma, sans-serif;
+  font-family: veranda, sans-serif;
   font-size: 13px;
   width: 380px;
   height: 200px;
@@ -59,7 +59,7 @@ body {
 }
 
 .grade{
-    padding-top: 10px;
+/*    padding-top: 5px;*/
     font-size:14px;
     padding-left: 12px;
 }
@@ -71,7 +71,7 @@ body {
      /* For button text center */
     position: absolute;          /* Position absolute */
     left: 29%;
-    padding-top: 5%;
+    padding-top: 11%;
 }
     .item {
         position: relative;
@@ -94,7 +94,7 @@ body {
 }
 
 #tableHeader{
-  font-size: 18px;
+  font-size: 16px;
 }
 
 #factoids{
@@ -224,11 +224,13 @@ table .row{
 .barLabel{
 /*  font-size: 1em;*/
   text-align: left;
-  padding-right: 6px;
+/*  padding-right: 6px;*/
+  padding-right: 13px;
   color: #606060;
 }
 
 .wholeTable{
+    
    border-right: 1px solid gray;
     
 }
