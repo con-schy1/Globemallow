@@ -605,7 +605,7 @@ case answerArray[13] >= 5:
     break;
 } 
 
-finalScore = finalScore/14.3;
+finalScore = finalScore/14.7;
 
 finalScore = Math.round(finalScore*100)
 
