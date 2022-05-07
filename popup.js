@@ -418,7 +418,7 @@ var lazyOLengthVal = getRandomInt(lazyOArray.length);
 var lazyOEntry = lazyOArray[lazyOLengthVal];
         
 //Transfer Size Orange Major Recommendations Array
-var transferOArray = ['Caching: With less transmitted data and fewer server requests, pages are loaded much faster.', 'Analytics and advertising script files can add significant weight, increase CPU usage, and slow websites down.', 'Choose plugins that minimize server load and don’t add unnecessary weight on the front end.', 'Caching reduces the server load and the amount of data transferred, making websites more environmentally friendly.', 'Reducing Transfer Data size is largely seen as one of the best ways to make your website more sustainable', 'If you notice little difference between Total Byte Size, and Transfer Size it might mean that additional data can be cached.', 'This is the most heavily weighted metric in your Sustainability Grade. Reducing it will increase your Grade.', 'If Transfer size is greater than 1MB- it\'s equivalent to 150,000 words in a HTML File. Are your images worth 1,000 words?', ];
+var transferOArray = ['Caching: With less transmitted data and fewer server requests, pages are loaded much faster.', 'Analytics and advertising script files can add significant weight, increase CPU usage, and slow websites down.', 'Choose plugins that minimize server load and don’t add unnecessary weight on the front end.', 'Caching reduces the server load and the amount of data transferred, making websites more environmentally friendly.', 'Reducing Transfer Data size is largely seen as one of the best ways to make your website more sustainable', 'If you notice little difference between Total Byte Size, and Transfer Size it might mean that additional data can be cached.', 'Transfer Size is the most heavily weighted metric in your Sustainability Grade. Reducing it will increase your Grade.', 'If Transfer size is greater than 1MB- it\'s equivalent to 150,000 words in a HTML File. Are your images worth 1,000 words?', ];
 var transferOLengthVal = getRandomInt(transferOArray.length);
 var transferOEntry = transferOArray[transferOLengthVal];
     
@@ -447,9 +447,36 @@ var htmlOArray = ['It seems like you have a lot going on on this page. Is there 
 var htmlOLengthVal = getRandomInt(htmlOArray.length);
 var htmlOEntry = htmlOArray[htmlOLengthVal];
             
+//Responsive Image Orange Major Recommendations Array
 var resImgOArray = ['You can save bandwidth and speed up page load times by loading the most appropriate image for the viewer\'s display.', 'Our scan is searching for the HTML \"picture\" tag, and for \"srcset\" when loading an image for different screen dimensions', 'Responsive web design has changed how websites can be created. Device detection is no longer needed to display separate “mobile” sites whenever the server detects a phone or tablet.', 'Using srcset or picture HTML allow an image to be displayed at the correct dimensions for a user\'s device', 'If a site is being loaded on tablet or smart phone it wastes data to load the same image you would on a desktop website.', 'If media queries are being used in the CSS to create responisve images you want to make sure that not all images are being downloaded at the same time.'];
 var resImgOLengthVal  = getRandomInt(resImgOArray.length);
 var resImgOEntry = resImgOArray[resImgOLengthVal];
+            
+            
+//Internal Style Sheets Orange Major Recommendations Array
+var intSSOArray = ['Make sure CSS files are separate from page\’s HTML code.', 'If CSS is in HMTL body then the code must be sent for each page request- increasing the amount of data sent.','If CSS is in separate files, the browser can store them in local cache.'];
+var intSSOLengthVal  = getRandomInt(intSSOArray.length);
+var intSSOEntry = intSSOArray[intSSOLengthVal];
+            
+//Style Sheet Files Orange Major Recommendations Array
+var fileSSOArray = ['Reducing the number of CSS files to reduces the number of HTTP requests.', 'Ask yourself, can I just combine my multiple Style Sheets?', 'Reducing unnecessary files will help with overall page size.'];
+var fileSSOLengthVal  = getRandomInt(fileSSOArray.length);
+var fileSSOEntry = fileSSOArray[fileSSOLengthVal];
+            
+//Cookie Orange Major Recommendations Array
+var cookieOArray = ['Are all these cookies on your page necessary?', 'Do you know the specific purpose of each cookie on your page?', 'Reducing the amount of cookies on each page will help to reudce the amount of reqeusts sent per page.'];
+var cookieOLengthVal  = getRandomInt(cookieOArray.length);
+var cookieOEntry = cookieOArray[cookieOLengthVal];
+            
+//Redirect Orange Major Recommendations Array
+var redirectOArray = ['Redirects are an unnecessary use of resources.'];
+var redirectOLengthVal  = getRandomInt(redirectOArray.length);
+var redirectOEntry = redirectOArray[redirectOLengthVal];
+            
+//Empty URL Orange Major Recommendations Array
+var emptyURLOArray = ['Browser will call the directory in which the page is located if src Attribute is empty.This results in additional HTTP requests.'];
+var emptyURLOLengthVal  = getRandomInt(emptyURLOArray.length);
+var emptyURLOEntry = emptyURLOArray[emptyURLOLengthVal];
 
 //Lazy Load Bar Size 
 var lazyLoadChart = x.lazyLoadChart;
@@ -1242,42 +1269,42 @@ switch (intStyleSheet >= 0){
         document.getElementById("intStyleBar").style.width = "120px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(intSSOEntry);
         break;
     case intStyleSheet == 7:
         document.getElementById("intStyleBar").innerHTML = "7";
         document.getElementById("intStyleBar").style.width = "100px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(intSSOEntry);
         break;
     case intStyleSheet == 8:
         document.getElementById("intStyleBar").innerHTML = "8";
         document.getElementById("intStyleBar").style.width = "80px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(intSSOEntry);
         break;
     case intStyleSheet == 9:
         document.getElementById("intStyleBar").innerHTML = "9";
         document.getElementById("intStyleBar").style.width = "60px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(intSSOEntry);
         break;
     case intStyleSheet == 10:
         document.getElementById("intStyleBar").innerHTML = "10";
         document.getElementById("intStyleBar").style.width = "50px";
         document.getElementById("intStyleBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("intStyleBar").style.border = '1px solid orange';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(intSSOEntry);
         break;
     case intStyleSheet > 10:
         document.getElementById("intStyleBar").innerHTML = ">10";
         document.getElementById("intStyleBar").style.width = "30px";
         document.getElementById("intStyleBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("intStyleBar").style.border = '1px solid orange';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(intSSOEntry);
         break;
 }
             
@@ -1321,42 +1348,42 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.width = "120px";
         document.getElementById("numStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(fileSSOEntry);
         break;
     case numStyleSheet == 7:
         document.getElementById("numStyleBar").innerHTML = "7";
         document.getElementById("numStyleBar").style.width = "100px";
         document.getElementById("numStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(fileSSOEntry);
         break;
     case numStyleSheet == 8:
         document.getElementById("numStyleBar").innerHTML = "8";
         document.getElementById("numStyleBar").style.width = "80px";
         document.getElementById("numStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(fileSSOEntry);
         break;
     case numStyleSheet == 9:
         document.getElementById("numStyleBar").innerHTML = "9";
         document.getElementById("numStyleBar").style.width = "60px";
         document.getElementById("numStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(fileSSOEntry);
         break;
     case numStyleSheet == 10:
         document.getElementById("numStyleBar").innerHTML = "10";
         document.getElementById("numStyleBar").style.width = "50px";
         document.getElementById("numStyleBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("numStyleBar").style.border = '1px solid orange';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(fileSSOEntry);
         break;
     case numStyleSheet > 10:
         document.getElementById("numStyleBar").innerHTML = ">10";
         document.getElementById("numStyleBar").style.width = "30px";
         document.getElementById("numStyleBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("numStyleBar").style.border = '1px solid orange';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(fileSSOEntry);
         break;
 }
             
@@ -1377,7 +1404,7 @@ switch (redirects >= 0){
         document.getElementById("redirectBar").style.background = 'rgba(241, 137, 49, 0.5)';
         document.getElementById("redirectBar").style.border = '1px solid orange';
         document.getElementById("redirectBar").innerHTML = 'Yes';
-        orangeArray.push(fontOEntry);
+        orangeArray.push(redirectOEntry);
         break;
 }
             
@@ -1390,19 +1417,21 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.width = "260px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
-        greenArray.push("Only 1 Style Sheet File!");
+        greenArray.push("Great job limiting the amount of cookies use!");
         break;
     case cookieLen <= 3:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "240px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
+        greenArray.push("Great job limiting the amount of cookies use!");
         break;
     case cookieLen <= 4:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "220px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
+        greenArray.push("Great job limiting the amount of cookies use!");
         break;
     case cookieLen <= 5:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1421,42 +1450,42 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.width = "120px";
         document.getElementById("cookieBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid yellow';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(cookieOEntry);
         break;
     case cookieLen <= 8:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "100px";
         document.getElementById("cookieBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid yellow';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(cookieOEntry);
         break;
     case cookieLen <= 9:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "80px";
         document.getElementById("cookieBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid yellow';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(cookieOEntry);
         break;
     case cookieLen <= 10:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "60px";
         document.getElementById("cookieBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid yellow';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(cookieOEntry);
         break;
     case cookieLen <= 12:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "50px";
         document.getElementById("cookieBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("cookieBar").style.border = '1px solid orange';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(cookieOEntry);
         break;
     case cookieLen >= 13:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "30px";
         document.getElementById("cookieBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("cookieBar").style.border = '1px solid orange';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(cookieOEntry);
         break;
 }
             
@@ -1469,7 +1498,7 @@ switch (emptyURL >= 0){
         document.getElementById("srcBar").style.width = "260px";
         document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("srcBar").style.border = '1px solid green';
-        greenArray.push("Only 1 Style Sheet File!");
+        greenArray.push("No empty URLs found! Great job.");
         break;
     case emptyURL == 1:
         document.getElementById("srcBar").innerHTML = emptyURL;
@@ -1486,35 +1515,37 @@ switch (emptyURL >= 0){
     case emptyURL == 3:
         document.getElementById("srcBar").innerHTML = emptyURL;
         document.getElementById("srcBar").style.width = "200px";
-        document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
-        document.getElementById("srcBar").style.border = '1px solid green';
+        document.getElementById("srcBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid yellow';
+        orangeArray.push(emptyURLOEntry);
         break;
     case emptyURL == 4:
         document.getElementById("srcBar").innerHTML = emptyURL;
         document.getElementById("srcBar").style.width = "140px";
-        document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
-        document.getElementById("srcBar").style.border = '1px solid green';
+        document.getElementById("srcBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid yellow';
+        orangeArray.push(emptyURLOEntry);
         break;
     case emptyURL == 5:
         document.getElementById("srcBar").innerHTML = emptyURL;
         document.getElementById("srcBar").style.width = "100px";
         document.getElementById("srcBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("srcBar").style.border = '1px solid yellow';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(emptyURLOEntry);
         break;
     case emptyURL >= 6:
         document.getElementById("srcBar").innerHTML = emptyURL;
         document.getElementById("srcBar").style.width = "50px";
         document.getElementById("srcBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("srcBar").style.border = '1px solid orange';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(emptyURLOEntry);
         break;
     case emptyURL >= 10:
         document.getElementById("srcBar").innerHTML = ">10";
         document.getElementById("srcBar").style.width = "30px";
         document.getElementById("srcBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("srcBar").style.border = '1px solid orange';
-        orangeArray.push(resImgOEntry);
+        orangeArray.push(emptyURLOEntry);
         break;
 }
             
@@ -1533,7 +1564,8 @@ switch (emptyURL >= 0){
  else{
      document.getElementById("m1").innerHTML = "No Major Recommendations, good work!";
  }
-        
+           
+
 /* if (yellowArray.length == 1) {
   document.getElementById("r1").innerHTML = yellowArray[0];
 } else if (yellowArray.length == 2) {

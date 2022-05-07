@@ -13,21 +13,21 @@ body {
   width: 100%;
   background-color: #F77616;
   line-height: 0px;
-  height: 40px;
+  height: 60px;
   border-bottom-left-radius: 5px;
 }
 
 #icon{
   padding-left: 5px;
-  padding-top: 4px;
+  padding-top: 5px;
   padding-right: 5px;
-  background: radial-gradient(circle at center, white 46%, transparent 61%);
-  padding-bottom: 4px;
+  background: radial-gradient(circle at center, white 55%, transparent 61%);
+  padding-bottom: 5px;
 }
 
 #title{
-  padding-bottom: 0px;
-  font-size: 20px;
+  padding-bottom: 2px;
+  font-size: 24px;
   line-height:0px;
   color: #FFFFFF;
   letter-spacing: 0.1em;
@@ -35,8 +35,8 @@ body {
 }
 
 #viewButtons{
-  padding-left: 56px;
-  padding-top: 23px;
+  padding-left: 7px;
+  padding-top: 43px;
   border-bottom: 0px;
   font-size: 0px;
   outline: none;
@@ -70,7 +70,7 @@ body {
 .ScoreGraph{
      /* For button text center */
     position: absolute;          /* Position absolute */
-    left: 29%;
+    left: 27%;
     padding-top: 11%;
 }
     .item {
@@ -87,10 +87,15 @@ body {
 
 #scoreHTML{
   font-size: 26px;
+  padding-top: 4px;
 }
 
 #Example2Div{
     padding-top: 43%;
+}
+
+h3{
+    font-weight: 550;
 }
 
 #tableHeader{
@@ -131,7 +136,7 @@ body {
 }
 
 #kwhScore{
- font-weight: bold;
+font-weight: bold;
 }
 
 #kwhTotal{
@@ -294,8 +299,12 @@ table .row{
   font-family: Tahoma, sans-serif;
 }
 
+.recoClass{
+  border-left: 1px solid gray;  
+}
+
 #major{
-    font-size: 18px;
+  font-size: 16px;
 }
 
 #m1{
@@ -311,7 +320,7 @@ table .row{
 }
 
 #praise{
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #p1{
@@ -344,6 +353,10 @@ table .row{
 #viewButtons button.active, #viewButtons button:hover {
     background: #F2F2F2;
     color: #000;
+}
+
+#viewButtons button:hover {
+    border: 1px solid #E25B10;
 }
 
 /* Ukraine Donation */

@@ -11,7 +11,7 @@
     
  <div class="header"> 
 <div class="topLine">
-<img id="icon" src="/images/32x32.png" style='height:30px'>
+<img id="icon" src="/images/128x128.png" style='height:36px'>
 
 <p id= 'title'>Globemallow</p> 
 <div id="viewButtons">
@@ -20,11 +20,10 @@
 Fact View </button>
 
 <button id="devButton" class="tablinks" type="devView">
-Dev View </button>
+Report View </button>
 </div>
-
- </div>
- </div>   
+    </div>  
+</div>   
     
     
     
@@ -79,7 +78,7 @@ Dev View </button>
     
     
 <tr>
-   <td class = 'hoverClass' class= 'barLabel' >Page<br>Bytes<span class="tooltiptextGrade">Amount of content loaded on page</span></td>
+   <td class = 'hoverClass' class= 'barLabel' >Page<br>HTML<span class="tooltiptextGrade">Amount of content loaded on page- HTML content</span></td>
       <td>
         <div  class="row" id = "htmlBar">Yes</div>
       </td>
@@ -89,13 +88,6 @@ Dev View </button>
    <td class = 'hoverClass' class= 'barLabel'>Image<br>Formats<span class="tooltiptextGrade">% of img src that are AVIF, WebP, and SVG</span></td>
       <td>
           <div  class="row" id = "svgBar">80%</div>
-      </td>
-</tr>
-    
-<tr>
-   <td class = 'hoverClass' class= 'barLabel'>Total Byte<br>Size<span class="tooltiptextGrade">Total size of page uploaded to server</span></td>
-      <td>
-       <div class="row" id = "byteSizeBar">750 kb</div>
       </td>
 </tr>
     
@@ -114,7 +106,7 @@ Dev View </button>
 </tr>
     
 <tr>
-   <td class = 'hoverClass' class= 'intStyleLabel' >Internal<br>Style Sheet<span class="tooltiptextGrade"> Internal Style Sheet</span></td>
+   <td class = 'hoverClass' class= 'intStyleLabel' >Internal<br>Style Sheet<span class="tooltiptextGrade"> Internal Style Sheet in html: style = </span></td>
       <td>
         <div  class="row" id = "intStyleBar">Loading...</div>
       </td>
@@ -150,6 +142,13 @@ Dev View </button>
        <div  class="row" id = "loadBar">2.6 sec</div>
    </td>
 </tr>
+    
+<tr>
+   <td class = 'hoverClass' class= 'barLabel'>Total Byte<br>Size<span class="tooltiptextGrade">Total size of page uploaded to server</span></td>
+      <td>
+       <div class="row" id = "byteSizeBar">750 kb</div>
+      </td>
+</tr>
 
 <tr>
    <td class = 'hoverClass' class= 'barLabel' >Transfer<br>Size<span class="tooltiptextGrade">Data transferred from server on load</span></td>
@@ -180,14 +179,14 @@ Dev View </button>
 </tr>
     
 <tr>
-   <td class = 'hoverClass' class= 'cookieLabel' >Cookies<span class="tooltiptextGrade">Number Cookies</span></td>
+   <td class = 'hoverClass' class= 'cookieLabel' >Cookies<span class="tooltiptextGrade">Number of Cookies on Page</span></td>
       <td>
         <div  class="row" id = "cookieBar">Loading...</div>
       </td>
 </tr>
     
 <tr>
-   <td class = 'hoverClass' class= 'srcLabel' >Empty<br>SRC Tags<span class="tooltiptextGrade">Empty SRC Tags</span></td>
+   <td class = 'hoverClass' class= 'srcLabel' >Empty<br>URL Tags<span class="tooltiptextGrade">Empty SRC Tags and href links</span></td>
       <td>
         <div  class="row" id = "srcBar">Loading...</div>
       </td>
@@ -200,9 +199,9 @@ Dev View </button>
     
     <h3 id= "major">Recommendations:</h3>
 
-<p id= "m1"></p>
-<p id= "m2"></p>
-<p id= "m3"></p>
+<p class = "recoClass" id= "m1"></p>
+<p class = "recoClass" id= "m2"></p>
+<p class = "recoClass" id= "m3"></p>
     
 <!--<p id= "reco">Recommendations for Page:</p>
     
@@ -212,9 +211,9 @@ Dev View </button>
     
 <h3 id= "praise">Praise:</h3>
     
-<p id= "p1"></p>
-<p id= "p2"></p>
-<p id= "p3"></p>
+<p class = "recoClass" id= "p1"></p>
+<p class = "recoClass" id= "p2"></p>
+<p class = "recoClass" id= "p3"></p>
     
 
     </div>
