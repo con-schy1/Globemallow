@@ -474,7 +474,7 @@ var redirectOLengthVal  = getRandomInt(redirectOArray.length);
 var redirectOEntry = redirectOArray[redirectOLengthVal];
             
 //Empty URL Orange Major Recommendations Array
-var emptyURLOArray = ['Browser will call the directory in which the page is located if src Attribute is empty.This results in additional HTTP requests.'];
+var emptyURLOArray = ['Browser will call the directory in which the page is located if SRC Attribute is empty.This results in additional HTTP requests.', 'Having an empty href link is bad practice.'];
 var emptyURLOLengthVal  = getRandomInt(emptyURLOArray.length);
 var emptyURLOEntry = emptyURLOArray[emptyURLOLengthVal];
 
@@ -1417,21 +1417,21 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.width = "260px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of cookies use!");
+        greenArray.push("Great job limiting the amount of cookies used!");
         break;
     case cookieLen <= 3:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "240px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of cookies use!");
+        greenArray.push("Great job limiting the amount of cookies used!");
         break;
     case cookieLen <= 4:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "220px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of cookies use!");
+        greenArray.push("Great job limiting the amount of cookies used!");
         break;
     case cookieLen <= 5:
         document.getElementById("cookieBar").innerHTML = cookieLen;
