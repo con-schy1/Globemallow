@@ -212,6 +212,8 @@ var transferLabel = 0;
    else{
      transferLabel = (transferSize1).toString() + arrayLabel[0];
  }
+    
+//if you see that issue 3.34xe1 it's from the toPrecision rounding it off
 
 ////////////////////////////////////////////////////
 
@@ -291,6 +293,42 @@ answerArray.push(cookieLen);
 var emptyURL = document.querySelectorAll('img[src=""]').length + document.querySelectorAll('script[src=""]').length + document.querySelectorAll('link[rel=stylesheet][href=""]').length + document.querySelectorAll('button[href=""]').length + document.querySelectorAll('a[href=""]').length;
     
 answerArray.push(emptyURL);
+    
+    
+///////////////////////////////////////////////////////
+//Analytics Tracker Checker    
+
+const regex1List = [/google-analytics/,/googletagmanager/,/marketo/,/doubleclick/
+,/scorecardresearch/,/connect\.facebook\.net/,/clarity\.ms/, /chartbeat/,
+/go\-mpulse/,/analytics\.tiktok/,/quantcount/, /snap\.licdn/, /analytics\.similarweb/, /hotjar/, /pardot/,
+/newrelic/, /foresee/, /smetrics\./, /tms\./, /crazyegg/, /krxd\.net/, /boomtrain/
+, /cdn\.turner/, /optimizely/, /bounceexchange/, /visualime/, /tags\.tiqcdn/, /tealiumiq/,
+/adobedtm/, /qualaroo/, /clicktale/, /funnelenvy/, /edge\.fullstory/, /tvsquared/, /heapanalytics/,
+ /thebrighttag/, /s\.btstatic/, /raygun/, /ac\-target/, /demdex/, /utag/, /iperceptions/, /techtarget/, /bizible/,
+ /6sc\.co/, /demandbase/, /engagio/, /akamai/, /qualtrics/, /rubiconproject/, /s\.yimg/,
+  /cdn\.segment/, /marinsm/, /googlesyndication/, /chartbeat/, /gstatic/, /rlcdn/, /sojern/,
+  /rmtag/, /impactradius\-event/];
+
+
+var scripts = document.head.getElementsByTagName("script");
+
+
+var scrptSrcs = [];
+var strInMatches;
+var foundArray = [];
+var count = 0;
+
+    for (var i = 0; i < scripts.length; i++) {
+        scrptSrcs.push(scripts[i].src);
+    }
+    for (var i = 0; i < regex1List.length; i++) {
+        strInMatches = scrptSrcs.filter(element => regex1List[i].test(element));
+        foundArray.push(strInMatches);
+        count = count + foundArray[i].length;
+    }
+
+    answerArray.push(count);
+    
     
 /////////////////////
 var scoreArray = [];
@@ -655,18 +693,74 @@ switch (finalScore >= 0){
 }
 
 var decodedBodySizeChart = answerArray[0];
-var lazyLoadChart = (answerArray[1]*100).toPrecision(3);
-var svgChart = (answerArray[2]*100).toPrecision(3);
+var lazyLoadChart = (answerArray[1]*100);
+var svgChart = (answerArray[2]*100);
 var jsChart = answerArray[3];
 var htmlChart = answerArray[4];
 var loadTimeChart = answerArray[5];
 var importChart = answerArray[6];
 var transferSizeChart = answerArray[7];
 var lengthK = pagebytesLabel;
-var resImgChart = (answerArray[8]*100).toPrecision(3);
+var resImgChart = (answerArray[8]*100);
+//var resImgChart = (answerArray[8]*100).toPrecision(3);
+var analChart = answerArray[9];
+
+    
+//Responsive images were sometimes showing > 100% and .848% showing off bar
+/*if(resImgChart >= 110){
+        resImgChart = 100;
+    }
+ else {
+     //
+ }*/
+    
+switch (resImgChart >= 0){
+        
+    case resImgChart >= 110:
+        resImgChart = 100;
+    case resImgChart >= 1:
+        resImgChart.toPrecision(3);
+    case resImgChart < 1:
+        resImgChart.toPrecision(2);      
+}
+    
+//Responsive images were sometimes showing > 100% and .848% showing off bar
+/*if(svgChart == 100){
+        svgChart = 100;
+    }
+ else {
+     //
+ }*/
+switch (svgChart >= 0){
+        
+    case svgChart >= 110:
+        svgChart = 100;
+    case svgChart >= 1:
+        svgChart.toPrecision(3);
+    case svgChart < 1:
+        svgChart.toPrecision(2);      
+}
+    
+//Responsive images were sometimes showing > 100% and .848% showing off bar
+/*if(lazyLoadChart == 100){
+        lazyLoadChart = 100;
+    }
+ else {
+     //
+ }*/
+    
+switch (lazyLoadChart >= 0){
+        
+    case lazyLoadChart >= 110:
+        lazyLoadChart = 100;
+    case lazyLoadChart >= 1:
+        lazyLoadChart.toPrecision(3);
+    case lazyLoadChart < 1:
+        lazyLoadChart.toPrecision(2);      
+}
 
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, analChart}
 
 chrome.runtime.sendMessage(counts);
     

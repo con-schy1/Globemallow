@@ -1549,6 +1549,68 @@ switch (emptyURL >= 0){
         break;
 }
             
+            
+var analTrack = x.analChart;
+
+switch (analTrack >= 0){
+
+    case analTrack <= 3:
+        document.getElementById("analBar").innerHTML = analTrack;
+        document.getElementById("analBar").style.width = "260px";
+        document.getElementById("analBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("analBar").style.border = '1px solid green';
+        //greenArray.push("No empty URLs found! Great job.");
+        break;
+    case analTrack <= 4:
+        document.getElementById("analBar").innerHTML = analTrack;
+        document.getElementById("analBar").style.width = "240px";
+        document.getElementById("analBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("analBar").style.border = '1px solid green';
+        break;
+    case analTrack <= 8:
+        document.getElementById("analBar").innerHTML = analTrack;
+        document.getElementById("analBar").style.width = "220px";
+        document.getElementById("analBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("analBar").style.border = '1px solid green';
+        break;
+    case analTrack <= 12:
+        document.getElementById("analBar").innerHTML = analTrack;
+        document.getElementById("analBar").style.width = "200px";
+        document.getElementById("analBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("analBar").style.border = '1px solid yellow';
+        //orangeArray.push(emptyURLOEntry);
+        break;
+    case analTrack <= 16:
+        document.getElementById("analBar").innerHTML = analTrack;
+        document.getElementById("analBar").style.width = "140px";
+        document.getElementById("analBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("analBar").style.border = '1px solid yellow';
+        //orangeArray.push(emptyURLOEntry);
+        break;
+    case analTrack <= 20:
+        document.getElementById("analBar").innerHTML = analTrack;
+        document.getElementById("analBar").style.width = "100px";
+        document.getElementById("analBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("analBar").style.border = '1px solid yellow';
+        //orangeArray.push(emptyURLOEntry);
+        break;
+    case analTrack <= 23:
+        document.getElementById("analBar").innerHTML = analTrack;
+        document.getElementById("analBar").style.width = "50px";
+        document.getElementById("analBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("analBar").style.border = '1px solid orange';
+        //orangeArray.push(emptyURLOEntry);
+        break;
+    case analTrack >= 24:
+        document.getElementById("analBar").innerHTML = analTrack;
+        document.getElementById("analBar").style.width = "30px";
+        document.getElementById("analBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("analBar").style.border = '1px solid orange';
+        //orangeArray.push(emptyURLOEntry);
+        break;
+}
+            
+            
  if (orangeArray.length == 1) {
   document.getElementById("m1").innerHTML = orangeArray[0];
 } else if (orangeArray.length == 2) {
