@@ -298,7 +298,7 @@ answerArray.push(emptyURL);
 ///////////////////////////////////////////////////////
 //Analytics Tracker Checker    
 
-const regex1List = [/google-analytics/,/googletagmanager/,/marketo/,/doubleclick/
+const regex1List = [/google\-analytics/,/googletagmanager/,/marketo/,/doubleclick/
 ,/scorecardresearch/,/connect\.facebook\.net/,/clarity\.ms/, /chartbeat/,
 /go\-mpulse/,/analytics\.tiktok/,/quantcount/, /snap\.licdn/, /analytics\.similarweb/, /hotjar/, /pardot/,
 /newrelic/, /foresee/, /smetrics\./, /tms\./, /crazyegg/, /krxd\.net/, /boomtrain/
@@ -324,8 +324,11 @@ var count = 0;
     for (var i = 0; i < regex1List.length; i++) {
         strInMatches = scrptSrcs.filter(element => regex1List[i].test(element));
         foundArray.push(strInMatches);
-        count = count + foundArray[i].length;
+        count += foundArray[i].length;
     }
+    
+    console.log(count);
+    console.log(foundArray);
 
     answerArray.push(count);
     
@@ -703,61 +706,43 @@ var transferSizeChart = answerArray[7];
 var lengthK = pagebytesLabel;
 var resImgChart = (answerArray[8]*100);
 //var resImgChart = (answerArray[8]*100).toPrecision(3);
-var analChart = answerArray[9];
+var analChart = answerArray[14];
 
     
 //Responsive images were sometimes showing > 100% and .848% showing off bar
-/*if(resImgChart >= 110){
-        resImgChart = 100;
+
+if(resImgChart >= 111){
+       resImgChart = 100;
     }
- else {
-     //
- }*/
-    
-switch (resImgChart >= 0){
-        
-    case resImgChart >= 110:
-        resImgChart = 100;
-    case resImgChart >= 1:
-        resImgChart.toPrecision(3);
-    case resImgChart < 1:
-        resImgChart.toPrecision(2);      
+else if(resImgChart > 1 && resImgChart < 111){
+    resImgChart = resImgChart.toPrecision(3);
 }
+ else {
+     resImgChart = resImgChart.toPrecision(2);
+ }
     
 //Responsive images were sometimes showing > 100% and .848% showing off bar
-/*if(svgChart == 100){
-        svgChart = 100;
+if(svgChart >= 111){
+       svgChart = 100;
     }
- else {
-     //
- }*/
-switch (svgChart >= 0){
-        
-    case svgChart >= 110:
-        svgChart = 100;
-    case svgChart >= 1:
-        svgChart.toPrecision(3);
-    case svgChart < 1:
-        svgChart.toPrecision(2);      
+else if(svgChart > 1 && svgChart < 111){
+    svgChart = svgChart.toPrecision(3);
 }
+ else {
+     svgChart = svgChart.toPrecision(2);
+ }
     
 //Responsive images were sometimes showing > 100% and .848% showing off bar
-/*if(lazyLoadChart == 100){
-        lazyLoadChart = 100;
+if(lazyLoadChart >= 111){
+       lazyLoadChart = 100;
     }
- else {
-     //
- }*/
-    
-switch (lazyLoadChart >= 0){
-        
-    case lazyLoadChart >= 110:
-        lazyLoadChart = 100;
-    case lazyLoadChart >= 1:
-        lazyLoadChart.toPrecision(3);
-    case lazyLoadChart < 1:
-        lazyLoadChart.toPrecision(2);      
+else if(lazyLoadChart > 1 && lazyLoadChart < 111){
+    lazyLoadChart = lazyLoadChart.toPrecision(3);
 }
+ else {
+     lazyLoadChart = lazyLoadChart.toPrecision(2);
+ }
+
 
 
 var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, analChart}
