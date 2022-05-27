@@ -7,7 +7,7 @@ chrome.runtime.onMessage.addListener(msg=> {
         window.addEventListener('load', greenFunction);
     }
 });
-
+/*window.addEventListener ("load", greenFunction, false);*/
 
 function greenFunction(){
 //decodedSize
@@ -307,7 +307,7 @@ const regex1List = [/google\-analytics/,/googletagmanager/,/marketo/,/doubleclic
  /thebrighttag/, /s\.btstatic/, /raygun/, /ac\-target/, /demdex/, /utag/, /iperceptions/, /techtarget/, /bizible/,
  /6sc\.co/, /demandbase/, /engagio/, /akamai/, /qualtrics/, /rubiconproject/, /s\.yimg/,
   /cdn\.segment/, /marinsm/, /googlesyndication/, /chartbeat/, /gstatic/, /rlcdn/, /sojern/,
-  /rmtag/, /impactradius\-event/];
+  /rmtag/, /impactradius\-event/, /bytedance/, /sprig/, /userleap/, /bat\.bing/, /adservice\.google/, /googleadservices/, /geoedge/, /taboola/, /ads\-twitter/, /sleeknote/, /pushcrew/, /onesignal/, /amazon\-adsystem/, /amplify\-outbrain/, /dianomi/, /s\-onetag/, /ads\.pubmatic/, /adroll/, /adnxs/, /crwdcntrl/, /redditstatic/, /ads.\linkedin/, /moatads/, /criteo/, /adlightning/, /turner\.com\/ads/, /quantserve/, /rubiconproject/, /mpulse/];
 
 
 var scripts = document.head.getElementsByTagName("script");
@@ -327,8 +327,8 @@ var count = 0;
         count += foundArray[i].length;
     }
     
-    console.log(count);
-    console.log(foundArray);
+/*    console.log(count);
+    console.log(foundArray);*/
 
     answerArray.push(count);
     
