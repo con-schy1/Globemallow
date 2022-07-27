@@ -1,7 +1,7 @@
 body {
   font-family: veranda, sans-serif;
   font-size: 13px;
-  width: 380px;
+  width: 700px;
   height: 200px;
   background-color:  #f2f2f2;
   margin: 0; /*new*/
@@ -96,7 +96,23 @@ body {
 }
 
 #Example2Div{
-    padding-top: 43%;
+    padding-top: 40%;
+}
+
+.nameClass{
+    display: flex;
+    width: 100%;
+    line-height: 0;
+}
+
+#devID{
+    padding-left: 50%;
+}
+
+.wholeTable{
+    display: flex;
+    width: 100%;
+    justify-content: left;
 }
 
 h3{
@@ -105,6 +121,10 @@ h3{
 
 #tableHeader{
   font-size: 16px;
+}
+
+#designTable{
+    border-right: 1px solid gray;
 }
 
 #factoids{
@@ -241,7 +261,7 @@ table .row{
 
 .wholeTable{
     
-   border-right: 1px solid gray;
+   
     
 }
 
@@ -402,5 +422,7 @@ table .row{
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+
+
 </style>
 

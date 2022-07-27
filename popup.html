@@ -28,6 +28,8 @@ Fact View </button>
 <button id="devButton" class="tablinks" type="devView">
 Report View </button>
 </div>
+    
+
     </div>  
 </div>   
     
@@ -76,11 +78,14 @@ Report View </button>
 
 <div id = "Example2Div" class="tabcontent">
  <h3 id="tableHeader">Sustainability Grade Metrics:</h3>
+    <div id="nameClass">
+    <h3 class="tableName">Design</h3>
+    <h3 id="devID" class="tableName">Development</h3>
+    </div>
      <div class ='wholeTable'>  
 <table class= 'tableClass'>
     
-    
-<h3>Design</h3>
+<div id="designTable">
     
     
 <tr>
@@ -124,11 +129,10 @@ Report View </button>
         <div  class="row" id = "numStyleBar">Loading...</div>
       </td>
 </tr>
-    
+</div>    
 </table>    
 
-
-<h3>Development</h3>    
+<div id="devTable">    
 
          
          
@@ -204,8 +208,9 @@ Report View </button>
         <div  class="row" id = "analBar">Loading...</div>
       </td>
 </tr>
-      
+    
 </table>
+     </div> 
  </div> 
     
 <!--    /////////////// Recommendations -->
