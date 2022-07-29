@@ -17,9 +17,6 @@
 <p id= 'title'>Globemallow</p>
     
     
-<!--<img id='elipsis' src="images/ellypsis-vertical.svg" style="height: 30px">-->
-    
-    
 <div id="viewButtons">
 
 <button id="factButton" class="tablinks" type="factView">
@@ -29,7 +26,8 @@ Fact View </button>
 Report View </button>
 </div>
     
-
+<img id='elipsis' src="images/ellypsis-vertical.svg" style="height: 36px">
+    
     </div>  
 </div>   
     
@@ -44,7 +42,7 @@ Report View </button>
 <h2 id = "scoreHTML">A+</h2>
     
     
-<canvas id="myChart" style="width:100%;max-width:170px;"></canvas>
+<canvas id="myChart" style="width:100%;max-width:230px;"></canvas>
 </div>
 </div1>
     
@@ -93,7 +91,15 @@ Report View </button>
       <td>
         <div  class="row" id = "htmlBar">Yes</div>
       </td>
-</tr>    
+</tr> 
+    
+<tr>
+     <td class = 'hoverClass' class= 'barLabel'>Lazy Loaded<br>Images
+    <span class="tooltiptextGrade">% of Images Lazy Loaded</span></td>
+      <td>
+        <div  class="row" id = "lazyBar">90%</div>
+      </td>
+</tr>
 
 <tr>
    <td class = 'hoverClass' class= 'barLabel'>Image<br>Formats<span class="tooltiptextGrade">% of img src that are AVIF, WebP, and SVG</span></td>
@@ -124,7 +130,7 @@ Report View </button>
 </tr>
     
 <tr>
-   <td class = 'hoverClass' class= 'numStyleLabel' >Style Sheet<br>Files<span class="tooltiptextGrade"> Style Sheet Files</span></td>
+   <td class = 'hoverClass' class= 'numStyleLabel' >Style<br>Sheets<span class="tooltiptextGrade"> Style Sheet Files</span></td>
       <td>
         <div  class="row" id = "numStyleBar">Loading...</div>
       </td>
@@ -133,18 +139,10 @@ Report View </button>
 </table>    
 
 <div id="devTable">    
-
          
          
 <table class= 'tableClass'>
     
-<tr>
-     <td class = 'hoverClass' class= 'barLabel'>Lazy Loaded<br>Images
-    <span class="tooltiptextGrade">% of Images Lazy Loaded</span></td>
-      <td>
-        <div  class="row" id = "lazyBar">90%</div>
-      </td>
-</tr>
     
 <tr>
    <td class = 'hoverClass' class= 'barLabel' >Page Load<br>Time</td>
@@ -154,7 +152,7 @@ Report View </button>
 </tr>
     
 <tr>
-   <td class = 'hoverClass' class= 'barLabel'>Total Byte<br>Size<span class="tooltiptextGrade">Total size of page uploaded to server</span></td>
+   <td class = 'hoverClass' class= 'barLabel'>Page<br>Size<span class="tooltiptextGrade">Total size of page uploaded to server</span></td>
       <td>
        <div class="row" id = "byteSizeBar">750 kb</div>
       </td>
@@ -202,12 +200,12 @@ Report View </button>
       </td>
 </tr>
     
-<tr>
+<!--<tr>
    <td class = 'hoverClass' class= 'analLabel' >Analytics<br>Trackers<span class="tooltiptextGrade">Analytics and Ad tags collecting data</span></td>
       <td>
         <div  class="row" id = "analBar">Loading...</div>
       </td>
-</tr>
+</tr>-->
     
 </table>
      </div> 
