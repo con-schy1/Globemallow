@@ -119,37 +119,40 @@ body {
     padding-left: 43%;
 }
 
-.wholeTable{
-    display: flex;
-    width: 100%;
-    justify-content: left;
-}
-
 h3{
     font-weight: 550;
     letter-spacing: .75px;
-}
-
-#tableHeader{
-  font-size: 16px;
 }
 
 .tableName{
     font-size: 15px;
 }
 
+#tableHeader{
+  font-size: 16px;
+}
+
+.wholeTable{
+    display: flex;
+    width: 100%;
+}
+
+
 #designTable{
     float: left;
-    text-align: left;
     width: 50%;
     position: fixed;
 }
 
 #devTable{
-    float: right;
     border-left: 1px solid gray;
     width: 50%;
-    justify-content: right;
+    float: right;
+}
+
+/*This keeps dev table from moving*/
+.row2{
+    width: 270px;
 }
 
 #factoids{
