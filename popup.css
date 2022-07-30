@@ -151,7 +151,7 @@ h3{
 }
 
 #devTable{
-    border-left: 1px solid gray;
+/*    border-left: 1px solid gray;*/
     width: 50%;
     float: right;
 }
@@ -272,7 +272,7 @@ font-weight: bold;
 table .row{
   color: #606060;
   text-align: right;
-  font-size: 11px;
+  font-size: 10px;
   padding-right: 5px;
   padding-top: 3px;
   padding-bottom: 3px;
@@ -364,18 +364,22 @@ table .row{
 }
 
 #m1{
-    padding-left: 8px;
+    padding-left: 9px;
+    font-weight: 550;
+    font-size: 15px;
+    
 }
 
 #m2{
     padding-left: 8px;
+    font-size: 15px;
 }
 
 #m3{
     padding-left: 8px;
 }
 
-#praise{
+/*#praise{
     font-size: 16px;
 }
 
@@ -389,7 +393,28 @@ table .row{
 
 #p3{
     padding-left: 8px;
+}*/
+
+#footer{
+  padding-top: 5px;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid gray;
+  background-color: whitesmoke;
+  height: 51px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+     
+  
 }
+
+#donate{
+  padding-left: 50%;
+  padding-top: 7px;
+  padding-bottom: 3px;
+}
+
 
 /* Style the tab content */
 .tabcontent {

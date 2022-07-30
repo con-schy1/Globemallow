@@ -20,7 +20,7 @@ chrome.tabs.query({
             document.getElementById("greenBar").style.background = 'rgba(142, 202, 46, 0.5)';
             document.getElementById("greenBar").style.border = '1px solid green';
             document.getElementById("greenBar").innerHTML = 'Yes';
-            document.getElementById("p3").innerHTML = 'Your website is hosted with green energy sources!';
+//            document.getElementById("p3").innerHTML = 'Your website is hosted with green energy sources!';
             
 		}
 		else if(resData.green == false){
@@ -28,7 +28,7 @@ chrome.tabs.query({
             document.getElementById("greenBar").style.background = 'rgba(241, 137, 49, 0.5)';
             document.getElementById("greenBar").style.border = '1px solid orange';
             document.getElementById("greenBar").innerHTML = 'No'; 
-            document.getElementById("m3").innerHTML = 'Try finding a method to host your website with renewable energy.';
+            document.getElementById("m2").innerHTML = 'Green Hosted is powered by the Green Web Foundation who defines the dataset as: "the largest dataset in the world of which sites use renewable power." Powering your site with renewables saves energy from energy produced by fossil fuels.';
 		}
 	  });
 	});
