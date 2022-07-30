@@ -163,6 +163,11 @@ h3{
     width: 270px;
 }
 
+
+.tableButton{
+    text-align: left;
+}
+
 #factoids{
   padding-top: 34%;
   display: flex;

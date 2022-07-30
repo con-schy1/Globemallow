@@ -9,7 +9,7 @@ chrome.tabs.query({
         try{
  var x = data["tab"+tab.id];
             
-  
+         
 /////////////////////////////////////////////////////////////////////////////
 //Green Hosting Search
             
@@ -29,7 +29,7 @@ chrome.tabs.query({
             document.getElementById("greenBar").style.border = '1px solid orange';
             document.getElementById("greenBar").innerHTML = 'No'; 
             document.getElementById("m2").innerHTML = 'Green Hosted is powered by the Green Web Foundation who defines the dataset as: "the largest dataset in the world of which sites use renewable power." Powering your site with renewables saves energy from energy produced by fossil fuels.';
-            document.getElementById("m1").innerHTML = 'Green Hosted';
+//            document.getElementById("m1").innerHTML = 'Green Hosted';
 		}
 	  });
 	});
@@ -1609,7 +1609,12 @@ switch (analTrack >= 0){
         document.getElementById("analBar").style.border = '1px solid orange';
         //orangeArray.push(emptyURLOEntry);
         break;
-}
+} 
+            
+            
+            
+            
+            
             
             
  if (orangeArray.length == 1) {
@@ -1627,23 +1632,7 @@ switch (analTrack >= 0){
  else{
      document.getElementById("m1").innerHTML = "No Major Recommendations, good work!";
  }
-           
-
-/* if (yellowArray.length == 1) {
-  document.getElementById("r1").innerHTML = yellowArray[0];
-} else if (yellowArray.length == 2) {
-  document.getElementById("r1").innerHTML = yellowArray[0];
-  document.getElementById("r2").innerHTML = yellowArray[1];
-} else if (yellowArray.length >= 3) {
-  var yellowLength = yellowArray.length;
-  var yellowRand = getRandomInt(yellowLength)
-  document.getElementById("r1").innerHTML = yellowArray[yellowRand];
-  var yellowRand = Math.abs(yellowRand-1);
-  document.getElementById("r2").innerHTML = yellowArray[yellowRand+1];
-}
- else{
-     //document.getElementById("r1").innerHTML = "";
- }   */     
+               
         
 
 if (greenArray.length == 1) {
@@ -1705,3 +1694,45 @@ if(selectedTab)
 	document.getElementById(selectedTab).click();
 else
 	document.getElementById("factButton").click();
+
+
+
+const titleArray =  {pageHTML:'Page HTML', LLImage:'Lazy Loaded Images', imgFormats:'Image Formats', importedFonts:'Imported Fonts', resImages: 'Responsive Images', intStyleSheet: 'Internal Style Sheet', styleSheet: 'Style Sheets', pageLoad:'Page Load Time', pageSize: "Page Size", transSize:'Transfer Size', jsHeap: 'JS HeapSize', greenHosted:"Green Hosted", redirects:"Redirects", cookies:'Cookies', emptyURLTag:'Empty URL Tags'}; 
+
+function openButton(evt1, cityName1){
+    var tabcontent1, tablinks1;
+    
+    tabcontent1 = document.getElementById("m1");
+    for (i = 0; i < tabcontent1.length; i++) {
+    tabcontent1[i].style.display = "none";   
+  }
+    
+    tablinks1 = document.getElementsByClassName('tableButton');
+    for (i = 0; i < tablinks1.length; i++) {
+    tablinks1[i].className = tablinks1[i].className.replace(" active", "");
+  }
+    
+   document.getElementById(cityName1).style.display = "block";
+   evt1.currentTarget.className += " active"; 
+}
+
+/* button clicks calls */
+document.getElementById('htmlButton').onclick = function(evt) {
+	 //console.log('factview is clciked'); 
+	 localStorage.setItem('selectedButtonId', 'htmlButton'); 
+	 openButton(evt,'Example1Div');
+     document.getElementById("m1").innerHTML = titleArray.pageHTML;
+     
+}
+document.getElementById('LLButton').onclick = function(evt) {
+	 //console.log('devview is clciked'); 
+	 localStorage.setItem('selectedButtonId', 'LLButton'); 
+	 openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = titleArray.LLImage;
+}
+
+var selectedTab1 = localStorage.getItem('selectedButtonId');  
+if(selectedTab1)
+	document.getElementById(selectedTab1).click();
+else
+	document.getElementById('htmlButton').click();
