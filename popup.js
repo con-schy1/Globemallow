@@ -412,23 +412,23 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
         
-//Transfer Size Orange Major Recommendations Array
-var lazyOArray = ['With "lazy loading", files are only loaded when they reach the visible area of the browser window, or shortly before it.', 'Modern browsers allow to insert loading=“lazy“ as an attribute in the img element.', 'Lazy loading is useful because it allows images lower on a page to not be loaded if it\'s not in immediate view.'];
+// Lazy Load Orange Major Recommendations Array
+var lazyOArray = ['With "lazy loading", files are only loaded when they reach the visible area of the browser window, or shortly before it. Modern browsers allow to insert loading=“lazy“ as an attribute in the img element. Lazy loading is useful because it allows images lower on a page to not be loaded if it\'s not in immediate view.'];
 var lazyOLengthVal = getRandomInt(lazyOArray.length);
 var lazyOEntry = lazyOArray[lazyOLengthVal];
         
 //Transfer Size Orange Major Recommendations Array
-var transferOArray = ['Caching: With less transmitted data and fewer server requests, pages are loaded much faster.', 'Analytics and advertising script files can add significant weight, increase CPU usage, and slow websites down.', 'Choose plugins that minimize server load and don’t add unnecessary weight on the front end.', 'Caching reduces the server load and the amount of data transferred, making websites more environmentally friendly.', 'Reducing Transfer Data size is largely seen as one of the best ways to make your website more sustainable', 'If you notice little difference between Total Byte Size, and Transfer Size it might mean that additional data can be cached.', 'Transfer Size is the most heavily weighted metric in your Sustainability Grade. Reducing it will increase your Grade.', 'If Transfer size is greater than 1MB- it\'s equivalent to 150,000 words in a HTML File. Are your images worth 1,000 words?', ];
+var transferOArray = ['Reducing Transfer Data size is largely seen as one of the best ways to make your website more sustainable. Caching reduces the server load and the amount of data transferred, making websites more environmentally friendly. Caching: With less transmitted data and fewer server requests, pages are loaded much faster. Analytics and advertising script files can add significant weight, increase CPU usage, and slow websites down. Choose plugins that minimize server load and don’t add unnecessary weight on the front end. If you notice little difference between Total Byte Size, and Transfer Size it might mean that additional data can be cached. Transfer Size is the most heavily weighted metric in your Sustainability Grade. Reducing it will increase your Grade. If Transfer size is greater than 1MB- it\'s equivalent to 150,000 words in a HTML File. Are your images worth 1,000 words?', ];
 var transferOLengthVal = getRandomInt(transferOArray.length);
 var transferOEntry = transferOArray[transferOLengthVal];
     
 //Page Load Time Orange Major Recommendations Array
-var loadTimeOArray = ['Reducing your page load time can improve your SEO. Google Search prioritizes pages with faster page load time.', 'Reducing your page load time can improve the energy required to render pages.', 'Reducing your page load time can improve the user experience for users with slower connection speeds.'];
+var loadTimeOArray = ['Reducing your page load time can improve the energy required to render pages. Decreasing page load time can improve your SEO. Google Search prioritizes pages with faster page load time. Decreasing load time improves the user experience for users with slower connection speeds.'];
 var loadTimeOLengthVal = getRandomInt(loadTimeOArray.length);
 var loadTimeOEntry = loadTimeOArray[loadTimeOLengthVal];
         
 //Imported Fonts Orange Major Recommendations Array
-var fontOArray = ['If your imported Font file is .TFF it’s a less efficient font file format than .WOFF.', 'For imported fonts try to only include the characters needed for your website.', 'Stick to modern web font file formats: WOFF and WOFF2, these use higher compression methods compared to TTF, SVG and OFT file formats.', 'Some font files will have distiction between styling \(i.e bolding). If styling is not being used, try removing this from the font file.'];
+var fontOArray = ['If your imported Font file is .TFF it’s a less efficient font file format than .WOFF. For imported fonts try to only include the characters needed for your website. Stick to modern web font file formats: WOFF and WOFF2, these use higher compression methods compared to TTF, SVG and OFT file formats. Some font files will have distiction between styling \(i.e bolding). If styling is not being used, try removing this from the font file.'];
 var fontOLengthVal = getRandomInt(fontOArray.length);
 var fontOEntry = fontOArray[fontOLengthVal];
         
@@ -443,12 +443,12 @@ var jsOLengthVal = getRandomInt(jsOArray.length);
 var jsOEntry = jsOArray[jsOLengthVal];
         
 //HTML Length Types Orange Major Recommendations Array
-var htmlOArray = ['It seems like you have a lot going on on this page. Is there any way to reduce the amount of content on this page?', 'Have you considered just loading content on scroll?', 'If content is being loaded beyong what the user is currently seeing, it is as waste of data.'];
+var htmlOArray = ['It seems like you have a lot going on on this page. Is there any way to reduce the amount of content on this page? Have you considered just loading content on scroll? If content is being loaded beyong what the user is currently seeing, it is as waste of data.'];
 var htmlOLengthVal = getRandomInt(htmlOArray.length);
 var htmlOEntry = htmlOArray[htmlOLengthVal];
             
 //Responsive Image Orange Major Recommendations Array
-var resImgOArray = ['You can save bandwidth and speed up page load times by loading the most appropriate image for the viewer\'s display.', 'Our scan is searching for the HTML \"picture\" tag, and for \"srcset\" when loading an image for different screen dimensions', 'Responsive web design has changed how websites can be created. Device detection is no longer needed to display separate “mobile” sites whenever the server detects a phone or tablet.', 'Using srcset or picture HTML allow an image to be displayed at the correct dimensions for a user\'s device', 'If a site is being loaded on tablet or smart phone it wastes data to load the same image you would on a desktop website.', 'If media queries are being used in the CSS to create responisve images you want to make sure that not all images are being downloaded at the same time.'];
+var resImgOArray = ['You can save bandwidth and speed up page load times by loading the most appropriate image for the viewer\'s display. Our scan is searching for the HTML \"picture\" tag, and for \"srcset\" when loading an image for different screen dimensions. Responsive web design has changed how websites can be created. Device detection is no longer needed to display separate “mobile” sites whenever the server detects a phone or tablet. Using srcset or picture HTML allow an image to be displayed at the correct dimensions for a user\'s device', 'If a site is being loaded on tablet or smart phone it wastes data to load the same image you would on a desktop website.', 'If media queries are being used in the CSS to create responisve images you want to make sure that not all images are being downloaded at the same time.'];
 var resImgOLengthVal  = getRandomInt(resImgOArray.length);
 var resImgOEntry = resImgOArray[resImgOLengthVal];
             
