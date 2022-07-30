@@ -1697,6 +1697,10 @@ else
 
 
 
+
+
+
+
 const titleArray =  {pageHTML:'Page HTML', LLImage:'Lazy Loaded Images', imgFormats:'Image Formats', importedFonts:'Imported Fonts', resImages: 'Responsive Images', intStyleSheet: 'Internal Style Sheet', styleSheet: 'Style Sheets', pageLoad:'Page Load Time', pageSize: "Page Size", transSize:'Transfer Size', jsHeap: 'JS HeapSize', greenHosted:"Green Hosted", redirects:"Redirects", cookies:'Cookies', emptyURLTag:'Empty URL Tags'}; 
 
 function openButton(evt1, cityName1){
@@ -1718,20 +1722,24 @@ function openButton(evt1, cityName1){
 
 /* button clicks calls */
 document.getElementById('htmlButton').onclick = function(evt) {
-	 //console.log('factview is clciked'); 
-	 localStorage.setItem('selectedButtonId', 'htmlButton'); 
-	 openButton(evt,'Example1Div');
+
+	 localStorage.setItem('selectedButtonId1', 'htmlButton'); 
+	 //openButton(evt,'Example1Div');
      document.getElementById("m1").innerHTML = titleArray.pageHTML;
+     //document.getElementById('htmlButton').style.background = 'rgba(241, 137, 49, .5)';
+    document.getElementById("m2").innerHTML = 'It seems like you have a lot going on on this page. Is there any way to reduce the amount of content on this page? Have you considered just loading content on scroll? If content is being loaded beyong what the user is currently seeing, it is as waste of data.';
      
 }
 document.getElementById('LLButton').onclick = function(evt) {
-	 //console.log('devview is clciked'); 
-	 localStorage.setItem('selectedButtonId', 'LLButton'); 
-	 openButton(evt,'Example2Div');
+	  
+	 localStorage.setItem('selectedButtonId1', 'LLButton'); 
+	 //openButton(evt,'Example2Div');
      document.getElementById("m1").innerHTML = titleArray.LLImage;
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'With "lazy loading", files are only loaded when they reach the visible area of the browser window, or shortly before it. Modern browsers allow to insert loading=“lazy“ as an attribute in the img element. Lazy loading is useful because it allows images lower on a page to not be loaded if it\'s not in immediate view.';
 }
 
-var selectedTab1 = localStorage.getItem('selectedButtonId');  
+var selectedTab1 = localStorage.getItem('selectedButtonId1');  
 if(selectedTab1)
 	document.getElementById(selectedTab1).click();
 else
