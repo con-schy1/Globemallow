@@ -44,7 +44,7 @@ body {
 .dropbtn{
 /*    margin-left: 220px;*/
     background-color: #F77616;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 #viewButtons{
@@ -279,6 +279,9 @@ table .row{
   padding-left: 1px;
   line-height:20px;
   border-radius: 15px;
+  width: 260px;
+  border: '1px solid green';
+  background-color: lightgrey;
 }
 
 .tableLine{
