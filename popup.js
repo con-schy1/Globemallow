@@ -29,6 +29,7 @@ chrome.tabs.query({
             document.getElementById("greenBar").style.border = '1px solid orange';
             document.getElementById("greenBar").innerHTML = 'No'; 
             document.getElementById("m2").innerHTML = 'Green Hosted is powered by the Green Web Foundation who defines the dataset as: "the largest dataset in the world of which sites use renewable power." Powering your site with renewables saves energy from energy produced by fossil fuels.';
+            document.getElementById("m1").innerHTML = 'Green Hosted';
 		}
 	  });
 	});
@@ -418,7 +419,7 @@ var lazyOLengthVal = getRandomInt(lazyOArray.length);
 var lazyOEntry = lazyOArray[lazyOLengthVal];
         
 //Transfer Size Orange Major Recommendations Array
-var transferOArray = ['Reducing Transfer Data size is largely seen as one of the best ways to make your website more sustainable. Caching reduces the server load and the amount of data transferred, making websites more environmentally friendly. Caching: With less transmitted data and fewer server requests, pages are loaded much faster. Analytics and advertising script files can add significant weight, increase CPU usage, and slow websites down. Choose plugins that minimize server load and don’t add unnecessary weight on the front end. If you notice little difference between Total Byte Size, and Transfer Size it might mean that additional data can be cached. Transfer Size is the most heavily weighted metric in your Sustainability Grade. Reducing it will increase your Grade. If Transfer size is greater than 1MB- it\'s equivalent to 150,000 words in a HTML File. Are your images worth 1,000 words?', ];
+var transferOArray = ['Reducing Transfer Data size is largely seen as one of the best ways to make your website more sustainable. Caching reduces the server load and the amount of data transferred, making websites more environmentally friendly. When more data is cached, less is transmitted and fewer server requests, pages are loaded much faster. Analytics and advertising script files can add significant weight, increase CPU usage, and slow websites down. Choose plugins that minimize server load and don’t add unnecessary weight on the front end. If you notice little difference between Total Byte Size, and Transfer Size it might mean that additional data can be cached. Transfer Size is the most heavily weighted metric in your Sustainability Grade. Reducing it will increase your Grade. If Transfer size is greater than 1MB- it\'s equivalent to 150,000 words in a HTML File. Are your images worth 1,000 words?', ];
 var transferOLengthVal = getRandomInt(transferOArray.length);
 var transferOEntry = transferOArray[transferOLengthVal];
     
