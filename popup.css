@@ -396,13 +396,17 @@ table .row{
 }
 
 #major{
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 0;
+  padding-bottom: 15px;
+  padding-top: 20px;
 }
 
 #m1{
     padding-left: 9px;
     font-weight: 550;
     font-size: 15px;
+    padding-top: 10px;
     
 }
 
