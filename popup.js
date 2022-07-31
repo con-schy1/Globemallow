@@ -434,7 +434,7 @@ var fontOLengthVal = getRandomInt(fontOArray.length);
 var fontOEntry = fontOArray[fontOLengthVal];
         
 //Image File Types Orange Major Recommendations Array
-var imageOArray = ['The svg format is ideal for simple graphics without a high level of detail, such as icons and geometric representations.', 'Are your images being shown in a carousel? Could you just show 1 for the same effect?', 'On most websites, images are the single largest contributors to page weight.', 'The more images you use and the larger those image files, the more data needs to be transferred, increasing the energy that is used.', 'Could you use a vector graphic (or CSS styling) instead of a photo?', 'Try to do some research on emerging image file formats: WebP and Avif have a greatly reduced amount of data load.', 'Most modern browsers support using the WebP format. It looks great for photographic images, and have a smaller byte size.', 'WebP images typically have about a 30% smaller file size than JPEG.', 'The newer file type AVIF can almost be half the file size of WebP depending on the image.', 'Ask yourself, can my site be using Vector Imagery? Vector images are a cool, clean way to show icons'];
+var imageOArray = ['On most websites, images are the single largest contributors to page weight.The more images you use and the larger those image files, the more data needs to be transferred, increasing the energy that is used. Ask yourself, can my site be using Vector Imagery? Vector images are a cool, clean way to show icons. Could you use a vector graphic (or CSS styling) instead of a photo? The svg format is ideal for simple graphics without a high level of detail, such as icons and geometric representations. Try to do some research on emerging image file formats: WebP and Avif have a greatly reduced amount of data load. Most modern browsers support using the WebP format. It looks great for photographic images, and have a smaller byte size. WebP images typically have about a 30% smaller file size than JPEG. The newer file type AVIF can almost be half the file size of WebP depending on the image.Are your images being shown in a carousel? Could you just show 1 for the same effect?'];
 var imageOLengthVal = getRandomInt(imageOArray.length);
 var imageOEntry = imageOArray[imageOLengthVal];
         
@@ -449,7 +449,7 @@ var htmlOLengthVal = getRandomInt(htmlOArray.length);
 var htmlOEntry = htmlOArray[htmlOLengthVal];
             
 //Responsive Image Orange Major Recommendations Array
-var resImgOArray = ['You can save bandwidth and speed up page load times by loading the most appropriate image for the viewer\'s display. Our scan is searching for the HTML \"picture\" tag, and for \"srcset\" when loading an image for different screen dimensions. Responsive web design has changed how websites can be created. Device detection is no longer needed to display separate “mobile” sites whenever the server detects a phone or tablet. Using srcset or picture HTML allow an image to be displayed at the correct dimensions for a user\'s device', 'If a site is being loaded on tablet or smart phone it wastes data to load the same image you would on a desktop website.', 'If media queries are being used in the CSS to create responisve images you want to make sure that not all images are being downloaded at the same time.'];
+var resImgOArray = ['If a site is being loaded on tablet or smart phone it wastes data to load the same image you would on a desktop website. You can save bandwidth and speed up page load times by loading the most appropriate image for the viewer\'s display. Our scan is searching for the HTML \"picture\" tag, and for \"srcset\" when loading an image for different screen dimensions. Responsive web design has changed how websites can be created. Device detection is no longer needed to display separate “mobile” sites whenever the server detects a phone or tablet. Using srcset or picture HTML allow an image to be displayed at the correct dimensions for a user\'s device. If media queries are being used in the CSS to create responisve images you want to make sure that not all images are being downloaded at the same time.'];
 var resImgOLengthVal  = getRandomInt(resImgOArray.length);
 var resImgOEntry = resImgOArray[resImgOLengthVal];
             
@@ -1609,9 +1609,7 @@ switch (analTrack >= 0){
         document.getElementById("analBar").style.border = '1px solid orange';
         //orangeArray.push(emptyURLOEntry);
         break;
-} 
-            
-            
+}           
             
             
             
@@ -1727,9 +1725,10 @@ document.getElementById('htmlButton').onclick = function(evt) {
 	 //openButton(evt,'Example1Div');
      document.getElementById("m1").innerHTML = titleArray.pageHTML;
      //document.getElementById('htmlButton').style.background = 'rgba(241, 137, 49, .5)';
-    document.getElementById("m2").innerHTML = 'It seems like you have a lot going on on this page. Is there any way to reduce the amount of content on this page? Have you considered just loading content on scroll? If content is being loaded beyong what the user is currently seeing, it is as waste of data.';
+    document.getElementById("m2").innerHTML = 'It seems like you have a lot going on on this page. Is there any way to reduce the amount of content on this page? Have you considered just loading content on scroll? If content is being loaded beyond what the user is currently seeing, it is as waste of data.';
      
 }
+
 document.getElementById('LLButton').onclick = function(evt) {
 	  
 	 localStorage.setItem('selectedButtonId1', 'LLButton'); 
@@ -1739,6 +1738,34 @@ document.getElementById('LLButton').onclick = function(evt) {
      document.getElementById("m2").innerHTML = 'With "lazy loading", files are only loaded when they reach the visible area of the browser window, or shortly before it. Modern browsers allow to insert loading=“lazy“ as an attribute in the img element. Lazy loading is useful because it allows images lower on a page to not be loaded if it\'s not in immediate view.';
 }
 
+document.getElementById('imgButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'imgButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Image File Formats';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'On most websites, images are the single largest contributors to page weight.The more images you use and the larger those image files, the more data needs to be transferred, increasing the energy that is used. Ask yourself, can my site be using Vector Imagery? Vector images are a cool, clean way to show icons. Could you use a vector graphic (or CSS styling) instead of a photo? The svg format is ideal for simple graphics without a high level of detail, such as icons and geometric representations. Try to do some research on emerging image file formats: WebP and Avif have a greatly reduced amount of data load. Most modern browsers support using the WebP format. It looks great for photographic images, and have a smaller byte size. WebP images typically have about a 30% smaller file size than JPEG. The newer file type AVIF can almost be half the file size of WebP depending on the image.';
+}
+
+document.getElementById('importButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'importButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Imported Fonts';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'Imported Font Files cause an unnecessary amount of data loading on your page. Try to just use system fonts. If your imported Font file is .TFF it’s a less efficient font file format than .WOFF. Stick to modern web font file formats: WOFF and WOFF2, these use higher compression methods compared to TTF, SVG and OFT file formats. For imported fonts try to only include the characters needed for your website. Some font files will have distiction between styling \(i.e bolding). If styling is not being used, try removing this from the font file.';
+}
+
+document.getElementById('resImgButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'resImgButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Responsive Images';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'If a site is being loaded on tablet or smart phone it wastes data to load the same image you would on a desktop website. You can save bandwidth and speed up page load times by loading the most appropriate image for the viewer\'s display. Our scan is searching for the HTML \"picture\" tag, and for \"srcset\" when loading an image for different screen dimensions. Responsive web design has changed how websites can be created. Device detection is no longer needed to display separate “mobile” sites whenever the server detects a phone or tablet. Using srcset or picture HTML allow an image to be displayed at the correct dimensions for a user\'s device. If media queries are being used in the CSS to create responisve images you want to make sure that not all images are being downloaded at the same time.';
+}
+
+//Sets a default
 var selectedTab1 = localStorage.getItem('selectedButtonId1');  
 if(selectedTab1)
 	document.getElementById(selectedTab1).click();
