@@ -28,7 +28,7 @@ chrome.tabs.query({
             document.getElementById("greenBar").style.background = 'rgba(241, 137, 49, 0.5)';
             document.getElementById("greenBar").style.border = '1px solid orange';
             document.getElementById("greenBar").innerHTML = 'No'; 
-            document.getElementById("m2").innerHTML = 'Green Hosted is powered by the Green Web Foundation who defines the dataset as: "the largest dataset in the world of which sites use renewable power." Powering your site with renewables saves energy from energy produced by fossil fuels.';
+            //document.getElementById("m2").innerHTML = 'Green Hosted is powered by the Green Web Foundation who defines the dataset as: "the largest dataset in the world of which sites use renewable power." Powering your site with renewables saves energy from energy produced by fossil fuels.';
 //            document.getElementById("m1").innerHTML = 'Green Hosted';
 		}
 	  });
@@ -439,7 +439,7 @@ var imageOLengthVal = getRandomInt(imageOArray.length);
 var imageOEntry = imageOArray[imageOLengthVal];
         
 //JS Size Types Orange Major Recommendations Array
-var jsOArray = ['JavaScript impacts website efficiency by adding file weight to the web page. Increasing the amount of processing required by your device.', 'JavaScript is processed on the your computer/phone requiring CPU usage, which in turn increases the energy consumption of the device.', 'The amount of javascript having to be executed can isolate users with older devices, or smaller processors.'];
+var jsOArray = ['JavaScript impacts website efficiency by adding file weight to the web page. Increasing the amount of processing required by your device. JavaScript is processed on the your computer/phone requiring CPU usage, which in turn increases the energy consumption of the device. The amount of javascript having to be executed can isolate users with older devices, or smaller processors.'];
 var jsOLengthVal = getRandomInt(jsOArray.length);
 var jsOEntry = jsOArray[jsOLengthVal];
         
@@ -455,17 +455,17 @@ var resImgOEntry = resImgOArray[resImgOLengthVal];
             
             
 //Internal Style Sheets Orange Major Recommendations Array
-var intSSOArray = ['Make sure CSS files are separate from page\’s HTML code.', 'If CSS is in HMTL body then the code must be sent for each page request- increasing the amount of data sent.','If CSS is in separate files, the browser can store them in local cache.'];
+var intSSOArray = ['If CSS is in HMTL body then the code must be sent for each page request- increasing the amount of data sent. If CSS is in separate files, the browser can store them in local cache. Make sure CSS files are separate from page\’s HTML code.'];
 var intSSOLengthVal  = getRandomInt(intSSOArray.length);
 var intSSOEntry = intSSOArray[intSSOLengthVal];
             
 //Style Sheet Files Orange Major Recommendations Array
-var fileSSOArray = ['Reducing the number of CSS files to reduces the number of HTTP requests.', 'Ask yourself, can I just combine my multiple Style Sheets?', 'Reducing unnecessary files will help with overall page size.'];
+var fileSSOArray = ['Reducing unnecessary files will help with overall page size. Reducing the number of CSS files reduces the number of HTTP requests that are required on page load. Ask yourself, can I just combine my multiple Style Sheets into one?'];
 var fileSSOLengthVal  = getRandomInt(fileSSOArray.length);
 var fileSSOEntry = fileSSOArray[fileSSOLengthVal];
             
 //Cookie Orange Major Recommendations Array
-var cookieOArray = ['Are all these cookies on your page necessary?', 'Do you know the specific purpose of each cookie on your page?', 'Reducing the amount of cookies on each page will help to reudce the amount of reqeusts sent per page.'];
+var cookieOArray = ['Are all these cookies on your page necessary? Do you know the specific purpose of each cookie on your page?'];
 var cookieOLengthVal  = getRandomInt(cookieOArray.length);
 var cookieOEntry = cookieOArray[cookieOLengthVal];
             
@@ -475,7 +475,7 @@ var redirectOLengthVal  = getRandomInt(redirectOArray.length);
 var redirectOEntry = redirectOArray[redirectOLengthVal];
             
 //Empty URL Orange Major Recommendations Array
-var emptyURLOArray = ['Browser will call the directory in which the page is located if SRC Attribute is empty.This results in additional HTTP requests.', 'Having an empty href link is bad practice.'];
+var emptyURLOArray = ['Having an empty href link is bad practice. Browser will call the directory in which the page is located if SRC Attribute is empty. This results in additional HTTP requests.'];
 var emptyURLOLengthVal  = getRandomInt(emptyURLOArray.length);
 var emptyURLOEntry = emptyURLOArray[emptyURLOLengthVal];
 
@@ -1630,8 +1630,13 @@ switch (analTrack >= 0){
  else{
      document.getElementById("m1").innerHTML = "No Major Recommendations, good work!";
  }
+            
+            
+            
                
-        
+            
+            
+            
 
 if (greenArray.length == 1) {
   document.getElementById("p1").innerHTML = greenArray[0];
@@ -1763,6 +1768,97 @@ document.getElementById('resImgButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Responsive Images';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'If a site is being loaded on tablet or smart phone it wastes data to load the same image you would on a desktop website. You can save bandwidth and speed up page load times by loading the most appropriate image for the viewer\'s display. Our scan is searching for the HTML \"picture\" tag, and for \"srcset\" when loading an image for different screen dimensions. Responsive web design has changed how websites can be created. Device detection is no longer needed to display separate “mobile” sites whenever the server detects a phone or tablet. Using srcset or picture HTML allow an image to be displayed at the correct dimensions for a user\'s device. If media queries are being used in the CSS to create responisve images you want to make sure that not all images are being downloaded at the same time.';
+}
+
+
+document.getElementById('intSSButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'intSSButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Internal Style Sheets';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'Make sure CSS files are separate from page\’s HTML code. If CSS is in the HMTL body then the code must be sent for each page request- increasing the amount of data sent. If CSS is in separate files, the browser can store them in local cache.';
+}
+
+document.getElementById('fileSSButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'fileSSButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Number of Style Sheet Files';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'Reducing unnecessary files will help with overall page size. Reducing the number of CSS files reduces the number of HTTP requests that are required on page load. Ask yourself, can I just combine my multiple Style Sheets into one?';
+}
+
+document.getElementById('pageLoadButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'pageLoadButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Page Load Time';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'Reducing your page load time can improve the energy required to render pages. Decreasing page load time can improve your SEO; which enables users to find the content they\'re looking for- faster. Google Search prioritizes pages with faster page load time. Decreasing load time improves the user experience for users with slower connection speeds.';
+}
+
+document.getElementById('pageSizeButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'pageSizeButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Page Size';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'Overall page size, is total amount of data required to load the page. This is the amount of data required to load your page for each unique user for the first time. It can also be thought of as the amount of data uploaded to servers.';
+}
+
+document.getElementById('transferButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'transferButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Transfer Data Size';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'Reducing Transfer Data size is largely seen as one of the best ways to make your website more sustainable. Caching reduces the server load and the amount of data transferred, making websites more environmentally friendly. When more data is cached, less is transmitted and fewer server requests, pages are loaded much faster. Analytics and advertising script files can add significant weight, increase CPU usage, and slow websites down. Choose plugins that minimize server load and don’t add unnecessary weight on the front end. If you notice little difference between Total Byte Size, and Transfer Size it might mean that additional data can be cached. Transfer Size is the most heavily weighted metric in your Sustainability Grade. Reducing it will increase your Grade if decreased. If Transfer size is greater than 1MB- it\'s equivalent to 150,000 words in a HTML File. Are your images worth 1,000 words?';
+}
+
+document.getElementById('jsButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'jsButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'JS Heap Size';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'JavaScript impacts website efficiency by adding file weight to the web page. Increasing the amount of processing required by your device. JavaScript is processed on the your computer/phone requiring CPU usage, which in turn increases the energy consumption of the device. The amount of javascript having to be executed can isolate users with older devices, or smaller processors.';
+}
+
+document.getElementById('hostButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'hostButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Green Hosted';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'Green Hosted is powered by the Green Web Foundation who defines the dataset as: "the largest dataset in the world of which sites use renewable power." Powering your site with renewables saves energy from energy produced by fossil fuels.';
+}
+
+document.getElementById('redirectButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'redirectButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Redirects';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'Redirects are an unnecessary use of resources. It causes data to be loaded.';
+}
+
+document.getElementById('cookieButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'cookieButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Number of Cookies';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'Are all these cookies on your page necessary? Do you know the specific purpose of each cookie on your page?';
+}
+
+document.getElementById('emptyButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'emptyButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Empty URL Tags';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'Having an empty href link is bad practice. Browser will call the directory in which the page is located if SRC Attribute is empty. This results in additional HTTP requests.';
 }
 
 //Sets a default
