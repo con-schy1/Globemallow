@@ -166,6 +166,23 @@ h3{
 
 .tableButton{
     text-align: left;
+    font-size: 11px;
+    width: 72px;
+    background-color: #f2f2f2;
+    border-color: #F77616;
+    border-width: thin;
+    border-radius: 5px;
+}
+
+
+.tableButton:hover{
+    background-color: lightgray;
+    border-width: thin;
+
+}
+
+.tableButton:active{
+    background-color: darkgrey;
 }
 
 #factoids{
