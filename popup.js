@@ -1056,6 +1056,7 @@ switch (transferSizeChart >= 0){
         greenArray.push("Great job limiting the amount of data transfered on page load!");
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
+        document.getElementById('transferTextA').style.display = "block";
         break;
     case transferSizeChart <= 200000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1065,6 +1066,7 @@ switch (transferSizeChart >= 0){
         greenArray.push("Great job limiting the amount of data transfered on page load!");
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
+        document.getElementById('transferTextA').style.display = "block";
         break;
     case transferSizeChart <= 400000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1074,6 +1076,7 @@ switch (transferSizeChart >= 0){
         greenArray.push("Great job limiting the amount of data transfered on page load!");
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
+        document.getElementById('transferTextA').style.display = "block";
         break;
     case transferSizeChart <= 600000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1083,6 +1086,7 @@ switch (transferSizeChart >= 0){
         greenArray.push("Great job limiting the amount of data transfered on page load!");
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
+        document.getElementById('transferTextA').style.display = "block";
         break;
     case transferSizeChart <= 850000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1091,6 +1095,7 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.border = '1px solid green';
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
+        document.getElementById('transferTextA').style.display = "block";
         break;
     case transferSizeChart <= 1048576:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1099,6 +1104,7 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.border = '1px solid green';
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
+        document.getElementById('transferTextA').style.display = "block";
         break
     case transferSizeChart <= 1348576:
     document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1107,6 +1113,7 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.border = '1px solid yellow';
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
+        document.getElementById('transferTextA').style.display = "block";
         orangeArray.push(transferOEntry);
         break;
     case transferSizeChart <= 1572864:
@@ -1116,6 +1123,7 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.border = '1px solid yellow';
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
+        document.getElementById('transferTextA').style.display = "block";
         orangeArray.push(transferOEntry);
         break;
     case transferSizeChart <= 2621440:
@@ -1125,6 +1133,7 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.border = '1px solid yellow';
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
+        document.getElementById('transferTextA').style.display = "block";
         orangeArray.push(transferOEntry);
         break;
     case transferSizeChart <= 3670016:
@@ -1134,6 +1143,7 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.border = '1px solid yellow';
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
+        document.getElementById('transferTextA').style.display = "block";
         orangeArray.push(transferOEntry);
         break;
     case transferSizeChart <= 5242880:
@@ -1143,6 +1153,7 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.border = '1px solid orange';
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
+        document.getElementById('transferTextA').style.display = "block";
         orangeArray.push(transferOEntry);
         break;
     case transferSizeChart > 5242880:
@@ -1152,6 +1163,7 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.border = '1px solid orange';
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
+        document.getElementById('transferTextA').style.display = "block";
         orangeArray.push(transferOEntry);
         break;
 }
@@ -1264,36 +1276,54 @@ switch (intStyleSheet >= 0){
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
         greenArray.push("Only 1 internal style sheet found!");
+        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        document.getElementById('intStyleTextA').style.display = "block";
+        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
         break;
     case intStyleSheet == 2:
         document.getElementById("intStyleBar").innerHTML = "2";
         document.getElementById("intStyleBar").style.width = "240px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
+        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        document.getElementById('intStyleTextA').style.display = "block";
+        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
         break;
     case intStyleSheet == 3:
         document.getElementById("intStyleBar").innerHTML = "3";
         document.getElementById("intStyleBar").style.width = "220px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
+        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        document.getElementById('intStyleTextA').style.display = "block";
+        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
         break;
     case intStyleSheet == 4:
         document.getElementById("intStyleBar").innerHTML = "4";
         document.getElementById("intStyleBar").style.width = "200px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
+        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        document.getElementById('intStyleTextA').style.display = "block";
+        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
         break;
     case intStyleSheet == 5:
         document.getElementById("intStyleBar").innerHTML = "5";
         document.getElementById("intStyleBar").style.width = "140px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
+        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        document.getElementById('intStyleTextA').style.display = "block";
+        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
         break;
     case intStyleSheet == 6:
         document.getElementById("intStyleBar").innerHTML = "6";
         document.getElementById("intStyleBar").style.width = "120px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
+        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        document.getElementById('intStyleTextA').style.display = "block";
+        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
         orangeArray.push(intSSOEntry);
         break;
     case intStyleSheet == 7:
@@ -1301,6 +1331,9 @@ switch (intStyleSheet >= 0){
         document.getElementById("intStyleBar").style.width = "100px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
+        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        document.getElementById('intStyleTextA').style.display = "block";
+        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
         orangeArray.push(intSSOEntry);
         break;
     case intStyleSheet == 8:
@@ -1308,6 +1341,9 @@ switch (intStyleSheet >= 0){
         document.getElementById("intStyleBar").style.width = "80px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
+        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        document.getElementById('intStyleTextA').style.display = "block";
+        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
         orangeArray.push(intSSOEntry);
         break;
     case intStyleSheet == 9:
@@ -1315,6 +1351,9 @@ switch (intStyleSheet >= 0){
         document.getElementById("intStyleBar").style.width = "60px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
+        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        document.getElementById('intStyleTextA').style.display = "block";
+        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
         orangeArray.push(intSSOEntry);
         break;
     case intStyleSheet == 10:
@@ -1322,6 +1361,9 @@ switch (intStyleSheet >= 0){
         document.getElementById("intStyleBar").style.width = "50px";
         document.getElementById("intStyleBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("intStyleBar").style.border = '1px solid orange';
+        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        document.getElementById('intStyleTextA').style.display = "block";
+        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
         orangeArray.push(intSSOEntry);
         break;
     case intStyleSheet > 10:
@@ -1329,6 +1371,9 @@ switch (intStyleSheet >= 0){
         document.getElementById("intStyleBar").style.width = "30px";
         document.getElementById("intStyleBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("intStyleBar").style.border = '1px solid orange';
+        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        document.getElementById('intStyleTextA').style.display = "block";
+        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
         orangeArray.push(intSSOEntry);
         break;
 }

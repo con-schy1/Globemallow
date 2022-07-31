@@ -280,7 +280,15 @@ answerArray.push(1.1);
     
 var intStyleSheet = document.getElementsByTagName('style').length;
     
+if(intStyleSheet > 0){
+var intStyleSheetTags = document.getElementsByTagName('style')[0].outerHTML;
+}
+    else{
+        //
+    }
+    
 answerArray.push(intStyleSheet);
+//console.log(intStyleSheetTags);
     
 
 ////////////////////////////////////////////
@@ -288,7 +296,8 @@ answerArray.push(intStyleSheet);
   
 var numStyleSheet = document.styleSheets.length;
 
-answerArray.push(numStyleSheet);    
+answerArray.push(numStyleSheet); 
+
     
 ////////////////////////////////////////////
 //Site Redirects
@@ -814,7 +823,7 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, analChart, cookiesList, largeTransSrc}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, analChart, cookiesList, largeTransSrc, intStyleSheetTags}
 
 chrome.runtime.sendMessage(counts);
     
