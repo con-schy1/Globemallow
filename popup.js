@@ -1054,6 +1054,8 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid green';
         greenArray.push("Great job limiting the amount of data transfered on page load!");
+        document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
+        document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         break;
     case transferSizeChart <= 200000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1061,6 +1063,8 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid green';
         greenArray.push("Great job limiting the amount of data transfered on page load!");
+        document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
+        document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         break;
     case transferSizeChart <= 400000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1068,6 +1072,8 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid green';
         greenArray.push("Great job limiting the amount of data transfered on page load!");
+        document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
+        document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         break;
     case transferSizeChart <= 600000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1075,24 +1081,32 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid green';
         greenArray.push("Great job limiting the amount of data transfered on page load!");
+        document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
+        document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         break;
     case transferSizeChart <= 850000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
         document.getElementById("transferBar").style.width = "180px";
         document.getElementById("transferBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid green';
+        document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
+        document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         break;
     case transferSizeChart <= 1048576:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
         document.getElementById("transferBar").style.width = "160px";
         document.getElementById("transferBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid green';
+        document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
+        document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         break
     case transferSizeChart <= 1348576:
     document.getElementById("transferBar").innerHTML = x.transferLabel;
         document.getElementById("transferBar").style.width = "140px";
         document.getElementById("transferBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid yellow';
+        document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
+        document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         orangeArray.push(transferOEntry);
         break;
     case transferSizeChart <= 1572864:
@@ -1100,6 +1114,8 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.width = "120px";
         document.getElementById("transferBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid yellow';
+        document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
+        document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         orangeArray.push(transferOEntry);
         break;
     case transferSizeChart <= 2621440:
@@ -1107,6 +1123,8 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.width = "100px";
         document.getElementById("transferBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid yellow';
+        document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
+        document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         orangeArray.push(transferOEntry);
         break;
     case transferSizeChart <= 3670016:
@@ -1114,6 +1132,8 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.width = "80px";
         document.getElementById("transferBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid yellow';
+        document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
+        document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         orangeArray.push(transferOEntry);
         break;
     case transferSizeChart <= 5242880:
@@ -1121,6 +1141,8 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.width = "60px";
         document.getElementById("transferBar").style.background = 'rgba(241, 137, 49, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid orange';
+        document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
+        document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         orangeArray.push(transferOEntry);
         break;
     case transferSizeChart > 5242880:
@@ -1128,6 +1150,8 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.width = "40px";
         document.getElementById("transferBar").style.background = 'rgba(241, 137, 49, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid orange';
+        document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
+        document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         orangeArray.push(transferOEntry);
         break;
 }
@@ -1413,7 +1437,7 @@ var cookieLen = x.cookieLen;
 
 switch (cookieLen >= 0){
 
-    case cookieLen === 0:
+    case cookieLen <= 1:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "260px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
@@ -1428,6 +1452,7 @@ switch (cookieLen >= 0){
         greenArray.push("Great job limiting the amount of cookies used!");
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
+        document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
         break;
     case cookieLen <= 3:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1437,6 +1462,7 @@ switch (cookieLen >= 0){
         greenArray.push("Great job limiting the amount of cookies used!");
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
+        document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
         break;
     case cookieLen <= 4:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1446,6 +1472,7 @@ switch (cookieLen >= 0){
         greenArray.push("Great job limiting the amount of cookies used!");
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
+        document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
         break;
     case cookieLen <= 5:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1454,6 +1481,7 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.border = '1px solid green';
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
+        document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
         break;
     case cookieLen <= 6:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1462,6 +1490,7 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.border = '1px solid green';
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
+        document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
         break;
     case cookieLen <= 7:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1471,6 +1500,7 @@ switch (cookieLen >= 0){
         orangeArray.push(cookieOEntry);
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
+        document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
         break;
     case cookieLen <= 8:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1480,6 +1510,7 @@ switch (cookieLen >= 0){
         orangeArray.push(cookieOEntry);
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
+        document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
         break;
     case cookieLen <= 9:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1488,6 +1519,7 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.border = '1px solid yellow';
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
+        document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
         orangeArray.push(cookieOEntry);
         break;
     case cookieLen <= 10:
@@ -1497,6 +1529,7 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.border = '1px solid yellow';
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
+        document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
         orangeArray.push(cookieOEntry);
         break;
     case cookieLen <= 12:
@@ -1507,6 +1540,7 @@ switch (cookieLen >= 0){
         orangeArray.push(cookieOEntry);
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
+        document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
         break;
     case cookieLen >= 13:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1516,6 +1550,7 @@ switch (cookieLen >= 0){
         orangeArray.push(cookieOEntry);
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
+        document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
         break;
 }
             

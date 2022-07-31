@@ -394,25 +394,16 @@ table .row{
     font-size: 15px;
 }
 
-#m3{
-    margin-left: 16px;
+
+
+.textAreaHeaders{
+    padding-left: 9px;
+    font-weight: 550;
+    font-size: 15px;
+    padding-top: 15px;
 }
 
-/*#praise{
-    font-size: 16px;
-}
 
-#p1{
-    padding-left: 8px;
-}
-
-#p2{
-    padding-left: 8px;
-}
-
-#p3{
-    padding-left: 8px;
-}*/
 
 #footer{
 /*  padding-top: 5px;*/

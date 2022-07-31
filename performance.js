@@ -168,7 +168,7 @@ answerArray.push(duration);
 
 //Imported Fonts
 var headText = document.head.innerHTML;
-var fontRegex = /(@font-face)|(woff?2)|(fonts\.googleapis)/;
+var fontRegex = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)/;
 var fontBoolean = 0;
 
 if (headText.match(fontRegex)){
@@ -190,12 +190,29 @@ answerArray.push(fontBoolean);
     
 var imgB = [];
 var transferSize1 = 0;
+var largeTrans = 0;
+var largeTransArray = [];
+var largeTransSrc;
 
 const transferResources = performance.getEntriesByType('resource');
+    
+    
+var max = transferResources[0].transferSize;
+var maxIndex = 0;
 
 for (var i = 0; i < transferResources.length; i++) {
    imgB.push(transferResources[i].transferSize);
+   
+    if(imgB[i] > max){
+            maxIndex = i;
+            max = imgB[i];
+            
+        }
+
    }
+largeTransSrc = transferResources[maxIndex].name;
+    
+    
 for (let i in imgB){
    transferSize1 += imgB[i];
    }
@@ -217,6 +234,9 @@ var transferLabel = 0;
    else{
      transferLabel = (transferSize1).toString() + arrayLabel[0];
  }
+
+/*console.log(transferResources);
+console.log(largeTransSrc);*/
     
 //if you see that issue 3.34xe1 it's from the toPrecision rounding it off
 
@@ -794,7 +814,7 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, analChart, cookiesList}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, analChart, cookiesList, largeTransSrc}
 
 chrome.runtime.sendMessage(counts);
     
