@@ -123,7 +123,7 @@ body {
 }
 
 #devID{
-    padding-left: 43%;
+    padding-left: 42%;
 }
 
 h3{
@@ -160,7 +160,7 @@ h3{
 
 /*This keeps dev table from moving*/
 .row2{
-    width: 270px;
+    width: 265px;
 }
 
 
@@ -324,7 +324,7 @@ table .row{
   padding-left: 1px;
   line-height:20px;
   border-radius: 15px;
-  width: 260px;
+  width: 240px;
   border: '1px solid green';
   background-color: lightgrey;
 }
