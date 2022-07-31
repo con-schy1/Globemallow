@@ -414,10 +414,19 @@ table .row{
 
 
 .textAreaHeaders{
-    padding-left: 9px;
+    margin-left: 9px;
     font-weight: 550;
     font-size: 15px;
     padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+
+.textAreaDiv{
+    background-color: #f2f2f2;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
 }
 
 
@@ -437,9 +446,9 @@ table .row{
 }
 
 #donate{
-  padding-left: 50%;
-  padding-top: 6px;
-  padding-bottom: 3px;
+  margin-left: 255px;
+  padding-top: 4px;
+  padding-bottom: 6px;
 }
 
 
@@ -465,22 +474,6 @@ table .row{
 
 #viewButtons button:hover {
     border: 1px solid #E25B10;
-}
-
-/* Ukraine Donation */
-#supportUA{
-  display: flex;
-  line-height: 0px;
-}
-
-#uaFlag{
-    padding-left: 145px;
-    padding-right: 5px;
-    padding-top: 4px;
-}
-
-#supportText{
-    padding-top: 10px;
 }
 
 /*Scroll Bar CSS*/ 
