@@ -46,6 +46,7 @@ answerArray.push(parseFloat(decodedSize));
 
 // Images that are lazy loaded
 var xArray = [];
+var imgNotLLArray = [];
 var imgCount = document.getElementsByTagName("img");
 let x1 = document.querySelector('body').outerHTML;
 var regEX = /loading="lazy"/;
@@ -59,7 +60,7 @@ if (y.match(regEX)){
 xArray.push(y);
 }
 else{
-//console.log("0");
+//imgNotLLArray.push(y);
 }
 }
 var ratioLL = xArray.length/imgCount.length;
@@ -68,6 +69,10 @@ answerArray.push(ratioLL);
 else{
 answerArray.push(1.1);
 }
+
+//Gets the images and puts them in report. uncomment out else statement above
+/*var joinLLString = imgNotLLArray.join(",");
+console.log(joinLLString);*/
 
 /////////////////////////////////////////////////////
 //Responsive & low-load images
@@ -286,7 +291,10 @@ var cookieLen = 0;
     
 cookieLen = cookieArray.length;
 answerArray.push(cookieLen);
+    
+var cookiesList = document.cookie;
 
+console.log(cookiesList);
     
 ////////////////////////////////////////////
 //Amount of Empty URLs
@@ -786,7 +794,7 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, analChart}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, analChart, cookiesList}
 
 chrome.runtime.sendMessage(counts);
     

@@ -1413,12 +1413,21 @@ var cookieLen = x.cookieLen;
 
 switch (cookieLen >= 0){
 
+    case cookieLen === 0:
+        document.getElementById("cookieBar").innerHTML = cookieLen;
+        document.getElementById("cookieBar").style.width = "260px";
+        document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("cookieBar").style.border = '1px solid green';
+        greenArray.push("Great job limiting the amount of cookies used!");
+        break;
     case cookieLen <= 2:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "260px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
         greenArray.push("Great job limiting the amount of cookies used!");
+        document.getElementById('cookieTextA').innerHTML = x.cookiesList;
+        document.getElementById('cookieTextA').style.display = "block";
         break;
     case cookieLen <= 3:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1426,6 +1435,8 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
         greenArray.push("Great job limiting the amount of cookies used!");
+        document.getElementById('cookieTextA').innerHTML = x.cookiesList;
+        document.getElementById('cookieTextA').style.display = "block";
         break;
     case cookieLen <= 4:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1433,18 +1444,24 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
         greenArray.push("Great job limiting the amount of cookies used!");
+        document.getElementById('cookieTextA').innerHTML = x.cookiesList;
+        document.getElementById('cookieTextA').style.display = "block";
         break;
     case cookieLen <= 5:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "200px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
+        document.getElementById('cookieTextA').innerHTML = x.cookiesList;
+        document.getElementById('cookieTextA').style.display = "block";
         break;
     case cookieLen <= 6:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "140px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
+        document.getElementById('cookieTextA').innerHTML = x.cookiesList;
+        document.getElementById('cookieTextA').style.display = "block";
         break;
     case cookieLen <= 7:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1452,6 +1469,8 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid yellow';
         orangeArray.push(cookieOEntry);
+        document.getElementById('cookieTextA').innerHTML = x.cookiesList;
+        document.getElementById('cookieTextA').style.display = "block";
         break;
     case cookieLen <= 8:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1459,12 +1478,16 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid yellow';
         orangeArray.push(cookieOEntry);
+        document.getElementById('cookieTextA').innerHTML = x.cookiesList;
+        document.getElementById('cookieTextA').style.display = "block";
         break;
     case cookieLen <= 9:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "80px";
         document.getElementById("cookieBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid yellow';
+        document.getElementById('cookieTextA').innerHTML = x.cookiesList;
+        document.getElementById('cookieTextA').style.display = "block";
         orangeArray.push(cookieOEntry);
         break;
     case cookieLen <= 10:
@@ -1472,6 +1495,8 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.width = "60px";
         document.getElementById("cookieBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid yellow';
+        document.getElementById('cookieTextA').innerHTML = x.cookiesList;
+        document.getElementById('cookieTextA').style.display = "block";
         orangeArray.push(cookieOEntry);
         break;
     case cookieLen <= 12:
@@ -1480,6 +1505,8 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("cookieBar").style.border = '1px solid orange';
         orangeArray.push(cookieOEntry);
+        document.getElementById('cookieTextA').innerHTML = x.cookiesList;
+        document.getElementById('cookieTextA').style.display = "block";
         break;
     case cookieLen >= 13:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1487,6 +1514,8 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("cookieBar").style.border = '1px solid orange';
         orangeArray.push(cookieOEntry);
+        document.getElementById('cookieTextA').innerHTML = x.cookiesList;
+        document.getElementById('cookieTextA').style.display = "block";
         break;
 }
             
