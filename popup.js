@@ -1389,36 +1389,54 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid green';
         greenArray.push("Only 1 Style Sheet File!");
+        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
+        document.getElementById('extStyleTextA').style.display = "block";
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
         break;
     case numStyleSheet == 2:
         document.getElementById("numStyleBar").innerHTML = "2";
         document.getElementById("numStyleBar").style.width = "230px";
         document.getElementById("numStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid green';
+        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
+        document.getElementById('extStyleTextA').style.display = "block";
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
         break;
     case numStyleSheet == 3:
         document.getElementById("numStyleBar").innerHTML = "3";
         document.getElementById("numStyleBar").style.width = "220px";
         document.getElementById("numStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid green';
+        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
+        document.getElementById('extStyleTextA').style.display = "block";
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
         break;
     case numStyleSheet == 4:
         document.getElementById("numStyleBar").innerHTML = "4";
         document.getElementById("numStyleBar").style.width = "200px";
         document.getElementById("numStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid green';
+        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
+        document.getElementById('extStyleTextA').style.display = "block";
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
         break;
     case numStyleSheet == 5:
         document.getElementById("numStyleBar").innerHTML = "5";
         document.getElementById("numStyleBar").style.width = "140px";
         document.getElementById("numStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid green';
+        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
+        document.getElementById('extStyleTextA').style.display = "block";
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
         break;
     case numStyleSheet == 6:
         document.getElementById("numStyleBar").innerHTML = "6";
         document.getElementById("numStyleBar").style.width = "120px";
         document.getElementById("numStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
+        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
+        document.getElementById('extStyleTextA').style.display = "block";
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
         orangeArray.push(fileSSOEntry);
         break;
     case numStyleSheet == 7:
@@ -1426,6 +1444,9 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.width = "100px";
         document.getElementById("numStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
+        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
+        document.getElementById('extStyleTextA').style.display = "block";
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
         orangeArray.push(fileSSOEntry);
         break;
     case numStyleSheet == 8:
@@ -1433,6 +1454,9 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.width = "80px";
         document.getElementById("numStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
+        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
+        document.getElementById('extStyleTextA').style.display = "block";
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
         orangeArray.push(fileSSOEntry);
         break;
     case numStyleSheet == 9:
@@ -1440,6 +1464,9 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.width = "60px";
         document.getElementById("numStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
+        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
+        document.getElementById('extStyleTextA').style.display = "block";
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
         orangeArray.push(fileSSOEntry);
         break;
     case numStyleSheet == 10:
@@ -1447,6 +1474,9 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.width = "50px";
         document.getElementById("numStyleBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("numStyleBar").style.border = '1px solid orange';
+        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
+        document.getElementById('extStyleTextA').style.display = "block";
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
         orangeArray.push(fileSSOEntry);
         break;
     case numStyleSheet > 10:
@@ -1454,6 +1484,9 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.width = "30px";
         document.getElementById("numStyleBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("numStyleBar").style.border = '1px solid orange';
+        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
+        document.getElementById('extStyleTextA').style.display = "block";
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
         orangeArray.push(fileSSOEntry);
         break;
 }

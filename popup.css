@@ -490,21 +490,6 @@ table .row{
 }
 
 
-#htmlButton button {
-    background: transparent;
-    cursor: pointer;
-    color: #fff;
-    background-color: #E25B10;/* Makes color of other button */
-}
-
-#htmlButton button.active #htmlButton button:hover{
-    background: #F2F2F2;
-    color: #000;
-}
-
-
-
-
 /*Scroll Bar CSS*/ 
 
 /* width */

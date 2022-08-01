@@ -295,6 +295,17 @@ answerArray.push(intStyleSheet);
 //# of Style Sheets Files Found
   
 var numStyleSheet = document.styleSheets.length;
+var styleSheetArray = [];
+var styleSheetSrcs;
+    
+  for (var i = 1 ; i < numStyleSheet; i++) {
+    styleSheetSrcs = document.styleSheets[i].href;
+    styleSheetArray.push(styleSheetSrcs);
+}
+
+var styleSheetSources = styleSheetArray.toString();
+    
+console.log(styleSheetSources);
 
 answerArray.push(numStyleSheet); 
 
@@ -323,7 +334,7 @@ answerArray.push(cookieLen);
     
 var cookiesList = document.cookie;
 
-console.log(cookiesList);
+//console.log(cookiesList);
     
 ////////////////////////////////////////////
 //Amount of Empty URLs
@@ -823,7 +834,7 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, analChart, cookiesList, largeTransSrc, intStyleSheetTags}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, analChart, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources}
 
 chrome.runtime.sendMessage(counts);
     
