@@ -425,56 +425,56 @@ switch (lazyLoadChart >= 0){
         document.getElementById("lazyBar").style.width = "240px";
         document.getElementById("lazyBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid green';
-        greenArray.push("Great Job, way to reduce the number of images!");
+         
         break;
     case lazyLoadChart == 100:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "230px";
         document.getElementById("lazyBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid green';
-        greenArray.push("Most images are being lazy loaded- good work!");
+         
         break;
     case lazyLoadChart >= 95:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "225px";
         document.getElementById("lazyBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid green';
-        greenArray.push("Most images are being lazy loaded- good work!");
+         
         break;
     case lazyLoadChart >= 90:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "220px";
         document.getElementById("lazyBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid green';
-        greenArray.push("Most images are being lazy loaded- good work!");
+         
         break;
     case lazyLoadChart >= 80:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "215px";
         document.getElementById("lazyBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid green';
-        greenArray.push("Most images are being lazy loaded- good work!");
+         
         break;
     case lazyLoadChart >= 75:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "210px";
         document.getElementById("lazyBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid green';
-        greenArray.push("Most images are being lazy loaded- good work!");
+         
         break;
     case lazyLoadChart >= 70:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "200px";
         document.getElementById("lazyBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid green';
-        greenArray.push("Most images are being lazy loaded- good work!");
+         
         break;
     case lazyLoadChart >= 65:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "190px";
         document.getElementById("lazyBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid green';
-        greenArray.push("Most images are being lazy loaded- good work!");
+         
         break;
     case lazyLoadChart >= 60:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
@@ -550,35 +550,35 @@ switch (svgChart >= 0){
         document.getElementById("svgBar").style.width = "240px";
         document.getElementById("svgBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("svgBar").style.border = '1px solid green';
-        greenArray.push("All images are a light weight file type-- that's awesome!");
+         
         break;
     case svgChart >= 90:
         document.getElementById("svgBar").innerHTML = x.svgChart + "%";
         document.getElementById("svgBar").style.width = "220px";
         document.getElementById("svgBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("svgBar").style.border = '1px solid green';
-        greenArray.push("Most images are a light weight file type- that's awesome!");
+         
         break;
     case svgChart >= 80:
         document.getElementById("svgBar").innerHTML = x.svgChart + "%";
         document.getElementById("svgBar").style.width = "200px";
         document.getElementById("svgBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("svgBar").style.border = '1px solid green';
-        greenArray.push("Most images are a light weight file type- that's awesome!");
+         
         break;
     case svgChart >= 70:
         document.getElementById("svgBar").innerHTML = x.svgChart + "%";
         document.getElementById("svgBar").style.width = "180px";
         document.getElementById("svgBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("svgBar").style.border = '1px solid green';
-        greenArray.push("Most images are a light weight file type- that's awesome!");
+         
         break;
     case svgChart >= 60:
         document.getElementById("svgBar").innerHTML = x.svgChart + "%";
         document.getElementById("svgBar").style.width = "140px";
         document.getElementById("svgBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("svgBar").style.border = '1px solid green';
-        greenArray.push("Most images are a light weight file type- that's awesome!");
+         
         break;
     case svgChart >= 50:
         document.getElementById("svgBar").innerHTML = x.svgChart + "%";
@@ -634,14 +634,14 @@ switch (decodedBodySizeChart >= 0){
         document.getElementById("byteSizeBar").style.width = "240px";
         document.getElementById("byteSizeBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("byteSizeBar").style.border = '1px solid green';
-        greenArray.push("This is an all-around light weight website- great job!");
+         
         break;
     case decodedBodySizeChart <= 600000:
         document.getElementById("byteSizeBar").innerHTML = x.sizeLabel;
         document.getElementById("byteSizeBar").style.width = "220px";
         document.getElementById("byteSizeBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("byteSizeBar").style.border = '1px solid green';
-        greenArray.push("This is an all-around light weight website- great job!");
+         
         break;
     case decodedBodySizeChart <= 850000:
         document.getElementById("byteSizeBar").innerHTML = x.sizeLabel;
@@ -709,35 +709,35 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "240px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
-        greenArray.push("This page is loading really fast!");
+         
         break;
      case loadTimeChart <= 1.5:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "220px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
-        greenArray.push("This page is loading really fast!");
+         
         break;
     case loadTimeChart <= 2:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "200px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
-        greenArray.push("Great job with your page load time!");
+         
         break;
     case loadTimeChart <= 2.5:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "180px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
-        greenArray.push("Great job with your page load time!");
+         
         break;
     case loadTimeChart <= 3:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "160px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
-        greenArray.push("Great job with your page load time!");
+         
         break;
     case loadTimeChart <= 3.5:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
@@ -806,21 +806,21 @@ switch (jsChart >= 0){
         document.getElementById("jsBar").style.width = "240px";
         document.getElementById("jsBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("jsBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of Javascript running!");
+         
         break;
     case jsChart <= 15000000:
         document.getElementById("jsBar").innerHTML = x.jssSizeLabel;
         document.getElementById("jsBar").style.width = "230px";
         document.getElementById("jsBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("jsBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of Javascript running!");
+         
         break;
     case jsChart <= 20000000:
         document.getElementById("jsBar").innerHTML = x.jssSizeLabel;
         document.getElementById("jsBar").style.width = "220px";
         document.getElementById("jsBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("jsBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of Javascript running!");
+         
         break;
     case jsChart <= 25000000:
         document.getElementById("jsBar").innerHTML = x.jssSizeLabel;
@@ -887,7 +887,7 @@ switch (importChart >= 0){
         document.getElementById("fontBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("fontBar").style.border = '1px solid green';
         document.getElementById("fontBar").innerHTML = 'No';
-        greenArray.push("Looks like you're only using system fonts, way to go!");
+         
         break;
     case importChart == 1:
         document.getElementById("fontBar").style.width = "30px";
@@ -908,21 +908,21 @@ switch (htmlChart >= 0){
         document.getElementById("htmlBar").style.width = "240px";
         document.getElementById("htmlBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("htmlBar").style.border = '1px solid green';
-        greenArray.push("Looks like your page is loading a minimal amount of content, this is better for the planet, and your users!");
+         
         break;
     case htmlChart <= 250001:
         document.getElementById("htmlBar").innerHTML = x.lengthK;
         document.getElementById("htmlBar").style.width = "230px";
         document.getElementById("htmlBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("htmlBar").style.border = '1px solid green';
-        greenArray.push("Looks like your page is loading a minimal amount of content, this is better for the planet, and your users!");
+         
         break;
     case htmlChart <= 300001:
         document.getElementById("htmlBar").innerHTML = x.lengthK;
         document.getElementById("htmlBar").style.width = "220px";
         document.getElementById("htmlBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("htmlBar").style.border = '1px solid green';
-        greenArray.push("Looks like your page is loading a minimal amount of content, this is better for the planet, and your users!");
+         
         break;
     case htmlChart <= 350001:
         document.getElementById("htmlBar").innerHTML = x.lengthK;
@@ -989,7 +989,7 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.width = "240px";
         document.getElementById("transferBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of data transfered on page load!");
+         
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
@@ -999,7 +999,7 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.width = "230px";
         document.getElementById("transferBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of data transfered on page load!");
+         
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
@@ -1009,7 +1009,7 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.width = "220px";
         document.getElementById("transferBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of data transfered on page load!");
+         
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
@@ -1019,7 +1019,7 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferBar").style.width = "200px";
         document.getElementById("transferBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("transferBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of data transfered on page load!");
+         
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
@@ -1121,35 +1121,35 @@ switch (resImgChart >= 0){
         document.getElementById("resImgBar").style.width = "240px";
         document.getElementById("resImgBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("resImgBar").style.border = '1px solid green';
-        greenArray.push("All images are being loaded responsively! Great job!");
+         
         break;
     case resImgChart >= 90:
         document.getElementById("resImgBar").innerHTML = resImgChart + "%";
         document.getElementById("resImgBar").style.width = "230px";
         document.getElementById("resImgBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("resImgBar").style.border = '1px solid green';
-        greenArray.push("Most images are being loaded responsively! Great job!");
+         
         break;
     case resImgChart >= 80:
         document.getElementById("resImgBar").innerHTML = resImgChart + "%";
         document.getElementById("resImgBar").style.width = "220px";
         document.getElementById("resImgBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("resImgBar").style.border = '1px solid green';
-        greenArray.push("Most images are being loaded responsively! Great job!");
+         
         break;
     case resImgChart >= 70:
         document.getElementById("resImgBar").innerHTML = resImgChart + "%";
         document.getElementById("resImgBar").style.width = "200px";
         document.getElementById("resImgBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("resImgBar").style.border = '1px solid green';
-        greenArray.push("Most images are being loaded responsively! Great job!");
+         
         break;
     case resImgChart >= 60:
         document.getElementById("resImgBar").innerHTML = resImgChart + "%";
         document.getElementById("resImgBar").style.width = "140px";
         document.getElementById("resImgBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("resImgBar").style.border = '1px solid green';
-        greenArray.push("Most images are being loaded responsively! Great job!");
+         
         break;
     case resImgChart >= 50:
         document.getElementById("resImgBar").innerHTML = resImgChart + "%";
@@ -1204,7 +1204,7 @@ switch (intStyleSheet >= 0){
         document.getElementById("intStyleBar").style.width = "240px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-        greenArray.push("No inline style sheets found. Great job!");
+         
         document.getElementById("intSSDiv").style.display = 'none';
         break;
     case intStyleSheet == 1:
@@ -1212,7 +1212,7 @@ switch (intStyleSheet >= 0){
         document.getElementById("intStyleBar").style.width = "240px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-        greenArray.push("Only 1 internal style sheet found!");
+         
         document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
         document.getElementById('intStyleTextA').style.display = "block";
         document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
@@ -1324,7 +1324,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.width = "240px";
         document.getElementById("numStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid green';
-        greenArray.push("Only 1 Style Sheet File!");
+         
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
         document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
@@ -1437,7 +1437,7 @@ switch (redirects >= 0){
         document.getElementById("redirectBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("redirectBar").style.border = '1px solid green';
         document.getElementById("redirectBar").innerHTML = 'No redirects';
-        greenArray.push("No redirects!");
+         
         break;
     case redirects >= 1:
         document.getElementById("redirectBar").style.width = "30px";
@@ -1457,7 +1457,7 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.width = "240px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of cookies used!");
+         
         document.getElementById('cookDiv').style.display = "none";
         break;
     case cookieLen <= 2:
@@ -1465,7 +1465,7 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.width = "230px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of cookies used!");
+         
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
         document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
@@ -1475,7 +1475,7 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.width = "220px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of cookies used!");
+         
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
         document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
@@ -1485,7 +1485,7 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.width = "210px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
-        greenArray.push("Great job limiting the amount of cookies used!");
+         
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
         document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
@@ -1579,7 +1579,7 @@ switch (emptyURL >= 0){
         document.getElementById("srcBar").style.width = "240px";
         document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("srcBar").style.border = '1px solid green';
-        greenArray.push("No empty URLs found! Great job.");
+         
         break;
     case emptyURL == 1:
         document.getElementById("srcBar").innerHTML = emptyURL;
@@ -1640,7 +1640,7 @@ switch (analTrack >= 0){
         document.getElementById("analBar").style.width = "260px";
         document.getElementById("analBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("analBar").style.border = '1px solid green';
-        //greenArray.push("No empty URLs found! Great job.");
+        // 
         break;
     case analTrack <= 4:
         document.getElementById("analBar").innerHTML = analTrack;
