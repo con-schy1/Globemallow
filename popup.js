@@ -1269,6 +1269,7 @@ switch (intStyleSheet >= 0){
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
         greenArray.push("No inline style sheets found. Great job!");
+        document.getElementById("intSSDiv").style.display = 'none';
         break;
     case intStyleSheet == 1:
         document.getElementById("intStyleBar").innerHTML = "1";
@@ -1488,6 +1489,7 @@ switch (cookieLen >= 0){
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
         greenArray.push("Great job limiting the amount of cookies used!");
+        document.getElementById('cookDiv').style.display = "none";
         break;
     case cookieLen <= 2:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1827,6 +1829,7 @@ document.getElementById('LLButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = titleArray.LLImage;
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'With "lazy loading", files are only loaded when they reach the visible area of the browser window, or shortly before it. Modern browsers allow to insert loading=“lazy“ as an attribute in the img element. Lazy loading is useful because it allows images lower on a page to not be loaded if it\'s not in immediate view.';
+
 }
 
 document.getElementById('imgButton').onclick = function(evt) {
