@@ -305,7 +305,7 @@ var styleSheetSrcs;
 
 var styleSheetSources = styleSheetArray.toString();
     
-console.log(styleSheetSources);
+//console.log(styleSheetSources);
 
 answerArray.push(numStyleSheet); 
 
