@@ -1758,12 +1758,12 @@ function openDiv(evt, cityName) {
 
 /* button clicks calls */
 document.getElementById("factButton").onclick = function(evt) {
-	 console.log('factview is clciked'); 
+	 //console.log('factview is clciked'); 
 	 localStorage.setItem('selectedButtonId', 'factButton'); 
 	 openDiv(evt,'Example1Div'); 
 }
 document.getElementById("devButton").onclick = function(evt) {
-	 console.log('devview is clciked'); 
+	 //console.log('devview is clciked'); 
 	 localStorage.setItem('selectedButtonId', 'devButton'); 
 	 openDiv(evt,'Example2Div'); 
 }
@@ -1778,28 +1778,15 @@ else
 
 //////////////////////////////////////////////////////////////////
 // Info Div Fill on Button Clicks
-function openButton(evt1, cityName1){
-    var tabcontent1, tablinks1;
+function openButton(){
     
-    tabcontent1 = document.getElementById("m1");
-    for (i = 0; i < tabcontent1.length; i++) {
-    tabcontent1[i].style.display = "none";   
-  }
-    
-    tablinks1 = document.getElementsByClassName('tableButton');
-    for (i = 0; i < tablinks1.length; i++) {
-    tablinks1[i].className = tablinks1[i].className.replace(" active", "");
-  }
-    
-   document.getElementById(cityName1).style.display = "block";
-   evt1.currentTarget.className += " active"; 
 }
 
 /* button clicks calls */
 document.getElementById('htmlButton').onclick = function(evt) {
 
 	 localStorage.setItem('selectedButtonId1', 'htmlButton'); 
-	 //openButton(evt,'Example1Div');
+	 //openButton(evt1);
      document.getElementById("m1").innerHTML = "Page HTML";
      //document.getElementById('htmlButton').style.background = 'rgba(241, 137, 49, .5)';
     document.getElementById("m2").innerHTML = 'It seems like you have a lot going on on this page. Is there any way to reduce the amount of content on this page? Have you considered just loading content on scroll? If content is being loaded beyond what the user is currently seeing, it is as waste of data.';
@@ -1935,7 +1922,11 @@ document.getElementById('emptyButton').onclick = function(evt) {
 
 //Sets a default
 var selectedTab1 = localStorage.getItem('selectedButtonId1');  
-if(selectedTab1)
+if(selectedTab1){
 	document.getElementById(selectedTab1).click();
-else
+    document.getElementById(selectedTab1).focus();
+}
+else{
 	document.getElementById('htmlButton').click();
+    document.getElementById('htmlButton').focus();
+}
