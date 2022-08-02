@@ -336,11 +336,75 @@ var cookiesList = document.cookie;
 
 //console.log(cookiesList);
     
+    
+    
+    
+    
+    
+    
 ////////////////////////////////////////////
 //Amount of Empty URLs
 var emptyURL = document.querySelectorAll('img[src=""]').length + document.querySelectorAll('script[src=""]').length + document.querySelectorAll('link[rel=stylesheet][href=""]').length + document.querySelectorAll('button[href=""]').length + document.querySelectorAll('a[href=""]').length;
     
+var emptySrcURL1 = document.querySelectorAll('img[src=""]');
+var emptySrcURL2 = document.querySelectorAll('script[src=""]');
+var emptySrcURL3 = document.querySelectorAll('link[rel=stylesheet][href=""]');
+var emptySrcURL4 = document.querySelectorAll('button[href=""]');
+var emptySrcURL5 = document.querySelectorAll('a[href=""]');
+var emptySRCArray = [];
+var try4;
+
+if (emptySrcURL1.length >= 1){
+  for (var i = 1 ; i < emptySrcURL1.length; i++) {
+    try4 = emptySrcURL1[i].outerHTML;
+    emptySRCArray.push(try4);
+    
+  }
+
+}
+if(emptySrcURL2.length >= 1){
+    for (var i = 1 ; i < emptySrcURL2.length; i++) {
+    try4 = emptySrcURL2[i].outerHTML;
+    emptySRCArray.push(try4);
+    
+  }
+}
+if(emptySrcURL3.length >= 1){
+    for (var i = 1 ; i < emptySrcURL3.length; i++) {
+    try4 = emptySrcURL3[i].outerHTML;
+    emptySRCArray.push(try4);
+    
+  }
+}
+if(emptySrcURL4.length >= 1){
+    for (var i = 1 ; i < emptySrcURL4.length; i++) {
+    try4 = emptySrcURL4[i].outerHTML;
+    emptySRCArray.push(try4);
+    
+  }
+}
+if(emptySrcURL5.length >= 1){
+    for (var i = 1 ; i < emptySrcURL5.length; i++) {
+    try4 = emptySrcURL5[i].outerHTML;
+    emptySRCArray.push(try4);
+    
+  }
+}
+    
+//try26 = emptySRCArray.toString();
+    
+
+var emptySRCVal = emptySRCArray.toString();    
+    
+console.log(emptySRCVal);
+    
 answerArray.push(emptyURL);
+    
+    
+    
+    
+    
+    
     
     
 ///////////////////////////////////////////////////////
@@ -834,7 +898,7 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, analChart, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, analChart, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal}
 
 chrome.runtime.sendMessage(counts);
     

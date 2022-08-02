@@ -1634,18 +1634,22 @@ switch (emptyURL >= 0){
         document.getElementById("srcBar").style.border = '1px solid yellow';
          
         break;
-    case emptyURL >= 6:
+    case emptyURL == 6:
         document.getElementById("srcBar").innerHTML = emptyURL;
         document.getElementById("srcBar").style.width = "50px";
         document.getElementById("srcBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("srcBar").style.border = '1px solid orange';
          
         break;
-    case emptyURL >= 10:
+    case emptyURL >= 7:
         document.getElementById("srcBar").innerHTML = ">10";
         document.getElementById("srcBar").style.width = "30px";
         document.getElementById("srcBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("srcBar").style.border = '1px solid orange';
+        document.getElementById("emptySrcDiv").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
          
         break;
 }
@@ -1899,7 +1903,7 @@ document.getElementById('redirectButton').onclick = function(evt) {
 	 //openButton(evt,'Example2Div');
      document.getElementById("m1").innerHTML = 'Redirects';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
-     document.getElementById("m2").innerHTML = 'Redirects are an unnecessary use of resources. It causes data to be loaded.';
+     document.getElementById("m2").innerHTML = 'Redirects are an unnecessary use of resources. It causes additional data to be loaded.';
 }
 
 document.getElementById('cookieButton').onclick = function(evt) {
