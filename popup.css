@@ -492,11 +492,19 @@ table .row{
 }
 
 .tableButton:active{
-    background-color: darkgrey;
+    border-width: 3px;
 }
 
 .tableButton:focus{
-    background-color: aquamarine;
+    border-color: #F77616;
+    border-width: 3px;
+    outline: none;
+}
+
+#pageLoadButton:focus {
+    border-color: #F77616;
+    border-width: 2px;
+    outline: none;
 }
 
 
