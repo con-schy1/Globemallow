@@ -431,17 +431,19 @@ table .row{
     font-weight: 550;
     font-size: 15px;
     padding-top: 15px;
-    padding-bottom: 10px;
 }
 
 
 .textAreaDiv{
     background-color: #f2f2f2;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     padding-left: 10px;
     border-radius: 10px;
 }
 
+.textAreaClass{
+    margin-left: 10px;
+}
 
 
 #footer{
