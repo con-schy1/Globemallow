@@ -1330,7 +1330,8 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.width = "240px";
         document.getElementById("numStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("numStyleBar").style.border = '1px solid green';
-        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources; 
+        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
+        document.getElementById('extSSDiv').style.display = 'none';
         break;
     case numStyleSheet == 1:
         document.getElementById("numStyleBar").innerHTML = "1";
@@ -1599,47 +1600,67 @@ switch (emptyURL >= 0){
         document.getElementById("srcBar").style.width = "240px";
         document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("srcBar").style.border = '1px solid green';
-         
+        document.getElementById('emptySrcDiv').style.display = "none"; 
         break;
     case emptyURL == 1:
         document.getElementById("srcBar").innerHTML = emptyURL;
         document.getElementById("srcBar").style.width = "230px";
         document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("srcBar").style.border = '1px solid green';
+        document.getElementById("emptySrcDiv").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
         break;
     case emptyURL == 2:
         document.getElementById("srcBar").innerHTML = emptyURL;
         document.getElementById("srcBar").style.width = "220px";
         document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("srcBar").style.border = '1px solid green';
+        document.getElementById("emptySrcDiv").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
         break;
     case emptyURL == 3:
         document.getElementById("srcBar").innerHTML = emptyURL;
         document.getElementById("srcBar").style.width = "200px";
         document.getElementById("srcBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("srcBar").style.border = '1px solid yellow';
-         
+        document.getElementById("emptySrcDiv").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
         break;
     case emptyURL == 4:
         document.getElementById("srcBar").innerHTML = emptyURL;
         document.getElementById("srcBar").style.width = "140px";
         document.getElementById("srcBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("srcBar").style.border = '1px solid yellow';
-         
+        document.getElementById("emptySrcDiv").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
         break;
     case emptyURL == 5:
         document.getElementById("srcBar").innerHTML = emptyURL;
         document.getElementById("srcBar").style.width = "100px";
         document.getElementById("srcBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("srcBar").style.border = '1px solid yellow';
-         
+        document.getElementById("emptySrcDiv").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
         break;
     case emptyURL == 6:
         document.getElementById("srcBar").innerHTML = emptyURL;
         document.getElementById("srcBar").style.width = "50px";
         document.getElementById("srcBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("srcBar").style.border = '1px solid orange';
-         
+        document.getElementById("emptySrcDiv").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
         break;
     case emptyURL >= 7:
         document.getElementById("srcBar").innerHTML = ">10";
