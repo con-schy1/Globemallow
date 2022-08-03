@@ -85,7 +85,9 @@ var barColors = [
 
 ];
     break;
-      case x.finalScore >= 78:
+        
+      
+    case x.finalScore >= 78:
 var ctx = document.getElementById('myChart').getContext('2d');
 var yValues = [x.finalScore, scoreDiff];
 var barColors = [
