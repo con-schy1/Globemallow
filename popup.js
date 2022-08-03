@@ -1470,14 +1470,27 @@ switch (redirects >= 0){
 var cookieLen = x.cookieLen;
 
 switch (cookieLen >= 0){
-
-    case cookieLen <= 1:
+        
+    
+    case cookieLen == 0:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "240px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
         document.getElementById("cookDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
         document.getElementById('cookDiv').style.display = "none";
+        break;
+    case cookieLen <= 1:
+        document.getElementById("cookieBar").innerHTML = cookieLen;
+        document.getElementById("cookieBar").style.width = "240px";
+        document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("cookieBar").style.border = '1px solid green';
+        document.getElementById("cookDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
+        //document.getElementById('cookDiv').style.display = "none";
+        document.getElementById('cookieTextA').innerHTML = x.cookiesList;
+        document.getElementById('cookieTextA').style.display = "block";
+        document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
+        document.getElementById('cookieTextA').rows = "3";
         break;
     case cookieLen <= 2:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1488,6 +1501,7 @@ switch (cookieLen >= 0){
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
         document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
+        document.getElementById('cookieTextA').rows = "3";
         break;
     case cookieLen <= 3:
         document.getElementById("cookieBar").innerHTML = cookieLen;
@@ -1498,6 +1512,7 @@ switch (cookieLen >= 0){
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
         document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
+        document.getElementById('cookieTextA').rows = "6";
         break;
     case cookieLen <= 4:
         document.getElementById("cookieBar").innerHTML = cookieLen;
