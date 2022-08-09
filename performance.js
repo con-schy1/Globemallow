@@ -168,7 +168,7 @@ answerArray.push(duration);
 
 //Imported Fonts
 var headText = document.head.innerHTML;
-var fontRegex = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)/;
+var fontRegex = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)/;
 var fontBoolean = 0;
 
 if (headText.match(fontRegex)){
