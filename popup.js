@@ -1343,7 +1343,8 @@ switch (numStyleSheet >= 0){
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
         document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
-        document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
+        document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById('extStyleTextA').rows = "3";
         break;
     case numStyleSheet == 2:
         document.getElementById("numStyleBar").innerHTML = "2";
@@ -1353,7 +1354,8 @@ switch (numStyleSheet >= 0){
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
         document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
-        document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
+        document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById('extStyleTextA').rows = "3";
         break;
     case numStyleSheet == 3:
         document.getElementById("numStyleBar").innerHTML = "3";
@@ -1363,7 +1365,8 @@ switch (numStyleSheet >= 0){
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
         document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
-        document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
+        document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById('extStyleTextA').rows = "4";
         break;
     case numStyleSheet == 4:
         document.getElementById("numStyleBar").innerHTML = "4";
@@ -1474,15 +1477,15 @@ var cookieLen = x.cookieLen;
 switch (cookieLen >= 0){
         
     
-    case cookieLen == 0:
-        document.getElementById("cookieBar").innerHTML = cookieLen;
+    case cookieLen == 1:
+        document.getElementById("cookieBar").innerHTML = 0;
         document.getElementById("cookieBar").style.width = "240px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cookieBar").style.border = '1px solid green';
         document.getElementById("cookDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
         document.getElementById('cookDiv').style.display = "none";
         break;
-    case cookieLen <= 1:
+    case cookieLen == 2:
         document.getElementById("cookieBar").innerHTML = cookieLen;
         document.getElementById("cookieBar").style.width = "240px";
         document.getElementById("cookieBar").style.background = 'rgba(142, 202, 46, 0.5)';

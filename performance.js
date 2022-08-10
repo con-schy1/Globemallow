@@ -168,7 +168,7 @@ answerArray.push(duration);
 
 //Imported Fonts
 var headText = document.head.innerHTML;
-var fontRegex = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)/;
+var fontRegex = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)/;
 var fontBoolean = 0;
 
 if (headText.match(fontRegex)){
@@ -298,7 +298,7 @@ var numStyleSheet = document.styleSheets.length;
 var styleSheetArray = [];
 var styleSheetSrcs;
     
-  for (var i = 1 ; i < numStyleSheet; i++) {
+  for (var i = 0 ; i < numStyleSheet; i++) {
     styleSheetSrcs = document.styleSheets[i].href;
     styleSheetArray.push(styleSheetSrcs);
 }
