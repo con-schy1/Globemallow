@@ -1355,7 +1355,7 @@ switch (numStyleSheet >= 0){
         document.getElementById('extStyleTextA').style.display = "block";
         document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
-        document.getElementById('extStyleTextA').rows = "3";
+        document.getElementById('extStyleTextA').rows = "4";
         break;
     case numStyleSheet == 3:
         document.getElementById("numStyleBar").innerHTML = "3";
@@ -1366,7 +1366,6 @@ switch (numStyleSheet >= 0){
         document.getElementById('extStyleTextA').style.display = "block";
         document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
-        document.getElementById('extStyleTextA').rows = "4";
         break;
     case numStyleSheet == 4:
         document.getElementById("numStyleBar").innerHTML = "4";
