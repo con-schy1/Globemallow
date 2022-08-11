@@ -479,55 +479,63 @@ switch (lazyLoadChart >= 0){
         document.getElementById("lazyBar").style.width = "170px";
         document.getElementById("lazyBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid green';
+        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 55:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "150px";
         document.getElementById("lazyBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid yellow';
-         
+        //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
+        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 55:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "130px";
         document.getElementById("lazyBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid yellow';
-         
+        //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
+        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 40:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "110px";
         document.getElementById("lazyBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid yellow';
-         
+        //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
+        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 30:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "90px";
         document.getElementById("lazyBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid yellow';
-         
+        //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
+        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 20:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "70px";
         document.getElementById("lazyBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid yellow';
-         
+        //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
+        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 10:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "50px";
         document.getElementById("lazyBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("lazyBar").style.border = '1px solid orange';
-         
+        //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
+        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 0:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
         document.getElementById("lazyBar").style.width = "30px";
         document.getElementById("lazyBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("lazyBar").style.border = '1px solid orange';
-         
+        //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
+        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
 }
 
@@ -788,8 +796,7 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "35px";
         document.getElementById("loadBar").style.background = 'rgba(241, 137, 49, 0.5)';
-        document.getElementById("loadBar").style.border = '1px solid orange';
-         
+        document.getElementById("loadBar").style.border = '1px solid orange'; 
         break;
 }
 
@@ -1833,7 +1840,7 @@ document.getElementById('htmlButton').onclick = function(evt) {
 	 //openButton(evt1);
      document.getElementById("m1").innerHTML = "Page HTML";
      //document.getElementById('htmlButton').style.background = 'rgba(241, 137, 49, .5)';
-    document.getElementById("m2").innerHTML = 'It seems like you have a lot going on on this page. Is there any way to reduce the amount of content on this page? Have you considered just loading content on scroll? If content is being loaded beyond what the user is currently seeing, it is as waste of data.';
+    document.getElementById("m2").innerHTML = 'Page HTML counts the number of bytes on your page from HTML code. If it is significantly high- it can signal that there is too much content on your page. Is there any way to reduce the amount of content on this page? Have you considered just loading content on scroll? If content is being loaded beyond what the user is currently seeing, it is as waste of data.';
      
 }
 
@@ -1844,6 +1851,9 @@ document.getElementById('LLButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Lazy Loaded Images';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'With "lazy loading", files are only loaded when they reach the visible area of the browser window, or shortly before it. Modern browsers allow to insert loading=“lazy“ as an attribute in the img element. Lazy loading is useful because it allows images lower on a page to not be loaded if it\'s not in immediate view.';
+    //var lazyLoadScore = document.getElementById("mLL").innerHTML;
+//    document.getElementById("m4").innerHTML = "Grade increases to " + lazyLoadScore + " if all images were Lazy Loaded";
+    document.getElementById("m4").style.display = "block";
 
 }
 
@@ -1881,6 +1891,8 @@ document.getElementById('intSSButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Internal Style Sheets';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Make sure CSS files are separate from page\’s HTML code. If CSS is in the HMTL body then the code must be sent for each page request- increasing the amount of data sent. If CSS is in separate files, the browser can store them in local cache.';
+    var mayYou = document.getElementById('scoreHTML').innerHTML;
+//    document.getElementById("m4").innerHTML = "Grade increases to " + mayYou + " if all images were Lazy Loaded";
 }
 
 document.getElementById('fileSSButton').onclick = function(evt) {

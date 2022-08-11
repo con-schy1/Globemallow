@@ -309,6 +309,7 @@ table .row{
   background-color: lightgrey;
 }
 
+
 .tableLine{
   padding-top:10px;
 }
@@ -392,7 +393,6 @@ table .row{
 }
 
 #m1{
-    padding-left: 9px;
     font-weight: 550;
     font-size: 15px;
     padding-top: 10px;
@@ -400,6 +400,20 @@ table .row{
 }
 
 #m2{
+    padding-left: 6px;
+    font-size: 15px;
+    border-color: #F77616;
+    border-width: 2px;
+}
+
+#m3{
+    font-weight: 550;
+    font-size: 15px;
+    padding-top: 10px;
+    
+}
+
+#m4{
     padding-left: 6px;
     font-size: 15px;
     border-color: #F77616;

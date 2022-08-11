@@ -448,20 +448,25 @@ case answerArray[0] > 5242880:
 }
 
 
+var LazyLoadWeight = 0;
 //Lazy Loaded Image
 switch (answerArray[1] >= 0){
 
     case answerArray[1] >= .65:
         finalScore += .4;
+        LazyLoadWeight = .4;
         break;
     case answerArray[1] >= .40:
         finalScore += .3;
+        LazyLoadWeight = .3;
         break;
    case answerArray[1] >= .25:
         finalScore += .2;
+        LazyLoadWeight = .2;
         break;
    case answerArray[1] > 0:
         finalScore += .1;
+        LazyLoadWeight = .1;
         break;
    case answerArray[1] == 0:
         finalScore += 0;
@@ -714,7 +719,10 @@ case answerArray[13] <= 4:
 case answerArray[13] >= 5:
     finalScore += 0;
     break;
-} 
+}
+    
+//Metric Weight Calc
+var LazyLoadMax = ((((finalScore-LazyLoadWeight)+.4)/14.7)*100).toPrecision(2);
 
 finalScore = finalScore/14.7;
 
@@ -777,6 +785,9 @@ var lengthK = pagebytesLabel;
 var resImgChart = (answerArray[8]*100);
 //var resImgChart = (answerArray[8]*100).toPrecision(3);
 var analChart = answerArray[14];
+    
+
+
 
     
 //Responsive images were sometimes showing > 100% and .848% showing off bar
@@ -815,7 +826,7 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax}
 
 chrome.runtime.sendMessage(counts);
     
