@@ -792,53 +792,67 @@ case answerArray[13] >= 5:
 //////////////////////////////////////
 //Metric Weight Calc
 // Lazy Load
-var LazyLoadMax = ((((finalScore-LazyLoadWeight)+.4)/14.7)*100).toPrecision(2);
+//var LazyLoadMax = ((((finalScore-LazyLoadWeight)+.4)/14.7)*100).toPrecision(2);
+var LazyLoadMax = Math.round((((finalScore-LazyLoadWeight)+.4)/14.7)*100);
     
 //Empty Src Tags
-var emptySrcMax = ((((finalScore-emptySRCWeight)+.2)/14.7)*100).toPrecision(2);
+//var emptySrcMax = ((((finalScore-emptySRCWeight)+.2)/14.7)*100).toPrecision(2);
+var emptySrcMax = Math.round((((finalScore-emptySRCWeight)+.2)/14.7)*100);    
 
 // Cookies
-var cookieMax = ((((finalScore-cookieWeight)+.4)/14.7)*100).toPrecision(2);
+//var cookieMax = ((((finalScore-cookieWeight)+.4)/14.7)*100).toPrecision(2);
+var cookieMax = Math.round((((finalScore-cookieWeight)+.4)/14.7)*100);    
     
 // Redirects   
-var redirectMax = ((((finalScore-redirectWeight)+.1)/14.7)*100).toPrecision(2);    
+//var redirectMax = ((((finalScore-redirectWeight)+.1)/14.7)*100).toPrecision(2); 
+var redirectMax = Math.round((((finalScore-redirectWeight)+.1)/14.7)*100);     
     
 // Style Sheet Files   
-var ssFileMax = ((((finalScore-ssFileWeight)+.2)/14.7)*100).toPrecision(2);    
+//var ssFileMax = ((((finalScore-ssFileWeight)+.2)/14.7)*100).toPrecision(2); 
+var ssFileMax = Math.round((((finalScore-ssFileWeight)+.2)/14.7)*100);    
     
 // Internal Style Sheet   
-var intSSMax = ((((finalScore-intSSWeight)+.2)/14.7)*100).toPrecision(2);    
+//var intSSMax = ((((finalScore-intSSWeight)+.2)/14.7)*100).toPrecision(2);
+var intSSMax = Math.round((((finalScore-intSSWeight)+.2)/14.7)*100);    
     
 // Responsive Images
-var resMax = ((((finalScore-resWeight)+.4)/14.7)*100).toPrecision(2);
+//var resMax = ((((finalScore-resWeight)+.4)/14.7)*100).toPrecision(2);
+var resMax = Math.round((((finalScore-resWeight)+.4)/14.7)*100);
+    
     
  // Transfer Size
-var transMax = ((((finalScore-transWeight)+4)/14.7)*100).toPrecision(2);
+//var transMax = ((((finalScore-transWeight)+4)/14.7)*100).toPrecision(2);
+var transMax = Math.round((((finalScore-transWeight)+4)/14.7)*100);
     
     
 // Imported Fonts
-var fontMax = ((((finalScore-fontWeight)+.4)/14.7)*100).toPrecision(2);
+//var fontMax = ((((finalScore-fontWeight)+.4)/14.7)*100).toPrecision(2);
+var fontMax = Math.round((((finalScore-fontWeight)+.4)/14.7)*100);  
     
     
 // Page Load Time
-var timeMax = ((((finalScore-timeWeight)+2)/14.7)*100).toPrecision(2);
+//var timeMax = ((((finalScore-timeWeight)+2)/14.7)*100).toPrecision(2);
+var timeMax = Math.round((((finalScore-timeWeight)+2)/14.7)*100); 
     
     
 // Length Weight
-var lengthMax = ((((finalScore-lengthWeight)+1)/14.7)*100).toPrecision(2);
+//var lengthMax = ((((finalScore-lengthWeight)+1)/14.7)*100).toPrecision(2);
+var lengthMax = Math.round((((finalScore-lengthWeight)+1)/14.7)*100);
     
 
 // Img Type Weight
-var imgTypeMax = ((((finalScore-imgTypeWeight)+.4)/14.7)*100).toPrecision(2);
+//var imgTypeMax = ((((finalScore-imgTypeWeight)+.4)/14.7)*100).toPrecision(2);
+var imgTypeMax = Math.round((((finalScore-imgTypeWeight)+.4)/14.7)*100); 
     
     
 // JS
-var jsMax = ((((finalScore-jsWeight)+2)/14.7)*100).toPrecision(2);
+//var jsMax = ((((finalScore-jsWeight)+2)/14.7)*100).toPrecision(2);
+var jsMax = Math.round((((finalScore-jsWeight)+2)/14.7)*100);    
     
   
 // Page Size
-var sizeMax = ((((finalScore-sizeWeight)+3)/14.7)*100).toPrecision(2);
-      
+//var sizeMax = ((((finalScore-sizeWeight)+3)/14.7)*100).toPrecision(2);
+var sizeMax = Math.round((((finalScore-sizeWeight)+3)/14.7)*100);     
 
 
 

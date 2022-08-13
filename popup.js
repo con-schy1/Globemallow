@@ -453,14 +453,14 @@ switch (lazyLoadChart >= 0){
         break;
     case lazyLoadChart == 100:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
-        document.getElementById("lazyBar").style.width = "230px";
+        document.getElementById("lazyBar").style.width = "240px";
         document.getElementById("lazyBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid green';
          
         break;
     case lazyLoadChart >= 95:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
-        document.getElementById("lazyBar").style.width = "225px";
+        document.getElementById("lazyBar").style.width = "230px";
         document.getElementById("lazyBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid green';
          
