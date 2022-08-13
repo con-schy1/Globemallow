@@ -622,107 +622,151 @@ case answerArray[7] > 5242880:
 }
     
 // Responsive Images
-
+var resWeight = 0;
 switch (answerArray[8] >= 0){
 
 case answerArray[8] >= .7:
     finalScore += .4;
+    resWeight = .4;
     break;
 case answerArray[8] >= .5:
     finalScore += .3;
+    resWeight = .4;
     break;
 case answerArray[8] >= .3:
     finalScore += .2;
+    resWeight = .4;
     break;
 case answerArray[8] > 0:
     finalScore += .1;
+    resWeight = .4;
     break;
 case answerArray[8] == 0:
     finalScore += 0;
+    resWeight = .4;
     break;
 }
     
 // Internal Stylesheets
-
+var intSSWeight = 0;
 switch (answerArray[9] >= 0){
 
 case answerArray[9] <= 2:
     finalScore += .2;
+    intSSWeight = .2;
     break;
 case answerArray[9] <= 5:
     finalScore += .1;
+    intSSWeight = .1;
     break;
 case answerArray[9] >= 5:
     finalScore += 0;
+    intSSWeight = 0;
     break;
 }
     
 // Number of Stylesheet Files
-
+var ssFileWeight = 0;
 switch (answerArray[10] >= 0){
 
 case answerArray[10] <= 2:
     finalScore += .2;
+    ssFileWeight = .2;
     break;
 case answerArray[10] <= 5:
     finalScore += .1;
+    ssFileWeight = .1;
     break;
 case answerArray[10] >= 5:
     finalScore += 0;
+    ssFileWeight = 0;
     break;
 }
     
 // Number of Redirects
-
+var redirectWeight = 0;
 switch (answerArray[11] >= 0){
 
 case answerArray[11] == 0:
     finalScore += .1;
+    redirectWeight = .1;
     break;
 case answerArray[11] <= 1:
     finalScore += 0;
+    redirectWeight = 0;
     break;
 }
 
  // Amount of Cookies
-
+var cookieWeight = 0;
 switch (answerArray[12] >= 0){
 
 case answerArray[12] <=3:
     finalScore += .4;
+    cookieWeight = .4;
     break;
 case answerArray[12] <= 7:
     finalScore += .3;
+    cookieWeight = .3;
     break;
 case answerArray[12] <= 10:
     finalScore += .2;
+    cookieWeight = .2;
     break;
 case answerArray[12] <= 15:
     finalScore += .1;
+    cookieWeight = .1;
     break;
 case answerArray[12] >= 16:
     finalScore += 0;
+    cookieWeight = 0;
     break;
 }
         
         
  // Empty SRC Tags
-
+var emptySRCWeight = 0;
 switch (answerArray[13] >= 0){
 
 case answerArray[13] <= 2:
     finalScore += .2;
+    emptySRCWeight = .2;
     break;
 case answerArray[13] <= 4:
     finalScore += .1;
+    emptySRCWeight = .1;
     break;
 case answerArray[13] >= 5:
     finalScore += 0;
+    emptySRCWeight = 0;
     break;
 }
-    
+
+//////////////////////////////////////
 //Metric Weight Calc
+// Lazy Load
 var LazyLoadMax = ((((finalScore-LazyLoadWeight)+.4)/14.7)*100).toPrecision(2);
+    
+//Empty Src Tags
+var emptySrcMax = ((((finalScore-emptySRCWeight)+.2)/14.7)*100).toPrecision(2);
+
+// Cookies
+var cookieMax = ((((finalScore-cookieWeight)+.4)/14.7)*100).toPrecision(2);
+    
+// Redirects   
+var redirectMax = ((((finalScore-redirectWeight)+.1)/14.7)*100).toPrecision(2);    
+    
+// Style Sheet Files   
+var ssFileMax = ((((finalScore-ssFileWeight)+.2)/14.7)*100).toPrecision(2);    
+    
+// Internal Style Sheet   
+var intSSMax = ((((finalScore-intSSWeight)+.2)/14.7)*100).toPrecision(2);    
+    
+// Responsive Images
+var resMax = ((((finalScore-resWeight)+.4)/14.7)*100).toPrecision(2);
+    
+    
+    
 
 finalScore = finalScore/14.7;
 
@@ -826,7 +870,7 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax}
 
 chrome.runtime.sendMessage(counts);
     

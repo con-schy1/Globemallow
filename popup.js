@@ -72,6 +72,20 @@ document.getElementById("co2Total").innerHTML = co2Total + "g";
 document.getElementById("kwhTotal").innerHTML = kwhTotal.toPrecision(2);
     
 
+// This is for the Score Diff on Button click. Button stuff
+document.getElementById('sampleVal').innerHTML = x.finalScore;
+            
+document.getElementById('LazyLoadVal').innerHTML = x.LazyLoadMax;
+document.getElementById('emptySrcVal1').innerHTML = x.emptySRCMax;
+document.getElementById('cookieVal').innerHTML = x.cookieMax;
+document.getElementById('redirectVal').innerHTML = x.redirectsax;
+document.getElementById('ssFileVal').innerHTML = x.ssFileMax;
+document.getElementById('intSSsampleVal').innerHTML = x.intSSMax;
+document.getElementById('resVal').innerHTML = x.resMax;
+            
+
+            
+            
 var scoreDiff = 100-x.finalScore;      
 
 switch (x.finalScore >= 0){
@@ -109,7 +123,8 @@ var barColors = [
 
 case x.finalScore >= 67:
 var ctx = document.getElementById('myChart').getContext('2d');
-var yValues = [6 , 4];
+//var yValues = [6 , 4];
+var yValues = [x.finalScore, scoreDiff];
 var barColors = [
   "#ebdc3d",
   "#f2f2f2",
@@ -119,7 +134,8 @@ var barColors = [
         
  case x.finalScore >= 64:
 var ctx = document.getElementById('myChart').getContext('2d');
-var yValues = [5 , 5];
+//var yValues = [5 , 5];
+var yValues = [x.finalScore, scoreDiff];
 var barColors = [
   "#F77616",
   "#f2f2f2",
@@ -129,7 +145,8 @@ var barColors = [
         
 case x.finalScore >= 55:
 var ctx = document.getElementById('myChart').getContext('2d');
-var yValues = [4 , 6];
+//var yValues = [4 , 6];
+var yValues = [x.finalScore, scoreDiff];
 var barColors = [
   "#F77616",
   "#f2f2f2",
@@ -140,7 +157,8 @@ var barColors = [
 
     case x.finalScore >= 50:
 var ctx = document.getElementById('myChart').getContext('2d');
-var yValues = [3 , 7];
+//var yValues = [3 , 7];
+var yValues = [x.finalScore, scoreDiff];
 var barColors = [
   "#ff0d21",
   "#f2f2f2",
@@ -150,7 +168,8 @@ var barColors = [
     
 case x.finalScore >= 40:
 var ctx = document.getElementById('myChart').getContext('2d');
-var yValues = [2 , 8];
+//var yValues = [2 , 8];
+var yValues = [x.finalScore, scoreDiff];
 var barColors = [
   "#ff0d21",
   "#f2f2f2",
@@ -160,7 +179,8 @@ var barColors = [
     
 case x.finalScore < 40:
 var ctx = document.getElementById('myChart').getContext('2d');
-var yValues = [1 , 9];
+//var yValues = [1 , 9];
+var yValues = [x.finalScore, scoreDiff];
 var barColors = [
   "#ff0d21",
   "#f2f2f2",
@@ -479,7 +499,7 @@ switch (lazyLoadChart >= 0){
         document.getElementById("lazyBar").style.width = "170px";
         document.getElementById("lazyBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid green';
-        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
+        //document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 55:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
@@ -487,7 +507,7 @@ switch (lazyLoadChart >= 0){
         document.getElementById("lazyBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid yellow';
         //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
-        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
+//        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 55:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
@@ -495,7 +515,7 @@ switch (lazyLoadChart >= 0){
         document.getElementById("lazyBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid yellow';
         //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
-        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
+//        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 40:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
@@ -503,7 +523,7 @@ switch (lazyLoadChart >= 0){
         document.getElementById("lazyBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid yellow';
         //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
-        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
+//        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 30:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
@@ -511,7 +531,7 @@ switch (lazyLoadChart >= 0){
         document.getElementById("lazyBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid yellow';
         //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
-        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
+//        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 20:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
@@ -519,7 +539,7 @@ switch (lazyLoadChart >= 0){
         document.getElementById("lazyBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("lazyBar").style.border = '1px solid yellow';
         //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
-        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
+//        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 10:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
@@ -527,7 +547,7 @@ switch (lazyLoadChart >= 0){
         document.getElementById("lazyBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("lazyBar").style.border = '1px solid orange';
         //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
-        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
+//        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
     case lazyLoadChart >= 0:
         document.getElementById("lazyBar").innerHTML = x.lazyLoadChart + "%";
@@ -535,7 +555,7 @@ switch (lazyLoadChart >= 0){
         document.getElementById("lazyBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("lazyBar").style.border = '1px solid orange';
         //document.getElementById("mLL").innerHTML = x.LazyLoadMax;
-        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
+//        document.getElementById("m4").innerHTML = "Grade increases to " + x.LazyLoadMax + " if all images were Lazy Loaded";
         break;
 }
 
@@ -1152,35 +1172,35 @@ switch (resImgChart >= 0){
         document.getElementById("resImgBar").style.width = "200px";
         document.getElementById("resImgBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("resImgBar").style.border = '1px solid green';
-         
+        document.getElementById("m4").innerHTML = "Grade increases to " + x.resMax + " if all images were responsive"; 
         break;
     case resImgChart >= 60:
         document.getElementById("resImgBar").innerHTML = resImgChart + "%";
         document.getElementById("resImgBar").style.width = "140px";
         document.getElementById("resImgBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("resImgBar").style.border = '1px solid green';
-         
+        document.getElementById("m4").innerHTML = "Grade increases to " + x.resMax + " if all images were responsive"; 
         break;
     case resImgChart >= 50:
         document.getElementById("resImgBar").innerHTML = resImgChart + "%";
         document.getElementById("resImgBar").style.width = "120px";
         document.getElementById("resImgBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("resImgBar").style.border = '1px solid yellow';
-         
+//        document.getElementById("m4").innerHTML = "Grade increases to " + x.resMax + " if all images were responsive"; 
         break;
     case resImgChart >= 40:
         document.getElementById("resImgBar").innerHTML = resImgChart + "%";
         document.getElementById("resImgBar").style.width = "100px";
         document.getElementById("resImgBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("resImgBar").style.border = '1px solid yellow';
-         
+//        document.getElementById("m4").innerHTML = "Grade increases to " + x.resMax + " if all images were responsive"; 
         break;
     case resImgChart >= 30:
         document.getElementById("resImgBar").innerHTML = resImgChart + "%";
         document.getElementById("resImgBar").style.width = "80px";
         document.getElementById("resImgBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("resImgBar").style.border = '1px solid yellow';
-         
+//        document.getElementById("m4").innerHTML = "Grade increases to " + x.resMax + " if all images were responsive"; 
         break;
     case resImgChart >= 20:
         document.getElementById("resImgBar").innerHTML = resImgChart + "%";
@@ -1194,14 +1214,14 @@ switch (resImgChart >= 0){
         document.getElementById("resImgBar").style.width = "50px";
         document.getElementById("resImgBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("resImgBar").style.border = '1px solid orange';
-         
+//        document.getElementById("m4").innerHTML = "Grade increases to " + x.resMax + " if all images were responsive"; 
         break;
     case resImgChart >= 0:
         document.getElementById("resImgBar").innerHTML = resImgChart + "%";
         document.getElementById("resImgBar").style.width = "30px";
         document.getElementById("resImgBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("resImgBar").style.border = '1px solid orange';
-         
+//        document.getElementById("m4").innerHTML = "Grade increases to " + x.resMax + " if all images were responsive"; 
         break;
 }
             
@@ -1702,65 +1722,6 @@ switch (emptyURL >= 0){
 }
             
             
-/*var analTrack = x.analChart;
-
-switch (analTrack >= 0){
-
-    case analTrack <= 3:
-        document.getElementById("analBar").innerHTML = analTrack;
-        document.getElementById("analBar").style.width = "260px";
-        document.getElementById("analBar").style.background = 'rgba(142, 202, 46, 0.5)';
-        document.getElementById("analBar").style.border = '1px solid green';
-        // 
-        break;
-    case analTrack <= 4:
-        document.getElementById("analBar").innerHTML = analTrack;
-        document.getElementById("analBar").style.width = "240px";
-        document.getElementById("analBar").style.background = 'rgba(142, 202, 46, 0.5)';
-        document.getElementById("analBar").style.border = '1px solid green';
-        break;
-    case analTrack <= 8:
-        document.getElementById("analBar").innerHTML = analTrack;
-        document.getElementById("analBar").style.width = "220px";
-        document.getElementById("analBar").style.background = 'rgba(142, 202, 46, 0.5)';
-        document.getElementById("analBar").style.border = '1px solid green';
-        break;
-    case analTrack <= 12:
-        document.getElementById("analBar").innerHTML = analTrack;
-        document.getElementById("analBar").style.width = "200px";
-        document.getElementById("analBar").style.background = 'rgba(235, 220, 61, 0.5)';
-        document.getElementById("analBar").style.border = '1px solid yellow';
-        // 
-        break;
-    case analTrack <= 16:
-        document.getElementById("analBar").innerHTML = analTrack;
-        document.getElementById("analBar").style.width = "140px";
-        document.getElementById("analBar").style.background = 'rgba(235, 220, 61, 0.5)';
-        document.getElementById("analBar").style.border = '1px solid yellow';
-        // 
-        break;
-    case analTrack <= 20:
-        document.getElementById("analBar").innerHTML = analTrack;
-        document.getElementById("analBar").style.width = "100px";
-        document.getElementById("analBar").style.background = 'rgba(235, 220, 61, 0.5)';
-        document.getElementById("analBar").style.border = '1px solid yellow';
-        // 
-        break;
-    case analTrack <= 23:
-        document.getElementById("analBar").innerHTML = analTrack;
-        document.getElementById("analBar").style.width = "50px";
-        document.getElementById("analBar").style.background = 'rgba(241, 137, 49, .5)';
-        document.getElementById("analBar").style.border = '1px solid orange';
-        // 
-        break;
-    case analTrack >= 24:
-        document.getElementById("analBar").innerHTML = analTrack;
-        document.getElementById("analBar").style.width = "30px";
-        document.getElementById("analBar").style.background = 'rgba(241, 137, 49, .5)';
-        document.getElementById("analBar").style.border = '1px solid orange';
-        // 
-        break;
-}           */
             
             
             
@@ -1851,11 +1812,32 @@ document.getElementById('LLButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Lazy Loaded Images';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'With "lazy loading", files are only loaded when they reach the visible area of the browser window, or shortly before it. Modern browsers allow to insert loading=“lazy“ as an attribute in the img element. Lazy loading is useful because it allows images lower on a page to not be loaded if it\'s not in immediate view.';
-    //var lazyLoadScore = document.getElementById("mLL").innerHTML;
+     /*var lazyLoadScore = document.getElementById("mLL").innerHTML;
 //    document.getElementById("m4").innerHTML = "Grade increases to " + lazyLoadScore + " if all images were Lazy Loaded";
-    document.getElementById("m4").style.display = "block";
+    document.getElementById("m4").style.display = "block";*/
+    var mayYou = document.getElementById('LazyLoadVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + '222222222';
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        //
+    }
+    
+    
 
 }
+
+/*document.getElementById('LazyLoadVal').innerHTML = x.LazyLoadMax;
+document.getElementById('emptySrcVal1').innerHTML = x.emptySRCMax;
+document.getElementById('cookieVal').innerHTML = x.cookieMax;
+document.getElementById('redirectVal').innerHTML = x.redirectsax;
+document.getElementById('ssFileVal').innerHTML = x.ssFileMax;
+document.getElementById('intSSsampleVal').innerHTML = x.intSSMax;
+document.getElementById('resVal').innerHTML = x.resMax;*/
 
 document.getElementById('imgButton').onclick = function(evt) {
 	  
@@ -1882,6 +1864,7 @@ document.getElementById('resImgButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Responsive Images';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'If a site is being loaded on tablet or smart phone it wastes data to load the same image you would on a desktop website. You can save bandwidth and speed up page load times by loading the most appropriate image for the viewer\'s display. Our scan is searching for the HTML \"picture\" tag, and for \"srcset\" when loading an image for different screen dimensions. Responsive web design has changed how websites can be created. Device detection is no longer needed to display separate “mobile” sites whenever the server detects a phone or tablet. Using srcset or picture HTML allow an image to be displayed at the correct dimensions for a user\'s device. If media queries are being used in the CSS to create responisve images you want to make sure that not all images are being downloaded at the same time.';
+//     document.getElementById("m4").style.display = "block";
 }
 
 document.getElementById('intSSButton').onclick = function(evt) {
@@ -1891,8 +1874,22 @@ document.getElementById('intSSButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Internal Style Sheets';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Make sure CSS files are separate from page\’s HTML code. If CSS is in the HMTL body then the code must be sent for each page request- increasing the amount of data sent. If CSS is in separate files, the browser can store them in local cache.';
-    var mayYou = document.getElementById('scoreHTML').innerHTML;
-//    document.getElementById("m4").innerHTML = "Grade increases to " + mayYou + " if all images were Lazy Loaded";
+    
+    var mayYou = document.getElementById('intSSsampleVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + '1111111111';
+        //" if all images were Lazy Loaded";
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        //
+    }
+    
+    
 }
 
 document.getElementById('fileSSButton').onclick = function(evt) {
