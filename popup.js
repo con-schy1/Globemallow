@@ -1802,6 +1802,8 @@ document.getElementById('htmlButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = "Page HTML";
      //document.getElementById('htmlButton').style.background = 'rgba(241, 137, 49, .5)';
     document.getElementById("m2").innerHTML = 'Page HTML counts the number of bytes on your page from HTML code. If it is significantly high- it can signal that there is too much content on your page. Is there any way to reduce the amount of content on this page? Have you considered just loading content on scroll? If content is being loaded beyond what the user is currently seeing, it is as waste of data.';
+    
+    
      
 }
 
@@ -1820,7 +1822,7 @@ document.getElementById('LLButton').onclick = function(evt) {
     var may4You = document.getElementById('sampleVal').innerHTML;
     
     if (may4You !== mayYou){
-        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + '222222222';
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if all images were Lazy Loaded";
         document.getElementById("mLL").style.display = 'block';
     }
     else{
@@ -1830,14 +1832,6 @@ document.getElementById('LLButton').onclick = function(evt) {
     
 
 }
-
-/*document.getElementById('LazyLoadVal').innerHTML = x.LazyLoadMax;
-document.getElementById('emptySrcVal1').innerHTML = x.emptySRCMax;
-document.getElementById('cookieVal').innerHTML = x.cookieMax;
-document.getElementById('redirectVal').innerHTML = x.redirectsax;
-document.getElementById('ssFileVal').innerHTML = x.ssFileMax;
-document.getElementById('intSSsampleVal').innerHTML = x.intSSMax;
-document.getElementById('resVal').innerHTML = x.resMax;*/
 
 document.getElementById('imgButton').onclick = function(evt) {
 	  
@@ -1865,6 +1859,19 @@ document.getElementById('resImgButton').onclick = function(evt) {
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'If a site is being loaded on tablet or smart phone it wastes data to load the same image you would on a desktop website. You can save bandwidth and speed up page load times by loading the most appropriate image for the viewer\'s display. Our scan is searching for the HTML \"picture\" tag, and for \"srcset\" when loading an image for different screen dimensions. Responsive web design has changed how websites can be created. Device detection is no longer needed to display separate “mobile” sites whenever the server detects a phone or tablet. Using srcset or picture HTML allow an image to be displayed at the correct dimensions for a user\'s device. If media queries are being used in the CSS to create responisve images you want to make sure that not all images are being downloaded at the same time.';
 //     document.getElementById("m4").style.display = "block";
+    
+    var mayYou = document.getElementById('resVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if all images were responsive by screen size.";
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        //
+    }
+    
 }
 
 document.getElementById('intSSButton').onclick = function(evt) {
@@ -1881,8 +1888,8 @@ document.getElementById('intSSButton').onclick = function(evt) {
     
     if (may4You !== mayYou){
         
-        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + '1111111111';
-        //" if all images were Lazy Loaded";
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + ' if there were < 3 internal style sheets. ';
+        
         document.getElementById("mLL").style.display = 'block';
     }
     else{
@@ -1899,6 +1906,18 @@ document.getElementById('fileSSButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Number of Style Sheet Files';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Reducing unnecessary files will help with overall page size. Reducing the number of CSS files reduces the number of HTTP requests that are required on page load. Ask yourself, can I just combine my multiple Style Sheets into one?';
+    
+    var mayYou = document.getElementById('ssFileVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if there were < 3 style sheet files.";
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        //
+    }
 }
 
 document.getElementById('pageLoadButton').onclick = function(evt) {
@@ -1953,6 +1972,20 @@ document.getElementById('redirectButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Redirects';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Redirects are an unnecessary use of resources. It causes additional data to be loaded.';
+    
+    var mayYou = document.getElementById('redirectVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + ' ,if there were no redirects.';
+        
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        //
+    }
 }
 
 document.getElementById('cookieButton').onclick = function(evt) {
@@ -1962,6 +1995,21 @@ document.getElementById('cookieButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Number of Cookies';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Cookies are sent with every request, so they can worsen performance (especially for mobile data connections). Are all these cookies on your page necessary? Do you know the specific purpose of each cookie on your page? ';
+    
+    var mayYou = document.getElementById('cookieVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + ' if there were < 4 cookies set on page.';
+        
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        //
+    }
+    
 }
 
 document.getElementById('emptyButton').onclick = function(evt) {
@@ -1971,6 +2019,18 @@ document.getElementById('emptyButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Empty URL Tags';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Having an empty href link is bad practice. Browser will call the directory in which the page is located if SRC Attribute is empty. This results in additional HTTP requests.';
+    
+    var mayYou = document.getElementById('emptySrcVal1').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if there were no empty 'src' tags.";
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        //
+    }
 }
 
 //Sets a default

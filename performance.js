@@ -631,19 +631,19 @@ case answerArray[8] >= .7:
     break;
 case answerArray[8] >= .5:
     finalScore += .3;
-    resWeight = .4;
+    resWeight = .3;
     break;
 case answerArray[8] >= .3:
     finalScore += .2;
-    resWeight = .4;
+    resWeight = .2;
     break;
 case answerArray[8] > 0:
     finalScore += .1;
-    resWeight = .4;
+    resWeight = .1;
     break;
 case answerArray[8] == 0:
     finalScore += 0;
-    resWeight = .4;
+    resWeight = 0;
     break;
 }
     
