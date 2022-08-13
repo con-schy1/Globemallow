@@ -82,8 +82,14 @@ document.getElementById('redirectVal').innerHTML = x.redirectsax;
 document.getElementById('ssFileVal').innerHTML = x.ssFileMax;
 document.getElementById('intSSsampleVal').innerHTML = x.intSSMax;
 document.getElementById('resVal').innerHTML = x.resMax;
+document.getElementById('transVal').innerHTML = x.transMax;
             
-
+document.getElementById('fontVal').innerHTML = x.fontMax;
+document.getElementById('timeVal').innerHTML = x.timeMax;
+document.getElementById('lengthVal').innerHTML = x.lengthMax;
+document.getElementById('imgTypeVal').innerHTML = x.imgTypeMax;
+document.getElementById('jsVal').innerHTML = x.jsMax;
+document.getElementById('sizeVal').innerHTML = x.sizeMax;
             
             
 var scoreDiff = 100-x.finalScore;      
@@ -1794,6 +1800,7 @@ function openButton(){
     
 }
 
+
 /* button clicks calls */
 document.getElementById('htmlButton').onclick = function(evt) {
 
@@ -1803,7 +1810,17 @@ document.getElementById('htmlButton').onclick = function(evt) {
      //document.getElementById('htmlButton').style.background = 'rgba(241, 137, 49, .5)';
     document.getElementById("m2").innerHTML = 'Page HTML counts the number of bytes on your page from HTML code. If it is significantly high- it can signal that there is too much content on your page. Is there any way to reduce the amount of content on this page? Have you considered just loading content on scroll? If content is being loaded beyond what the user is currently seeing, it is as waste of data.';
     
+    var mayYou = document.getElementById('lengthVal').innerHTML;
     
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if page content was simplified.";
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        document.getElementById("mLL").style.display = 'none';
+    }
      
 }
 
@@ -1822,7 +1839,7 @@ document.getElementById('LLButton').onclick = function(evt) {
     var may4You = document.getElementById('sampleVal').innerHTML;
     
     if (may4You !== mayYou){
-        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if all images were Lazy Loaded";
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if > 65% of images were Lazy Loaded";
         document.getElementById("mLL").style.display = 'block';
     }
     else{
@@ -1840,6 +1857,18 @@ document.getElementById('imgButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Image File Formats';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'On most websites, images are the single largest contributors to page weight.The more images you use and the larger those image files, the more data needs to be transferred, increasing the energy that is used. Ask yourself, can my site be using Vector Imagery? Vector images are a cool, clean way to show icons. Could you use a vector graphic (or CSS styling) instead of a photo? The svg format is ideal for simple graphics without a high level of detail, such as icons and geometric representations. Try to do some research on emerging image file formats: WebP and Avif have a greatly reduced amount of data load. Most modern browsers support using the WebP format. It looks great for photographic images, and have a smaller byte size. WebP images typically have about a 30% smaller file size than JPEG. The newer file type AVIF can almost be half the file size of WebP depending on the image.';
+    
+    var mayYou = document.getElementById('imgTypeVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if image types were changed to either svg, webp, or avif.";
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        document.getElementById("mLL").style.display = 'none';
+    }
 }
 
 document.getElementById('importButton').onclick = function(evt) {
@@ -1849,6 +1878,18 @@ document.getElementById('importButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Imported Fonts';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Imported Font Files cause an unnecessary amount of data loading on your page. Try to just use system fonts. If your imported Font file is .TFF it’s a less efficient font file format than .WOFF. Stick to modern web font file formats: WOFF and WOFF2, these use higher compression methods compared to TTF, SVG and OFT file formats. For imported fonts try to only include the characters needed for your website. Some font files will have distiction between styling \(i.e bolding). If styling is not being used, try removing this from the font file.';
+    
+    var mayYou = document.getElementById('fontVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if system fonts were used.";
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        document.getElementById("mLL").style.display = 'none';
+    }
 }
 
 document.getElementById('resImgButton').onclick = function(evt) {
@@ -1865,7 +1906,7 @@ document.getElementById('resImgButton').onclick = function(evt) {
     var may4You = document.getElementById('sampleVal').innerHTML;
     
     if (may4You !== mayYou){
-        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if all images were responsive by screen size.";
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if > 70% of images were responsive by screen size.";
         document.getElementById("mLL").style.display = 'block';
     }
     else{
@@ -1927,6 +1968,19 @@ document.getElementById('pageLoadButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Page Load Time';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Reducing your page load time can improve the energy required to render pages. Decreasing page load time can improve your SEO; which enables users to find the content they\'re looking for- faster. Google Search prioritizes pages with faster page load time. Decreasing load time improves the user experience for users with slower connection speeds.';
+    
+    var mayYou = document.getElementById('timeVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if page load time is decreased.";
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        document.getElementById("mLL").style.display = 'none';
+    }
+    
 }
 
 document.getElementById('pageSizeButton').onclick = function(evt) {
@@ -1936,6 +1990,18 @@ document.getElementById('pageSizeButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Page Size';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Overall page size, is total amount of data required to load the page. This is the amount of data required to load your page for each unique user for the first time. It can also be thought of as the amount of data uploaded to servers.';
+    
+    var mayYou = document.getElementById('sizeVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if overall page size was decreased.";
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        document.getElementById("mLL").style.display = 'none';
+    }
 }
 
 document.getElementById('transferButton').onclick = function(evt) {
@@ -1945,6 +2011,18 @@ document.getElementById('transferButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Transfer Data Size';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Reducing Transfer Data size is largely seen as one of the best ways to make your website more sustainable. Caching reduces the server load and the amount of data transferred, making websites more environmentally friendly. When more data is cached, less is transmitted and fewer server requests, pages are loaded much faster. Analytics and advertising script files can add significant weight, increase CPU usage, and slow websites down. Choose plugins that minimize server load and don’t add unnecessary weight on the front end. If you notice little difference between Total Byte Size, and Transfer Size it might mean that additional data can be cached. Transfer Size is the most heavily weighted metric in your Sustainability Grade. Reducing it will increase your Grade if decreased. If Transfer size is greater than 1MB- it\'s equivalent to 150,000 words in a HTML File. Are your images worth 1,000 words?';
+    
+    var mayYou = document.getElementById('transVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if transfer size was decreased.";
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        document.getElementById("mLL").style.display = 'none';
+    }
 }
 
 document.getElementById('jsButton').onclick = function(evt) {
@@ -1954,6 +2032,20 @@ document.getElementById('jsButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'JS Heap Size';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'JavaScript impacts website efficiency by adding file weight to the web page. Increasing the amount of processing required by your device. JavaScript is processed on the your computer/phone requiring CPU usage, which in turn increases the energy consumption of the device. The amount of javascript having to be executed can isolate users with older devices, or smaller processors.';
+    
+    var mayYou = document.getElementById('jsVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou && mayYou !== 'undefined'){
+        
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + ' if less JavaScript was executed on page.';
+        
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        document.getElementById("mLL").style.display = 'none';
+    }
 }
 
 document.getElementById('hostButton').onclick = function(evt) {

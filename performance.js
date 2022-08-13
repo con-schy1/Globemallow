@@ -408,48 +408,60 @@ var scoreArray = [];
 var finalScore = 0;
 
 // Decoded Body Size
-
+var sizeWeight = 0;
 switch (answerArray[0] >= 0){
 
 case answerArray[0] <= 150000:
     finalScore += 3;
+    sizeWeight = 3;
     break;
 case answerArray[0] <= 600000:
     finalScore += 2.85;
+    sizeWeight = 2.85;
     break;
 case answerArray[0] <= 850000:
     finalScore += 2.65;
+    sizeWeight = 2.65;
     break;
 case answerArray[0] <= 1048576:
     finalScore += 2.45;
+    sizeWeight = 2.45;
     break;
 case answerArray[0] <= 1572864:
     finalScore += 2.2;
+    sizeWeight = 2.2;
     break;
 case answerArray[0] <= 2000000:
     finalScore += 2;
+    sizeWeight = 2;
     break;
 case answerArray[0] <= 2621440:
     finalScore += 1.85;
+    sizeWeight = 1.85;
     break;
 case answerArray[0] <= 3100000:
     finalScore += 1.65;
+    sizeWeight = 1.65;
     break;
 case answerArray[0] <= 3670016:
     finalScore += 1.45;
+    sizeWeight = 1.45;
     break;
 case answerArray[0] <= 5242880:
     finalScore += 1.25;
+    sizeWeight = 1.25;
     break;
 case answerArray[0] > 5242880:
     finalScore += 1;
+    sizeWeight = 1;
     break;
 
 }
 
 
-var LazyLoadWeight = 0;
+
 //Lazy Loaded Image
+var LazyLoadWeight = 0;
 switch (answerArray[1] >= 0){
 
     case answerArray[1] >= .65:
@@ -475,19 +487,24 @@ switch (answerArray[1] >= 0){
 }
 
 //Ratio of SVG Images
+var imgTypeWeight = 0;
 switch (answerArray[2] >= 0){
 
     case answerArray[2] >= .7:
         finalScore += .4;
+        imgTypeWeight = .4;
         break;
     case answerArray[2] >= .5:
         finalScore += .3;
+        imgTypeWeight = .3;
         break;
    case answerArray[2] >= .25:
         finalScore += .2;
+        imgTypeWeight = .2;
         break;
    case answerArray[2] > 0:
         finalScore += .1;
+        imgTypeWeight = .1;
         break;
    case answerArray[2] == 0:
         finalScore += 0;
@@ -496,91 +513,117 @@ switch (answerArray[2] >= 0){
 }
 
 //JS Heapsize
+var jsWeight = 0;
 switch (answerArray[3] >= 0){
 
     case answerArray[3] <= 10000000:
         finalScore += 2;
+        jsWeight = 2;
         break;
     case answerArray[3] <= 15000000:
         finalScore += 1.75;
+        jsWeight = 1.75;
         break;
     case answerArray[3] <= 20000000:
         finalScore += 1.5;
+        jsWeight = 1.5;
         break;
    case answerArray[3] <= 25000000:
         finalScore += 1;
+        jsWeight = 1;
         break;
     case answerArray[3] <= 30000000:
         finalScore += .75;
+        jsWeight = .75;
         break;
    case answerArray[3] <= 40000000:
         finalScore += .5;
+        jsWeight = .5;
         break;
    case answerArray[3] > 40000000:
         finalScore += .25;
+        jsWeight = .25;
         break;
 
 }
 
 //HTML Length of Page
+var lengthWeight = 0;
 switch (answerArray[4] >= 0){
 
     case answerArray[4] <= 250000:
         finalScore += 1;
+        lengthWeight = 1;
         break;
     case answerArray[4] <= 350000:
         finalScore += .85;
+        lengthWeight = .85;
         break;
     case answerArray[4] <= 500000:
         finalScore += .75;
+        lengthWeight = .75;
         break;
     case answerArray[4] <= 750000:
         finalScore += .65;
+        lengthWeight = .65;
         break;
    case answerArray[4] <= 1000000:
         finalScore += .5;
+        lengthWeight = .5;
         break;
    case answerArray[4] <= 4000000:
         finalScore += .25;
+        lengthWeight = .25;
         break;
    case answerArray[4] > 4000000:
         finalScore += .1;
+        lengthWeight = .1;
         break;
 
 }
 
-//Page Loadtime
+//Page Loadtime\
+var timeWeight = 0;
 switch (answerArray[5] >= 0){
 
     case answerArray[5] <= 2:
         finalScore += 2;
+        timeWeight = 2;
         break;
     case answerArray[5] <= 3.5:
         finalScore += 1.75;
+        timeWeight = 1.75;
         break;
     case answerArray[5] <= 5:
         finalScore += 1.5;
+        timeWeight = 1.5;
         break;
    case answerArray[5] <= 6:
         finalScore += 1;
+        timeWeight = 1;
         break;
    case answerArray[5] <= 8:
         finalScore += .75;
+        timeWeight = .75;
         break;
    case answerArray[5] > 8:
         finalScore += .5;
+        timeWeight = .5;
         break;
 
 }
 
 //Imported Fonts
+var fontWeight = 0;
 switch (answerArray[6] >= 0){
 
     case answerArray[6] == 0:
         finalScore += .4;
+        fontWeight = .4;
         break;
     case answerArray[6] == 1:
         finalScore += .1;
+        fontWeight = .1;
         break;
 
 }
@@ -588,35 +631,44 @@ switch (answerArray[6] >= 0){
 
     
 // Transfer Size
-
+var transWeight = 0;
 switch (answerArray[7] >= 0){
 
 case answerArray[7] <= 150000:
     finalScore += 4;
+    transWeight = 4;
     break;
 case answerArray[7] <= 600000:
     finalScore += 3.75;
+    transWeight = 3.75;
     break;
 case answerArray[7] <= 850000:
     finalScore += 3.5;
+    transWeight = 3.5;
     break;
 case answerArray[7] <= 1048576:
     finalScore += 3.25;
+    transWeight = 3.25;
     break;
 case answerArray[7] <= 1572864:
     finalScore += 3;
+    transWeight = 3;
     break;
 case answerArray[7] <= 2621440:
     finalScore += 2.75;
+    transWeight = 2.75;
     break;
 case answerArray[7] <= 3670016:
     finalScore += 2.5;
+    transWeight = 2.5;
     break;
 case answerArray[7] <= 5242880:
     finalScore += 2.25;
+    transWeight = 2.25;
     break;
 case answerArray[7] > 5242880:
     finalScore += 2;
+    transWeight = 2;
     break;
 
 }
@@ -661,7 +713,6 @@ case answerArray[9] <= 5:
     break;
 case answerArray[9] >= 5:
     finalScore += 0;
-    intSSWeight = 0;
     break;
 }
     
@@ -679,7 +730,6 @@ case answerArray[10] <= 5:
     break;
 case answerArray[10] >= 5:
     finalScore += 0;
-    ssFileWeight = 0;
     break;
 }
     
@@ -693,7 +743,6 @@ case answerArray[11] == 0:
     break;
 case answerArray[11] <= 1:
     finalScore += 0;
-    redirectWeight = 0;
     break;
 }
 
@@ -719,7 +768,6 @@ case answerArray[12] <= 15:
     break;
 case answerArray[12] >= 16:
     finalScore += 0;
-    cookieWeight = 0;
     break;
 }
         
@@ -738,7 +786,6 @@ case answerArray[13] <= 4:
     break;
 case answerArray[13] >= 5:
     finalScore += 0;
-    emptySRCWeight = 0;
     break;
 }
 
@@ -765,8 +812,39 @@ var intSSMax = ((((finalScore-intSSWeight)+.2)/14.7)*100).toPrecision(2);
 // Responsive Images
 var resMax = ((((finalScore-resWeight)+.4)/14.7)*100).toPrecision(2);
     
+ // Transfer Size
+var transMax = ((((finalScore-transWeight)+4)/14.7)*100).toPrecision(2);
     
     
+// Imported Fonts
+var fontMax = ((((finalScore-fontWeight)+.4)/14.7)*100).toPrecision(2);
+    
+    
+// Page Load Time
+var timeMax = ((((finalScore-timeWeight)+2)/14.7)*100).toPrecision(2);
+    
+    
+// Length Weight
+var lengthMax = ((((finalScore-lengthWeight)+1)/14.7)*100).toPrecision(2);
+    
+
+// Img Type Weight
+var imgTypeMax = ((((finalScore-imgTypeWeight)+.4)/14.7)*100).toPrecision(2);
+    
+    
+// JS
+var jsMax = ((((finalScore-jsWeight)+2)/14.7)*100).toPrecision(2);
+    
+  
+// Page Size
+var sizeMax = ((((finalScore-sizeWeight)+3)/14.7)*100).toPrecision(2);
+      
+
+
+
+
+
+
 
 finalScore = finalScore/14.7;
 
@@ -871,7 +949,7 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax}
 
 chrome.runtime.sendMessage(counts);
     
