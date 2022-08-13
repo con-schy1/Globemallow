@@ -1929,7 +1929,7 @@ document.getElementById('intSSButton').onclick = function(evt) {
     
     if (may4You !== mayYou){
         
-        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + ' if there were < 3 internal style sheets. ';
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + ' if there were < 3 internal style sheets \(style=). ';
         
         document.getElementById("mLL").style.display = 'block';
     }
@@ -2055,6 +2055,8 @@ document.getElementById('hostButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Green Hosted';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Green Hosted is powered by the Green Web Foundation who defines the dataset as: "the largest dataset in the world of which sites use renewable power." Powering your site with renewables saves energy from energy produced by fossil fuels.';
+    
+    document.getElementById("mLL").style.display = 'none';
 }
 
 document.getElementById('redirectButton').onclick = function(evt) {
