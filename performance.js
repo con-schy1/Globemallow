@@ -582,7 +582,7 @@ switch (answerArray[4] >= 0){
 
 }
 
-//Page Loadtime\
+//Page Loadtime
 var timeWeight = 0;
 switch (answerArray[5] >= 0){
 

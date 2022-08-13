@@ -1796,9 +1796,6 @@ else
 
 //////////////////////////////////////////////////////////////////
 // Info Div Fill on Button Clicks
-function openButton(){
-    
-}
 
 
 /* button clicks calls */
@@ -1839,7 +1836,7 @@ document.getElementById('LLButton').onclick = function(evt) {
     var may4You = document.getElementById('sampleVal').innerHTML;
     
     if (may4You !== mayYou){
-        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if > 65% of images were Lazy Loaded";
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if > 65% of images were lazy loaded";
         document.getElementById("mLL").style.display = 'block';
     }
     else{
@@ -1974,7 +1971,7 @@ document.getElementById('pageLoadButton').onclick = function(evt) {
     var may4You = document.getElementById('sampleVal').innerHTML;
     
     if (may4You !== mayYou){
-        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if page load time is decreased.";
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if page load time is decreased to less than 2 seconds.";
         document.getElementById("mLL").style.display = 'block';
     }
     else{
