@@ -1977,7 +1977,7 @@ document.getElementById('redirectButton').onclick = function(evt) {
     
     var may4You = document.getElementById('sampleVal').innerHTML;
     
-    if (may4You !== mayYou){
+    if (may4You !== mayYou && mayYou !== 'undefined'){
         
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + ' ,if there were no redirects.';
         
