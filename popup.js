@@ -1826,7 +1826,7 @@ document.getElementById('LLButton').onclick = function(evt) {
         document.getElementById("mLL").style.display = 'block';
     }
     else{
-        //
+        document.getElementById("mLL").style.display = 'none';
     }
     
     
@@ -1869,7 +1869,7 @@ document.getElementById('resImgButton').onclick = function(evt) {
         document.getElementById("mLL").style.display = 'block';
     }
     else{
-        //
+        document.getElementById("mLL").style.display = 'none';
     }
     
 }
@@ -1893,7 +1893,7 @@ document.getElementById('intSSButton').onclick = function(evt) {
         document.getElementById("mLL").style.display = 'block';
     }
     else{
-        //
+        document.getElementById("mLL").style.display = 'none';
     }
     
     
@@ -1916,7 +1916,7 @@ document.getElementById('fileSSButton').onclick = function(evt) {
         document.getElementById("mLL").style.display = 'block';
     }
     else{
-        //
+        document.getElementById("mLL").style.display = 'none';
     }
 }
 
@@ -1984,7 +1984,7 @@ document.getElementById('redirectButton').onclick = function(evt) {
         document.getElementById("mLL").style.display = 'block';
     }
     else{
-        //
+        document.getElementById("mLL").style.display = 'none';
     }
 }
 
@@ -2007,7 +2007,7 @@ document.getElementById('cookieButton').onclick = function(evt) {
         document.getElementById("mLL").style.display = 'block';
     }
     else{
-        //
+        document.getElementById("mLL").style.display = 'none';
     }
     
 }
@@ -2029,7 +2029,7 @@ document.getElementById('emptyButton').onclick = function(evt) {
         document.getElementById("mLL").style.display = 'block';
     }
     else{
-        //
+        document.getElementById("mLL").style.display = 'none';
     }
 }
 
