@@ -76,7 +76,7 @@ document.getElementById("kwhTotal").innerHTML = kwhTotal.toPrecision(2);
 document.getElementById('sampleVal').innerHTML = x.finalScore;
             
 document.getElementById('LazyLoadVal').innerHTML = x.LazyLoadMax;
-document.getElementById('emptySrcVal1').innerHTML = x.emptySRCMax;
+document.getElementById('emptySrcVal1').innerHTML = x.emptySrcMax;
 document.getElementById('cookieVal').innerHTML = x.cookieMax;
 document.getElementById('redirectVal').innerHTML = x.redirectsax;
 document.getElementById('ssFileVal').innerHTML = x.ssFileMax;

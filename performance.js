@@ -829,6 +829,7 @@ var lengthK = pagebytesLabel;
 var resImgChart = (answerArray[8]*100);
 //var resImgChart = (answerArray[8]*100).toPrecision(3);
 var analChart = answerArray[14];
+
     
 
 
