@@ -1,7 +1,7 @@
 {
   "name": "Globemallow",
   "description": "Get a sustainability grade calculated for visited websites, and see estimations of the amount of energy & CO2 produced on page load.",
-  "version": "0.0.2.2",
+  "version": "0.0.2.4",
   "manifest_version": 3,
   "action":{
         "default_popup": "popup.html",
