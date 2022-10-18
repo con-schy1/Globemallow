@@ -338,10 +338,6 @@ var cookiesList = document.cookie;
     
     
     
-    
-    
-    
-    
 ////////////////////////////////////////////
 //Amount of Empty URLs
 var emptyURL = document.querySelectorAll('img[src=""]').length + document.querySelectorAll('script[src=""]').length + document.querySelectorAll('link[rel=stylesheet][href=""]').length + document.querySelectorAll('button[href=""]').length + document.querySelectorAll('a[href=""]').length;
@@ -399,7 +395,193 @@ var emptySRCVal = emptySRCArray.toString();
 //console.log(emptySRCVal);
     
 answerArray.push(emptyURL);
+ 
+
     
+    
+////////////////////////////////////////
+////////////////////////////////////////
+//Cached
+try{
+var req = new XMLHttpRequest();
+
+req.open('GET', document.location, false);
+
+req.send(null);
+
+
+var header = req.getResponseHeader("Cache-Control");
+
+console.log(header);
+
+var cfHeader = req.getResponseHeader("cf-cache-status");
+    
+console.log(cfHeader);
+    
+var combined = header + cfHeader + 'far';
+
+//var cacheControlRegex = /(cache-control)/;
+
+var cfCacheControlRegexHit = /(HIT)/;
+
+var cfDynCacheControlRegex = /(DYNAMIC)/;
+
+var maxAgeRegex = /(max-age)/;
+
+var maxAgeString = '';
+
+var cfCacheString = '';
+
+var noCacheRegex = /(no-cache)|(max-age=0)|(no-store)/;
+
+var cfNoCacheRegex = /(BYPASS)|(MISS)/;   
+
+//var maxAgeZero = 'max-age=0';
+
+var maxAgeInt = 0;
+
+var cacheArray = [];
+
+var exactCacheArray = [];
+
+var cfDynVar = '';
+
+var sMaxCacheVal = [];
+
+var sMaxRegex = /(s-maxage)/;
+
+
+     if (combined.match(cfCacheControlRegexHit)){
+         
+         exactCacheArray.push(1);
+        
+    }
+
+    else if (combined.match(sMaxRegex)){
+
+           sMaxCacheVal = header.split(',');
+
+           //console.log(sMaxCacheVal[0]);
+
+           for (var i = 0; i < sMaxCacheVal.length; i++){
+
+                if (sMaxCacheVal[i].match(sMaxRegex)){
+
+                    header = sMaxCacheVal[i].replace('s-maxage=','');
+
+                }
+                else{
+                    //nothing
+                }
+           }
+
+           exactCacheArray.push(3);
+
+        }
+    
+    else if (combined.match(noCacheRegex)){
+
+            exactCacheArray.push(2);
+         }
+
+    else if (combined.match(maxAgeRegex)){
+
+            
+           cacheArray = header.split(',');
+
+          // console.log(sMaxCacheVal[0]);
+
+           for (var i = 0; i < cacheArray.length; i++){
+
+                if (cacheArray[i].match(maxAgeRegex)){
+
+                    header = cacheArray[i].replace('max-age=', '');
+
+                }
+                else{
+                    //nothing
+                }
+           }
+
+            //console.log(header);
+        
+            exactCacheArray.push(3);
+         }
+
+    else if (combined.match(cfDynCacheControlRegex)){
+
+        //cfCacheString = aHeaders[i].replace('cf-cache-status: ', '');
+       // cfCacheString = cfCacheString.replace('\r','');
+
+            exactCacheArray.push(5);
+        
+    }
+
+   else if (combined.match(cfNoCacheRegex)){
+           exactCacheArray.push(4);
+        }
+
+    else {
+        exactCacheArray.push(6);
+    }
+
+
+if (parseInt(header) === 0){
+
+    cacheArray = combined.split(',');
+
+    for (var i = 0; i < cacheArray.length; i++){
+
+                if (cacheArray[i].match(maxAgeRegex)){
+
+                    header = cacheArray[i].replace('max-age=', '');
+
+                }
+                else{
+                    //nothing
+                }
+           }
+
+
+}
+else {
+//
+
+}
+
+switch (exactCacheArray.length > 0){
+  case exactCacheArray.includes(1):
+    console.log('Cloudflare Cache: '+ cfHeader);
+    //console.log('Cloudflare Cache:');
+    break;
+  case exactCacheArray.includes(4):
+    //console.log("No Cloudflare Cache: " + cfCacheString);
+    console.log("No Cloudflare Cache: ");
+    break;
+  case exactCacheArray.includes(5) && exactCacheArray.includes(2):
+    console.log('Dynamic Cloudflare Cache not set up');
+    break;
+  case exactCacheArray.includes(2):
+    //console.log("No Cache: " + cacheArray);
+    console.log("No Cache: ");
+    break;
+  case exactCacheArray.includes(5):
+    //console.log('Cloudflare Dynamic Content Cache: ' + maxAgeInt);
+    console.log('Cloudflare Dynamic Content Cache: ');
+    break;
+  case exactCacheArray.includes(3):
+    console.log("Max Age: "+ parseInt(header));
+    //console.log("Max Age: ");
+    break;
+  case exactCacheArray.includes(6):
+    console.log("None such caching");
+    break;
+}
+}
+catch(e){
+console.log('Script Blocked');
+}
+
     
     
     
