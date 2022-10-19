@@ -582,7 +582,20 @@ catch(e){
 console.log('Script Blocked');
 }
 
+
+/////////////////////////////////////////
+/////////////////////////////////////////
+
     
+//Background Color    
+
+var backGroundColor = window.getComputedStyle( document.body ,null).getPropertyValue('background-color');
+console.log(backGroundColor);
+    
+    
+    
+/////////////////////////////////////////
+/////////////////////////////////////////   
     
     
 /////////////////////
