@@ -1732,77 +1732,77 @@ var cacheNum = x.cacheChart;
 switch (cacheNum >= 0){
 
     case cacheNum >= 31536000:
-        document.getElementById("srcBar").innerHTML = days + "D, " + ;
-        document.getElementById("srcBar").style.width = "240px";
-        document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
-        document.getElementById("srcBar").style.border = '1px solid green';
+        document.getElementById("cacheBar").innerHTML = x.cacheDays + "D, " + x.cacheHours + 'H, ' + x.cacheMinutes + 'M, ' + x.cacheSeconds + ' S';
+        document.getElementById("cacheBar").style.width = "240px";
+        document.getElementById("cacheBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("cacheBar").style.border = '1px solid green';
         document.getElementById('emptySrcDiv').style.display = "none"; 
         break;
     case cacheNum >= 864000:
-        document.getElementById("srcBar").innerHTML = emptyURL;
-        document.getElementById("srcBar").style.width = "230px";
-        document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
-        document.getElementById("srcBar").style.border = '1px solid green';
+        document.getElementById("cacheBar").innerHTML = x.cacheDays + "D, " + x.cacheHours + 'H, ' + x.cacheMinutes + 'M, ' + x.cacheSeconds + ' S';
+        document.getElementById("cacheBar").style.width = "230px";
+        document.getElementById("cacheBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("cacheBar").style.border = '1px solid green';
         document.getElementById("emptySrcDiv").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
         document.getElementById('emptySrcTextA').style.display = "block";
         document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
         break;
     case cacheNum >= 86400:
-        document.getElementById("srcBar").innerHTML = emptyURL;
-        document.getElementById("srcBar").style.width = "220px";
-        document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
-        document.getElementById("srcBar").style.border = '1px solid green';
+        document.getElementById("cacheBar").innerHTML = x.cacheDays + "D, " + x.cacheHours + 'H, ' + x.cacheMinutes + 'M, ' + x.cacheSeconds + ' S';
+        document.getElementById("cacheBar").style.width = "220px";
+        document.getElementById("cacheBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("cacheBar").style.border = '1px solid green';
         document.getElementById("emptySrcDiv").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
         document.getElementById('emptySrcTextA').style.display = "block";
         document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
         break;
     case cacheNum >= 36000:
-        document.getElementById("srcBar").innerHTML = emptyURL;
-        document.getElementById("srcBar").style.width = "200px";
-        document.getElementById("srcBar").style.background = 'rgba(235, 220, 61, 0.5)';
-        document.getElementById("srcBar").style.border = '1px solid yellow';
+        document.getElementById("cacheBar").innerHTML = x.cacheHours + 'H, ' + x.cacheMinutes + 'M, ' + x.cacheSeconds + ' S';
+        document.getElementById("cacheBar").style.width = "200px";
+        document.getElementById("cacheBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("cacheBar").style.border = '1px solid yellow';
         document.getElementById("emptySrcDiv").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
         document.getElementById('emptySrcTextA').style.display = "block";
         document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
         break;
     case cacheNum >= 3600:
-        document.getElementById("srcBar").innerHTML = emptyURL;
-        document.getElementById("srcBar").style.width = "160px";
-        document.getElementById("srcBar").style.background = 'rgba(235, 220, 61, 0.5)';
-        document.getElementById("srcBar").style.border = '1px solid yellow';
+        document.getElementById("cacheBar").innerHTML = x.cacheHours + 'H, ' + x.cacheMinutes + 'M, ' + x.cacheSeconds + ' S';
+        document.getElementById("cacheBar").style.width = "160px";
+        document.getElementById("cacheBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("cacheBar").style.border = '1px solid yellow';
         document.getElementById("emptySrcDiv").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
         document.getElementById('emptySrcTextA').style.display = "block";
         document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
         break;
     case cacheNum >= 600:
-        document.getElementById("srcBar").innerHTML = emptyURL;
-        document.getElementById("srcBar").style.width = "120px";
-        document.getElementById("srcBar").style.background = 'rgba(235, 220, 61, 0.5)';
-        document.getElementById("srcBar").style.border = '1px solid yellow';
+        document.getElementById("cacheBar").innerHTML = x.cacheMinutes + 'M, ' + x.cacheSeconds + ' S';
+        document.getElementById("cacheBar").style.width = "120px";
+        document.getElementById("cacheBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("cacheBar").style.border = '1px solid yellow';
         document.getElementById("emptySrcDiv").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
         document.getElementById('emptySrcTextA').style.display = "block";
         document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
         break;
     case cacheNum >= 300:
-        document.getElementById("srcBar").innerHTML = emptyURL;
-        document.getElementById("srcBar").style.width = "90px";
-        document.getElementById("srcBar").style.background = 'rgba(241, 137, 49, .5)';
-        document.getElementById("srcBar").style.border = '1px solid orange';
+        document.getElementById("cacheBar").innerHTML = x.cacheMinutes + 'M, ' + x.cacheSeconds + ' S';
+        document.getElementById("cacheBar").style.width = "90px";
+        document.getElementById("cacheBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("cacheBar").style.border = '1px solid orange';
         document.getElementById("emptySrcDiv").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
         document.getElementById('emptySrcTextA').style.display = "block";
         document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
         break;
     case cacheNum >= 0:
-        document.getElementById("srcBar").innerHTML = ">10";
-        document.getElementById("srcBar").style.width = "30px";
-        document.getElementById("srcBar").style.background = 'rgba(241, 137, 49, .5)';
-        document.getElementById("srcBar").style.border = '1px solid orange';
+        document.getElementById("cacheBar").innerHTML = x.cacheMinutes + 'M, ' + x.cacheSeconds + ' S';
+        document.getElementById("cacheBar").style.width = "60px";
+        document.getElementById("cacheBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("cacheBar").style.border = '1px solid orange';
         document.getElementById("emptySrcDiv").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
         document.getElementById('emptySrcTextA').style.display = "block";
@@ -1810,26 +1810,6 @@ switch (cacheNum >= 0){
          
         break;
 }            
-            
-            
-            
-            
-            
-/* if (orangeArray.length == 1) {
-  document.getElementById("m1").innerHTML = orangeArray[0];
-} else if (orangeArray.length == 2) {
-  document.getElementById("m1").innerHTML = orangeArray[0];
-  document.getElementById("m2").innerHTML = orangeArray[1];
-} else if (orangeArray.length >= 3) {
-  var orangeLength = orangeArray.length;
-  var orangeRand = getRandomInt(orangeLength)
-  document.getElementById("m1").innerHTML = orangeArray[orangeRand];
-  var orangeRand = Math.abs(orangeRand-1);
-  document.getElementById("m2").innerHTML = orangeArray[orangeRand];
-}
- else{
-     document.getElementById("m1").innerHTML = "No Major Recommendations, good work!";
- }*/
             
         
        }
