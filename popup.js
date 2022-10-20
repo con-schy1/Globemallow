@@ -1727,7 +1727,89 @@ switch (emptyURL >= 0){
         break;
 }
             
-            
+var cacheNum = x.cacheChart;
+
+switch (cacheNum >= 0){
+
+    case cacheNum >= 31536000:
+        document.getElementById("srcBar").innerHTML = days + "D, " + ;
+        document.getElementById("srcBar").style.width = "240px";
+        document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid green';
+        document.getElementById('emptySrcDiv').style.display = "none"; 
+        break;
+    case cacheNum >= 864000:
+        document.getElementById("srcBar").innerHTML = emptyURL;
+        document.getElementById("srcBar").style.width = "230px";
+        document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid green';
+        document.getElementById("emptySrcDiv").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
+        break;
+    case cacheNum >= 86400:
+        document.getElementById("srcBar").innerHTML = emptyURL;
+        document.getElementById("srcBar").style.width = "220px";
+        document.getElementById("srcBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid green';
+        document.getElementById("emptySrcDiv").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
+        break;
+    case cacheNum >= 36000:
+        document.getElementById("srcBar").innerHTML = emptyURL;
+        document.getElementById("srcBar").style.width = "200px";
+        document.getElementById("srcBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid yellow';
+        document.getElementById("emptySrcDiv").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
+        break;
+    case cacheNum >= 3600:
+        document.getElementById("srcBar").innerHTML = emptyURL;
+        document.getElementById("srcBar").style.width = "160px";
+        document.getElementById("srcBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid yellow';
+        document.getElementById("emptySrcDiv").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
+        break;
+    case cacheNum >= 600:
+        document.getElementById("srcBar").innerHTML = emptyURL;
+        document.getElementById("srcBar").style.width = "120px";
+        document.getElementById("srcBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("srcBar").style.border = '1px solid yellow';
+        document.getElementById("emptySrcDiv").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
+        break;
+    case cacheNum >= 300:
+        document.getElementById("srcBar").innerHTML = emptyURL;
+        document.getElementById("srcBar").style.width = "90px";
+        document.getElementById("srcBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("srcBar").style.border = '1px solid orange';
+        document.getElementById("emptySrcDiv").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
+        break;
+    case cacheNum >= 0:
+        document.getElementById("srcBar").innerHTML = ">10";
+        document.getElementById("srcBar").style.width = "30px";
+        document.getElementById("srcBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("srcBar").style.border = '1px solid orange';
+        document.getElementById("emptySrcDiv").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
+        document.getElementById('emptySrcTextA').style.display = "block";
+        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
+         
+        break;
+}            
             
             
             

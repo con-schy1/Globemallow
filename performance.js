@@ -28,13 +28,13 @@ var arrayLabel = [' bytes','kb','mb','gb'];
 var sizeLabel = '';
 
  if (decodedSize/1024/1024/1024 > 1){
- sizeLabel = (((decodedSize/1024/1024/1024).toPrecision(3)).toString() + arrayLabel[3]);
+ sizeLabel = (((decodedSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
  } else if (decodedSize/1024/1024 > 1){
- sizeLabel = (((decodedSize/1024/1024).toPrecision(3)).toString() + arrayLabel[2]);
+ sizeLabel = (((decodedSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (decodedSize/1024 > 1){
- sizeLabel = (((decodedSize/1024).toPrecision(3)).toString() + arrayLabel[1]);
+ sizeLabel = (((decodedSize/1024).toFixed(2)).toString() + arrayLabel[1]);
  } else if (decodedSize > 1){
- sizeLabel = (((decodedSize).toPrecision(3)).toString() + arrayLabel[0]);
+ sizeLabel = (((decodedSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
      sizeLabel = (decodedSize).toString() + arrayLabel[0];
@@ -48,7 +48,7 @@ answerArray.push(parseFloat(decodedSize));
 var xArray = [];
 var imgNotLLArray = [];
 var imgCount = document.getElementsByTagName("img");
-let x1 = document.querySelector('body').outerHTML;
+let x1 = document.querySelector('html').outerHTML;
 var regEX = /(loading="lazy")|(class="lozad")/;
 var result = "";
 
@@ -223,13 +223,13 @@ answerArray.push(transferSize1);
 var transferLabel = 0;
     
  if (transferSize1/1024/1024/1024 > 1){
- transferLabel = (((transferSize1/1024/1024/1024).toPrecision(3)).toString() + arrayLabel[3]);
+ transferLabel = (((transferSize1/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
  } else if (transferSize1/1024/1024 > 1){
- transferLabel = (((transferSize1/1024/1024).toPrecision(3)).toString() + arrayLabel[2]);
+ transferLabel = (((transferSize1/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (transferSize1/1024 > 1){
- transferLabel = (((transferSize1/1024).toPrecision(3)).toString() + arrayLabel[1]);
+ transferLabel = (((transferSize1/1024).toFixed(2)).toString() + arrayLabel[1]);
  } else if (transferSize1 > 1){
- transferLabel = (((transferSize1).toPrecision(3)).toString() + arrayLabel[0]);
+ transferLabel = (((transferSize1).toFixed(2)).toString() + arrayLabel[0]);
  }
    else{
      transferLabel = (transferSize1).toString() + arrayLabel[0];
@@ -238,7 +238,7 @@ var transferLabel = 0;
 /*console.log(transferResources);
 console.log(largeTransSrc);*/
     
-//if you see that issue 3.34xe1 it's from the toPrecision rounding it off
+//if you see that issue 3.34xe1 it's from the toPrecision rounding it off - 10/19/22 changed to toFixed
 
 ////////////////////////////////////////////////////
 
@@ -409,7 +409,6 @@ req.open('GET', document.location, false);
 
 req.send(null);
 
-
 var header = req.getResponseHeader("Cache-Control");
 
 console.log(header);
@@ -419,8 +418,6 @@ var cfHeader = req.getResponseHeader("cf-cache-status");
 console.log(cfHeader);
     
 var combined = header + cfHeader + 'far';
-
-//var cacheControlRegex = /(cache-control)/;
 
 var cfCacheControlRegexHit = /(HIT)/;
 
@@ -436,8 +433,6 @@ var noCacheRegex = /(no-cache)|(max-age=0)|(no-store)/;
 
 var cfNoCacheRegex = /(BYPASS)|(MISS)/;   
 
-//var maxAgeZero = 'max-age=0';
-
 var maxAgeInt = 0;
 
 var cacheArray = [];
@@ -449,6 +444,8 @@ var cfDynVar = '';
 var sMaxCacheVal = [];
 
 var sMaxRegex = /(s-maxage)/;
+
+var cacheScore = 0;
 
 
      if (combined.match(cfCacheControlRegexHit)){
@@ -548,39 +545,66 @@ else {
 //
 
 }
-
+var cacheTime = 0;
 switch (exactCacheArray.length > 0){
   case exactCacheArray.includes(1):
     console.log('Cloudflare Cache: '+ cfHeader);
-    //console.log('Cloudflare Cache:');
+    cacheScore = 31536000;
+    answerArray.push(cacheScore);
     break;
   case exactCacheArray.includes(4):
     //console.log("No Cloudflare Cache: " + cfCacheString);
     console.log("No Cloudflare Cache: ");
+    cacheScore = 0;
+    answerArray.push(cacheScore);
     break;
   case exactCacheArray.includes(5) && exactCacheArray.includes(2):
     console.log('Dynamic Cloudflare Cache not set up');
+    cacheScore = 0;
+    answerArray.push(cacheScore);
     break;
   case exactCacheArray.includes(2):
-    //console.log("No Cache: " + cacheArray);
+    cacheScore = 0;
+    answerArray.push(cacheScore);
     console.log("No Cache: ");
     break;
   case exactCacheArray.includes(5):
-    //console.log('Cloudflare Dynamic Content Cache: ' + maxAgeInt);
+    cacheScore = 31536000;
+    answerArray.push(cacheScore);
     console.log('Cloudflare Dynamic Content Cache: ');
     break;
   case exactCacheArray.includes(3):
     console.log("Max Age: "+ parseInt(header));
-    //console.log("Max Age: ");
+    cacheScore = parseInt(header);
+    var cacheTime = cacheScore;   
+    answerArray.push(cacheScore);
     break;
   case exactCacheArray.includes(6):
     console.log("None such caching");
+    cacheScore = 0;
+    answerArray.push(cacheScore);
     break;
 }
 }
 catch(e){
+cacheScore = .5;
+answerArray.push(cacheScore);
 console.log('Script Blocked');
 }
+    
+    
+    
+var seconds = 1;
+var minute = 60;
+var hour= 3600;
+var day = 86400;
+
+var cacheDays = Math.floor(cacheTime / day);
+var cacheHours = Math.floor((cacheTime-(day*cacheDays)) / hour);
+var cacheMinutes = Math.floor((cacheTime-((cacheDays*day)+(cacheHours*hour)))/minute);
+var cacheSeconds = Math.floor((cacheTime-((cacheDays*day)+(cacheHours*hour)+(cacheMinutes*minute)))/seconds);
+
+console.log('Days: '+ cacheDays + ' ,Hours : ' + cacheHours + ' , Minutes: ' + cacheMinutes +  ' ,Seconds: ' + cacheSeconds);
 
 
 /////////////////////////////////////////
@@ -823,8 +847,7 @@ switch (answerArray[6] >= 0){
 
 }
     
-
-    
+  
 // Transfer Size
 var transWeight = 0;
 switch (answerArray[7] >= 0){
@@ -983,79 +1006,112 @@ case answerArray[13] >= 5:
     finalScore += 0;
     break;
 }
+    
+    
+    
+ // Cache Max Age
+var cacheWeight = 0;
+switch (answerArray[14] >= 0){
+
+case answerArray[14] >= 31536000:
+    finalScore += .4;
+    cacheWeight = .4;
+    break;
+case answerArray[14] >= 86400:
+    finalScore += .35;
+    cacheWeight = .35;
+    break;
+case answerArray[14] >= 3600:
+    finalScore += .25;
+    cacheWeight = .25;
+    break;
+case answerArray[14] >= 600:
+    finalScore += .15;
+    cacheWeight = .15;
+    break;
+case answerArray[14] >= 1:
+    finalScore += .1;
+    cacheWeight = .1;
+    break;
+case answerArray[14] == .5:
+    finalScore += .4;
+    cacheWeight = .4;
+    break;
+}
 
 //////////////////////////////////////
 //Metric Weight Calc
 // Lazy Load
 //var LazyLoadMax = ((((finalScore-LazyLoadWeight)+.4)/14.7)*100).toPrecision(2);
-var LazyLoadMax = Math.round((((finalScore-LazyLoadWeight)+.4)/14.7)*100);
+var LazyLoadMax = Math.round((((finalScore-LazyLoadWeight)+.4)/15.1)*100);
     
 //Empty Src Tags
 //var emptySrcMax = ((((finalScore-emptySRCWeight)+.2)/14.7)*100).toPrecision(2);
-var emptySrcMax = Math.round((((finalScore-emptySRCWeight)+.2)/14.7)*100);    
+var emptySrcMax = Math.round((((finalScore-emptySRCWeight)+.2)/15.1)*100);    
 
 // Cookies
 //var cookieMax = ((((finalScore-cookieWeight)+.4)/14.7)*100).toPrecision(2);
-var cookieMax = Math.round((((finalScore-cookieWeight)+.4)/14.7)*100);    
+var cookieMax = Math.round((((finalScore-cookieWeight)+.4)/15.1)*100);    
     
 // Redirects   
 //var redirectMax = ((((finalScore-redirectWeight)+.1)/14.7)*100).toPrecision(2); 
-var redirectMax = Math.round((((finalScore-redirectWeight)+.1)/14.7)*100);     
+var redirectMax = Math.round((((finalScore-redirectWeight)+.1)/15.1)*100);     
     
 // Style Sheet Files   
 //var ssFileMax = ((((finalScore-ssFileWeight)+.2)/14.7)*100).toPrecision(2); 
-var ssFileMax = Math.round((((finalScore-ssFileWeight)+.2)/14.7)*100);    
+var ssFileMax = Math.round((((finalScore-ssFileWeight)+.2)/15.1)*100);    
     
 // Internal Style Sheet   
 //var intSSMax = ((((finalScore-intSSWeight)+.2)/14.7)*100).toPrecision(2);
-var intSSMax = Math.round((((finalScore-intSSWeight)+.2)/14.7)*100);    
+var intSSMax = Math.round((((finalScore-intSSWeight)+.2)/15.1)*100);    
     
 // Responsive Images
 //var resMax = ((((finalScore-resWeight)+.4)/14.7)*100).toPrecision(2);
-var resMax = Math.round((((finalScore-resWeight)+.4)/14.7)*100);
+var resMax = Math.round((((finalScore-resWeight)+.4)/15.1)*100);
     
     
  // Transfer Size
 //var transMax = ((((finalScore-transWeight)+4)/14.7)*100).toPrecision(2);
-var transMax = Math.round((((finalScore-transWeight)+4)/14.7)*100);
+var transMax = Math.round((((finalScore-transWeight)+4)/15.1)*100);
     
     
 // Imported Fonts
 //var fontMax = ((((finalScore-fontWeight)+.4)/14.7)*100).toPrecision(2);
-var fontMax = Math.round((((finalScore-fontWeight)+.4)/14.7)*100);  
+var fontMax = Math.round((((finalScore-fontWeight)+.4)/15.1)*100);  
     
     
 // Page Load Time
 //var timeMax = ((((finalScore-timeWeight)+2)/14.7)*100).toPrecision(2);
-var timeMax = Math.round((((finalScore-timeWeight)+2)/14.7)*100); 
+var timeMax = Math.round((((finalScore-timeWeight)+2)/15.1)*100); 
     
     
 // Length Weight
 //var lengthMax = ((((finalScore-lengthWeight)+1)/14.7)*100).toPrecision(2);
-var lengthMax = Math.round((((finalScore-lengthWeight)+1)/14.7)*100);
+var lengthMax = Math.round((((finalScore-lengthWeight)+1)/15.1)*100);
     
 
 // Img Type Weight
 //var imgTypeMax = ((((finalScore-imgTypeWeight)+.4)/14.7)*100).toPrecision(2);
-var imgTypeMax = Math.round((((finalScore-imgTypeWeight)+.4)/14.7)*100); 
+var imgTypeMax = Math.round((((finalScore-imgTypeWeight)+.4)/15.1)*100); 
     
     
 // JS
 //var jsMax = ((((finalScore-jsWeight)+2)/14.7)*100).toPrecision(2);
-var jsMax = Math.round((((finalScore-jsWeight)+2)/14.7)*100);    
+var jsMax = Math.round((((finalScore-jsWeight)+2)/15.1)*100);    
     
   
 // Page Size
 //var sizeMax = ((((finalScore-sizeWeight)+3)/14.7)*100).toPrecision(2);
-var sizeMax = Math.round((((finalScore-sizeWeight)+3)/14.7)*100);     
+var sizeMax = Math.round((((finalScore-sizeWeight)+3)/15.1)*100);     
+
+cacheWeight
+// Caching
+var cacheMax = Math.round((((finalScore-cacheWeight)+.4)/15.1)*100); 
 
 
 
 
-
-
-
-finalScore = finalScore/14.7;
+finalScore = finalScore/15.1;
 
 finalScore = Math.round(finalScore*100)
 
@@ -1115,7 +1171,7 @@ var transferSizeChart = answerArray[7];
 var lengthK = pagebytesLabel;
 var resImgChart = (answerArray[8]*100);
 //var resImgChart = (answerArray[8]*100).toPrecision(3);
-var analChart = answerArray[14];
+var cacheChart = answerArray[14];
 
     
 
@@ -1158,7 +1214,7 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, seconds, minute, hour, day}
 
 chrome.runtime.sendMessage(counts);
     
