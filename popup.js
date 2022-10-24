@@ -90,6 +90,7 @@ document.getElementById('lengthVal').innerHTML = x.lengthMax;
 document.getElementById('imgTypeVal').innerHTML = x.imgTypeMax;
 document.getElementById('jsVal').innerHTML = x.jsMax;
 document.getElementById('sizeVal').innerHTML = x.sizeMax;
+document.getElementById('cacheVal').innerHTML = x.cacheMax;
             
             
 var scoreDiff = 100-x.finalScore;      
@@ -2229,6 +2230,27 @@ document.getElementById('emptyButton').onclick = function(evt) {
     
     if (may4You !== mayYou){
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if there were no empty 'src' tags.";
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        document.getElementById("mLL").style.display = 'none';
+    }
+}
+
+document.getElementById('cacheButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'cacheButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Browser Cache Set Time';
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'HTTP caching can speed up your page load time on repeat visits. Caching is great for sustainability since it prevents browsers from requesting all resources every time. A longer cache duration is not always better. Ultimately, it\'s up to you to decide what the optimal cache duration is for your resources.';
+    
+    var mayYou = document.getElementById('cacheVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if cache time is > 365 days.";
         document.getElementById("mLL").style.display = 'block';
     }
     else{
