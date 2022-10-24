@@ -549,19 +549,19 @@ var cacheTime = 0;
 switch (exactCacheArray.length > 0){
   case exactCacheArray.includes(1):
     console.log('Cloudflare Cache: '+ cfHeader);
-    cacheScore = 31536000;
-    answerArray.push(cacheScore);
+    cacheScore = .1;
+    answerArray.push(31536000);
     break;
   case exactCacheArray.includes(4):
     //console.log("No Cloudflare Cache: " + cfCacheString);
     console.log("No Cloudflare Cache: ");
-    cacheScore = 0;
-    answerArray.push(cacheScore);
+    cacheScore = .2;
+    answerArray.push(0);
     break;
   case exactCacheArray.includes(5) && exactCacheArray.includes(2):
     console.log('Dynamic Cloudflare Cache not set up');
-    cacheScore = 0;
-    answerArray.push(cacheScore);
+    cacheScore = .3;
+    answerArray.push(0);
     break;
   case exactCacheArray.includes(2):
     cacheScore = 0;
@@ -569,8 +569,8 @@ switch (exactCacheArray.length > 0){
     console.log("No Cache: ");
     break;
   case exactCacheArray.includes(5):
-    cacheScore = 31536000;
-    answerArray.push(cacheScore);
+    cacheScore = .4;
+    answerArray.push(31536000);
     console.log('Cloudflare Dynamic Content Cache: ');
     break;
   case exactCacheArray.includes(3):
@@ -588,12 +588,11 @@ switch (exactCacheArray.length > 0){
 }
 catch(e){
 cacheScore = .5;
-answerArray.push(cacheScore);
+answerArray.push(31536000);
 console.log('Script Blocked');
 }
     
-    
-    
+       
 var seconds = 1;
 var minute = 60;
 var hour= 3600;
@@ -606,6 +605,11 @@ var cacheSeconds = Math.floor((cacheTime-((cacheDays*day)+(cacheHours*hour)+(cac
 
 console.log('Days: '+ cacheDays + ' ,Hours : ' + cacheHours + ' , Minutes: ' + cacheMinutes +  ' ,Seconds: ' + cacheSeconds);
 
+    
+    
+    
+    
+    
 
 /////////////////////////////////////////
 /////////////////////////////////////////
