@@ -1154,11 +1154,13 @@ case 'white':
     break;
 case 'blue':
     finalScore += .5;
-    colorWeight = .5;
+    colorWeight = .05;
     break;
 }
     
 var maxScore = 15.3;
+
+
 
 //////////////////////////////////////
 //Metric Weight Calc
@@ -1237,9 +1239,7 @@ var colorMax = Math.round((((finalScore-colorWeight)+.2)/maxScore)*100);
 
 
 finalScore = finalScore/maxScore;
-
 finalScore = Math.round(finalScore*100)
-
 var finalGrade = "";
 
 switch (finalScore >= 0){
@@ -1340,7 +1340,7 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax}
 
 chrome.runtime.sendMessage(counts);
     

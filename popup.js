@@ -91,7 +91,7 @@ document.getElementById('imgTypeVal').innerHTML = x.imgTypeMax;
 document.getElementById('jsVal').innerHTML = x.jsMax;
 document.getElementById('sizeVal').innerHTML = x.sizeMax;
 document.getElementById('cacheVal').innerHTML = x.cacheMax;
-document.getElementById('colorVal').innerHTML = x.colorScore;
+document.getElementById('colorVal').innerHTML = x.colorMax;
             
             
 var scoreDiff = 100-x.finalScore;      
@@ -1849,6 +1849,7 @@ switch (colorScore){
         document.getElementById("colorBar").innerHTML = colorScore;
         document.getElementById("colorBar").style.width = "200px";
         document.getElementById("colorBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("cacheBar").style.border = '1px solid yellow';
         break;
     case 'blue':
         document.getElementById("colorBar").innerHTML = colorScore;
@@ -2273,9 +2274,9 @@ document.getElementById('colorButton').onclick = function(evt) {
 	  
 	 localStorage.setItem('selectedButtonId1', 'colorButton'); 
 	 //openButton(evt,'Example2Div');
-     document.getElementById("m1").innerHTML = 'Website Background Color;
+     document.getElementById("m1").innerHTML = 'Website Background Color';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
-     document.getElementById("m2").innerHTML = 'HTTP caching can speed up your page load time on repeat visits. Caching is great for sustainability since it prevents browsers from requesting all resources every time. A longer cache duration is not always better. Ultimately, it\'s up to you to decide what the optimal cache duration is for your resources.';
+     document.getElementById("m2").innerHTML = 'What is clear from the findings is that colour choices overall can play a key role in making websites, apps and other digital tools more or less sustainable, based on their energy usage.';
     
     var mayYou = document.getElementById('colorVal').innerHTML;
     
