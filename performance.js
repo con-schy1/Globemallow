@@ -681,7 +681,7 @@ else if (backGroundColor.match(rgbMatch)){
         colorScore = 'white';
 
     }
-    else if (subComColor <= 25){
+    else if (subComColor <= 30){
         colorScore = 'black/grey';
 
     }
@@ -1152,7 +1152,7 @@ case 'white':
     colorWeight = .10;
     break;
 case 'blue':
-    finalScore += .5;
+    finalScore += .05;
     colorWeight = .05;
     break;
 }
