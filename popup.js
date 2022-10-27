@@ -2348,7 +2348,7 @@ document.getElementById('colorButton').onclick = function(evt) {
 	 //openButton(evt,'Example2Div');
      document.getElementById("m1").innerHTML = 'Website Background Color';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
-     document.getElementById("m2").innerHTML = 'Color choices play a role in making websites and other digital tools more or less energy efficient.A study conducted by Google showed: White: uses nearly 20% more power than blue. Blue uses 25% more power than Green or Red. Green and red use a very similar amount of power as one another. Black will use the least amount of power on OLED screens';
+     document.getElementById("m2").innerHTML = 'Color choices play a role in making websites and other digital tools more or less energy efficient. A study conducted by Google showed: White: uses nearly 20% more power than blue. Blue uses 25% more power than Green or Red. Green and red use a very similar amount of power as one another. Black will use the least amount of power on OLED screens. An easy way to increase your grade is to allow users a \'night mode\' that allows them to toggle between a white and black screen.';
   
     
     document.getElementById("colorSquare").style.display = 'block';

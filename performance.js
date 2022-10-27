@@ -412,11 +412,11 @@ req.send(null);
 
 var header = req.getResponseHeader("Cache-Control");
 
-console.log(header);
+//console.log(header);
 
 var cfHeader = req.getResponseHeader("cf-cache-status");
     
-console.log(cfHeader);
+//console.log(cfHeader);
     
 var combined = header + cfHeader + 'far';
 
@@ -549,39 +549,39 @@ else {
 var cacheTime = 0;
 switch (exactCacheArray.length > 0){
   case exactCacheArray.includes(1):
-    console.log('Cloudflare Cache: '+ cfHeader);
+    //console.log('Cloudflare Cache: '+ cfHeader);
     cacheScore = .1;
     answerArray.push(31536000);
     break;
   case exactCacheArray.includes(4):
     //console.log("No Cloudflare Cache: " + cfCacheString);
-    console.log("No Cloudflare Cache: ");
+    //console.log("No Cloudflare Cache: ");
     cacheScore = .2;
     answerArray.push(0);
     break;
   case exactCacheArray.includes(5) && exactCacheArray.includes(2):
-    console.log('Dynamic Cloudflare Cache not set up');
+    //console.log('Dynamic Cloudflare Cache not set up');
     cacheScore = .3;
     answerArray.push(0);
     break;
   case exactCacheArray.includes(2):
     cacheScore = 0;
     answerArray.push(cacheScore);
-    console.log("No Cache: ");
+    //console.log("No Cache: ");
     break;
   case exactCacheArray.includes(5):
     cacheScore = .4;
     answerArray.push(31536000);
-    console.log('Cloudflare Dynamic Content Cache: ');
+    //console.log('Cloudflare Dynamic Content Cache: ');
     break;
   case exactCacheArray.includes(3):
-    console.log("Max Age: "+ parseInt(header));
+    //console.log("Max Age: "+ parseInt(header));
     cacheScore = parseInt(header);
     var cacheTime = cacheScore;   
     answerArray.push(cacheScore);
     break;
   case exactCacheArray.includes(6):
-    console.log("None such caching");
+    //console.log("None such caching");
     cacheScore = 0;
     answerArray.push(cacheScore);
     break;
@@ -590,7 +590,7 @@ switch (exactCacheArray.length > 0){
 catch(e){
 cacheScore = .5;
 answerArray.push(31536000);
-console.log('Script Blocked');
+//console.log('Script Blocked');
 }
     
        
@@ -604,7 +604,7 @@ var cacheHours = Math.floor((cacheTime-(day*cacheDays)) / hour);
 var cacheMinutes = Math.floor((cacheTime-((cacheDays*day)+(cacheHours*hour)))/minute);
 var cacheSeconds = Math.floor((cacheTime-((cacheDays*day)+(cacheHours*hour)+(cacheMinutes*minute)))/seconds);
 
-console.log('Days: '+ cacheDays + ' ,Hours : ' + cacheHours + ' , Minutes: ' + cacheMinutes +  ' ,Seconds: ' + cacheSeconds);
+//console.log('Days: '+ cacheDays + ' ,Hours : ' + cacheHours + ' , Minutes: ' + cacheMinutes +  ' ,Seconds: ' + cacheSeconds);
 
     
     
