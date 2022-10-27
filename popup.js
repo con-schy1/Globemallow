@@ -92,6 +92,7 @@ document.getElementById('jsVal').innerHTML = x.jsMax;
 document.getElementById('sizeVal').innerHTML = x.sizeMax;
 document.getElementById('cacheVal').innerHTML = x.cacheMax;
 document.getElementById('colorVal').innerHTML = x.colorMax;
+document.getElementById('backGrndVal').innerHTML = x.backGroundColor;
             
             
 var scoreDiff = 100-x.finalScore;      
@@ -1936,6 +1937,10 @@ document.getElementById('htmlButton').onclick = function(evt) {
     
     var may4You = document.getElementById('sampleVal').innerHTML;
     
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
+    
     if (may4You !== mayYou){
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if page content was simplified.";
         document.getElementById("mLL").style.display = 'block';
@@ -1959,6 +1964,10 @@ document.getElementById('LLButton').onclick = function(evt) {
     var mayYou = document.getElementById('LazyLoadVal').innerHTML;
     
     var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
     
     if (may4You !== mayYou){
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if > 65% of images were lazy loaded";
@@ -1984,6 +1993,10 @@ document.getElementById('imgButton').onclick = function(evt) {
     
     var may4You = document.getElementById('sampleVal').innerHTML;
     
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
+    
     if (may4You !== mayYou){
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if image types were changed to either svg, webp, or avif.";
         document.getElementById("mLL").style.display = 'block';
@@ -2004,6 +2017,10 @@ document.getElementById('importButton').onclick = function(evt) {
     var mayYou = document.getElementById('fontVal').innerHTML;
     
     var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
     
     if (may4You !== mayYou){
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if system fonts were used.";
@@ -2027,6 +2044,10 @@ document.getElementById('resImgButton').onclick = function(evt) {
     
     var may4You = document.getElementById('sampleVal').innerHTML;
     
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
+    
     if (may4You !== mayYou){
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if > 70% of images were responsive by screen size.";
         document.getElementById("mLL").style.display = 'block';
@@ -2048,6 +2069,10 @@ document.getElementById('intSSButton').onclick = function(evt) {
     var mayYou = document.getElementById('intSSsampleVal').innerHTML;
     
     var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
     
     if (may4You !== mayYou){
         
@@ -2074,6 +2099,10 @@ document.getElementById('fileSSButton').onclick = function(evt) {
     
     var may4You = document.getElementById('sampleVal').innerHTML;
     
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
+    
     if (may4You !== mayYou){
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if there were < 3 style sheet files.";
         document.getElementById("mLL").style.display = 'block';
@@ -2094,6 +2123,10 @@ document.getElementById('pageLoadButton').onclick = function(evt) {
     var mayYou = document.getElementById('timeVal').innerHTML;
     
     var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
     
     if (may4You !== mayYou){
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if page load time is decreased to less than 2 seconds.";
@@ -2117,6 +2150,10 @@ document.getElementById('pageSizeButton').onclick = function(evt) {
     
     var may4You = document.getElementById('sampleVal').innerHTML;
     
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
+    
     if (may4You !== mayYou){
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if overall page size was decreased.";
         document.getElementById("mLL").style.display = 'block';
@@ -2137,6 +2174,10 @@ document.getElementById('transferButton').onclick = function(evt) {
     var mayYou = document.getElementById('transVal').innerHTML;
     
     var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
     
     if (may4You !== mayYou){
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if transfer size was decreased.";
@@ -2159,6 +2200,10 @@ document.getElementById('jsButton').onclick = function(evt) {
     
     var may4You = document.getElementById('sampleVal').innerHTML;
     
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
+    
     if (may4You !== mayYou && mayYou !== 'undefined'){
         
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + ' if less JavaScript was executed on page.';
@@ -2179,6 +2224,10 @@ document.getElementById('hostButton').onclick = function(evt) {
      document.getElementById("m2").innerHTML = 'Green Hosted is powered by the Green Web Foundation who defines the dataset as: "the largest dataset in the world of which sites use renewable power." Powering your site with renewables saves energy from energy produced by fossil fuels.';
     
     document.getElementById("mLL").style.display = 'none';
+    
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
 }
 
 document.getElementById('redirectButton').onclick = function(evt) {
@@ -2188,6 +2237,10 @@ document.getElementById('redirectButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Redirects';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Redirects are an unnecessary use of resources. It causes additional data to be loaded.';
+    
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
     
     var mayYou = document.getElementById('redirectVal').innerHTML;
     
@@ -2212,6 +2265,10 @@ document.getElementById('cookieButton').onclick = function(evt) {
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Cookies are sent with every request, so they can worsen performance (especially for mobile data connections). Are all these cookies on your page necessary? Do you know the specific purpose of each cookie on your page? ';
     
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
+    
     var mayYou = document.getElementById('cookieVal').innerHTML;
     
     var may4You = document.getElementById('sampleVal').innerHTML;
@@ -2235,6 +2292,10 @@ document.getElementById('emptyButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Empty URL Tags';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'Having an empty href link is bad practice. Browser will call the directory in which the page is located if SRC Attribute is empty. This results in additional HTTP requests.';
+    
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
     
     var mayYou = document.getElementById('emptySrcVal1').innerHTML;
     
@@ -2261,6 +2322,10 @@ document.getElementById('cacheButton').onclick = function(evt) {
     
     var may4You = document.getElementById('sampleVal').innerHTML;
     
+    document.getElementById("colorSquare").style.display = 'none';
+    document.getElementById("colorSquare").style.width = "0px";
+    document.getElementById("colorSquare").style.height = "0px";
+    
     if (may4You !== mayYou){
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if cache time is > 365 days.";
         document.getElementById("mLL").style.display = 'block';
@@ -2277,6 +2342,14 @@ document.getElementById('colorButton').onclick = function(evt) {
      document.getElementById("m1").innerHTML = 'Website Background Color';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
      document.getElementById("m2").innerHTML = 'What is clear from the findings is that colour choices overall can play a key role in making websites, apps and other digital tools more or less sustainable, based on their energy usage.';
+  
+    
+    document.getElementById("colorSquare").style.display = 'block';
+    document.getElementById("colorSquare").style.width = "30px";
+     document.getElementById("colorSquare").style.height = "20px";
+
+    var bkgrnCol = document.getElementById('backGrndVal').innerHTML;
+    document.getElementById("colorSquare").style.background = bkgrnCol;
     
     var mayYou = document.getElementById('colorVal').innerHTML;
     

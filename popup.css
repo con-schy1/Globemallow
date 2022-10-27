@@ -389,6 +389,13 @@ table .row{
   border-left: 1px solid gray;  
 }
 
+#colorSquare {
+  height: 20px;
+  width: 30px;
+  border: 1px solid black;
+  margin-left: 10px;
+}
+
 #major{
   font-size: 18px;
   line-height: 0;

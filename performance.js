@@ -617,7 +617,7 @@ console.log('Days: '+ cacheDays + ' ,Hours : ' + cacheHours + ' , Minutes: ' + c
 //Background Color    
 
 var backGroundColor = window.getComputedStyle( document.body ,null).getPropertyValue('background-color');
-console.log(backGroundColor);
+//console.log(backGroundColor);
 
 var colorVar1 = '';
 
@@ -635,7 +635,6 @@ if (backGroundColor.match(rgbaMatch)){
 
     colorArray = colorVar1.split(',');
 
-    //console.log(parseInt(colorArray[0])+parseInt(colorArray[1])+parseInt(colorArray[2])+parseInt(colorArray[3]));
 
     var combineColor = parseInt(colorArray[0])+parseInt(colorArray[1])+parseInt(colorArray[2])+parseInt(colorArray[3]);
     
@@ -704,7 +703,7 @@ else{
     colorScore = 'something';
 }
 
-console.log(colorScore);
+//console.log(backGroundColor);
 
     
     
@@ -1141,8 +1140,8 @@ case 'black':
     colorWeight = .2;
     break;
 case 'black/grey':
-    finalScore += .15;
-    colorWeight = .15;
+    finalScore += .2;
+    colorWeight = .2;
     break;
 case 'something':
     finalScore += .13;
@@ -1337,7 +1336,6 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
  else {
      lazyLoadChart = lazyLoadChart.toPrecision(2);
  }
-
 
 
 var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax}
