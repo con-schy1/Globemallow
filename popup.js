@@ -91,6 +91,7 @@ document.getElementById('imgTypeVal').innerHTML = x.imgTypeMax;
 document.getElementById('jsVal').innerHTML = x.jsMax;
 document.getElementById('sizeVal').innerHTML = x.sizeMax;
 document.getElementById('cacheVal').innerHTML = x.cacheMax;
+document.getElementById('colorVal').innerHTML = x.colorScore;
             
             
 var scoreDiff = 100-x.finalScore;      
@@ -1737,132 +1738,142 @@ switch (cacheNum >= 0){
         document.getElementById("cacheBar").style.width = "240px";
         document.getElementById("cacheBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cacheBar").style.border = '1px solid green';
-        document.getElementById('emptySrcDiv').style.display = "none"; 
         break;
     case cacheNum >= 864000:
         document.getElementById("cacheBar").innerHTML = x.cacheDays + " days, " + x.cacheHours + ' hrs';
         document.getElementById("cacheBar").style.width = "230px";
         document.getElementById("cacheBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cacheBar").style.border = '1px solid green';
-        document.getElementById("emptySrcDiv").style.background = 'rgba(142, 202, 46, 0.5)';
-        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
-        document.getElementById('emptySrcTextA').style.display = "block";
-        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
         break;
     case cacheNum >= 86400:
         document.getElementById("cacheBar").innerHTML = x.cacheDays + " days, " + x.cacheHours + ' hrs';
         document.getElementById("cacheBar").style.width = "220px";
         document.getElementById("cacheBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cacheBar").style.border = '1px solid green';
-        document.getElementById("emptySrcDiv").style.background = 'rgba(142, 202, 46, 0.5)';
-        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
-        document.getElementById('emptySrcTextA').style.display = "block";
-        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
         break;
     case cacheNum >= 36000:
         document.getElementById("cacheBar").innerHTML = x.cacheHours + ' hrs, ' + x.cacheMinutes + ' min';
         document.getElementById("cacheBar").style.width = "200px";
         document.getElementById("cacheBar").style.background = 'rgba(235, 220, 61, 0.5)';
-        document.getElementById("cacheBar").style.border = '1px solid yellow';
-        document.getElementById("emptySrcDiv").style.background = 'rgba(235, 220, 61, 0.5)';
-        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
-        document.getElementById('emptySrcTextA').style.display = "block";
-        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
         break;
     case cacheNum >= 3600:
         document.getElementById("cacheBar").innerHTML = x.cacheHours + ' hrs, ' + x.cacheMinutes + ' min';
         document.getElementById("cacheBar").style.width = "160px";
         document.getElementById("cacheBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("cacheBar").style.border = '1px solid yellow';
-        document.getElementById("emptySrcDiv").style.background = 'rgba(235, 220, 61, 0.5)';
-        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
-        document.getElementById('emptySrcTextA').style.display = "block";
-        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
         break;
     case cacheNum >= 600:
         document.getElementById("cacheBar").innerHTML = x.cacheMinutes +  ' min, ' + x.cacheSeconds + ' sec';
         document.getElementById("cacheBar").style.width = "120px";
         document.getElementById("cacheBar").style.background = 'rgba(235, 220, 61, 0.5)';
-        document.getElementById("cacheBar").style.border = '1px solid yellow';
-        document.getElementById("emptySrcDiv").style.background = 'rgba(235, 220, 61, 0.5)';
-        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
-        document.getElementById('emptySrcTextA').style.display = "block";
-        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
+        document.getElementById("cacheBar").style.border = '1px solid yellow'; 
         break;
     case cacheNum >= 300:
         document.getElementById("cacheBar").innerHTML = x.cacheMinutes + ' min, ' + x.cacheSeconds + ' sec';
         document.getElementById("cacheBar").style.width = "90px";
         document.getElementById("cacheBar").style.background = 'rgba(241, 137, 49, .5)';
-        document.getElementById("cacheBar").style.border = '1px solid orange';
-        document.getElementById("emptySrcDiv").style.background = 'rgba(241, 137, 49, .5)';
-        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
-        document.getElementById('emptySrcTextA').style.display = "block";
-        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
+        document.getElementById("cacheBar").style.border = '1px solid orange'; 
         break;
     case cacheNum >= 1:
         document.getElementById("cacheBar").innerHTML = x.cacheMinutes + ' min, ' + x.cacheSeconds + ' sec';
         document.getElementById("cacheBar").style.width = "70px";
         document.getElementById("cacheBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("cacheBar").style.border = '1px solid orange';
-        document.getElementById("emptySrcDiv").style.background = 'rgba(241, 137, 49, .5)';
-        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
-        document.getElementById('emptySrcTextA').style.display = "block";
-        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
         break;
     case cacheNum == 0:
         document.getElementById("cacheBar").innerHTML = 'No Caching';
         document.getElementById("cacheBar").style.width = "70px";
         document.getElementById("cacheBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("cacheBar").style.border = '1px solid orange';
-        document.getElementById("emptySrcDiv").style.background = 'rgba(241, 137, 49, .5)';
-        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
-        document.getElementById('emptySrcTextA').style.display = "block";
-        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
         break;
     case cacheNum == .5:
         document.getElementById("cacheBar").innerHTML = 'Script Blocked';
         document.getElementById("cacheBar").style.width = "240px";
         document.getElementById("cacheBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cacheBar").style.border = '1px solid green';
-        document.getElementById('emptySrcDiv').style.display = "none"; 
         break;
     case cacheNum == .1:
         document.getElementById("cacheBar").innerHTML = 'Cloudflare Cache';
         document.getElementById("cacheBar").style.width = "240px";
         document.getElementById("cacheBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cacheBar").style.border = '1px solid green';
-        document.getElementById('emptySrcDiv').style.display = "none"; 
         break;
     case cacheNum == .2:
         document.getElementById("cacheBar").innerHTML = 'No Cloudflare Cache';
         document.getElementById("cacheBar").style.width = "70px";
         document.getElementById("cacheBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("cacheBar").style.border = '1px solid orange';
-        document.getElementById("emptySrcDiv").style.background = 'rgba(241, 137, 49, .5)';
-        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
-        document.getElementById('emptySrcTextA').style.display = "block";
-        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
         break;
     case cacheNum == .3:
         document.getElementById("cacheBar").innerHTML = 'No Cloudflare Dynamic Cache';
         document.getElementById("cacheBar").style.width = "90px";
         document.getElementById("cacheBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("cacheBar").style.border = '1px solid orange';
-        document.getElementById("emptySrcDiv").style.background = 'rgba(241, 137, 49, .5)';
-        document.getElementById('emptySrcTextA').innerHTML = x.emptySRCVal;
-        document.getElementById('emptySrcTextA').style.display = "block";
-        document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:';
         break;
     case cacheNum == .4:
         document.getElementById("cacheBar").innerHTML = 'Cloudflare Dynamic Cache';
         document.getElementById("cacheBar").style.width = "240px";
         document.getElementById("cacheBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("cacheBar").style.border = '1px solid green';
-        document.getElementById('emptySrcDiv').style.display = "none"; 
+         
         break;
 }            
             
-        
+
+            
+            
+            
+var colorScore = x.colorScore;
+
+switch (colorScore){
+
+    case 'black':
+        document.getElementById("colorBar").innerHTML = colorScore;
+        document.getElementById("colorBar").style.width = "240px";
+        document.getElementById("colorBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("colorBar").style.border = '1px solid green';
+        break;
+    case 'black/grey':
+        document.getElementById("colorBar").innerHTML = colorScore;
+        document.getElementById("colorBar").style.width = "230px";
+        document.getElementById("colorBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("colorBar").style.border = '1px solid green';
+        break;
+    case 'something':
+        document.getElementById("colorBar").innerHTML = x.backGroundColor;
+        document.getElementById("colorBar").style.width = "220px";
+        document.getElementById("colorBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("colorBar").style.border = '1px solid green';
+        break;
+    case 'white':
+        document.getElementById("colorBar").innerHTML = colorScore;
+        document.getElementById("colorBar").style.width = "200px";
+        document.getElementById("colorBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        break;
+    case 'blue':
+        document.getElementById("colorBar").innerHTML = colorScore;
+        document.getElementById("colorBar").style.width = "90px";
+        document.getElementById("colorBar").style.background = 'rgba(241, 137, 49, .5)';
+        document.getElementById("colorBar").style.border = '1px solid orange';
+        break;
+}            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
        }
         catch(e) {
             //alert("Page is almost loaded")
@@ -2251,6 +2262,27 @@ document.getElementById('cacheButton').onclick = function(evt) {
     
     if (may4You !== mayYou){
         document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if cache time is > 365 days.";
+        document.getElementById("mLL").style.display = 'block';
+    }
+    else{
+        document.getElementById("mLL").style.display = 'none';
+    }
+}
+
+document.getElementById('colorButton').onclick = function(evt) {
+	  
+	 localStorage.setItem('selectedButtonId1', 'colorButton'); 
+	 //openButton(evt,'Example2Div');
+     document.getElementById("m1").innerHTML = 'Website Background Color;
+     //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
+     document.getElementById("m2").innerHTML = 'HTTP caching can speed up your page load time on repeat visits. Caching is great for sustainability since it prevents browsers from requesting all resources every time. A longer cache duration is not always better. Ultimately, it\'s up to you to decide what the optimal cache duration is for your resources.';
+    
+    var mayYou = document.getElementById('colorVal').innerHTML;
+    
+    var may4You = document.getElementById('sampleVal').innerHTML;
+    
+    if (may4You !== mayYou){
+        document.getElementById("mLL").innerHTML = "Grade increases to " + mayYou + " if website background color was black / dark gray.";
         document.getElementById("mLL").style.display = 'block';
     }
     else{

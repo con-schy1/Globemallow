@@ -402,6 +402,7 @@ answerArray.push(emptyURL);
 ////////////////////////////////////////
 ////////////////////////////////////////
 //Cached
+    
 try{
 var req = new XMLHttpRequest();
 
@@ -612,13 +613,99 @@ console.log('Days: '+ cacheDays + ' ,Hours : ' + cacheHours + ' , Minutes: ' + c
     
 
 /////////////////////////////////////////
-/////////////////////////////////////////
-
-    
+///////////////////////////////////////// 
 //Background Color    
 
 var backGroundColor = window.getComputedStyle( document.body ,null).getPropertyValue('background-color');
 console.log(backGroundColor);
+
+var colorVar1 = '';
+
+var colorArray = [];
+
+var rgbaMatch = /(rgba)/;
+var rgbMatch = /(rgb)/;
+
+var colorScore = '';
+
+if (backGroundColor.match(rgbaMatch)){
+
+    colorVar1 = backGroundColor.replace('rgba(','');
+    colorVar1 = colorVar1.replace(')','');
+
+    colorArray = colorVar1.split(',');
+
+    //console.log(parseInt(colorArray[0])+parseInt(colorArray[1])+parseInt(colorArray[2])+parseInt(colorArray[3]));
+
+    var combineColor = parseInt(colorArray[0])+parseInt(colorArray[1])+parseInt(colorArray[2])+parseInt(colorArray[3]);
+    
+    if (combineColor === 0){
+        colorScore = 'white';
+        
+    }
+
+    else if (combineColor === 1){
+        colorScore = 'black';
+
+    }
+    else if (parseInt(colorArray[2]) > 220) {
+
+        colorScore = 'blue';
+    }
+
+    else{
+
+        colorScore = 'something';
+
+    }
+    
+}
+
+else if (backGroundColor.match(rgbMatch)){
+
+    colorVar1 = backGroundColor.replace('rgb(','');
+    colorVar1 = colorVar1.replace(')','');
+
+    colorArray = colorVar1.split(',');
+
+    var combineColor = parseInt(colorArray[0])+parseInt(colorArray[1])+parseInt(colorArray[2]);
+    
+    var subComColor = (Math.abs(parseInt(colorArray[0])-parseInt(colorArray[1])) + Math.abs(parseInt(colorArray[2])-parseInt(colorArray[1]))+Math.abs(parseInt(colorArray[0])-parseInt(colorArray[2])));
+
+    var subComColor = subComColor/3;
+
+    if (combineColor === 0){
+        colorScore = 'black';
+    }
+
+    else if (combineColor >= 765){
+        colorScore = 'white';
+
+    }
+    else if (subComColor <= 25){
+        colorScore = 'black/grey';
+
+    }
+    else if (parseInt(colorArray[2]) > 220) {
+
+        colorScore = 'blue';
+    }
+
+    else{
+
+        colorScore = 'something';
+
+    }
+
+
+}
+else{
+
+    colorScore = 'something';
+}
+
+console.log(colorScore);
+
     
     
     
@@ -1042,80 +1129,114 @@ case answerArray[14] == .5:
     cacheWeight = .4;
     break;
 }
+    
+    
+  
+// Background Color
+var colorWeight = 0;
+switch (colorScore){
+
+case 'black':
+    finalScore += .2;
+    colorWeight = .2;
+    break;
+case 'black/grey':
+    finalScore += .15;
+    colorWeight = .15;
+    break;
+case 'something':
+    finalScore += .13;
+    colorWeight = .13;
+    break;
+case 'white':
+    finalScore += .10;
+    colorWeight = .10;
+    break;
+case 'blue':
+    finalScore += .5;
+    colorWeight = .5;
+    break;
+}
+    
+var maxScore = 15.3;
 
 //////////////////////////////////////
 //Metric Weight Calc
 // Lazy Load
 //var LazyLoadMax = ((((finalScore-LazyLoadWeight)+.4)/14.7)*100).toPrecision(2);
-var LazyLoadMax = Math.round((((finalScore-LazyLoadWeight)+.4)/15.1)*100);
+var LazyLoadMax = Math.round((((finalScore-LazyLoadWeight)+.4)/maxScore)*100);
     
 //Empty Src Tags
 //var emptySrcMax = ((((finalScore-emptySRCWeight)+.2)/14.7)*100).toPrecision(2);
-var emptySrcMax = Math.round((((finalScore-emptySRCWeight)+.2)/15.1)*100);    
+var emptySrcMax = Math.round((((finalScore-emptySRCWeight)+.2)/maxScore)*100);    
 
 // Cookies
 //var cookieMax = ((((finalScore-cookieWeight)+.4)/14.7)*100).toPrecision(2);
-var cookieMax = Math.round((((finalScore-cookieWeight)+.4)/15.1)*100);    
+var cookieMax = Math.round((((finalScore-cookieWeight)+.4)/maxScore)*100);    
     
 // Redirects   
 //var redirectMax = ((((finalScore-redirectWeight)+.1)/14.7)*100).toPrecision(2); 
-var redirectMax = Math.round((((finalScore-redirectWeight)+.1)/15.1)*100);     
+var redirectMax = Math.round((((finalScore-redirectWeight)+.1)/maxScore)*100);     
     
 // Style Sheet Files   
 //var ssFileMax = ((((finalScore-ssFileWeight)+.2)/14.7)*100).toPrecision(2); 
-var ssFileMax = Math.round((((finalScore-ssFileWeight)+.2)/15.1)*100);    
+var ssFileMax = Math.round((((finalScore-ssFileWeight)+.2)/maxScore)*100);    
     
 // Internal Style Sheet   
 //var intSSMax = ((((finalScore-intSSWeight)+.2)/14.7)*100).toPrecision(2);
-var intSSMax = Math.round((((finalScore-intSSWeight)+.2)/15.1)*100);    
+var intSSMax = Math.round((((finalScore-intSSWeight)+.2)/maxScore)*100);    
     
 // Responsive Images
 //var resMax = ((((finalScore-resWeight)+.4)/14.7)*100).toPrecision(2);
-var resMax = Math.round((((finalScore-resWeight)+.4)/15.1)*100);
+var resMax = Math.round((((finalScore-resWeight)+.4)/maxScore)*100);
     
     
  // Transfer Size
 //var transMax = ((((finalScore-transWeight)+4)/14.7)*100).toPrecision(2);
-var transMax = Math.round((((finalScore-transWeight)+4)/15.1)*100);
+var transMax = Math.round((((finalScore-transWeight)+4)/maxScore)*100);
     
     
 // Imported Fonts
 //var fontMax = ((((finalScore-fontWeight)+.4)/14.7)*100).toPrecision(2);
-var fontMax = Math.round((((finalScore-fontWeight)+.4)/15.1)*100);  
+var fontMax = Math.round((((finalScore-fontWeight)+.4)/maxScore)*100);  
     
     
 // Page Load Time
 //var timeMax = ((((finalScore-timeWeight)+2)/14.7)*100).toPrecision(2);
-var timeMax = Math.round((((finalScore-timeWeight)+2)/15.1)*100); 
+var timeMax = Math.round((((finalScore-timeWeight)+2)/maxScore)*100); 
     
     
 // Length Weight
 //var lengthMax = ((((finalScore-lengthWeight)+1)/14.7)*100).toPrecision(2);
-var lengthMax = Math.round((((finalScore-lengthWeight)+1)/15.1)*100);
+var lengthMax = Math.round((((finalScore-lengthWeight)+1)/maxScore)*100);
     
 
 // Img Type Weight
 //var imgTypeMax = ((((finalScore-imgTypeWeight)+.4)/14.7)*100).toPrecision(2);
-var imgTypeMax = Math.round((((finalScore-imgTypeWeight)+.4)/15.1)*100); 
+var imgTypeMax = Math.round((((finalScore-imgTypeWeight)+.4)/maxScore)*100); 
     
     
 // JS
 //var jsMax = ((((finalScore-jsWeight)+2)/14.7)*100).toPrecision(2);
-var jsMax = Math.round((((finalScore-jsWeight)+2)/15.1)*100);    
+var jsMax = Math.round((((finalScore-jsWeight)+2)/maxScore)*100);    
     
   
 // Page Size
 //var sizeMax = ((((finalScore-sizeWeight)+3)/14.7)*100).toPrecision(2);
-var sizeMax = Math.round((((finalScore-sizeWeight)+3)/15.1)*100);     
+var sizeMax = Math.round((((finalScore-sizeWeight)+3)/maxScore)*100);     
 
 cacheWeight
 // Caching
-var cacheMax = Math.round((((finalScore-cacheWeight)+.4)/15.1)*100); 
+var cacheMax = Math.round((((finalScore-cacheWeight)+.4)/maxScore)*100);
+    
+colorWeight
+// Caching
+var colorMax = Math.round((((finalScore-colorWeight)+.2)/maxScore)*100); 
 
 
 
 
-finalScore = finalScore/15.1;
+finalScore = finalScore/maxScore;
 
 finalScore = Math.round(finalScore*100)
 
@@ -1176,6 +1297,7 @@ var lengthK = pagebytesLabel;
 var resImgChart = (answerArray[8]*100);
 //var resImgChart = (answerArray[8]*100).toPrecision(3);
 var cacheChart = cacheScore;
+var colorChart = colorScore;
 
     
 
@@ -1218,7 +1340,7 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 
 
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor}
 
 chrome.runtime.sendMessage(counts);
     
