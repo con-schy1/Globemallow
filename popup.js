@@ -94,6 +94,13 @@ document.getElementById('cacheVal').innerHTML = x.cacheMax;
 document.getElementById('colorVal').innerHTML = x.colorMax;
 document.getElementById('backGrndVal').innerHTML = x.backGroundColor;
             
+
+            
+//Put this here so the square in background color doesn't display while opening / closing the app. Only pushing the button displays it.           
+document.getElementById("colorSquare").style.display = 'none';
+document.getElementById("colorSquare").style.width = "0px";
+document.getElementById("colorSquare").style.height = "0px";
+            
             
 var scoreDiff = 100-x.finalScore;      
 
@@ -2341,7 +2348,7 @@ document.getElementById('colorButton').onclick = function(evt) {
 	 //openButton(evt,'Example2Div');
      document.getElementById("m1").innerHTML = 'Website Background Color';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
-     document.getElementById("m2").innerHTML = 'What is clear from the findings is that colour choices overall can play a key role in making websites, apps and other digital tools more or less sustainable, based on their energy usage.';
+     document.getElementById("m2").innerHTML = 'Color choices play a role in making websites and other digital tools more or less energy efficient.A study conducted by Google showed: White: uses nearly 20% more power than blue. Blue uses 25% more power than Green or Red. Green and red use a very similar amount of power as one another. Black will use the least amount of power on OLED screens';
   
     
     document.getElementById("colorSquare").style.display = 'block';

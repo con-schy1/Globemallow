@@ -541,6 +541,13 @@ table .row{
     outline: none;
 }
 
+#colorButton:focus {
+    border-color: #F77616;
+    border-width: 2px;
+    outline: none;
+    font-size: 11px;
+}
+
 
 
 
