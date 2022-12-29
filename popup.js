@@ -5,7 +5,7 @@ chrome.tabs.query({
     var url  = tabs[0]['url'];
     let domain = (new URL(url));
 	domain = domain.hostname;
-    chrome.storage.local.get("tab"+tab.id).then(data => {
+    chrome.storage.session.get("tab"+tab.id).then(data => {
         try{
  var x = data["tab"+tab.id];
             
@@ -2381,3 +2381,11 @@ else{
 	document.getElementById('htmlButton').click();
     document.getElementById('htmlButton').focus();
 }
+
+document.querySelector('#go-to-options').addEventListener('click', function() {
+  if (chrome.runtime.openOptionsPage) {
+    chrome.runtime.openOptionsPage();
+  } else {
+    window.open(chrome.runtime.getURL('options.html'));
+  }
+});

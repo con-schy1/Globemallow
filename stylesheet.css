@@ -1,0 +1,38 @@
+body {
+  font-family: veranda, sans-serif;
+  font-size: 12px;
+  background-color:  white;
+  margin: 0; /*new*/
+  padding: 0; /*new*/
+  block-size: 100vh;
+}
+
+#title{
+    display: flex;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 5px;
+    line-height: 0;
+    letter-spacing: 0.1em;
+}
+
+#gbTitle{
+    margin-left: 10px;
+    margin-bottom: 10px;
+    line-height: 0;
+    margin-bottom: 2px;
+}
+
+#chartTitle{
+    text-align: center;
+    font-size: 18px;
+    line-height: 0;
+
+}
+
+/* changes below -harshit max-inline-size used to be 100%*/
+canvas {
+  max-inline-size: 90% !important;
+  block-size: 90% !important;
+  margin-left: 5%;
+}
