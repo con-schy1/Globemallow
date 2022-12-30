@@ -548,7 +548,9 @@ table .row{
     font-size: 11px;
 }
 
-
+#go-to-options{
+    cursor: pointer; 
+}
 
 
 /*Scroll Bar CSS*/ 
@@ -631,6 +633,10 @@ table .row{
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {padding-left: 1px;}
+
+#go-to-options{
+    font-size: 12px;
+}
 
 </style>
 

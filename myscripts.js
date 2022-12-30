@@ -6,11 +6,11 @@ const ctx = document.querySelector("#myChart").getContext('2d');
 
 let hosts = [];
 class Hosts {
-  constructor(time, url, finalScore, iframes) {
+  constructor(time, url, Sustainability, Score) {
     this.time = time;
     this.url = url;
-    this.finalScore = finalScore;
-    this.iframes = 0;
+    this.Score = Score;
+    this.Sustainability = Sustainability;
   }
 }
 class Dataset {
@@ -39,7 +39,7 @@ function chartConfig(storageData) {
   hosts.length = 0;
   for (z in storageData) {
     if (!hosts.length) {
-      hosts.push(new Hosts(storageData[z].storedAt, storageData[z].hostURL, storageData[z].finalScore, storageData[z].iFrames));
+      hosts.push(new Hosts(storageData[z].storedAt, storageData[z].hostURL, storageData[z].Score, storageData[z].Sustainability));
       
       continue;
     }
@@ -49,7 +49,7 @@ function chartConfig(storageData) {
       let y = hosts[i];
       if (storageData[z].storedAt < y.time) {
         let firstHalf = hosts.splice(0, i);
-        firstHalf.push(new Hosts(storageData[z].storedAt, storageData[z].hostURL, storageData[z].finalScore, storageData[z].iFrames));
+        firstHalf.push(new Hosts(storageData[z].storedAt, storageData[z].hostURL, storageData[z].Score, storageData[z].Sustainability));
         hosts = firstHalf.concat(hosts);
 
         added = true;
@@ -58,12 +58,12 @@ function chartConfig(storageData) {
     }
 
     if (!added) {
-      hosts.push(new Hosts(storageData[z].storedAt, storageData[z].hostURL, storageData[z].finalScore, storageData[z].iFrames))
+      hosts.push(new Hosts(storageData[z].storedAt, storageData[z].hostURL, storageData[z].Score, storageData[z].Sustainability))
     }
   }
 
 
-  const labels = ["iframes", "finalScore"];
+  const labels = ["Sustainability", "Score"];
   const dataTotal = [];
   hosts.forEach(z => {
     let temp = 0;
@@ -76,7 +76,7 @@ function chartConfig(storageData) {
 
   const data = {
     labels: hosts.map(z => z.url),
-    datasets: [new Dataset(labels.join(" & "), dataTotal)]
+    datasets: [new Dataset(labels.join(" "), dataTotal)]
   };
 
   const config = {
