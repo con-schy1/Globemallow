@@ -2,11 +2,10 @@ body {
   font-family: veranda, sans-serif;
   font-size: 12px;
   width: 700px;
-/*  height: 200px;*/
-/*  background-color:  #f2f2f2;*/
   background-color:  white;
-  margin: 0; /*new*/
-  padding: 0; /*new*/
+  margin: 0;
+  padding: 0;
+  overflow-x: visible;
 }
 
 .topLine{
@@ -37,19 +36,9 @@ body {
   padding-left: 3px;
 }
 
-.dropdown{
-    background-color: #F77616; 
-}
-
-
-.dropbtn{
-/*    margin-left: 220px;*/
-    background-color: #F77616;
-    margin-top: 10px;
-}
-
 #viewButtons{
-  padding-left: 65px;
+/*  padding-left: 65px;*/
+  padding-left: 9%;
 /*  padding-top: 20px;*/
   padding-top: 25px;
   border-bottom: 0px;
@@ -92,8 +81,10 @@ body {
 .ScoreGraph{
      /* For button text center */
     position: absolute;          /* Position absolute */
-    left: 34%;
-    padding-top: 5%;
+/*    left: 34%;
+    padding-top: 5%;*/
+    left: 235px;
+    padding-top: 40px;
 }
     .item {
         position: relative;
@@ -113,7 +104,7 @@ body {
 }
 
 #Example2Div{
-    padding-top: 34%;
+    padding-top: 32%;
 }
 
 #nameClass{
@@ -469,7 +460,7 @@ table .row{
 }
 
 #donate{
-  margin-left: 255px;
+  margin-left: 260px;
   padding-top: 4px;
   padding-bottom: 6px;
 }
@@ -581,18 +572,18 @@ table .row{
 
 /* Dropdown Button */
 .dropbtn {
-   background-color: #F77616;
+  background-color: #F77616;
   color: white;
-/*  padding: 5px;*/
   font-size: 17px;
   border: none;
+  margin-top: 10px;
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
-  margin-left: 205px;
+  margin-left: 30%;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -600,7 +591,7 @@ table .row{
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 65px;
+  width: 70px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   border-style: solid;
@@ -611,13 +602,11 @@ table .row{
 .dropdown-content a {
   color: black;
   font-size: 13px;
-/*  padding: 12px 16px;*/
   padding-top: 10px;
   padding-bottom: 12px;
-/*  padding-left: 3px;*/
   text-decoration: none;
   display: block;
-  min-width: 65px;
+  width: 70px;
   border-style: solid;
   border-width: .25px;
   color: #4d4b4b;
@@ -632,7 +621,7 @@ table .row{
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {padding-left: 1px;}
+.dropdown:hover .dropbtn {padding-left: .25px;}
 
 #go-to-options{
     font-size: 12px;

@@ -2,8 +2,8 @@ body {
   font-family: veranda, sans-serif;
   font-size: 12px;
   background-color:  white;
-  margin: 0; /*new*/
-  padding: 0; /*new*/
+  margin: 0;
+  padding: 0;
   block-size: 97vh;
   color: #606060;
 }
@@ -26,15 +26,17 @@ body {
 
 #chartTitle{
     font-size: 17px;
+    font-size: 1.3vw;
     line-height: 0;
-    margin-left: 54vh;
+/*    margin-left: 54vh;*/
     margin-top: 35px;
+    margin-left: 24%;
 
 }
 
 .info-icon{
     
-    margin-left: 60vh;
+/*    margin-left: 60vh;*/
     border-radius: 50%;
         width: 9px;
         height: 9px;
@@ -44,9 +46,27 @@ body {
         color: #606060;
         text-align: center;
         font-size: 9px;
-    font-weight: 550;
+    font-weight: 550;  
+}
+
+@media (min-width: 1100px) {
+  /*#chartTitle{
+    margin-left: 28%;
+  }*/
+ .info-icon{
+      margin-left: 30%;  
+    }
+}
+
+/* Responsive layout - makes a one column layout instead of a two-column layout*/
+@media (max-width: 1100px) {
+    /*#chartTitle{
+        margin-left: 15%;
+    }*/
     
-    
+    .info-icon{
+      margin-left: 25%;  
+    }
 }
 
 #infoTip{
@@ -64,7 +84,8 @@ body {
   position: absolute;
   z-index: 1;
   font-size: 11px;
-  margin-left: 80%;    
+  margin-left: 80%;
+  overflow-x: visible;
     
 }
 
