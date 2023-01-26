@@ -3,326 +3,73 @@
 
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="Chart.js" type="text/javascript"></script>
-<link rel="stylesheet" href="popup.css">    
+<link rel="stylesheet" href="popup.css">
+    
 </head>
   
 <body>
     
- <div class="header"> 
+    
+<div class="header"> 
 <div class="topLine">
     
-<img id="icon" src="/images/128x128.png" style='height:36px'>
+<img id="icon" src="/images/128x128.png" style='height:40px'>
 
 <p id= 'title'>Globemallow</p>
-    
-    
-<div id="viewButtons">
 
-<button id="factButton" class="tablinks" type="factView">
-Fact View </button>
-
-<button id="devButton" class="tablinks" type="devView">
-Report View </button>
-    
-
-</div>
-
-    
 <div class="dropdown">
-  <button class="dropbtn"><img id="menu" src="/images/ellypsis-vertical.svg" style='height:36px'></button>
+  <button class="dropbtn"><img id="menu" src="/images/ellypsis-vertical.svg" style='height:30px'></button>
   <div class="dropdown-content">
     <a href='mailto:help.globemallow@gmail.com'>Email</a>
     <a href='https://ko-fi.com/U6U46R9FA' target='_blank'>Donate</a>
   </div>
 </div>
-    
+
     </div>  
-</div>   
+</div> 
     
     
     
 <div class="bodyHTML">
-<div class = "grade"><h3>Sustainability Grade:</h3>
-    <span class="tooltiptextGrade">Calculated from development best practices</span>
-    <button type="button" id="go-to-options"><img src='images/newWindow.png' style='height:20px'/></button>
+<div class = "grade">Analytics &amp; Advertisements
     </div>
- <!--/////////////////////////////
-//This is the value for buttons  
-/////////////////////////////-->
-<p id='sampleVal' style="display:none"></p>
-    
- <p id='LazyLoadVal' style="display:none"></p>   
- <p id='emptySrcVal1' style="display:none"></p>   
- <p id='cookieVal' style="display:none"></p>   
- <p id='redirectVal' style="display:none"></p>
- <p id='ssFileVal' style="display:none"></p>   
- <p id='intSSsampleVal' style="display:none"></p>
-<p id='resVal' style="display:none"></p>
-<p id='transVal' style="display:none"></p>   
-    
- <p id='fontVal' style="display:none"></p>   
- <p id='timeVal' style="display:none"></p>
- <p id='lengthVal' style="display:none"></p>   
- <p id='imgTypeVal' style="display:none"></p>
-<p id='jsVal' style="display:none"></p>
-<p id='sizeVal' style="display:none"></p>
-<p id='cacheVal' style="display:none"></p>
-<p id='colorVal' style="display:none"></p>
-<p id='backGrndVal' style="display:none"></p>
-    
-    
-    
   <div1 class="ScoreGraph">
 <div class="item">
-<h2 id = "scoreHTML">Reload Page</h2>
+<h2 id = "scoreHTML">0</h2>
     
     
-<!--<canvas id="myChart" style="width:100%;max-width:230px;"></canvas>-->
-<canvas id="myChart" style="width:100%;width:230px;"></canvas>
+<canvas id="myChart" style="width:100%;max-width:230px;"></canvas>
 </div>
 </div1>
-    
- <!--/////////////////////////////
-//This Div does not display on Dev View  
-/////////////////////////////-->   
-<div id = "Example1Div" class="tabcontent">
-
-  <div id= "factoids">
-  <h3 id="fact">Fact: </h3>
-  <p id="actualFact"></p>
-  </div>
-  
-<div id= "emissionsLine">
-  <div id="kwhID">
-  <p id= "kwhScore">kWh Emitted: </p>
-  <p id='kwhTotal'></p>
-  </div>
-  <div id="co2ID">
-  <p id="co2Score">CO2 Emissions:</p>
-    <p id="co2Total"></p>
-    </div>
-  </div>
-</div>
-    
-<!--//////////////////////////////////// Graphs-->
-
-<!--/////////////////////////////
-//Block this code out on Fact View. Show on Dev View   
-/////////////////////////////-->
-
-<div id = "Example2Div" class="tabcontent">
- <h3 id="tableHeader">Sustainability Grade Metrics:</h3>
-    <div id="nameClass">
-    <h3 class="tableName">Design</h3>
-    <h3 id="devID" class="tableName">Development</h3>
-    </div>
-<div id='tableID' class ='wholeTable'>  
-         
-<table class= 'tableClass'>
-    
-<div id="designTable">
-    
-    
-<tr>
-   <td class = 'hoverClass' class= 'barLabel' ><button id='htmlButton' class='tableButton'>Page<br>HTML</button><span class="tooltiptextGrade">Amount of content loaded on page- HTML content</span></td>
-      <td>
-        <div  class="row" id = "htmlBar">Loading...</div>
-        <div  class="row2"></div>
-      </td>
-</tr> 
-    
-<tr>
-    <td class = 'hoverClass' class= 'barLabel'><button id='LLButton' class='tableButton'>Lazy Loaded<br>Images</button>
-    <span class="tooltiptextGrade">% of Images Lazy Loaded</span></td>
-      <td>
-        <div  class="row" id = "lazyBar">Loading...</div>
-      </td>
-</tr>
-
-<tr>
-    <td class = 'hoverClass' class= 'barLabel'><button id='imgButton' class='tableButton'>Image<br>Formats</button><span class="tooltiptextGrade">% of img src that are AVIF, WebP, and SVG</span></td>
-      <td>
-          <div  class="row" id = "svgBar">Loading...</div>
-      </td>
-</tr>
-    
-<tr>
-    <td class = 'hoverClass' class= 'barLabel' ><button id='importButton' class='tableButton'>Imported Fonts</button><span class="tooltiptextGrade">Looking for imported font files</span></td>
-      <td>
-        <div  class="row" id = "fontBar">Loading...</div>
-      </td>
-</tr>
-    
-<tr>
-    <td class = 'hoverClass' class= 'barLabel' ><button id='resImgButton' class='tableButton'>Responsive<br>Images</button><span class="tooltiptextGrade">Looking for images loaded with srcset attribute and picture html tag</span></td>
-      <td>
-        <div  class="row" id = "resImgBar">Loading...</div>
-      </td>
-</tr>
-    
-<tr>
-    <td class = 'hoverClass' class= 'intStyleLabel' ><button id='intSSButton' class='tableButton'>Internal<br>Style Sheet</button><span class="tooltiptextGrade"> Internal Style Sheet in html: style = </span></td>
-      <td>
-        <div  class="row" id = "intStyleBar">Loading...</div>
-      </td>
-</tr>
-    
-<tr>
-    <td class = 'hoverClass' class= 'numStyleLabel' ><button id='fileSSButton' class='tableButton'>Style<br>Sheets</button><span class="tooltiptextGrade"> Style Sheet Files</span></td>
-      <td>
-        <div  class="row" id = "numStyleBar">Loading...</div>
-      </td>
-</tr>
-<tr>
-    <td class = 'hoverClass' class= 'colorLabel' ><button id='colorButton' class='tableButton'>Background<br>Color</button><span class="tooltiptextGrade">Webite's Background Color</span></td>
-      <td>
-        <div  class="row" id = "colorBar">Loading...</div>
-      </td>
-</tr>
-</div>    
-</table>    
-
-<div id="devTable">    
-         
-         
-<table class= 'tableClass'>
-    
-    
-<tr>
-    <td class = 'hoverClass' class= 'barLabel' ><button id='pageLoadButton' class='tableButton'>Page Load<br>Time</button></td>
-     <td>
-       <div  class="row" id = "loadBar">Loading...</div>
-   </td>
-</tr>
-    
-<tr>
-    <td class = 'hoverClass' class= 'barLabel'><button id='pageSizeButton' class='tableButton'>Page<br>Size</button><span class="tooltiptextGrade">Total size of page uploaded to server</span></td>
-      <td>
-       <div class="row" id = "byteSizeBar">Loading...</div>
-      </td>
-</tr>
-
-<tr>
-    <td class = 'hoverClass' class= 'barLabel' ><button id='transferButton' class='tableButton'>Transfer<br>Size</button><span class="tooltiptextGrade">Data transferred from server on load</span></td>
-      <td>
-        <div  class="row" id = "transferBar">Loading...</div>
-      </td>
-</tr>
-    
-<tr>
-    <td class = 'hoverClass' class= 'barLabel' ><button id='jsButton' class='tableButton'>JS HeapSize</button><span class="tooltiptextGrade">Used JavaScript heap size</span></td>
-      <td>
-        <div class="row" id = "jsBar">Loading...</div>
-      </td>
-</tr>   
-
-<tr>
-    <td class = 'hoverClass' class= 'barLabel' ><button id='hostButton' class='tableButton'>Green<br>Hosted</button><span class="tooltiptextGrade">If website is hosted by renewable energy sources according to thegreenwebfoundation.org</span></td>
-      <td>
-        <div  class="row" id = "greenBar">Loading...</div>
-      </td>
-</tr>
-    
-<tr>
-    <td class = 'hoverClass' class= 'redirectLabel' ><button id='redirectButton' class='tableButton'>Redirects</button><span class="tooltiptextGrade">Whether or not page redirects</span></td>
-      <td>
-        <div  class="row" id = "redirectBar">Loading...</div>
-      </td>
-</tr>
-    
-<tr>
-    <td class = 'hoverClass' class= 'cookieLabel' ><button id='cookieButton' class='tableButton'>Cookies</button><span class="tooltiptextGrade">Number of Cookies on Page</span></td>
-      <td>
-        <div  class="row" id = "cookieBar">Loading...</div>
-      </td>
-</tr>
-    
-<tr>
-    <td class = 'hoverClass' class= 'srcLabel' ><button id='emptyButton' class='tableButton'>Empty<br>URL Tags</button><span class="tooltiptextGrade">If page has empty SRC Tags and href links</span></td>
-      <td>
-        <div  class="row" id = "srcBar">Loading...</div>
-      </td>
-</tr>
-    
-<tr>
-   <td class = 'hoverClass' class= 'cacheLabel' ><button id='cacheButton' class='tableButton'>Caching</button><span class="tooltiptextGrade">How long data is cached</span></td>
-      <td>
-        <div  class="row" id = "cacheBar">Loading...</div>
-      </td>
-</tr>
-    
-</table>
-     </div>
-         
- </div> 
-    
-<!--    /////////////// Metric Data -->
-    
-    <h3 id= "major">Metric Data:</h3>
-<div class='textAreaDiv'>
-<p id= "m1"></p>
-<p class = "recoClass" id= "m2"></p>
-<p class = "recoClass" id= "mLL" style ="display:none"></p>
-<p class = "recoClass" style="display:none" id= "m4"></p>
-<p class = "recoClass" style="height: 0;width: 0" id= "colorSquare"></p>
-  </div>   
-
-    
-<!--    /////////////// Page Reports -->
-    
-<!--    /////////////// Cookies -->
-<div class='textAreaDiv' id='cookDiv'>
-<p class='textAreaHeaders' id='cookieHeader'></p>
-<textarea class = "textAreaClass" id= "cookieTextA" style = "display:none"  rows="10" cols="83"></textarea>
- </div>   
-
-<!--    /////////////// Transfer Request -->
-<div class='textAreaDiv' id='transferDIV'>
-<p class='textAreaHeaders' id='transferHeader'></p>
-<textarea class = "textAreaClass" id= "transferTextA" style = "display:none"  rows="2" cols="83"></textarea>
-     </div> 
-    
-<!--    /////////////// Int Style Sheets --> 
-<div class='textAreaDiv' id="intSSDiv">
-<p class='textAreaHeaders' id='intStyleHeader'></p>
-<textarea class = "textAreaClass" id= "intStyleTextA" style = "display:none"  rows="10" cols="83"></textarea>
-     </div> 
-    
-<!--    /////////////// Ext Style Sheets Sources --> 
-<div class='textAreaDiv' id="extSSDiv">
-<p class='textAreaHeaders' id='extStyleHeader'></p>
-<textarea class = "textAreaClass" id= "extStyleTextA" style = "display:none"  rows="6" cols="83"></textarea>
-     </div>
-    
-    
-    
-<!--    /////////////// Empty Sources URL  --> 
-<div class='textAreaDiv' id="emptySrcDiv">
-<p class='textAreaHeaders' id='emptySrcHeader'></p>
-<textarea class = "textAreaClass" id= "emptySrcTextA" style = "display:none"  rows="6" cols="83"></textarea>
-     </div>     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    </div>
-    
-  <div id= "footer">    
-
-<a title="Donate" href='https://ko-fi.com/U6U46R9FA' target='_blank'><img id="donate" height='30' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
       
+<div id = "blockedDiv">
+    <p id="blocked">Blocked</p>
+    </div>
+    
+    
+    
+<!--    Report Try - delete if not working-->
+    <p id='reportAttempt' style="display: none"></p>
+    
+    
+    
       
-   
+  <div id= "footer">
+      
+<button title="Comparison Report" type="button" id="go-to-options"><img src='images/newWindow.png' style='height:40px'/></button>
+      
+<input title ="Pause Blocking" type="image" src="/images/pause.svg" name="pauseBlock" class="pauseRes" id="pause" />
+
+<input title ="Resume Blocking" type="image" src="/images/play.svg" name="pauseBlock" class="pauseRes" id="resume" style="display: none;" />
+
+<!--<a title="Donate" href='https://ko-fi.com/U6U46R9FA' target='_blank'><img id="donate" height='30' style='border:0px;height:27px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>-->
+      
+<a  title="Buy Me a Coffee" href="https://ko-fi.com/U6U46R9FA" target='_blank'><img id="donate" src="images/kofi.png" style='height:40px'></a>
+      
+ 
   </div>
-    </div>   
+    </div>  
 
 <script src="popup.js"></script>
 </body>

@@ -1,44 +1,48 @@
 {
-  "name": "Globemallow",
-  "description": "Get a sustainability grade calculated for visited websites, and see estimations of the amount of energy & CO2 produced on page load.",
-  "version": "0.0.2.9",
-  "manifest_version": 3,
-  "options_page": "options.html",
-  "action":{
-        "default_popup": "popup.html",
-        "default_icon": {
-            "16": "/images/16x16.png",
-            "32": "/images/32x32.png",
-            "48": "/images/48x48.png",
-            "128": "/images/128x128.png"
-        }
-    },
-  "content_scripts": [
-        {
-            "matches": [
-                "*://*/*"
-            ],
-            "js": [
-                "performance.js",
-                "Chart.js"
-            ]
-        }
-      ],
-  "background": {
-    "service_worker": "background.js"
-},   
-  "permissions": [
-      "storage", 
-    "activeTab"
-],
-    "host_permissions": [
-        "https://admin.thegreenwebfoundation.org/*"
-    ],
-"icons": {
+   "name": "Analytics & Ad Blocker",
+   "description": "A simple to use analytics & 3rd party advertisements blocker.",
+   "version": "0.0.2.1",
+   "manifest_version": 3,
+   "options_page": "options.html",
+   "declarative_net_request": {
+    "rule_resources": [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "rules.json"
+    }]
+  },
+   "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+         "16": "/images/16x16.png",
+         "32": "/images/32x32.png",
+         "48": "/images/48x48.png",
+         "128": "/images/128x128.png"
+      }
+   },
+   "content_scripts": [
+      {
+         "matches": [
+            "*://*/*"
+         ],
+         "js": [
+            "performance.js",
+            "Chart.js"
+         ],
+         "run_at": "document_start"
+      }
+   ],
+   "background": {
+      "service_worker": "background.js"
+   },
+   "permissions": [
+      "storage",
+      "declarativeNetRequest"
+   ],
+   "icons": {
       "16": "/images/16x16.png",
-      "32": "/images/32x32.png",
-      "48": "/images/48x48.png",
-      "128": "/images/128x128.png"
-    }
+       "32": "/images/32x32.png",
+       "48": "/images/48x48.png",
+       "128": "/images/128x128.png"
+   }
 }
-
