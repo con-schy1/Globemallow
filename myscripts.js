@@ -1,25 +1,37 @@
+// changes below -harshit
+const AVERAGE = 70;
+const MAX = AVERAGE * 2;
 
 const ctx = document.querySelector("#myChart").getContext('2d');
 
 let hosts = [];
 class Hosts {
-  constructor(time, url, Ads, Analytics) {
+  constructor(time, url, Sustainability, Score) {
     this.time = time;
     this.url = url;
-    this.Ads = Ads;
-    this.Analytics = Analytics;
+    this.Score = Score;
+    this.Sustainability = Sustainability;
   }
 }
 class Dataset {
-  constructor(label, bgcolor) {
-    this.base = 0;
+  constructor(label, data) {
+    this.base = AVERAGE;
     this.label = label;
-    this.data = hosts.map(z => z[label]);
-    this.backgroundColor = bgcolor;
+    this.data = data;//hosts.map(z => z[label]);
+    this.backgroundColor = (context) => {
+      const index = context.dataIndex;
+      const value = context.dataset.data[index];
+      return value < this.base ? 'rgba(200, 0, 0, 0.6)' : 'rgba(0, 200, 0, 0.6)'
+    };
     this.borderColor = this.backgroundColor;
     this.borderWidth = 2;
     this.borderRadius = 5;
     this.borderSkipped = false;
+    this.fill= {
+      target: AVERAGE,
+      above: "green",
+      below: "red"
+    }
   }
 }
 
@@ -27,7 +39,7 @@ function chartConfig(storageData) {
   hosts.length = 0;
   for (z in storageData) {
     if (!hosts.length) {
-      hosts.push(new Hosts(storageData[z].storedAt, storageData[z].hostURL, storageData[z].Ads, storageData[z].Analytics));
+      hosts.push(new Hosts(storageData[z].storedAt, storageData[z].hostURL, storageData[z].Score, storageData[z].Sustainability));
       
       continue;
     }
@@ -37,32 +49,34 @@ function chartConfig(storageData) {
       let y = hosts[i];
       if (storageData[z].storedAt < y.time) {
         let firstHalf = hosts.splice(0, i);
-        firstHalf.push(new Hosts(storageData[z].storedAt, storageData[z].hostURL, storageData[z].Ads, storageData[z].totalAnal));
-        hosts = firstHalf.concat(hosts); 
-          
+        firstHalf.push(new Hosts(storageData[z].storedAt, storageData[z].hostURL, storageData[z].Score, storageData[z].Sustainability));
+        hosts = firstHalf.concat(hosts);
+
         added = true;
         break;
       }
     }
 
     if (!added) {
-      hosts.push(new Hosts(storageData[z].storedAt, storageData[z].hostURL, storageData[z].Ads, storageData[z].Analytics))
+      hosts.push(new Hosts(storageData[z].storedAt, storageData[z].hostURL, storageData[z].Score, storageData[z].Sustainability))
     }
   }
 
-  const datasets = [
-    {
-      label: "Ads",
-      color: "#ebdc3d"
-    },
-    {
-      label: "Analytics",
-      color: "#f18931"
-    }
-  ];
+
+  const labels = ["Sustainability", "Score"];
+  const dataTotal = [];
+  hosts.forEach(z => {
+    let temp = 0;
+    let tempLabel = "";
+    labels.forEach(y => {
+      temp += z[y];
+    });
+    dataTotal.push(temp);
+  });
+
   const data = {
     labels: hosts.map(z => z.url),
-    datasets: datasets.map(z => new Dataset(z.label, z.color))
+    datasets: [new Dataset(labels.join(" "), dataTotal)]
   };
 
   const config = {
@@ -72,7 +86,7 @@ function chartConfig(storageData) {
       responsive: true,
       plugins: {
         legend: {
-          display: true,
+          display: false,
           position: 'top',
         },
         title: {
@@ -82,14 +96,12 @@ function chartConfig(storageData) {
       },
       scales: {
         x: {
-          stacked: true,
         },
         y: {
-          stacked: true,
-          min: 0,
-          /*max: 100,*/
+          min: 30,
+          max: 100,
           ticks: {
-            stepSize: 1,
+            stepSize: 5,
           }
         }
       }
@@ -123,64 +135,6 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
   chrome.storage.session.get(null).then(data => {
     chart.destroy();
     chart = createChart(chartConfig, data);
-      
-          // changes below -harshit
-    if (window.location.hash == "#Requests") {
-      requestDiv.innerHTML = "";
-      for (x in data) {
-        listSiteInfo(data[x].hostURL, data[x].foundHTTPArray, data[x].foundHTTPADArray);
-      }
-    } 
   });
-});
-
-
-
-// changes below -harshit
-// ----------------- iframe and image list DOM -----------------
-const requestDiv = document.querySelector("#requestDiv");
-const siteInfoTemplate = document.querySelector("#site-info-template");
-
-function listSiteInfo(name, imgs, frames) {
-  let clone = siteInfoTemplate.content.cloneNode(true);
-
-  let siteName = clone.querySelector(".site-name");
-  let siteMore = clone.querySelector(".site-more");
-  let siteImageList = clone.querySelector(".site-image-list");
-  let siteFrameList = clone.querySelector(".site-frame-list");
-  let listsections = clone.querySelectorAll(".list-sections");
-
-  siteName.innerText = name;
-  siteMore.addEventListener('click', e => {
-    listsections.forEach(z => {z.classList.toggle("list-sections")});
-    e.currentTarget.classList.toggle("site-more-rotated");
-  });
-
-  imgs.forEach(z => {
-    if (z && z != "") siteImageList.innerHTML += `<li>${z}</li>`;
-  });
-  frames.forEach(z => {
-    if (z && z != "") siteFrameList.innerHTML += `<li>${z}</li>`;
-  });
-
-  requestDiv.appendChild(clone);
-}
-
-//Chart Code to display requestDiv and hide chartDiv
-window.addEventListener("hashchange", async function() {
-  if(location.hash === "#Requests"){
-    document.getElementById("chartDiv").style.display = "none";
-    document.getElementById("requestDiv").style.display = "block";
-
-    // changes below -harshit
-    requestDiv.innerHTML = "";
-    await chrome.storage.session.get(null).then(data => {
-      for (x in data) {
-        listSiteInfo(data[x].hostURL, data[x].foundHTTPArray, data[x].foundHTTPADArray);
-      }
-    });
-  }else{
-    document.getElementById("chartDiv").style.display = "block";
-  }
 });
 
