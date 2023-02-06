@@ -543,7 +543,9 @@ if (parseInt(header) === 0){
 
 }
 else {
-//
+    
+//made a change here in 3.1- it used to just have // in this else statement
+exactCacheArray.push(6);
 
 }
 var cacheTime = 0;
@@ -602,12 +604,7 @@ var day = 86400;
 var cacheDays = Math.floor(cacheTime / day);
 var cacheHours = Math.floor((cacheTime-(day*cacheDays)) / hour);
 var cacheMinutes = Math.floor((cacheTime-((cacheDays*day)+(cacheHours*hour)))/minute);
-var cacheSeconds = Math.floor((cacheTime-((cacheDays*day)+(cacheHours*hour)+(cacheMinutes*minute)))/seconds);
-
-//console.log('Days: '+ cacheDays + ' ,Hours : ' + cacheHours + ' , Minutes: ' + cacheMinutes +  ' ,Seconds: ' + cacheSeconds);
-
-    
-    
+var cacheSeconds = Math.floor((cacheTime-((cacheDays*day)+(cacheHours*hour)+(cacheMinutes*minute)))/seconds); 
     
     
     
@@ -720,7 +717,7 @@ var finalScore = 0;
 var sizeWeight = 0;
 switch (answerArray[0] >= 0){
 
-case answerArray[0] <= 150000:
+/*case answerArray[0] <= 150000:
     finalScore += 3;
     sizeWeight = 3;
     break;
@@ -763,7 +760,94 @@ case answerArray[0] <= 5242880:
 case answerArray[0] > 5242880:
     finalScore += 1;
     sizeWeight = 1;
+    break;*/
+        
+case answerArray[0] <= 150000:
+    finalScore += 3;
+    sizeWeight = 3;
     break;
+case answerArray[0] <= 500000:
+    finalScore += 2.9;
+    sizeWeight = 2.9;
+    break;
+case answerArray[0] <= 650000:
+    finalScore += 2.8;
+    sizeWeight = 2.8;
+    break;
+case answerArray[0] <= 850000:
+    finalScore += 2.7;
+    sizeWeight = 2.7;
+    break;
+case answerArray[0] <= 1076398:
+    finalScore += 2.6;
+    sizeWeight = 2.6;
+    break;
+case answerArray[0] <= 1376398:
+    finalScore += 2.5;
+    sizeWeight = 2.5;
+    break;
+case answerArray[0] <= 1572864:
+    finalScore += 2.4;
+    sizeWeight = 2.4;
+    break;
+case answerArray[0] <= 1750000:
+    finalScore += 2.3;
+    sizeWeight = 2.3;
+    break;
+case answerArray[0] <= 2000000:
+    finalScore += 2.2;
+    sizeWeight = 2.2;
+    break;
+case answerArray[0] <= 2300000:
+    finalScore += 2.1;
+    sizeWeight = 2.1;
+    break;
+case answerArray[0] > 2600000:
+    finalScore += 2;
+    sizeWeight = 2;
+    break;
+case answerArray[0] <= 3200000:
+    finalScore += 1.9;
+    sizeWeight = 1.9;
+    break;
+case answerArray[0] <= 3800000:
+    finalScore += 1.8;
+    sizeWeight = 1.8;
+    break;
+case answerArray[0] <= 4400000:
+    finalScore += 1.7;
+    sizeWeight = 1.7;
+    break;
+case answerArray[0] <= 5000000:
+    finalScore += 1.6;
+    sizeWeight = 1.6;
+    break;
+case answerArray[0] <= 5600000:
+    finalScore += 1.5;
+    sizeWeight = 1.5;
+    break;
+case answerArray[0] <= 6200000:
+    finalScore += 1.4;
+    sizeWeight = 1.4;
+    break;
+case answerArray[0] > 6800000:
+    finalScore += 1.3;
+    sizeWeight = 1.3;
+    break;
+case answerArray[0] <= 7400000:
+    finalScore += 1.2;
+    sizeWeight = 1.2;
+    break;
+case answerArray[0] <= 8000000:
+    finalScore += 1.1;
+    sizeWeight = 1.1;
+    break;
+case answerArray[0] > 8000001:
+    finalScore += 1;
+    sizeWeight = 1;
+    break;
+        
+
 
 }
 
@@ -990,20 +1074,20 @@ case answerArray[8] >= .7:
     resWeight = .4;
     break;
 case answerArray[8] >= .5:
+    finalScore += .35;
+    resWeight = .35;
+    break;
+case answerArray[8] >= .3:
     finalScore += .3;
     resWeight = .3;
     break;
-case answerArray[8] >= .3:
-    finalScore += .2;
-    resWeight = .2;
-    break;
 case answerArray[8] > 0:
-    finalScore += .1;
-    resWeight = .1;
+    finalScore += .25;
+    resWeight = .25;
     break;
 case answerArray[8] == 0:
-    finalScore += 0;
-    resWeight = 0;
+    finalScore += .2;
+    resWeight = .2;
     break;
 }
     
@@ -1033,11 +1117,11 @@ case answerArray[10] <= 2:
     ssFileWeight = .2;
     break;
 case answerArray[10] <= 5:
-    finalScore += .1;
-    ssFileWeight = .1;
+    finalScore += .15;
+    ssFileWeight = .15;
     break;
 case answerArray[10] >= 5:
-    finalScore += 0;
+    finalScore += .5;
     break;
 }
     
@@ -1112,16 +1196,16 @@ case answerArray[14] >= 86400:
     cacheWeight = .35;
     break;
 case answerArray[14] >= 3600:
+    finalScore += .3;
+    cacheWeight = .3;
+    break;
+case answerArray[14] >= 600:
     finalScore += .25;
     cacheWeight = .25;
     break;
-case answerArray[14] >= 600:
-    finalScore += .15;
-    cacheWeight = .15;
-    break;
 case answerArray[14] >= 1:
-    finalScore += .1;
-    cacheWeight = .1;
+    finalScore += .2;
+    cacheWeight = .2;
     break;
 case answerArray[14] == .5:
     finalScore += .4;
@@ -1144,16 +1228,16 @@ case 'black/grey':
     colorWeight = .2;
     break;
 case 'something':
+    finalScore += .15;
+    colorWeight = .15;
+    break;
+case 'white':
     finalScore += .13;
     colorWeight = .13;
     break;
-case 'white':
-    finalScore += .10;
-    colorWeight = .10;
-    break;
 case 'blue':
-    finalScore += .05;
-    colorWeight = .05;
+    finalScore += .1;
+    colorWeight = .1;
     break;
 }
     

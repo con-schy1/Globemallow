@@ -1763,6 +1763,7 @@ switch (cacheNum >= 0){
         document.getElementById("cacheBar").innerHTML = x.cacheHours + ' hrs, ' + x.cacheMinutes + ' min';
         document.getElementById("cacheBar").style.width = "200px";
         document.getElementById("cacheBar").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("cacheBar").style.border = '1px solid yellow';
         break;
     case cacheNum >= 3600:
         document.getElementById("cacheBar").innerHTML = x.cacheHours + ' hrs, ' + x.cacheMinutes + ' min';
