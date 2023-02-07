@@ -1,5 +1,5 @@
 // changes made(global variable for sites)
-const MAXSITES = 15;
+const MAXSITES = 12;
 
 chrome.runtime.onInstalled.addListener(details => {
   chrome.storage.session.clear();
@@ -95,7 +95,7 @@ chrome.runtime.onInstalled.addListener(function (object) {
 
     if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
         chrome.tabs.create({ url: externalUrl }, function (tab) {
-            console.log("New tab launched with http://yoursite.com/");
+            //console.log("New tab launched with http://yoursite.com/");
         });
     }
 });

@@ -60,7 +60,7 @@ if (y.match(regEX)){
 xArray.push(y);
 }
 else{
-//imgNotLLArray.push(y);
+imgNotLLArray.push(y);
 }
 }
 var ratioLL = xArray.length/imgCount.length;
@@ -86,6 +86,8 @@ console.log(joinLLString);*/
  var numSVG = 0;
  var numWEBP = 0;
  var numAVIF = 0;
+    
+var imgNotGoodFormat = [];
 
 //5 is the best suggested number
 if(imgs.length > 5){
@@ -103,6 +105,7 @@ else if(pencil.match(regWEBP)){
      numWEBP++;
 }
 else {
+imgNotGoodFormat.push(pencil);
 //console.log("0");
 }
 }
@@ -1389,10 +1392,6 @@ const storedAt = Date.now();
 //displaying url for options chart label
 var hostURL = window.location.host;
     
-//Chart Example
-var images = document.getElementsByTagName("img").length;
-var iFrames = document.getElementsByTagName("iframe").length;
-    
 var Sustainability = 0;
 var Score = finalScore;
 
@@ -1433,10 +1432,12 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 
 
+console.log(imgNotLLArray);
+console.log(emptySRCArray);
+console.log(imgNotGoodFormat);
     
     
-    
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, images, iFrames, Sustainability, Score}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat}
 
 chrome.runtime.sendMessage(counts);
     

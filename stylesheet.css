@@ -24,7 +24,7 @@ body {
     margin-bottom: 2px;
 }
 
-#chartDiv{
+#titleDiv{
     display: flex;
     width: 100%;
     justify-content: center;
@@ -80,3 +80,23 @@ canvas {
   block-size: 90% !important;
   margin-left: 5%;
 }
+
+/*Changes to the design by Harshit*/
+
+#requestDiv {
+  padding-inline: 10px;
+}
+
+.site-more {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.site-more-rotated {
+  transform: rotate(90deg);
+}
+
+.list-sections {
+  display: none;
+}
+
