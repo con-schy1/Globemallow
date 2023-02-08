@@ -151,7 +151,7 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
 const requestDiv = document.querySelector("#requestDiv");
 const siteInfoTemplate = document.querySelector("#site-info-template");
 
-function listSiteInfo(name, imgs, frames, format) {
+function listSiteInfo(name, notLL, emptySrc, format) {
   let clone = siteInfoTemplate.content.cloneNode(true);
 
   let siteName = clone.querySelector(".site-name");
@@ -169,10 +169,10 @@ function listSiteInfo(name, imgs, frames, format) {
 
 //Connor Try / Catch    
 try{    
-  imgs.forEach(z => {
+  notLL.forEach(z => {
     if (z && z != "") siteImageList.innerHTML += `<li>${z}</li>`;
   });
-  frames.forEach(z => {
+  emptySrc.forEach(z => {
     if (z && z != "") siteFrameList.innerHTML += `<li>${z}</li>`;
   });
   format.forEach(z => {
