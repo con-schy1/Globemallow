@@ -49,7 +49,7 @@ var xArray = [];
 var imgNotLLArray = [];
 var imgCount = document.getElementsByTagName("img");
 let x1 = document.querySelector('html').outerHTML;
-var regEX = /(loading="lazy")|(class="lozad")/;
+var regEX = /(loading="lazy")|(class="lozad")|(class="b-lazy")/;
 var result = "";
 
 //5 is the best suggested number
