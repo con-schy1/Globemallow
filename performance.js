@@ -60,7 +60,8 @@ if (y.match(regEX)){
 xArray.push(y);
 }
 else{
-imgNotLLArray.push(y);
+//imgNotLLArray.push(y);
+imgNotLLArray.push(imgCount[i].src);
 }
 }
 var ratioLL = xArray.length/imgCount.length;
