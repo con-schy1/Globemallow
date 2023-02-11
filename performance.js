@@ -1432,7 +1432,15 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
  }
 
 
-
+if (imgNotLLArray.length === 0){
+    imgNotLLArray.push("0 Found");
+}
+if (emptySRCArray.length === 0){
+    emptySRCArray.push("0 Found");
+}
+if (imgNotGoodFormat.length === 0){
+    imgNotGoodFormat.push("0 Found");
+}
 console.log(imgNotLLArray);
 console.log(emptySRCArray);
 console.log(imgNotGoodFormat);

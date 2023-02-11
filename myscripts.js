@@ -168,15 +168,12 @@ function listSiteInfo(name, notLL, emptySrc, format) {
   });
 
 //Connor Try / Catch    
-//try{
 try{
+
   notLL.forEach(z => {
     if (z && z != "") siteImageList.innerHTML += `<li>${z}</li>`;
   });
-}
-    catch (e){
-        console.log(11);
-    }
+
   emptySrc.forEach(z => {
     if (z && z != "") siteFrameList.innerHTML += `<li>${z}</li>`;
   });
@@ -188,10 +185,10 @@ requestDiv.appendChild(clone);
     
 
     
-//}
-    //catch(e){
+}
+    catch(e){
         
-    //}
+    }
 
   
 }

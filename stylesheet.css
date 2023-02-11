@@ -74,14 +74,22 @@ body {
     
 }
 
-/* changes below -harshit max-inline-size used to be 100%*/
+#menuBar{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#requests{
+    margin-left: 10px;
+}
+
+/* max-inline-size used to be 100%*/
 canvas {
   max-inline-size: 90% !important;
   block-size: 90% !important;
   margin-left: 5%;
 }
-
-/*Changes to the design by Harshit*/
 
 #requestDiv {
   padding-inline: 10px;
