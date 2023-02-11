@@ -139,7 +139,7 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
     if (window.location.hash == "#Requests") {
       requestDiv.innerHTML = "";
       for (x in data) {
-        listSiteInfo(data[x].hostURL, data[x].imgNotLLArray, data[x].emptySRCArray, data[x].imgNotGoodFormat);
+        listSiteInfo(data[x].hostURL, data[x].imgNotLLArray, data[x].imgNotGoodFormat);
       }
     }
   });
@@ -151,7 +151,7 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
 const requestDiv = document.querySelector("#requestDiv");
 const siteInfoTemplate = document.querySelector("#site-info-template");
 
-function listSiteInfo(name, notLL, emptySrc, format) {
+function listSiteInfo(name, notLL, format) {
   let clone = siteInfoTemplate.content.cloneNode(true);
 
   let siteName = clone.querySelector(".site-name");
@@ -174,9 +174,6 @@ try{
     if (z && z != "") siteImageList.innerHTML += `<li>${z}</li>`;
   });
 
-  emptySrc.forEach(z => {
-    if (z && z != "") siteFrameList.innerHTML += `<li>${z}</li>`;
-  });
   format.forEach(z => {
     if (z && z != "") siteFormatList.innerHTML += `<li>${z}</li>`;
   });
@@ -203,7 +200,7 @@ window.addEventListener("hashchange", async function() {
     requestDiv.innerHTML = "";
     await chrome.storage.session.get(null).then(data => {
       for (x in data) {
-        listSiteInfo(data[x].hostURL, data[x].imgNotLLArray, data[x].emptySRCArray, data[x].imgNotGoodFormat);
+        listSiteInfo(data[x].hostURL, data[x].imgNotLLArray, data[x].imgNotGoodFormat);
       }
     });
   }else{
