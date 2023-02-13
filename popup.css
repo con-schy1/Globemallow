@@ -154,9 +154,6 @@ h3{
     width: 265px;
 }
 
-
-
-
 #redirectButton{
     height: 28px;
 }
@@ -348,7 +345,7 @@ table .row{
   padding: 5px 0;
   position: absolute;
   z-index: 1;
-  bottom: 125%;
+  bottom: 77%;
   left: 50%;
   margin-left: -60px;
   opacity: 0;
@@ -545,24 +542,13 @@ table .row{
     border-color: #F77616;
     border-width: thin;
     border-radius: 5px;
+    margin-top: 8px;
 }
 
 .additionReportBtn:hover{
     background-color: lightgray;
     border-width: thin;
 
-}
-
-#additionalReports{
-    display: flex;
-    width: 100%;
-    margin-top: 10px;
-    
-}
-
-#additionalReportText{
-    margin-top: 20px;
-    margin-left: 5px;
 }
 
 
@@ -651,6 +637,38 @@ table .row{
 
 #go-to-options1{
     margin-left: 3px;
+}
+
+.try62 .tooltiptextGrade {
+  visibility: hidden;
+  width: 144px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  margin-left: 45px;
+  margin-bottom: 15px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.try62 .tooltiptextGrade::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent transparent;
+}
+
+.try62:hover .tooltiptextGrade {
+  visibility: visible;
+  opacity: 1;
 }
 
 </style>
