@@ -555,7 +555,6 @@ table .row{
 
 #additionalReports{
     display: flex;
-    line-height: 0;
     width: 100%;
     margin-top: 10px;
     
@@ -648,6 +647,10 @@ table .row{
 
 #go-to-options{
     font-size: 12px;
+}
+
+#go-to-options1{
+    margin-left: 3px;
 }
 
 </style>
