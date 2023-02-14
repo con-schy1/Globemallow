@@ -49,7 +49,7 @@ var xArray = [];
 var imgNotLLArray = [];
 var imgCount = document.getElementsByTagName("img");
 let x1 = document.querySelector('html').outerHTML;
-var regEX = /(loading="lazy")|(class="lozad")|(class="b-lazy")/;
+var regEX = /(loading="lazy")|(class="lozad")|(class="b-lazy")|(class="lazyloaded)|(class="lazy")/;
 var result = "";
 
 //5 is the best suggested number
@@ -255,6 +255,8 @@ var img1Count = document.getElementsByTagName("img");
 var picTagCount = document.getElementsByTagName("picture").length;
 var regSRC = /srcset/;
 var ratio1 = 0;
+    
+var imgNotRes = [];
 
 if (picTagCount > 0){
 ratio1 = picTagCount/img1Count.length;
@@ -267,6 +269,7 @@ var y = img1Count[i].outerHTML;
     if (y.match(regSRC)){
         x1Array.push(y);
     }else{
+        imgNotRes.push(img1Count[i].src);
          //console.log("0 srcset Images");
         }
     }
@@ -275,6 +278,7 @@ answerArray.push(ratioSS);
 
 }
 else{
+imgNotRes.push(img1Count);
 answerArray.push(1.1);
 }   
 
@@ -1434,15 +1438,23 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 if (imgNotLLArray.length === 0){
     imgNotLLArray.push("0 Found");
-}
+    }
 if (imgNotGoodFormat.length === 0){
     imgNotGoodFormat.push("0 Found");
+    }
+if (picTagCount > 0){
+    imgNotRes.push("Images loading responsively.");
 }
-console.log(imgNotLLArray);
-console.log(imgNotGoodFormat);
+    else if (imgNotRes.length === 0){
+    imgNotRes.push("0 Found");
+}
+    
+/*console.log(imgNotLLArray);
+console.log(imgNotGoodFormat);*/
+//console.log(imgNotRes);
     
     
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes}
 
 chrome.runtime.sendMessage(counts);
     

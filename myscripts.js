@@ -139,7 +139,7 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
     if (window.location.hash == "#Requests") {
       requestDiv.innerHTML = "";
       for (x in data) {
-        listSiteInfo(data[x].hostURL, data[x].imgNotLLArray, data[x].imgNotGoodFormat);
+        listSiteInfo(data[x].hostURL, data[x].imgNotLLArray, data[x].imgNotGoodFormat, data[x].imgNotRes);
       }
     }
   });
@@ -151,14 +151,14 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
 const requestDiv = document.querySelector("#requestDiv");
 const siteInfoTemplate = document.querySelector("#site-info-template");
 
-function listSiteInfo(name, notLL, format) {
+function listSiteInfo(name, notLL, format, notResp) {
   let clone = siteInfoTemplate.content.cloneNode(true);
 
   let siteName = clone.querySelector(".site-name");
   let siteMore = clone.querySelector(".site-more");
   let siteImageList = clone.querySelector(".site-image-list");
-  let siteFrameList = clone.querySelector(".site-frame-list");
   let siteFormatList = clone.querySelector(".site-format-list");
+  let siteRespList = clone.querySelector(".site-responsive-list");
   let listsections = clone.querySelectorAll(".list-sections");
 
   siteName.innerText = name;
@@ -176,6 +176,10 @@ try{
 
   format.forEach(z => {
     if (z && z != "") siteFormatList.innerHTML += `<li>${z}</li>`;
+  });
+    
+  notResp.forEach(z => {
+    if (z && z != "") siteRespList.innerHTML += `<li>${z}</li>`;
   });
     
 requestDiv.appendChild(clone);
@@ -200,7 +204,7 @@ window.addEventListener("hashchange", async function() {
     requestDiv.innerHTML = "";
     await chrome.storage.session.get(null).then(data => {
       for (x in data) {
-        listSiteInfo(data[x].hostURL, data[x].imgNotLLArray, data[x].imgNotGoodFormat);
+        listSiteInfo(data[x].hostURL, data[x].imgNotLLArray, data[x].imgNotGoodFormat, data[x].imgNotRes);
       }
     });
   }else{

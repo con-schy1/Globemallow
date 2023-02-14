@@ -1965,7 +1965,7 @@ document.getElementById('LLButton').onclick = function(evt) {
 	 //openButton(evt,'Example2Div');
      document.getElementById("m1").innerHTML = 'Lazy Loaded Images';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
-     document.getElementById("m2").innerHTML = 'With "lazy loading", files are only loaded when they reach the visible area of the browser window, or shortly before it. Modern browsers allow to insert loading=“lazy“ as an attribute in the img element. Lazy loading is useful because it allows images lower on a page to not be loaded if it\'s not in immediate view. Looking for the following Lazy-Loading methods: loading="lazy", class="lozad" and class="b-lazy".';
+     document.getElementById("m2").innerHTML = 'With "lazy loading", files are only loaded when they reach the visible area of the browser window, or shortly before it. Modern browsers allow to insert loading=“lazy“ as an attribute in the img element. Lazy loading is useful because it allows images lower on a page to not be loaded if it\'s not in immediate view. Looking for the following Lazy-Loading methods: loading="lazy", class="lozad", class="b-lazy", class="lazyloaded", and class="lazy".';
      /*var lazyLoadScore = document.getElementById("mLL").innerHTML;
 //    document.getElementById("m4").innerHTML = "Grade increases to " + lazyLoadScore + " if all images were Lazy Loaded";
     document.getElementById("m4").style.display = "block";*/
