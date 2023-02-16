@@ -1436,18 +1436,24 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
  }
 
 
-if (imgNotLLArray.length === 0){
+if (answerArray[1] === 1.1){
+    imgNotLLArray.push("Less than 6 images on page.");
+    }
+    else if(imgNotLLArray.length === 0){
     imgNotLLArray.push("0 Found");
     }
-if (imgNotGoodFormat.length === 0){
+if (answerArray[2] === 1.1){
+    imgNotGoodFormat.push("Less than 6 images on page.");
+    }
+    else if(imgNotGoodFormat.length === 0){
     imgNotGoodFormat.push("0 Found");
     }
 if (picTagCount > 0){
     imgNotRes.push("Images loading responsively.");
-}
+    }
     else if (imgNotRes.length === 0){
     imgNotRes.push("0 Found");
-}
+    }
     
 /*console.log(imgNotLLArray);
 console.log(imgNotGoodFormat);*/
