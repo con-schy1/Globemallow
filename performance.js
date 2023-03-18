@@ -710,7 +710,11 @@ else{
 
 //console.log(backGroundColor);
 
-    
+//Recommendation Arrays
+var highRec = [];
+var medRec = [];
+var lowRec = [];
+     
     
     
 /////////////////////////////////////////
@@ -724,51 +728,6 @@ var finalScore = 0;
 // Decoded Body Size
 var sizeWeight = 0;
 switch (answerArray[0] >= 0){
-
-/*case answerArray[0] <= 150000:
-    finalScore += 3;
-    sizeWeight = 3;
-    break;
-case answerArray[0] <= 600000:
-    finalScore += 2.85;
-    sizeWeight = 2.85;
-    break;
-case answerArray[0] <= 850000:
-    finalScore += 2.65;
-    sizeWeight = 2.65;
-    break;
-case answerArray[0] <= 1048576:
-    finalScore += 2.45;
-    sizeWeight = 2.45;
-    break;
-case answerArray[0] <= 1572864:
-    finalScore += 2.2;
-    sizeWeight = 2.2;
-    break;
-case answerArray[0] <= 2000000:
-    finalScore += 2;
-    sizeWeight = 2;
-    break;
-case answerArray[0] <= 2621440:
-    finalScore += 1.85;
-    sizeWeight = 1.85;
-    break;
-case answerArray[0] <= 3100000:
-    finalScore += 1.65;
-    sizeWeight = 1.65;
-    break;
-case answerArray[0] <= 3670016:
-    finalScore += 1.45;
-    sizeWeight = 1.45;
-    break;
-case answerArray[0] <= 5242880:
-    finalScore += 1.25;
-    sizeWeight = 1.25;
-    break;
-case answerArray[0] > 5242880:
-    finalScore += 1;
-    sizeWeight = 1;
-    break;*/
         
 case answerArray[0] <= 150000:
     finalScore += 3;
@@ -789,73 +748,88 @@ case answerArray[0] <= 850000:
 case answerArray[0] <= 1076398:
     finalScore += 2.6;
     sizeWeight = 2.6;
+    lowRec.push(300);
     break;
 case answerArray[0] <= 1376398:
     finalScore += 2.5;
     sizeWeight = 2.5;
+    lowRec.push(300);
     break;
 case answerArray[0] <= 1572864:
     finalScore += 2.4;
     sizeWeight = 2.4;
+    medRec.push(200);
     break;
 case answerArray[0] <= 1750000:
     finalScore += 2.3;
     sizeWeight = 2.3;
+    medRec.push(200);
     break;
 case answerArray[0] <= 2000000:
     finalScore += 2.2;
     sizeWeight = 2.2;
+    medRec.push(200);
     break;
 case answerArray[0] <= 2300000:
     finalScore += 2.1;
     sizeWeight = 2.1;
+    medRec.push(200);
     break;
 case answerArray[0] > 2600000:
     finalScore += 2;
     sizeWeight = 2;
+    medRec.push(200);
     break;
 case answerArray[0] <= 3200000:
     finalScore += 1.9;
     sizeWeight = 1.9;
+    medRec.push(200);
     break;
 case answerArray[0] <= 3800000:
     finalScore += 1.8;
     sizeWeight = 1.8;
+    medRec.push(200);
     break;
 case answerArray[0] <= 4400000:
     finalScore += 1.7;
     sizeWeight = 1.7;
+    highRec.push(100);
     break;
 case answerArray[0] <= 5000000:
     finalScore += 1.6;
     sizeWeight = 1.6;
+    highRec.push(100);
     break;
 case answerArray[0] <= 5600000:
     finalScore += 1.5;
     sizeWeight = 1.5;
+    highRec.push(100);
     break;
 case answerArray[0] <= 6200000:
     finalScore += 1.4;
     sizeWeight = 1.4;
+    highRec.push(100);
     break;
 case answerArray[0] > 6800000:
     finalScore += 1.3;
     sizeWeight = 1.3;
+    highRec.push(100);
     break;
 case answerArray[0] <= 7400000:
     finalScore += 1.2;
     sizeWeight = 1.2;
+    highRec.push(100);
     break;
 case answerArray[0] <= 8000000:
     finalScore += 1.1;
     sizeWeight = 1.1;
+    highRec.push(100);
     break;
 case answerArray[0] > 8000001:
     finalScore += 1;
     sizeWeight = 1;
+    highRec.push(100);
     break;
-        
-
 
 }
 
@@ -872,17 +846,21 @@ switch (answerArray[1] >= 0){
     case answerArray[1] >= .40:
         finalScore += .3;
         LazyLoadWeight = .3;
+        lowRec.push(301);
         break;
    case answerArray[1] >= .25:
         finalScore += .2;
         LazyLoadWeight = .2;
+        medRec.push(201);
         break;
    case answerArray[1] > 0:
         finalScore += .1;
         LazyLoadWeight = .1;
+        medRec.push(201);
         break;
    case answerArray[1] == 0:
         finalScore += 0;
+        highRec.push(101);
         break;
 
 }
@@ -898,17 +876,21 @@ switch (answerArray[2] >= 0){
     case answerArray[2] >= .5:
         finalScore += .3;
         imgTypeWeight = .3;
+        lowRec.push(302);
         break;
    case answerArray[2] >= .25:
         finalScore += .2;
         imgTypeWeight = .2;
+        medRec.push(202);
         break;
    case answerArray[2] > 0:
         finalScore += .1;
         imgTypeWeight = .1;
+        medRec.push(202);
         break;
    case answerArray[2] == 0:
         finalScore += 0;
+        highRec.push(102);
         break;
 
 }
@@ -924,26 +906,32 @@ switch (answerArray[3] >= 0){
     case answerArray[3] <= 15000000:
         finalScore += 1.75;
         jsWeight = 1.75;
+        lowRec.push(303);
         break;
     case answerArray[3] <= 20000000:
         finalScore += 1.5;
         jsWeight = 1.5;
+        lowRec.push(303);
         break;
    case answerArray[3] <= 25000000:
         finalScore += 1;
         jsWeight = 1;
+        medRec.push(203);
         break;
     case answerArray[3] <= 30000000:
         finalScore += .75;
         jsWeight = .75;
+        medRec.push(203);
         break;
    case answerArray[3] <= 40000000:
         finalScore += .5;
         jsWeight = .5;
+        highRec.push(103);
         break;
    case answerArray[3] > 40000000:
         finalScore += .25;
         jsWeight = .25;
+        highRec.push(103);
         break;
 
 }
@@ -959,26 +947,32 @@ switch (answerArray[4] >= 0){
     case answerArray[4] <= 350000:
         finalScore += .85;
         lengthWeight = .85;
+        lowRec.push(304);
         break;
     case answerArray[4] <= 500000:
         finalScore += .75;
         lengthWeight = .75;
+        lowRec.push(304);
         break;
     case answerArray[4] <= 750000:
         finalScore += .65;
         lengthWeight = .65;
+        medRec.push(204);
         break;
    case answerArray[4] <= 1000000:
         finalScore += .5;
         lengthWeight = .5;
+        medRec.push(204);
         break;
    case answerArray[4] <= 4000000:
         finalScore += .25;
         lengthWeight = .25;
+        highRec.push(104);
         break;
    case answerArray[4] > 4000000:
         finalScore += .1;
         lengthWeight = .1;
+        highRec.push(104);
         break;
 
 }
@@ -1080,22 +1074,27 @@ switch (answerArray[8] >= 0){
 case answerArray[8] >= .7:
     finalScore += .4;
     resWeight = .4;
+    lowRec.push(300);
     break;
 case answerArray[8] >= .5:
     finalScore += .35;
     resWeight = .35;
+    lowRec.push(300);
     break;
 case answerArray[8] >= .3:
     finalScore += .3;
     resWeight = .3;
+    medRec.push(200);
     break;
 case answerArray[8] > 0:
     finalScore += .25;
     resWeight = .25;
+    medRec.push(200);
     break;
 case answerArray[8] == 0:
     finalScore += .2;
     resWeight = .2;
+    highRec.push(100);
     break;
 }
     
@@ -1171,7 +1170,7 @@ case answerArray[12] >= 16:
     break;
 }
         
-        
+    
  // Empty SRC Tags
 var emptySRCWeight = 0;
 switch (answerArray[13] >= 0){
@@ -1188,12 +1187,13 @@ case answerArray[13] >= 5:
     finalScore += 0;
     break;
 }
-    
+console.log(test54);
     
     
  // Cache Max Age
 var cacheWeight = 0;
-switch (answerArray[14] >= 0){
+
+switch (true){
 
 case answerArray[14] >= 31536000:
     finalScore += .4;
@@ -1205,23 +1205,26 @@ case answerArray[14] >= 86400:
     break;
 case answerArray[14] >= 3600:
     finalScore += .3;
-    cacheWeight = .3;
+    cacheWeight += .3;
+    var cacheReco = 'You need to cache something';
     break;
 case answerArray[14] >= 600:
     finalScore += .25;
-    cacheWeight = .25;
+    cacheWeight += .25;
+    var cacheReco = 'You need to cache something';
     break;
-case answerArray[14] >= 1:
+case answerArray[14] >= 0:
     finalScore += .2;
-    cacheWeight = .2;
+    cacheWeight += .2;
+    var cacheReco = 'You need to cache something';
     break;
 case answerArray[14] == .5:
     finalScore += .4;
-    cacheWeight = .4;
+    cacheWeight += .4;
+    var cacheReco = 'You need to cache something';
     break;
-}
-    
-    
+}    
+console.log(cacheWeight);    
   
 // Background Color
 var colorWeight = 0;
@@ -1248,7 +1251,7 @@ case 'blue':
     colorWeight = .1;
     break;
 }
-    
+   
 var maxScore = 15.3;
 
 
@@ -1460,7 +1463,7 @@ console.log(imgNotGoodFormat);*/
 //console.log(imgNotRes);
     
     
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, cacheReco}
 
 chrome.runtime.sendMessage(counts);
     

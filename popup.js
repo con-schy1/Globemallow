@@ -13,6 +13,8 @@ chrome.tabs.query({
 /////////////////////////////////////////////////////////////////////////////
 //Green Hosting Search
             
+try{
+            
 	fetch('https://admin.thegreenwebfoundation.org/api/v3/greencheck/'+domain).then(function(response) {
 	  response.json().then(function(resData) {
 		if(resData.green == true){
@@ -20,7 +22,6 @@ chrome.tabs.query({
             document.getElementById("greenBar").style.background = 'rgba(142, 202, 46, 0.5)';
             document.getElementById("greenBar").style.border = '1px solid green';
             document.getElementById("greenBar").innerHTML = 'Yes';
-//            document.getElementById("p3").innerHTML = 'Your website is hosted with green energy sources!';
             
 		}
 		else if(resData.green == false){
@@ -28,11 +29,13 @@ chrome.tabs.query({
             document.getElementById("greenBar").style.background = 'rgba(241, 137, 49, 0.5)';
             document.getElementById("greenBar").style.border = '1px solid orange';
             document.getElementById("greenBar").innerHTML = 'No'; 
-            //document.getElementById("m2").innerHTML = 'Green Hosted is powered by the Green Web Foundation who defines the dataset as: "the largest dataset in the world of which sites use renewable power." Powering your site with renewables saves energy from energy produced by fossil fuels.';
-//            document.getElementById("m1").innerHTML = 'Green Hosted';
 		}
 	  });
 	});
+}
+  catch(e){
+      console.log('Green Web Fail');
+  }
 
 //////////////////////////////////////////////////////////////////////////////////
             
@@ -1866,23 +1869,25 @@ switch (colorScore){
         document.getElementById("colorBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("colorBar").style.border = '1px solid orange';
         break;
-}            
+}
+            
+            
+            
+            
+//Recommendations
+/*<p class = "recoClass" id= "reco1"></p>
+<p class = "recoClass" id= "reco2"></p>
+<p class = "recoClass" id= "reco3"></p>*/  
+document.getElementById("reco1").innerHTML = x.cacheReco;
+document.getElementById("reco2").innerHTML = x.largeTransSrc;
+document.getElementById("reco3").innerHTML = x.styleSheetSources;
+
             
             
             
             
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+                     
             
        }
         catch(e) {
