@@ -988,22 +988,27 @@ switch (answerArray[5] >= 0){
     case answerArray[5] <= 3.5:
         finalScore += 1.75;
         timeWeight = 1.75;
+        lowRec.push(305);
         break;
     case answerArray[5] <= 5:
         finalScore += 1.5;
         timeWeight = 1.5;
+        medRec.push(205);
         break;
    case answerArray[5] <= 6:
         finalScore += 1;
         timeWeight = 1;
+        medRec.push(205);
         break;
    case answerArray[5] <= 8:
         finalScore += .75;
         timeWeight = .75;
+        highRec.push(105);
         break;
    case answerArray[5] > 8:
         finalScore += .5;
         timeWeight = .5;
+        highRec.push(105);
         break;
 
 }
@@ -1019,6 +1024,7 @@ switch (answerArray[6] >= 0){
     case answerArray[6] == 1:
         finalScore += .1;
         fontWeight = .1;
+        medRec.push(206);
         break;
 
 }
@@ -1039,30 +1045,37 @@ case answerArray[7] <= 600000:
 case answerArray[7] <= 850000:
     finalScore += 3.5;
     transWeight = 3.5;
+    lowRec.push(307);
     break;
 case answerArray[7] <= 1048576:
     finalScore += 3.25;
     transWeight = 3.25;
+    lowRec.push(307);
     break;
 case answerArray[7] <= 1572864:
     finalScore += 3;
     transWeight = 3;
+    medRec.push(207);
     break;
 case answerArray[7] <= 2621440:
     finalScore += 2.75;
     transWeight = 2.75;
+    medRec.push(207);
     break;
 case answerArray[7] <= 3670016:
     finalScore += 2.5;
     transWeight = 2.5;
+    highRec.push(107);
     break;
 case answerArray[7] <= 5242880:
     finalScore += 2.25;
     transWeight = 2.25;
+    highRec.push(107);
     break;
 case answerArray[7] > 5242880:
     finalScore += 2;
     transWeight = 2;
+    highRec.push(107);
     break;
 
 }
@@ -1074,27 +1087,26 @@ switch (answerArray[8] >= 0){
 case answerArray[8] >= .7:
     finalScore += .4;
     resWeight = .4;
-    lowRec.push(300);
     break;
 case answerArray[8] >= .5:
     finalScore += .35;
     resWeight = .35;
-    lowRec.push(300);
+    lowRec.push(308);
     break;
 case answerArray[8] >= .3:
     finalScore += .3;
     resWeight = .3;
-    medRec.push(200);
+    lowRec.push(308);
     break;
 case answerArray[8] > 0:
     finalScore += .25;
     resWeight = .25;
-    medRec.push(200);
+    medRec.push(208);
     break;
 case answerArray[8] == 0:
     finalScore += .2;
     resWeight = .2;
-    highRec.push(100);
+    highRec.push(108);
     break;
 }
     
@@ -1109,9 +1121,11 @@ case answerArray[9] <= 2:
 case answerArray[9] <= 5:
     finalScore += .1;
     intSSWeight = .1;
+    lowRec.push(309);
     break;
 case answerArray[9] >= 5:
     finalScore += 0;
+    medRec.push(209);
     break;
 }
     
@@ -1126,9 +1140,11 @@ case answerArray[10] <= 2:
 case answerArray[10] <= 5:
     finalScore += .15;
     ssFileWeight = .15;
+    lowRec.push(310);
     break;
 case answerArray[10] >= 5:
     finalScore += .5;
+    medRec.push(210);
     break;
 }
     
@@ -1142,6 +1158,7 @@ case answerArray[11] == 0:
     break;
 case answerArray[11] <= 1:
     finalScore += 0;
+    lowRec.push(311);
     break;
 }
 
@@ -1156,17 +1173,21 @@ case answerArray[12] <=3:
 case answerArray[12] <= 7:
     finalScore += .3;
     cookieWeight = .3;
+    lowRec.push(312);
     break;
 case answerArray[12] <= 10:
     finalScore += .2;
     cookieWeight = .2;
+    medRec.push(212);
     break;
 case answerArray[12] <= 15:
     finalScore += .1;
     cookieWeight = .1;
+    medRec.push(212);
     break;
 case answerArray[12] >= 16:
     finalScore += 0;
+    highRec.push(112);
     break;
 }
         
@@ -1182,9 +1203,11 @@ case answerArray[13] <= 2:
 case answerArray[13] <= 4:
     finalScore += .1;
     emptySRCWeight = .1;
+    lowRec.push(313);
     break;
 case answerArray[13] >= 5:
     finalScore += 0;
+    medRec.push(213);
     break;
 }
 console.log(test54);
@@ -1206,22 +1229,22 @@ case answerArray[14] >= 86400:
 case answerArray[14] >= 3600:
     finalScore += .3;
     cacheWeight += .3;
-    var cacheReco = 'You need to cache something';
+    lowRec.push(214);
     break;
 case answerArray[14] >= 600:
     finalScore += .25;
     cacheWeight += .25;
-    var cacheReco = 'You need to cache something';
+    medRec.push(214);
     break;
 case answerArray[14] >= 0:
     finalScore += .2;
     cacheWeight += .2;
-    var cacheReco = 'You need to cache something';
+    medRec.push(214);
     break;
 case answerArray[14] == .5:
     finalScore += .4;
     cacheWeight += .4;
-    var cacheReco = 'You need to cache something';
+    highRec.push(114);
     break;
 }    
 console.log(cacheWeight);    
@@ -1245,10 +1268,12 @@ case 'something':
 case 'white':
     finalScore += .13;
     colorWeight = .13;
+    lowRec.push(215);
     break;
 case 'blue':
     finalScore += .1;
     colorWeight = .1;
+    medRec.push(215);
     break;
 }
    
