@@ -1210,7 +1210,6 @@ case answerArray[13] >= 5:
     medRec.push(213);
     break;
 }
-console.log(test54);
     
     
  // Cache Max Age
@@ -1229,7 +1228,7 @@ case answerArray[14] >= 86400:
 case answerArray[14] >= 3600:
     finalScore += .3;
     cacheWeight += .3;
-    lowRec.push(214);
+    lowRec.push(314);
     break;
 case answerArray[14] >= 600:
     finalScore += .25;
@@ -1239,15 +1238,13 @@ case answerArray[14] >= 600:
 case answerArray[14] >= 0:
     finalScore += .2;
     cacheWeight += .2;
-    medRec.push(214);
+    highRec.push(114);
     break;
 case answerArray[14] == .5:
     finalScore += .4;
     cacheWeight += .4;
-    highRec.push(114);
     break;
-}    
-console.log(cacheWeight);    
+}        
   
 // Background Color
 var colorWeight = 0;
@@ -1268,7 +1265,7 @@ case 'something':
 case 'white':
     finalScore += .13;
     colorWeight = .13;
-    lowRec.push(215);
+    lowRec.push(315);
     break;
 case 'blue':
     finalScore += .1;
@@ -1463,7 +1460,8 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
      lazyLoadChart = lazyLoadChart.toPrecision(2);
  }
 
-
+//Sustainable Remediations
+    
 if (answerArray[1] === 1.1){
     imgNotLLArray.push("Less than 6 images on page.");
     }
@@ -1483,12 +1481,74 @@ if (picTagCount > 0){
     imgNotRes.push("0 Found");
     }
     
-/*console.log(imgNotLLArray);
-console.log(imgNotGoodFormat);*/
-//console.log(imgNotRes);
     
     
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, cacheReco}
+ //Identify File of Largest Transfer Size
+    
+var cssTransReq = /(.css)/;
+var apiTransReq = /(api)/;
+var jsTransReq = /(.js)/;
+var importedFontTransReq = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)/;
+var imageTransReq = /(.png)|(.jpeg)|(.gif)|(.jpg)|(.tiff)|(.svg)|(webp)|(avif)/;
+var imgFormatType = 0;
+
+
+if (largeTransSrc.match(cssTransReq)){
+    imgFormatType = 1;
+    console.log('Your largest Trans Size is a stylesheet.');
+}
+    else if(largeTransSrc.match(apiTransReq)){
+    imgFormatType = 2;
+    console.log('Your largest Trans Size is an api request.');
+}
+    else if(largeTransSrc.match(jsTransReq)){
+    imgFormatType = 3;
+    console.log('Your largest Trans Size is a javascript file.');
+}
+    else if(largeTransSrc.match(importedFontTransReq)){
+    imgFormatType = 4;
+    console.log('Your largest Trans Size is an imported font file.');
+}
+    else if(largeTransSrc.match(imageTransReq)){
+    imgFormatType = 5;
+    console.log('Your largest Trans Size is an image. Jeezus christ.');
+}
+        else{
+        console.log('Did not work');
+}
+
+
+
+// High Important Recomendation
+    
+var highRec1;
+console.log('Length '+highRec.length);
+console.log('Array '+highRec);
+    
+switch (highRec.length >= 1){
+
+    case highRec.includes(107) && imgFormatType === 1:
+        highRec1 = 'Your largest Trans Size is a stylesheet.';
+        break;
+    case highRec.includes(107) && imgFormatType === 2:
+        highRec1 = 'Your largest Trans Size is an api request.';
+        break;
+    case highRec.includes(107) && imgFormatType === 3:
+        highRec1 = 'Your largest Trans Size is a javascript file.';
+        break;
+    case highRec.includes(107) && imgFormatType === 4:
+        highRec1 = 'Your largest Trans Size is an imported font file.';
+        break;
+    case highRec.includes(107) && imgFormatType === 5:
+        highRec1 = 'Your largest Trans Size is an image. Jeezus christ.';
+        break;
+    case highRec.includes(107):
+        highRec1 = 'This is your largest Transfer Request '+largeTransSrc;
+        break;
+}
+    
+    
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, highRec1}
 
 chrome.runtime.sendMessage(counts);
     

@@ -6,7 +6,7 @@ chrome.tabs.query({
     let domain = (new URL(url));
 	domain = domain.hostname;
     chrome.storage.session.get("tab"+tab.id).then(data => {
-        try{
+        //try{
  var x = data["tab"+tab.id];
             
          
@@ -1877,8 +1877,9 @@ switch (colorScore){
 //Recommendations
 /*<p class = "recoClass" id= "reco1"></p>
 <p class = "recoClass" id= "reco2"></p>
-<p class = "recoClass" id= "reco3"></p>*/  
-document.getElementById("reco1").innerHTML = x.cacheReco;
+<p class = "recoClass" id= "reco3"></p>*/ 
+console.log('Perf Var '+x.highRec1);
+document.getElementById("reco1").innerHTML = x.highRec1;
 document.getElementById("reco2").innerHTML = x.largeTransSrc;
 document.getElementById("reco3").innerHTML = x.styleSheetSources;
 
@@ -1889,10 +1890,10 @@ document.getElementById("reco3").innerHTML = x.styleSheetSources;
             
                      
             
-       }
-        catch(e) {
+      // }
+        //catch(e) {
             //alert("Page is almost loaded")
-        }
+        //}
         });
     
 });
