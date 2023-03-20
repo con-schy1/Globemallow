@@ -193,28 +193,39 @@ answerArray.push(fontBoolean);
 //Transfer Size
     
 var imgB = [];
+var imgC = [];
 var transferSize1 = 0;
 var largeTrans = 0;
 var largeTransArray = [];
 var largeTransSrc;
+var largeLoadRequest;
 
 const transferResources = performance.getEntriesByType('resource');
     
     
 var max = transferResources[0].transferSize;
+var maxDur = transferResources[0].duration;
 var maxIndex = 0;
+var maxIndexDur = 0;
 
 for (var i = 0; i < transferResources.length; i++) {
    imgB.push(transferResources[i].transferSize);
+   imgC.push(transferResources[i].duration);
    
     if(imgB[i] > max){
             maxIndex = i;
             max = imgB[i];
             
         }
+    if(imgC[i] > maxDur){
+            maxIndexDur = i;
+            maxDur = imgC[i];
+            
+        }
 
    }
 largeTransSrc = transferResources[maxIndex].name;
+largeLoadRequest = transferResources[maxIndexDur].name;
     
     
 for (let i in imgB){
@@ -1276,7 +1287,7 @@ case 'blue':
    
 var maxScore = 15.3;
 
-
+console.log(highRec);
 
 //////////////////////////////////////
 //Metric Weight Calc
@@ -1489,7 +1500,7 @@ var cssTransReq = /(.css)/;
 var apiTransReq = /(api)/;
 var jsTransReq = /(.js)/;
 var importedFontTransReq = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)/;
-var imageTransReq = /(.png)|(.jpeg)|(.gif)|(.jpg)|(.tiff)|(.svg)|(webp)|(avif)/;
+var imageTransReq = /(.png)|(.jpeg)|(.gif)|(.jpg)|(.tiff)|(.svg)|(webp)|(avif)|(.ico)/;
 var imgFormatType = 0;
 
 
@@ -1516,14 +1527,14 @@ if (largeTransSrc.match(cssTransReq)){
         else{
         console.log('Did not work');
 }
-
+console.log(largeTransSrc);
 
 
 // High Important Recomendation
     
-var highRec1;
-console.log('Length '+highRec.length);
-console.log('Array '+highRec);
+var highRec1 = '';
+console.log('Length ' + highRec.length);
+console.log(highRec);
     
 switch (highRec.length >= 1){
 
@@ -1545,10 +1556,65 @@ switch (highRec.length >= 1){
     case highRec.includes(107):
         highRec1 = 'This is your largest Transfer Request '+largeTransSrc;
         break;
+    case highRec.length === 0:
+        highRec1 = 'I need an else statement';
+        break;
+}
+console.log(highRec1);
+    
+    
+var medRec1 = '';
+    
+switch (medRec.length >= 1){
+
+    case medRec.includes(207) && imgFormatType === 1:
+        medRec1 = 'Your largest Trans Size is a stylesheet.';
+        break;
+    case medRec.includes(207) && imgFormatType === 2:
+        medRec1 = 'Your largest Trans Size is an api request.';
+        break;
+    case medRec.includes(207) && imgFormatType === 3:
+        medRec1 = 'Your largest Trans Size is a javascript file.';
+        break;
+    case medRec.includes(207) && imgFormatType === 4:
+        medRec1 = 'Your largest Trans Size is an imported font file.';
+        break;
+    case medRec.includes(207) && imgFormatType === 5:
+        medRec1 = 'Your largest Trans Size is an image. Jeezus christ.';
+        break;
+    case medRec.includes(207):
+        medRec1 = 'This is your largest Transfer Request '+largeTransSrc;
+        break;
+}
+console.log(medRec1);
+    
+var lowRec1 = '';
+    
+switch (lowRec.length >= 1){
+
+    case lowRec.includes(307) && imgFormatType === 1:
+        lowRec1 = 'Your largest Trans Size is a stylesheet.';
+        break;
+    case lowRec.includes(307) && imgFormatType === 2:
+        lowRec1 = 'Your largest Trans Size is an api request.';
+        break;
+    case lowRec.includes(307) && imgFormatType === 3:
+        lowRec1 = 'Your largest Trans Size is a javascript file.';
+        break;
+    case lowRec.includes(307) && imgFormatType === 4:
+        lowRec1 = 'Your largest Trans Size is an imported font file.';
+        break;
+    case lowRec.includes(307) && imgFormatType === 5:
+        lowRec1 = 'Your largest Trans Size is an image. Jeezus christ.';
+        break;
+    case lowRec.includes(307):
+        lowRec1 = 'This is your largest Transfer Request '+largeTransSrc;
+        break;
 }
     
+console.log(lowRec1);
     
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, highRec1}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, highRec1, medRec1, lowRec1, largeLoadRequest}
 
 chrome.runtime.sendMessage(counts);
     

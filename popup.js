@@ -754,6 +754,10 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "240px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
+        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
+        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request:";
+        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
+        document.getElementById('longestTextA').style.display = "block";
          
         break;
      case loadTimeChart <= 1.5:
@@ -761,6 +765,10 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "220px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
+        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
+        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request:";
+        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
+        document.getElementById('longestTextA').style.display = "block";
          
         break;
     case loadTimeChart <= 2:
@@ -768,6 +776,10 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "200px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
+        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
+        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request:";
+        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
+        document.getElementById('longestTextA').style.display = "block";
          
         break;
     case loadTimeChart <= 2.5:
@@ -775,6 +787,10 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "180px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
+        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
+        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request:";
+        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
+        document.getElementById('longestTextA').style.display = "block";
          
         break;
     case loadTimeChart <= 3:
@@ -782,6 +798,10 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "160px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
+        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
+        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request:";
+        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
+        document.getElementById('longestTextA').style.display = "block";
          
         break;
     case loadTimeChart <= 3.5:
@@ -789,18 +809,30 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "140px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
+        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
+        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request:";
+        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
+        document.getElementById('longestTextA').style.display = "block";
         break;
     case loadTimeChart <= 4:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "120px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
+        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
+        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request:";
+        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
+        document.getElementById('longestTextA').style.display = "block";
         break;
     case loadTimeChart <= 5:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "110px";
         document.getElementById("loadBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid yellow';
+        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request:";
+        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
+        document.getElementById("longestTextA").style.display = "block";
+        document.getElementById("longestDIV").style.background = 'rgba(235, 220, 61, 0.5)';
          
         break;
     case loadTimeChart <= 6:
@@ -808,34 +840,50 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "100px";
         document.getElementById("loadBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid yellow';
-         
+        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request:";
+        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
+        document.getElementById("longestTextA").style.display = "block";
+        document.getElementById("longestDIV").style.background = 'rgba(235, 220, 61, 0.5)'; 
         break;
     case loadTimeChart <= 7:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "80px";
         document.getElementById("loadBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid yellow';
-         
+        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request:";
+        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
+        document.getElementById("longestTextA").style.display = "block";
+        document.getElementById("longestDIV").style.background = 'rgba(235, 220, 61, 0.5)'; 
         break;
     case loadTimeChart <= 8:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "60px";
         document.getElementById("loadBar").style.background = 'rgba(241, 137, 49, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid orange';
-         
+        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request:";
+        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
+        document.getElementById("longestTextA").style.display = "block";
+        document.getElementById("longestDIV").style.background = 'rgba(241, 137, 49, 0.5)'; 
         break;
     case loadTimeChart <= 10:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "45px";
         document.getElementById("loadBar").style.background = 'rgba(241, 137, 49, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid orange';
-         
+        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request:";
+        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
+        document.getElementById("longestTextA").style.display = "block";
+        document.getElementById("longestDIV").style.background = 'rgba(241, 137, 49, 0.5)'; 
         break;
     case loadTimeChart > 10:
         document.getElementById("loadBar").innerHTML = x.loadTimeChart + " sec";
         document.getElementById("loadBar").style.width = "35px";
         document.getElementById("loadBar").style.background = 'rgba(241, 137, 49, 0.5)';
-        document.getElementById("loadBar").style.border = '1px solid orange'; 
+        document.getElementById("loadBar").style.border = '1px solid orange';
+        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request:";
+        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
+        document.getElementById("longestTextA").style.display = "block";
+        document.getElementById("longestDIV").style.background = 'rgba(241, 137, 49, 0.5)';
         break;
 }
 
@@ -1880,8 +1928,8 @@ switch (colorScore){
 <p class = "recoClass" id= "reco3"></p>*/ 
 console.log('Perf Var '+x.highRec1);
 document.getElementById("reco1").innerHTML = x.highRec1;
-document.getElementById("reco2").innerHTML = x.largeTransSrc;
-document.getElementById("reco3").innerHTML = x.styleSheetSources;
+document.getElementById("reco2").innerHTML = x.medRec1;
+document.getElementById("reco3").innerHTML = x.lowRec1;
 
             
             
