@@ -1076,6 +1076,17 @@ var transferSizeChart = x.transferSizeChart;
 
 switch (transferSizeChart >= 0){
 
+    case transferSizeChart == 0:
+        document.getElementById("transferBar").innerHTML = x.transferLabel;
+        document.getElementById("transferBar").style.width = "240px";
+        document.getElementById("transferBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("transferBar").style.border = '1px solid green';
+        document.getElementById("transferDIV").style.background = 'rgba(142, 202, 46, 0.3)'; 
+        document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request:";
+        document.getElementById("transferTextA").innerHTML = "All transfer requests are cached!";
+        document.getElementById('transferTextA').style.display = "block";
+        document.getElementById("transferDIV").style.background = 'rgba(142, 202, 46, 0.5)';
+        break;
     case transferSizeChart <= 100000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
         document.getElementById("transferBar").style.width = "240px";
