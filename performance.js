@@ -1504,46 +1504,100 @@ var imageTransReq = /(.png)|(.jpeg)|(.gif)|(.jpg)|(.tiff)|(.svg)|(webp)|(avif)|(
 var imgFormatType = 0;
 
     
-var highRec1 = '';
+var highRec1 = [];
 var medRec1 = '';
 var lowRec1 = '';
     
-    
-if (highRec.includes(108)){
-    tryFunction();
+ if (highRec.includes(107)){
+    highRec1.push(transferFunction());
 }
-
-function tryFunction(){
+    else if(medRec.includes(207)){
+        highRec1.push(transferFunction());
+    }
+    else if(medRec.includes(307)){
+        highRec1.push(transferFunction());
+    }
+    else{
+        highRec1.push('');
+    }
+if(highRec.includes(105)){
+        highRec1.push(loadTimeFunction());
+    }
+    else if(medRec.includes(205)){
+        highRec1.push(loadTimeFunction());
+    }
+    else if(medRec.includes(305)){
+        highRec1.push(loadTimeFunction());
+    }
+    else{
+        highRec1.push('');
+    }
+    
+var transFuncVar;   
+//Transfer Function
+function transferFunction(){
     if (largeTransSrc.match(cssTransReq)){
-        highRec1 = 'Your largest Trans Size is a stylesheet.';
+        transFuncVar = 'Your largest Trans Size is a stylesheet.';
     }
         else if(largeTransSrc.match(apiTransReq)){
-        highRec1 ='Your largest Trans Size is an api request.';
+        transFuncVar ='Your largest Trans Size is an api request.';
     }
         else if(largeTransSrc.match(jsTransReq)){
-        highRec1 ='Your largest Trans Size is a javascript file.';
+        transFuncVar ='Your largest Trans Size is a javascript file.';
     }
         else if(largeTransSrc.match(importedFontTransReq)){
-        highRec1 ='Your largest Trans Size is an imported font file.';
+        transFuncVar ='Your largest Trans Size is an imported font file.';
     }
         else if(largeTransSrc.match(imageTransReq)){
-        highRec1 ='Your largest Trans Size is an image. Jeezus christ.';
+        transFuncVar ='Your largest Trans Size is an image. Jeezus christ.';
     }
-            else{
-            highRec1 = 'Did not work';
+         else{
+        transFuncVar = 'This is your largest Transfer Request '+largeTransSrc;
     }
     
-    return highRec1;
+    return transFuncVar;
     
 }
+ 
+    
+var loadFuncVar;
+//Transfer Function
+function loadTimeFunction(){
+    if (largeLoadRequest.match(cssTransReq)){
+        loadFuncVar = 'Your longest loading request is a stylesheet.';
+    }
+        else if(largeLoadRequest.match(apiTransReq)){
+        loadFuncVar ='Your longest loading request  is an api request.';
+    }
+        else if(largeLoadRequest.match(jsTransReq)){
+        loadFuncVar ='Your longest loading request is a javascript file.';
+    }
+        else if(largeLoadRequest.match(importedFontTransReq)){
+        loadFuncVar ='Your longest loading request is an imported font file.';
+    }
+        else if(largeLoadRequest.match(imageTransReq)){
+        loadFuncVar ='Your longest loading request is an image. Jeezus christ.';
+    }
+         else{
+            loadFuncVar = 'This is your longest loading request Request '+largeLoadRequest;
+    }
+    
+    return loadFuncVar;
+    
+}
+    
+    
+    
+    
 
     
 console.log(largeTransSrc);
 console.log(highRec1);
+console.log('High Rec: '+highRec1[0]);
 
     
     
-    
+ var highRecTest = highRec1[0]; 
     
     
 // High Important Recomendation
@@ -1631,7 +1685,7 @@ switch (lowRec.includes(307)){
     
 //performance.getEntries(); For Web Vitals
     
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, highRec1, largeLoadRequest}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, highRecTest, largeLoadRequest}
 
 chrome.runtime.sendMessage(counts);
     
