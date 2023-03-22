@@ -224,8 +224,13 @@ for (var i = 0; i < transferResources.length; i++) {
         }
 
    }
+    
 largeTransSrc = transferResources[maxIndex].name;
+var largeTransSize = transferResources[maxIndex].transferSize;
 largeLoadRequest = transferResources[maxIndexDur].name;
+var largeLoadTime = transferResources[maxIndexDur].duration;
+    
+largeLoadTime = largeLoadTime.toFixed(2);
     
     
 for (let i in imgB){
@@ -249,6 +254,30 @@ var transferLabel = 0;
    else{
      transferLabel = (transferSize1).toString() + arrayLabel[0];
  }
+    
+ var transferSizeLabel;
+    
+ if (largeTransSize/1024/1024/1024 > 1){
+ transferSizeLabel = (((largeTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (largeTransSize/1024/1024 > 1){
+ transferSizeLabel = (((largeTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (largeTransSize/1024 > 1){
+ transferSizeLabel = (((largeTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (largeTransSize > 1){
+ transferSizeLabel = (((largeTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+   else{
+     transferSizeLabel = (transferSize1).toString() + arrayLabel[0];
+ }
+    
+var largeLoadLabel;
+    
+if (largeLoadTime/1000 >= 1){
+   largeLoadLabel = (largeLoadTime/1000).toFixed(2).toString() + " secs"; 
+}
+    else{
+       largeLoadLabel = largeLoadTime.toString() + " ms"; 
+    }
 
 /*console.log(transferResources);
 console.log(largeTransSrc);*/
@@ -1497,7 +1526,7 @@ if (picTagCount > 0){
 //Identify File of Largest Transfer Size
     
 var cssTransReq = /(.css)/;
-var apiTransReq = /(\/api\/)/;
+var apiTransReq = /(api)/;
 var jsTransReq = /(.js)/;
 var importedFontTransReq = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)/;
 var imageTransReq = /(.png)|(.jpeg)|(.gif)|(.jpg)|(.tiff)|(.svg)|(webp)|(avif)|(.ico)/;
@@ -1685,7 +1714,8 @@ switch (lowRec.includes(307)){
     
 //performance.getEntries(); For Web Vitals
     
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, highRecTest, largeLoadRequest}
+    
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, highRecTest, largeLoadRequest, transferSizeLabel, largeLoadLabel}
 
 chrome.runtime.sendMessage(counts);
     
