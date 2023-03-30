@@ -1316,8 +1316,6 @@ case 'blue':
    
 var maxScore = 15.3;
 
-console.log(highRec);
-
 //////////////////////////////////////
 //Metric Weight Calc
 // Lazy Load
@@ -1620,13 +1618,13 @@ function loadTimeFunction(){
     
 
     
-console.log(largeTransSrc);
+/*console.log(largeTransSrc);
 console.log(highRec1);
 console.log('High Rec: '+highRec1[0]);
 
     
     
- var highRecTest = highRec1[0]; 
+ var highRecTest = highRec1[0]; */
     
     
 // High Important Recomendation
@@ -1715,7 +1713,7 @@ switch (lowRec.includes(307)){
 //performance.getEntries(); For Web Vitals
     
     
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, highRecTest, largeLoadRequest, transferSizeLabel, largeLoadLabel}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, largeLoadRequest, transferSizeLabel, largeLoadLabel}
 
 chrome.runtime.sendMessage(counts);
     

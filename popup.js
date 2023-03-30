@@ -6,7 +6,7 @@ chrome.tabs.query({
     let domain = (new URL(url));
 	domain = domain.hostname;
     chrome.storage.session.get("tab"+tab.id).then(data => {
-        //try{
+        try{
  var x = data["tab"+tab.id];
             
          
@@ -1948,10 +1948,10 @@ document.getElementById("reco3").innerHTML = x.lowRec1;*/
             
                      
             
-      // }
-        //catch(e) {
+       }
+        catch(e) {
             //alert("Page is almost loaded")
-        //}
+        }
         });
     
 });
