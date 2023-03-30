@@ -1937,9 +1937,9 @@ switch (colorScore){
 /*<p class = "recoClass" id= "reco1"></p>
 <p class = "recoClass" id= "reco2"></p>
 <p class = "recoClass" id= "reco3"></p>*/ 
-//document.getElementById("reco1").innerHTML = x.highRecTest;
-/*document.getElementById("reco2").innerHTML = x.medRec1;
-document.getElementById("reco3").innerHTML = x.lowRec1;*/
+document.getElementById("reco1").innerHTML = x.highRec1;
+document.getElementById("reco2").innerHTML = x.medRec1;
+document.getElementById("reco3").innerHTML = x.lowRec1;
 
             
             

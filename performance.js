@@ -172,7 +172,7 @@ answerArray.push(duration);
 
 //Imported Fonts
 var headText = document.head.innerHTML;
-var fontRegex = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)/;
+var fontRegex = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)|(otf)|(eot)/;
 var fontBoolean = 0;
 
 if (headText.match(fontRegex)){
@@ -397,12 +397,13 @@ var emptySrcURL4 = document.querySelectorAll('button[href=""]');
 var emptySrcURL5 = document.querySelectorAll('a[href=""]');
 var emptySRCArray = [];
 var try4;
+var emptySrcType = [];
 
 if (emptySrcURL1.length >= 1){
   for (var i = 1 ; i < emptySrcURL1.length; i++) {
     try4 = emptySrcURL1[i].outerHTML;
     emptySRCArray.push(try4);
-    
+    emptySrcType.push('img[src=""]');
   }
 
 }
@@ -410,28 +411,28 @@ if(emptySrcURL2.length >= 1){
     for (var i = 1 ; i < emptySrcURL2.length; i++) {
     try4 = emptySrcURL2[i].outerHTML;
     emptySRCArray.push(try4);
-    
+    emptySrcType.push('script[src=""]'); 
   }
 }
 if(emptySrcURL3.length >= 1){
     for (var i = 1 ; i < emptySrcURL3.length; i++) {
     try4 = emptySrcURL3[i].outerHTML;
     emptySRCArray.push(try4);
-    
+    emptySrcType.push('link[rel=stylesheet][href=""]');     
   }
 }
 if(emptySrcURL4.length >= 1){
     for (var i = 1 ; i < emptySrcURL4.length; i++) {
     try4 = emptySrcURL4[i].outerHTML;
     emptySRCArray.push(try4);
-    
+    emptySrcType.push('button[href=""]');
   }
 }
 if(emptySrcURL5.length >= 1){
     for (var i = 1 ; i < emptySrcURL5.length; i++) {
     try4 = emptySrcURL5[i].outerHTML;
     emptySRCArray.push(try4);
-    
+    emptySrcType.push('a[href=""]');
   }
 }
     
@@ -1532,8 +1533,8 @@ var imgFormatType = 0;
 
     
 var highRec1 = [];
-var medRec1 = '';
-var lowRec1 = '';
+var medRec1 = [];
+var lowRec1 = [];
     
  if (highRec.includes(107)){
     highRec1.push(transferFunction());
@@ -1555,6 +1556,15 @@ if(highRec.includes(105)){
     }
     else if(medRec.includes(305)){
         highRec1.push(loadTimeFunction());
+    }
+    else{
+        highRec1.push('');
+    }
+if(medRec.includes(213)){
+        medRec1.push(emptySRCFunction());
+    }
+    else if(lowRec.includes(313)){
+        lowRec1.push(emptySRCFunction());
     }
     else{
         highRec1.push('');
@@ -1613,9 +1623,37 @@ function loadTimeFunction(){
     
 }
     
+var emptySrcVar;
+//Transfer Function
+function emptySRCFunction(){
+    if (emptySRCArray.includes('img[src=""]')){
+        emptySrcVar = 'img[src=""]';
+    }
+        else if(emptySRCArray.includes('script[src=""]')){
+        emptySrcVar = 'script[src=""]';
+    }
+        else if(emptySRCArray.includes('link[rel=stylesheet][href=""]')){
+        emptySrcVar = 'link[rel=stylesheet][href=""]';
+    }
+        else if(emptySRCArray.includes('button[href=""]')){
+        emptySrcVar = 'button[href=""]';
+    }
+        else if(emptySRCArray.includes('button[href=""]')){
+        emptySrcVar = 'a[href=""]';
+    }
+         else{
+            emptySrcVar = 'You have a lot of empty srcs';
+    }
     
+    return emptySrcVar;
     
+}    
     
+/* var emptySrcURL1 = document.querySelectorAll('img[src=""]');
+var emptySrcURL2 = document.querySelectorAll('script[src=""]');
+var emptySrcURL3 = document.querySelectorAll('link[rel=stylesheet][href=""]');
+var emptySrcURL4 = document.querySelectorAll('button[href=""]');
+var emptySrcURL5 = document.querySelectorAll('a[href=""]'); */  
 
     
 /*console.log(largeTransSrc);
@@ -1713,7 +1751,7 @@ switch (lowRec.includes(307)){
 //performance.getEntries(); For Web Vitals
     
     
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, largeLoadRequest, transferSizeLabel, largeLoadLabel}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, largeLoadRequest, transferSizeLabel, largeLoadLabel, highRec1, medRec1, lowRec1}
 
 chrome.runtime.sendMessage(counts);
     

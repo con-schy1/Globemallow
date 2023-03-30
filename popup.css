@@ -104,7 +104,7 @@ body {
 }
 
 #Example2Div{
-    padding-top: 32%;
+    padding-top: 1%;
 }
 
 #nameClass{
@@ -167,11 +167,11 @@ h3{
 }
 
 #factoids{
-  padding-top: 34%;
+  padding-top: .5%;
   display: flex;
-  bottom: 0;
   width: 100%;
   height: 2.5rem;
+  padding-bottom: 6%;
 }
 
 #fact{
@@ -187,11 +187,13 @@ h3{
 }
 
 #emissionsLine{
-  padding-top: 25px;
+/*  padding-top: 25px;*/
   display: flex;
-  bottom: 0;
+/*  bottom: 0;*/
+  padding-top: 200px;
   width: 100%;
-  height: 4rem;   
+  height: 4rem;
+  padding-left: 10px;
 }
 
 #kwhID{
