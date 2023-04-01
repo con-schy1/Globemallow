@@ -1669,19 +1669,19 @@ function emptySRCFunction(){
         emptySrcVar = '';
     }
     if (emptySrcType.includes(1)){
-        emptySrcVar += 'img[src=""]';
+        emptySrcVar += 'img[src=""]<br>';
     }
     if(emptySrcType.includes(2)){
-        emptySrcVar += 'script[src=""]';
+        emptySrcVar += 'script[src=""]<br>';
     }
     if(emptySrcType.includes(3)){
-        emptySrcVar += 'link[rel=stylesheet][href=""]';
+        emptySrcVar += 'link[rel=stylesheet][href=""]<br>';
     }
     if(emptySrcType.includes(4)){
-        emptySrcVar += 'button[href=""]';
+        emptySrcVar += 'button[href=""]<br>';
     }
     if(emptySrcType.includes(5)){
-        emptySrcVar += 'a[href=""]';
+        emptySrcVar += 'a[href=""]<br>';
     }
         else{
             emptySrcVar += 'You have a lot of empty srcs';
