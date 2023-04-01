@@ -1787,7 +1787,7 @@ switch (emptyURL >= 0){
         document.getElementById('emptySrcHeader').innerHTML = 'Empty URL Sources:'; 
         break;
     case emptyURL >= 7:
-        document.getElementById("srcBar").innerHTML = ">10";
+        document.getElementById("srcBar").innerHTML = emptyURL.toString();
         document.getElementById("srcBar").style.width = "30px";
         document.getElementById("srcBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("srcBar").style.border = '1px solid orange';

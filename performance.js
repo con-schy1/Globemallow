@@ -388,7 +388,7 @@ var cookiesList = document.cookie;
     
 ////////////////////////////////////////////
 //Amount of Empty URLs
-var emptyURL = document.querySelectorAll('img[src=""]').length + document.querySelectorAll('script[src=""]').length + document.querySelectorAll('link[rel=stylesheet][href=""]').length + document.querySelectorAll('button[href=""]').length + document.querySelectorAll('a[href=""]').length;
+//var emptyURL = document.querySelectorAll('img[src=""]').length + document.querySelectorAll('script[src=""]').length + document.querySelectorAll('link[rel=stylesheet][href=""]').length + document.querySelectorAll('button[href=""]').length + document.querySelectorAll('a[href=""]').length;
     
 var emptySrcURL1 = document.querySelectorAll('img[src=""]');
 var emptySrcURL2 = document.querySelectorAll('script[src=""]');
@@ -403,7 +403,7 @@ if (emptySrcURL1.length >= 1){
   for (var i = 1 ; i < emptySrcURL1.length; i++) {
     try4 = emptySrcURL1[i].outerHTML;
     emptySRCArray.push(try4);
-    emptySrcType.push('img[src=""]');
+    emptySrcType.push(1);
   }
 
 }
@@ -411,28 +411,28 @@ if(emptySrcURL2.length >= 1){
     for (var i = 1 ; i < emptySrcURL2.length; i++) {
     try4 = emptySrcURL2[i].outerHTML;
     emptySRCArray.push(try4);
-    emptySrcType.push('script[src=""]'); 
+    emptySrcType.push(2); 
   }
 }
 if(emptySrcURL3.length >= 1){
     for (var i = 1 ; i < emptySrcURL3.length; i++) {
     try4 = emptySrcURL3[i].outerHTML;
     emptySRCArray.push(try4);
-    emptySrcType.push('link[rel=stylesheet][href=""]');     
+    emptySrcType.push(3);     
   }
 }
 if(emptySrcURL4.length >= 1){
     for (var i = 1 ; i < emptySrcURL4.length; i++) {
     try4 = emptySrcURL4[i].outerHTML;
     emptySRCArray.push(try4);
-    emptySrcType.push('button[href=""]');
+    emptySrcType.push(4);
   }
 }
 if(emptySrcURL5.length >= 1){
     for (var i = 1 ; i < emptySrcURL5.length; i++) {
     try4 = emptySrcURL5[i].outerHTML;
     emptySRCArray.push(try4);
-    emptySrcType.push('a[href=""]');
+    emptySrcType.push(5);
   }
 }
     
@@ -441,7 +441,16 @@ if(emptySrcURL5.length >= 1){
 
 var emptySRCVal = emptySRCArray.toString();    
     
-//console.log(emptySRCVal);
+console.log(emptySRCArray);
+console.log(emptySRCArray.length);
+console.log(emptySrcType);
+    
+if (emptySrcType.includes(1)){
+    console.log('sad');
+}
+
+var emptyURL = emptySRCArray.length;
+
     
 answerArray.push(emptyURL);
  
@@ -1546,7 +1555,7 @@ var lowRec1 = [];
         highRec1.push(transferFunction());
     }
     else{
-        highRec1.push('');
+        //highRec1.push('');
     }
 if(highRec.includes(105)){
         highRec1.push(loadTimeFunction());
@@ -1558,7 +1567,7 @@ if(highRec.includes(105)){
         highRec1.push(loadTimeFunction());
     }
     else{
-        highRec1.push('');
+        //highRec1.push('');
     }
 if(medRec.includes(213)){
         medRec1.push(emptySRCFunction());
@@ -1567,7 +1576,7 @@ if(medRec.includes(213)){
         lowRec1.push(emptySRCFunction());
     }
     else{
-        highRec1.push('');
+        //highRec1.push('');
     }
     
 var transFuncVar;   
@@ -1623,22 +1632,22 @@ function loadTimeFunction(){
     
 }
     
-var emptySrcVar;
+/*var emptySrcVar ;
 //Transfer Function
 function emptySRCFunction(){
-    if (emptySRCArray.includes('img[src=""]')){
+    if (emptySRCArray.includes(1)){
         emptySrcVar = 'img[src=""]';
     }
-        else if(emptySRCArray.includes('script[src=""]')){
+    if(emptySRCArray.includes(2)){
         emptySrcVar = 'script[src=""]';
     }
-        else if(emptySRCArray.includes('link[rel=stylesheet][href=""]')){
+    if(emptySRCArray.includes(3)){
         emptySrcVar = 'link[rel=stylesheet][href=""]';
     }
-        else if(emptySRCArray.includes('button[href=""]')){
+    if(emptySRCArray.includes(4)){
         emptySrcVar = 'button[href=""]';
     }
-        else if(emptySRCArray.includes('button[href=""]')){
+    if(emptySRCArray.includes(5)){
         emptySrcVar = 'a[href=""]';
     }
          else{
@@ -1647,7 +1656,35 @@ function emptySRCFunction(){
     
     return emptySrcVar;
     
-}    
+}*/
+    
+var emptySrcVar;
+//Transfer Function
+function emptySRCFunction(){
+    if (emptySrcType.includes(1)){
+        emptySrcVar = 'img[src=""]';
+    }
+     else if(emptySrcType.includes(2)){
+        emptySrcVar = 'script[src=""]';
+    }
+     else if(emptySrcType.includes(3)){
+        emptySrcVar = 'link[rel=stylesheet][href=""]';
+    }
+    else if(emptySrcType.includes(4)){
+        emptySrcVar = 'button[href=""]';
+    }
+    else if(emptySrcType.includes(5)){
+        emptySrcVar = 'a[href=""]';
+    }
+        else{
+            emptySrcVar = 'You have a lot of empty srcs';
+    }
+    
+    console.log(emptySrcVar);
+    
+    return emptySrcVar;
+    
+}
     
 /* var emptySrcURL1 = document.querySelectorAll('img[src=""]');
 var emptySrcURL2 = document.querySelectorAll('script[src=""]');
