@@ -1539,6 +1539,60 @@ var jsTransReq = /(.js)/;
 var importedFontTransReq = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)/;
 var imageTransReq = /(.png)|(.jpeg)|(.gif)|(.jpg)|(.tiff)|(.svg)|(webp)|(avif)|(.ico)/;
 var imgFormatType = 0;
+    
+    
+//Transfer size of External Style Sheets
+var cssTransSize = 0;
+/*var apiTransSize = 0;
+var jsTransSize = 0;*/
+var cssTransLabel;
+/*var apiTransLabel;
+var jsTransLabel;*/
+var cssHREF;
+//var v = 0;
+
+for (var i = 0; i < transferResources.length; i++) {
+
+    cssHREF = transferResources[i].name; 
+
+    if (cssHREF.match(cssTransReq)){
+        //v++;
+        cssTransSize += transferResources[i].transferSize;      
+    }
+   /* else if (cssHREF.match(apiTransReq)){
+        apiTransSize += transferResources[i].transferSize;
+    }
+    else if (cssHREF.match(jsTransSize)){
+        jsTransSize += transferResources[i].transferSize;
+    }*/
+    else{
+        //
+    }
+}
+
+/*console.log(cssTransSize);
+console.log(apiTransSize);
+console.log(jsTransSize);*/
+
+if (cssTransSize === 0){
+   cssTransLabel = 'All style sheets cached!' 
+}  else if(cssTransSize/1024/1024/1024 > 1){
+ cssTransLabel = (((cssTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (cssTransSize/1024/1024 > 1){
+ cssTransLabel = (((cssTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (cssTransSize/1024 > 1){
+ cssTransLabel = (((cssTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (cssTransSize > 1){
+ cssTransLabel = (((cssTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+   else{
+     cssTransLabel = (cssTransSize).toString() + arrayLabel[0];
+ }
+
+/*console.log(cssTransLabel);
+console.log('Css Requests: '+v);*/
+// v variable is the amount of Css Requests
+
 
     
 var highRec1 = [];
@@ -1578,6 +1632,8 @@ if(medRec.includes(213)){
     else{
         //highRec1.push('');
     }
+    
+    
     
 var transFuncVar;   
 //Transfer Function
@@ -1633,35 +1689,6 @@ function loadTimeFunction(){
 }
     
     
-/*var emptySrcVar;
-//Transfer Function
-function emptySRCFunction(){
-    if (emptySrcType.includes(1)){
-        emptySrcVar = 'img[src=""]';
-    }
-     else if(emptySrcType.includes(2)){
-        emptySrcVar = 'script[src=""]';
-    }
-     else if(emptySrcType.includes(3)){
-        emptySrcVar = 'link[rel=stylesheet][href=""]';
-    }
-    else if(emptySrcType.includes(4)){
-        emptySrcVar = 'button[href=""]';
-    }
-    else if(emptySrcType.includes(5)){
-        emptySrcVar = 'a[href=""]';
-    }
-        else{
-            emptySrcVar = 'You have a lot of empty srcs';
-    }
-    
-    console.log(emptySrcVar);
-    
-    return emptySrcVar;
-    
-}*/
-    
-    
 var emptySrcVar = '';
 //Transfer Function
 function emptySRCFunction(){
@@ -1669,19 +1696,19 @@ function emptySRCFunction(){
         emptySrcVar = '';
     }
     if (emptySrcType.includes(1)){
-        emptySrcVar += 'img[src=""]<br>';
+        emptySrcVar += '<img src=""><br>';
     }
     if(emptySrcType.includes(2)){
-        emptySrcVar += 'script[src=""]<br>';
+        emptySrcVar += '<script src=""><br>';
     }
     if(emptySrcType.includes(3)){
-        emptySrcVar += 'link[rel=stylesheet][href=""]<br>';
+        emptySrcVar += '<link rel=stylesheet href=""><br>';
     }
     if(emptySrcType.includes(4)){
-        emptySrcVar += 'button[href=""]<br>';
+        emptySrcVar += '<button href=""><br>';
     }
     if(emptySrcType.includes(5)){
-        emptySrcVar += 'a[href=""]<br>';
+        emptySrcVar += '<a href=""><br>';
     }
         else{
             emptySrcVar += 'You have a lot of empty srcs';
@@ -1796,7 +1823,7 @@ switch (lowRec.includes(307)){
 //performance.getEntries(); For Web Vitals
     
     
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, largeLoadRequest, transferSizeLabel, largeLoadLabel, highRec1, medRec1, lowRec1}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, largeLoadRequest, transferSizeLabel, largeLoadLabel, highRec1, medRec1, lowRec1, cssTransLabel}
 
 chrome.runtime.sendMessage(counts);
     

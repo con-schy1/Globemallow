@@ -1447,7 +1447,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid green';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById('extStyleTextA').rows = "3";
         break;
@@ -1458,7 +1458,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid green';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById('extStyleTextA').rows = "4";
         break;
@@ -1469,7 +1469,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid green';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
         break;
     case numStyleSheet == 4:
@@ -1479,7 +1479,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid green';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
         break;
     case numStyleSheet == 5:
@@ -1490,7 +1490,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid green';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
         break;
     case numStyleSheet == 6:
@@ -1500,7 +1500,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
         document.getElementById("extSSDiv").style.background = 'rgba(235, 220, 61, 0.5)';  
         break;
     case numStyleSheet == 7:
@@ -1510,7 +1510,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
         document.getElementById("extSSDiv").style.background = 'rgba(235, 220, 61, 0.5)';  
         break;
     case numStyleSheet == 8:
@@ -1520,7 +1520,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
         document.getElementById("extSSDiv").style.background = 'rgba(235, 220, 61, 0.5)';  
         break;
     case numStyleSheet == 9:
@@ -1530,7 +1530,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
         document.getElementById("extSSDiv").style.background = 'rgba(235, 220, 61, 0.5)'; 
         break;
     case numStyleSheet == 10:
@@ -1540,7 +1540,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid orange';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
         document.getElementById("extSSDiv").style.background = 'rgba(241, 137, 49, .5)'; 
         break;
     case numStyleSheet > 10:
@@ -1550,7 +1550,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid orange';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources:';
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
         document.getElementById("extSSDiv").style.background = 'rgba(241, 137, 49, .5)';
         break;
 }
@@ -2363,7 +2363,7 @@ document.getElementById('emptyButton').onclick = function(evt) {
 	 //openButton(evt,'Example2Div');
      document.getElementById("m1").innerHTML = 'Empty URL Tags';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
-     document.getElementById("m2").innerHTML = 'Having an empty href link is bad practice. Browser will call the directory in which the page is located if SRC Attribute is empty. This results in additional HTTP requests.';
+     document.getElementById("m2").innerHTML = 'Having an empty href link is bad practice. Browser will call the directory in which the page is located if SRC Attribute is empty. This results in additional HTTP requests. For example, if http://www.test.com/ has <script src=""> it will make a request to all / in all browsers to the homepage of the domain. Doubling the traffic to your homepage.';
     
     document.getElementById("colorSquare").style.display = 'none';
     document.getElementById("colorSquare").style.width = "0px";
