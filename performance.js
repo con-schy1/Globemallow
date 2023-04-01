@@ -1632,33 +1632,8 @@ function loadTimeFunction(){
     
 }
     
-/*var emptySrcVar ;
-//Transfer Function
-function emptySRCFunction(){
-    if (emptySRCArray.includes(1)){
-        emptySrcVar = 'img[src=""]';
-    }
-    if(emptySRCArray.includes(2)){
-        emptySrcVar = 'script[src=""]';
-    }
-    if(emptySRCArray.includes(3)){
-        emptySrcVar = 'link[rel=stylesheet][href=""]';
-    }
-    if(emptySRCArray.includes(4)){
-        emptySrcVar = 'button[href=""]';
-    }
-    if(emptySRCArray.includes(5)){
-        emptySrcVar = 'a[href=""]';
-    }
-         else{
-            emptySrcVar = 'You have a lot of empty srcs';
-    }
     
-    return emptySrcVar;
-    
-}*/
-    
-var emptySrcVar;
+/*var emptySrcVar;
 //Transfer Function
 function emptySRCFunction(){
     if (emptySrcType.includes(1)){
@@ -1684,7 +1659,40 @@ function emptySRCFunction(){
     
     return emptySrcVar;
     
+}*/
+    
+    
+var emptySrcVar = '';
+//Transfer Function
+function emptySRCFunction(){
+    if (emptySrcType.length > 0){
+        emptySrcVar = '';
+    }
+    if (emptySrcType.includes(1)){
+        emptySrcVar += 'img[src=""]';
+    }
+    if(emptySrcType.includes(2)){
+        emptySrcVar += 'script[src=""]';
+    }
+    if(emptySrcType.includes(3)){
+        emptySrcVar += 'link[rel=stylesheet][href=""]';
+    }
+    if(emptySrcType.includes(4)){
+        emptySrcVar += 'button[href=""]';
+    }
+    if(emptySrcType.includes(5)){
+        emptySrcVar += 'a[href=""]';
+    }
+        else{
+            emptySrcVar += 'You have a lot of empty srcs';
+    }
+    
+    console.log(emptySrcVar);
+    
+    return emptySrcVar;
+    
 }
+    
     
 /* var emptySrcURL1 = document.querySelectorAll('img[src=""]');
 var emptySrcURL2 = document.querySelectorAll('script[src=""]');
