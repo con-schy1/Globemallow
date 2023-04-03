@@ -1917,8 +1917,7 @@ switch (colorScore){
         document.getElementById("colorBar").style.border = '1px solid green';
         break;
     case 'white':
-        //document.getElementById("colorBar").innerHTML = colorScore;
-        document.getElementById("colorBar").innerHTML = x.medRec1;
+        document.getElementById("colorBar").innerHTML = colorScore;
         document.getElementById("colorBar").style.width = "200px";
         document.getElementById("colorBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("cacheBar").style.border = '1px solid yellow';
@@ -2362,7 +2361,7 @@ document.getElementById('emptyButton').onclick = function(evt) {
 	 //openButton(evt,'Example2Div');
      document.getElementById("m1").innerHTML = 'Empty URL Tags';
      //document.getElementById('LLButton').style.background = 'rgba(241, 137, 49, .5)';
-     document.getElementById("m2").innerHTML = 'Having an empty href link is bad practice. Browser will call the directory in which the page is located if SRC Attribute is empty. This results in additional HTTP requests. For example, if http://www.test.com/ has <script src=""> it will make a request to all / in all browsers to the homepage of the domain. Doubling the traffic to your homepage.';
+     document.getElementById("m2").innerHTML = 'Having an empty href link is bad practice. Browser will call the directory in which the page is located if SRC Attribute is empty. This results in additional HTTP requests. For example, if http://www.test.com/ has script src="" it will make a request to all / in all browsers to the homepage of the domain. Doubling the traffic to your homepage.';
     
     document.getElementById("colorSquare").style.display = 'none';
     document.getElementById("colorSquare").style.width = "0px";

@@ -1616,7 +1616,7 @@ if(highRec.includes(105)){
        // highRec1.push('');
     }
 if(medRec.includes(213)){
-        medRec1.push(emptySRCFunction());
+        medRec1.push(emptySRCFunction().toString());
     }
     else if(lowRec.includes(313)){
         lowRec1.push(emptySRCFunction());
@@ -1625,8 +1625,8 @@ if(medRec.includes(213)){
        // highRec1.push('');
     }
     
-console.log(medRec1);
-console.log(medRec);
+console.log("4"+medRec1);
+console.log("5"+medRec);
     
 var transFuncVar;   
 //Transfer Function
@@ -1682,30 +1682,29 @@ function loadTimeFunction(){
 }
     
     
-var emptySrcVar = '';
+var emptySrcVar;
 //Transfer Function
 function emptySRCFunction(){
     if (emptySrcType.length > 0){
         emptySrcVar = '';
     }
     if (emptySrcType.includes(1)){
-        emptySrcVar += '<img src=""><br>';
+        emptySrcVar += '< img src=""><br>';
     }
     if(emptySrcType.includes(2)){
-        emptySrcVar += '<script src=""><br>';
+        emptySrcVar += '< script src=""><br>';
     }
     if(emptySrcType.includes(3)){
-        emptySrcVar += '<link rel=stylesheet href=""><br>';
+        emptySrcVar += '< link rel=stylesheet href=""><br>';
     }
     if(emptySrcType.includes(4)){
-        emptySrcVar += '<button href=""><br>';
+        emptySrcVar += '< button href=""><br>';
     }
     if(emptySrcType.includes(5)){
-        emptySrcVar += '<a href=""><br>';
+        emptySrcVar += '< a href=""><br>';
     }
         else{
             emptySrcVar = 'You have a lot of empty srcs';
-            emptySrcVar += 'You have a lot of empty srcs';
     }
     
     console.log('1:'+emptySrcVar);
@@ -1716,105 +1715,6 @@ function emptySRCFunction(){
  
 console.log("2"+emptySrcVar);
 console.log("3"+medRec1);
-    
-/* var emptySrcURL1 = document.querySelectorAll('img[src=""]');
-var emptySrcURL2 = document.querySelectorAll('script[src=""]');
-var emptySrcURL3 = document.querySelectorAll('link[rel=stylesheet][href=""]');
-var emptySrcURL4 = document.querySelectorAll('button[href=""]');
-var emptySrcURL5 = document.querySelectorAll('a[href=""]'); */  
-
-    
-/*console.log(largeTransSrc);
-console.log(highRec1);
-console.log('High Rec: '+highRec1[0]);
-
-    
-    
- var highRecTest = highRec1[0]; */
-    
-    
-// High Important Recomendation
-    
-/*var highRec1 = '';
-console.log('Length ' + highRec.length);
-console.log(highRec);
-console.log(highRec.includes(107));    
-
-    
-switch (highRec.includes(107)){
-
-    case (imgFormatType == 1):
-        highRec1 = 'Your largest Trans Size is a stylesheet.';
-        break;
-    case (imgFormatType == 2):
-        highRec1 = 'Your largest Trans Size is an api request.';
-        break;
-    case (imgFormatType == 3):
-        highRec1 = 'Your largest Trans Size is a javascript file.';
-        break;
-    case (imgFormatType == 4):
-        highRec1 = 'Your largest Trans Size is an imported font file.';
-        break;
-    case (imgFormatType == 5):
-        highRec1 = 'Your largest Trans Size is an image. Jeezus christ.';
-        break;
-    case (highRec.includes(107)):
-        highRec1 = 'This is your largest Transfer Request '+largeTransSrc;
-        break;
-}
-console.log(highRec1);
-    
-    
-var medRec1 = '';
-    
-switch (medRec.includes(207)){
-
-    case imgFormatType == 1:
-        medRec1 = 'Your largest Trans Size is a stylesheet.';
-        break;
-    case imgFormatType == 2:
-        medRec1 = 'Your largest Trans Size is an api request.';
-        break;
-    case imgFormatType == 3:
-        medRec1 = 'Your largest Trans Size is a javascript file.';
-        break;
-    case imgFormatType === 4:
-        medRec1 = 'Your largest Trans Size is an imported font file.';
-        break;
-    case imgFormatType === 5:
-        medRec1 = 'Your largest Trans Size is an image. Jeezus christ.';
-        break;
-    case medRec.includes(207):
-        medRec1 = 'This is your largest Transfer Request '+largeTransSrc;
-        break;
-}
-console.log(medRec1);
-    
-var lowRec1 = '';
-    
-switch (lowRec.includes(307)){
-
-    case imgFormatType === 1:
-        lowRec1 = 'Your largest Trans Size is a stylesheet.';
-        break;
-    case imgFormatType === 2:
-        lowRec1 = 'Your largest Trans Size is an api request.';
-        break;
-    case imgFormatType === 3:
-        lowRec1 = 'Your largest Trans Size is a javascript file.';
-        break;
-    case imgFormatType === 4:
-        lowRec1 = 'Your largest Trans Size is an imported font file.';
-        break;
-    case imgFormatType === 5:
-        lowRec1 = 'Your largest Trans Size is an image. Jeezus christ.';
-        break;
-    case lowRec.includes(307):
-        lowRec1 = 'This is your largest Transfer Request '+largeTransSrc;
-        break;
-}*/
-    
-//console.log(lowRec1);
     
 //performance.getEntries(); For Web Vitals  
     
