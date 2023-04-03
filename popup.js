@@ -1917,7 +1917,8 @@ switch (colorScore){
         document.getElementById("colorBar").style.border = '1px solid green';
         break;
     case 'white':
-        document.getElementById("colorBar").innerHTML = colorScore;
+        //document.getElementById("colorBar").innerHTML = colorScore;
+        document.getElementById("colorBar").innerHTML = x.medRec1;
         document.getElementById("colorBar").style.width = "200px";
         document.getElementById("colorBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("cacheBar").style.border = '1px solid yellow';
@@ -1939,9 +1940,7 @@ switch (colorScore){
 <p class = "recoClass" id= "reco3"></p>*/ 
 document.getElementById("reco1").innerHTML = x.highRec1;
 document.getElementById("reco2").innerHTML = x.medRec1;
-document.getElementById("reco3").innerHTML = x.lowRec1;
-
-            
+document.getElementById("reco3").innerHTML = x.lowRec1;         
             
             
             

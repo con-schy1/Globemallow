@@ -440,14 +440,6 @@ if(emptySrcURL5.length >= 1){
     
 
 var emptySRCVal = emptySRCArray.toString();    
-    
-console.log(emptySRCArray);
-console.log(emptySRCArray.length);
-console.log(emptySrcType);
-    
-if (emptySrcType.includes(1)){
-    console.log('sad');
-}
 
 var emptyURL = emptySRCArray.length;
 
@@ -1621,7 +1613,7 @@ if(highRec.includes(105)){
         highRec1.push(loadTimeFunction());
     }
     else{
-        //highRec1.push('');
+       // highRec1.push('');
     }
 if(medRec.includes(213)){
         medRec1.push(emptySRCFunction());
@@ -1630,28 +1622,29 @@ if(medRec.includes(213)){
         lowRec1.push(emptySRCFunction());
     }
     else{
-        //highRec1.push('');
+       // highRec1.push('');
     }
     
-    
+console.log(medRec1);
+console.log(medRec);
     
 var transFuncVar;   
 //Transfer Function
 function transferFunction(){
     if (largeTransSrc.match(cssTransReq)){
-        transFuncVar = 'Your largest Trans Size is a stylesheet.';
+        transFuncVar = 'Your largest Trans Size is a stylesheet.<br>';
     }
         else if(largeTransSrc.match(apiTransReq)){
-        transFuncVar ='Your largest Trans Size is an api request.';
+        transFuncVar ='Your largest Trans Size is an api request.<br>';
     }
         else if(largeTransSrc.match(jsTransReq)){
-        transFuncVar ='Your largest Trans Size is a javascript file.';
+        transFuncVar ='Your largest Trans Size is a javascript file.<br>';
     }
         else if(largeTransSrc.match(importedFontTransReq)){
-        transFuncVar ='Your largest Trans Size is an imported font file.';
+        transFuncVar ='Your largest Trans Size is an imported font file.<br>';
     }
         else if(largeTransSrc.match(imageTransReq)){
-        transFuncVar ='Your largest Trans Size is an image. Jeezus christ.';
+        transFuncVar ='Your largest Trans Size is an image. Jeezus christ.<br>';
     }
          else{
         transFuncVar = 'This is your largest Transfer Request '+largeTransSrc;
@@ -1666,19 +1659,19 @@ var loadFuncVar;
 //Transfer Function
 function loadTimeFunction(){
     if (largeLoadRequest.match(cssTransReq)){
-        loadFuncVar = 'Your longest loading request is a stylesheet.';
+        loadFuncVar = 'Your longest loading request is a stylesheet.<br>';
     }
         else if(largeLoadRequest.match(apiTransReq)){
-        loadFuncVar ='Your longest loading request  is an api request.';
+        loadFuncVar ='Your longest loading request  is an api request.<br>';
     }
         else if(largeLoadRequest.match(jsTransReq)){
-        loadFuncVar ='Your longest loading request is a javascript file.';
+        loadFuncVar ='Your longest loading request is a javascript file.<br>';
     }
         else if(largeLoadRequest.match(importedFontTransReq)){
-        loadFuncVar ='Your longest loading request is an imported font file.';
+        loadFuncVar ='Your longest loading request is an imported font file.<br>';
     }
         else if(largeLoadRequest.match(imageTransReq)){
-        loadFuncVar ='Your longest loading request is an image. Jeezus christ.';
+        loadFuncVar ='Your longest loading request is an image. Jeezus christ.<br>';
     }
          else{
             loadFuncVar = 'This is your longest loading request Request '+largeLoadRequest;
@@ -1711,15 +1704,18 @@ function emptySRCFunction(){
         emptySrcVar += '<a href=""><br>';
     }
         else{
+            emptySrcVar = 'You have a lot of empty srcs';
             emptySrcVar += 'You have a lot of empty srcs';
     }
     
-    console.log(emptySrcVar);
+    console.log('1:'+emptySrcVar);
     
     return emptySrcVar;
     
 }
-    
+ 
+console.log("2"+emptySrcVar);
+console.log("3"+medRec1);
     
 /* var emptySrcURL1 = document.querySelectorAll('img[src=""]');
 var emptySrcURL2 = document.querySelectorAll('script[src=""]');
@@ -1820,8 +1816,7 @@ switch (lowRec.includes(307)){
     
 //console.log(lowRec1);
     
-//performance.getEntries(); For Web Vitals
-    
+//performance.getEntries(); For Web Vitals  
     
 var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, largeLoadRequest, transferSizeLabel, largeLoadLabel, highRec1, medRec1, lowRec1, cssTransLabel}
 
