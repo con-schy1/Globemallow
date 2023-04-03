@@ -1585,7 +1585,9 @@ if (cssTransSize === 0){
 console.log('Css Requests: '+v);*/
 // v variable is the amount of Css Requests
 
-
+var imFontSize = 0;
+var imFontLabel;
+var imFontHREF;
     
 var highRec1 = [];
 var medRec1 = [];
@@ -1625,7 +1627,40 @@ if(medRec.includes(213)){
        // highRec1.push('');
     }
 if(medRec.includes(206)){
-        medRec1.push(imFontFunction());
+
+//Imported Font Function
+
+for (var i = 0; i < transferResources.length; i++) {
+
+    imFontHREF = transferResources[i].name; 
+    
+    if (imFontHREF.match(importedFontTransReq)){
+        imFontSize += transferResources[i].transferSize;
+        console.log(transferResources[i].transferSize);
+        console.log(imFontSize);
+    }
+    else{
+        //
+    }
+}
+    
+    console.log('ImFont: '+imFontSize);
+
+if (imFontSize === 0){
+   imFontLabel = 'Your imported font files are cached!' 
+}  else if(imFontSize/1024/1024/1024 > 1){
+ imFontLabel = (((imFontSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (imFontSize/1024/1024 > 1){
+ imFontLabel = (((imFontSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (imFontSize/1024 > 1){
+ imFontLabel = (((imFontSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (imFontSize > 1){
+ imFontLabel = (((imFontSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+   else{
+     imFontLabel = (imFontSize).toString() + arrayLabel[0];
+ }
+        medRec1.push("Your imported fonts equate to "+ imFontLabel +" of your transfer size<br>");
     }
     else{
        // highRec1.push('');
@@ -1717,7 +1752,7 @@ function emptySRCFunction(){
     
 
     
-var imFontSize = 0;
+/*var imFontSize = 0;
 var imFontLabel;
 var imFontHREF;
 //Imported Font Function
@@ -1729,13 +1764,14 @@ for (var i = 0; i < transferResources.length; i++) {
     
     if (imFontHREF.match(importedFontTransReq)){
         imFontSize += transferResources[i].transferSize;
+        console.log(transferResources[i].transferSize);
+        console.log(imFontSize);
     }
     else{
         //
     }
 }
     
-    imFontSize = imFontSize || 0
     console.log('ImFont: '+imFontSize);
 
 if (imFontSize === 0){
@@ -1755,7 +1791,7 @@ if (imFontSize === 0){
     
     return imFontLabel;
     
-}
+}*/
  
     
 
