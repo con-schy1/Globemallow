@@ -1616,7 +1616,7 @@ if(highRec.includes(105)){
        // highRec1.push('');
     }
 if(medRec.includes(213)){
-        medRec1.push(emptySRCFunction().toString());
+        medRec1.push(emptySRCFunction());
     }
     else if(lowRec.includes(313)){
         lowRec1.push(emptySRCFunction());
@@ -1624,9 +1624,13 @@ if(medRec.includes(213)){
     else{
        // highRec1.push('');
     }
-    
-console.log("4"+medRec1);
-console.log("5"+medRec);
+if(medRec.includes(206)){
+        medRec1.push(imFontFunction());
+    }
+    else{
+       // highRec1.push('');
+    }
+
     
 var transFuncVar;   
 //Transfer Function
@@ -1707,14 +1711,54 @@ function emptySRCFunction(){
             emptySrcVar = 'You have a lot of empty srcs';
     }
     
-    console.log('1:'+emptySrcVar);
-    
     return emptySrcVar;
     
 }
+    
+
+    
+var imFontSize = 0;
+var imFontLabel;
+var imFontHREF;
+//Imported Font Function
+function imFontFunction(){
+
+for (var i = 0; i < transferResources.length; i++) {
+
+    imFontHREF = transferResources[i].name; 
+    
+    if (imFontHREF.match(importedFontTransReq)){
+        imFontSize += transferResources[i].transferSize;
+    }
+    else{
+        //
+    }
+}
+    
+    imFontSize = imFontSize || 0
+    console.log('ImFont: '+imFontSize);
+
+if (imFontSize === 0){
+   imFontLabel = 'Your imported font files are cached!' 
+}  else if(imFontSize/1024/1024/1024 > 1){
+ imFontLabel = (((imFontSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (imFontSize/1024/1024 > 1){
+ imFontLabel = (((imFontSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (imFontSize/1024 > 1){
+ imFontLabel = (((imFontSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (imFontSize > 1){
+ imFontLabel = (((imFontSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+   else{
+     imFontLabel = (imFontSize).toString() + arrayLabel[0];
+ }
+    
+    return imFontLabel;
+    
+}
  
-console.log("2"+emptySrcVar);
-console.log("3"+medRec1);
+    
+
     
 //performance.getEntries(); For Web Vitals  
     
