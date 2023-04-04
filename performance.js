@@ -1535,11 +1535,11 @@ var imgFormatType = 0;
     
 //Transfer size of External Style Sheets
 var cssTransSize = 0;
-/*var apiTransSize = 0;
-var jsTransSize = 0;*/
+/*var apiTransSize = 0;*/
+var jsTransSize = 0;
 var cssTransLabel;
-/*var apiTransLabel;
-var jsTransLabel;*/
+/*var apiTransLabel;*/
+var jsTransLabel;
 var cssHREF;
 //var v = 0;
 
@@ -1592,6 +1592,8 @@ var imFontHREF;
 var highRec1 = [];
 var medRec1 = [];
 var lowRec1 = [];
+
+//Recommendation Engine
     
  if (highRec.includes(107)){
     highRec1.push(transferFunction());
@@ -1599,24 +1601,26 @@ var lowRec1 = [];
     else if(medRec.includes(207)){
         highRec1.push(transferFunction());
     }
-    else if(medRec.includes(307)){
+    else if(lowRec.includes(307)){
         highRec1.push(transferFunction());
     }
     else{
         //highRec1.push('');
     }
+    
 if(highRec.includes(105)){
         highRec1.push(loadTimeFunction());
     }
     else if(medRec.includes(205)){
         highRec1.push(loadTimeFunction());
     }
-    else if(medRec.includes(305)){
+    else if(lowRec.includes(305)){
         highRec1.push(loadTimeFunction());
     }
     else{
        // highRec1.push('');
     }
+    
 if(medRec.includes(213)){
         medRec1.push(emptySRCFunction());
     }
@@ -1626,6 +1630,7 @@ if(medRec.includes(213)){
     else{
        // highRec1.push('');
     }
+    
 if(medRec.includes(206)){
 
 //Imported Font Function
@@ -1636,57 +1641,76 @@ for (var i = 0; i < transferResources.length; i++) {
     
     if (imFontHREF.match(importedFontTransReq)){
         imFontSize += transferResources[i].transferSize;
-        console.log(transferResources[i].transferSize);
-        console.log(imFontSize);
     }
     else{
         //
     }
 }
     
-    console.log('ImFont: '+imFontSize);
 
 if (imFontSize === 0){
-   imFontLabel = 'Your imported font files are cached!' 
+        imFontLabel = 'Your imported font files are cached!';
+        medRec1.push(imFontLabel);
 }  else if(imFontSize/1024/1024/1024 > 1){
- imFontLabel = (((imFontSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+        imFontLabel = (((imFontSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+        medRec1.push("Your imported fonts equate to "+ imFontLabel +" of your transfer size<br>");
  } else if (imFontSize/1024/1024 > 1){
- imFontLabel = (((imFontSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+        imFontLabel = (((imFontSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+        medRec1.push("Your imported fonts equate to "+ imFontLabel +" of your transfer size<br>");
  } else if (imFontSize/1024 > 1){
- imFontLabel = (((imFontSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+        imFontLabel = (((imFontSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+        medRec1.push("Your imported fonts equate to "+ imFontLabel +" of your transfer size<br>");
  } else if (imFontSize > 1){
- imFontLabel = (((imFontSize).toFixed(2)).toString() + arrayLabel[0]);
+        imFontLabel = (((imFontSize).toFixed(2)).toString() + arrayLabel[0]);
+        medRec1.push("Your imported fonts equate to "+ imFontLabel +" of your transfer size<br>");
  }
    else{
-     imFontLabel = (imFontSize).toString() + arrayLabel[0];
+        imFontLabel = (imFontSize).toString() + arrayLabel[0];
  }
-        medRec1.push("Your imported fonts equate to "+ imFontLabel +" of your transfer size<br>");
+        
     }
     else{
        // highRec1.push('');
     }
-
+    
+if(highRec.includes(103)){
+    highRec1.push(jsFunction())
+}
+    else if(medRec.includes(203)){
+        lowRec1.push(jsFunction());
+    }
+    else if(lowRec.includes(303)){
+        lowRec1.push(jsFunction());
+    }
+    else{
+        //
+    }
+    
+    
+    
+    
+    
     
 var transFuncVar;   
 //Transfer Function
 function transferFunction(){
     if (largeTransSrc.match(cssTransReq)){
-        transFuncVar = 'Your largest Trans Size is a stylesheet.<br>';
+        transFuncVar = 'Your largest Trans Size is a stylesheet.<br><br>';
     }
         else if(largeTransSrc.match(apiTransReq)){
-        transFuncVar ='Your largest Trans Size is an api request.<br>';
+        transFuncVar ='Your largest Trans Size is an api request.<br><br>';
     }
         else if(largeTransSrc.match(jsTransReq)){
-        transFuncVar ='Your largest Trans Size is a javascript file.<br>';
+        transFuncVar ='Your largest Trans Size is a javascript file.<br><br>';
     }
         else if(largeTransSrc.match(importedFontTransReq)){
-        transFuncVar ='Your largest Trans Size is an imported font file.<br>';
+        transFuncVar ='Your largest Trans Size is an imported font file.<br><br>';
     }
         else if(largeTransSrc.match(imageTransReq)){
-        transFuncVar ='Your largest Trans Size is an image. Jeezus christ.<br>';
+        transFuncVar ='Your largest Trans Size is an image. Jeezus christ.<br><br>';
     }
          else{
-        transFuncVar = 'This is your largest Transfer Request '+largeTransSrc;
+        transFuncVar = 'This is your largest Transfer Request '+largeTransSrc+' <br><br>';
     }
     
     return transFuncVar;
@@ -1698,22 +1722,22 @@ var loadFuncVar;
 //Transfer Function
 function loadTimeFunction(){
     if (largeLoadRequest.match(cssTransReq)){
-        loadFuncVar = 'Your longest loading request is a stylesheet.<br>';
+        loadFuncVar = 'Your longest loading request is a stylesheet.<br><br>';
     }
         else if(largeLoadRequest.match(apiTransReq)){
-        loadFuncVar ='Your longest loading request  is an api request.<br>';
+        loadFuncVar ='Your longest loading request  is an api request.<br><br>';
     }
         else if(largeLoadRequest.match(jsTransReq)){
-        loadFuncVar ='Your longest loading request is a javascript file.<br>';
+        loadFuncVar ='Your longest loading request is a javascript file.<br><br>';
     }
         else if(largeLoadRequest.match(importedFontTransReq)){
-        loadFuncVar ='Your longest loading request is an imported font file.<br>';
+        loadFuncVar ='Your longest loading request is an imported font file.<br><br>';
     }
         else if(largeLoadRequest.match(imageTransReq)){
-        loadFuncVar ='Your longest loading request is an image. Jeezus christ.<br>';
+        loadFuncVar ='Your longest loading request is an image. Jeezus christ.<br><br>';
     }
          else{
-            loadFuncVar = 'This is your longest loading request Request '+largeLoadRequest;
+            loadFuncVar = 'This is your longest loading request Request '+largeLoadRequest+' <br><br>';
     }
     
     return loadFuncVar;
@@ -1728,29 +1752,68 @@ function emptySRCFunction(){
         emptySrcVar = '';
     }
     if (emptySrcType.includes(1)){
-        emptySrcVar += '< img src=""><br>';
+        emptySrcVar += '< img src=""><br><br>';
     }
     if(emptySrcType.includes(2)){
-        emptySrcVar += '< script src=""><br>';
+        emptySrcVar += '< script src=""><br><br>';
     }
     if(emptySrcType.includes(3)){
-        emptySrcVar += '< link rel=stylesheet href=""><br>';
+        emptySrcVar += '< link rel=stylesheet href=""><br><br>';
     }
     if(emptySrcType.includes(4)){
-        emptySrcVar += '< button href=""><br>';
+        emptySrcVar += '< button href=""><br><br>';
     }
     if(emptySrcType.includes(5)){
-        emptySrcVar += '< a href=""><br>';
+        emptySrcVar += '< a href=""><br><br>';
     }
         else{
-            emptySrcVar = 'You have a lot of empty srcs';
+            emptySrcVar = 'You have a lot of empty srcs<br><br>';
     }
     
     return emptySrcVar;
     
 }
+ 
     
+var jsFuncVar;
+function jsFunction(){
+    
+for (var i = 0; i < transferResources.length; i++) {
 
+    cssHREF = transferResources[i].name; 
+
+    if (cssHREF.match(jsTransSize)){
+        jsTransSize += transferResources[i].transferSize;
+    }
+    else{
+        //
+    }
+} 
+
+if (jsTransSize === 0){
+   //jsTransLabel = 'All Javascript requests are cached!' 
+}  else if(jsTransSize/1024/1024/1024 > 1){
+    jsTransLabel = (((jsTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+    jsFuncVar = 'The total amount of transfered Javascript Requests: '+jsTransLabel+' <br><br>';
+ } else if (jsTransSize/1024/1024 > 1){
+    jsTransLabel = (((jsTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+    jsFuncVar = 'The total amount of transfered Javascript Requests: '+jsTransLabel+' <br><br>';
+ } else if (jsTransSize/1024 > 1){
+    jsTransLabel = (((jsTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+    jsFuncVar = 'The total amount of transfered Javascript Requests: '+jsTransLabel+' <br><br>';
+ } else if (jsTransSize > 1){
+    jsTransLabel = (((jsTransSize).toFixed(2)).toString() + arrayLabel[0]);
+    jsFuncVar = 'The total amount of transfered Javascript Requests: '+jsTransLabel+' <br><br>';
+ }
+   else{
+     jsTransLabel = (jsTransSize).toString() + arrayLabel[0];
+     jsFuncVar = 'The total amount of transfered Javascript Requests: '+jsTransLabel+' <br><br>';
+ }
+    
+   
+        
+   return jsFuncVar; 
+}
     
 /*var imFontSize = 0;
 var imFontLabel;
