@@ -422,7 +422,6 @@ table .row{
 }
 
 
-
 .textAreaHeaders{
     margin-left: 9px;
     font-weight: 550;
@@ -441,6 +440,19 @@ table .row{
 .textAreaClass{
     margin-left: 10px;
     max-width: 95%;
+}
+
+.textAreaDiv1{
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#reco1, #reco2, #reco3{
+    padding-left: 6px;
+    font-size: 15px;
+    border-color: #F77616;
+    border-width: 2px;
 }
 
 

@@ -1526,7 +1526,7 @@ if (picTagCount > 0){
 //Identify File of Largest Transfer Size
     
 var cssTransReq = /(.css)/;
-var apiTransReq = /(api)/;
+var apiTransReq = /(api?s)/;
 var jsTransReq = /(.js)/;
 var importedFontTransReq = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)/;
 var imageTransReq = /(.png)|(.jpeg)|(.gif)|(.jpg)|(.tiff)|(.svg)|(webp)|(avif)|(.ico)/;
@@ -1759,22 +1759,22 @@ function emptySRCFunction(){
         emptySrcVar = '';
     }
     if (emptySrcType.includes(1)){
-        emptySrcVar += '< img src=""><br><br>';
+        emptySrcVar += 'Instances of < img src=""> were found on page.<br><br>';
     }
     if(emptySrcType.includes(2)){
-        emptySrcVar += '< script src=""><br><br>';
+        emptySrcVar += 'Instances of < script src=""> were found on page.<br><br>';
     }
     if(emptySrcType.includes(3)){
-        emptySrcVar += '< link rel=stylesheet href=""><br><br>';
+        emptySrcVar += 'Instances of < link rel=stylesheet href=""> were found on page.<br><br>';
     }
     if(emptySrcType.includes(4)){
-        emptySrcVar += '< button href=""><br><br>';
+        emptySrcVar += 'Instances of < button href=""> were found on page.<br><br>';
     }
     if(emptySrcType.includes(5)){
-        emptySrcVar += '< a href=""><br><br>';
+        emptySrcVar += 'Instances of < a href=""> were found on page.<br><br>';
     }
         else{
-            emptySrcVar = 'You have a lot of empty srcs<br><br>';
+            //emptySrcVar = 'You have a lot of empty srcs<br><br>';
     }
     
     return emptySrcVar;
@@ -1801,23 +1801,25 @@ if (jsTransSize === 0){
    //jsTransLabel = 'All Javascript requests are cached!' 
 }  else if(jsTransSize/1024/1024/1024 > 1){
     jsTransLabel = (((jsTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
-    jsFuncVar = 'The total amount of transfered Javascript Requests: '+jsTransLabel+' <br><br>';
+    jsFuncVar = 'The total amount of all transfered Javascript Requests: '+jsTransLabel+'.<br><br>';
  } else if (jsTransSize/1024/1024 > 1){
     jsTransLabel = (((jsTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
-    jsFuncVar = 'The total amount of transfered Javascript Requests: '+jsTransLabel+' <br><br>';
+    jsFuncVar = 'The total amount of all transfered Javascript Requests: '+jsTransLabel+'.<br><br>';
  } else if (jsTransSize/1024 > 1){
     jsTransLabel = (((jsTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
-    jsFuncVar = 'The total amount of transfered Javascript Requests: '+jsTransLabel+' <br><br>';
+    jsFuncVar = 'The total amount of all transfered Javascript Requests: '+jsTransLabel+'.<br><br>';
  } else if (jsTransSize > 1){
     jsTransLabel = (((jsTransSize).toFixed(2)).toString() + arrayLabel[0]);
-    jsFuncVar = 'The total amount of transfered Javascript Requests: '+jsTransLabel+' <br><br>';
+    jsFuncVar = 'The total amount of all transfered Javascript Requests: '+jsTransLabel+'.<br><br>';
  }
    else{
      jsTransLabel = (jsTransSize).toString() + arrayLabel[0];
-     jsFuncVar = 'The total amount of transfered Javascript Requests: '+jsTransLabel+' <br><br>';
+     jsFuncVar = 'The total amount of all transfered Javascript Requests: '+jsTransLabel+'.<br><br>';
  }
     
- //If their JS is high and their transfersize is low then it must mean that they have a lot of Analytics and Ads running  
+ //If their JS is high and their transfersize is low then it must mean that they have a lot of Analytics and Ads running 
+    
+// Show the usedJSHeapSize / Total to show how much JavaScript is being used. 
         
    return jsFuncVar; 
 }
