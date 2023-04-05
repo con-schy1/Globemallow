@@ -1542,6 +1542,7 @@ var cssTransLabel;
 var jsTransLabel;
 var cssHREF;
 //var v = 0;
+var impFontReq = 0;
 
 for (var i = 0; i < transferResources.length; i++) {
 
@@ -1595,6 +1596,7 @@ var lowRec1 = [];
 
 //Recommendation Engine
     
+//Transfer Size Function
  if (highRec.includes(107)){
     highRec1.push(transferFunction());
 }
@@ -1607,7 +1609,8 @@ var lowRec1 = [];
     else{
         //highRec1.push('');
     }
-    
+
+//Page Loadtime Function
 if(highRec.includes(105)){
         highRec1.push(loadTimeFunction());
     }
@@ -1621,6 +1624,7 @@ if(highRec.includes(105)){
        // highRec1.push('');
     }
     
+//Empty SRC Tags Function  
 if(medRec.includes(213)){
         medRec1.push(emptySRCFunction());
     }
@@ -1631,6 +1635,7 @@ if(medRec.includes(213)){
        // highRec1.push('');
     }
     
+//Imported Fonts Function
 if(medRec.includes(206)){
 
 //Imported Font Function
@@ -1641,6 +1646,7 @@ for (var i = 0; i < transferResources.length; i++) {
     
     if (imFontHREF.match(importedFontTransReq)){
         imFontSize += transferResources[i].transferSize;
+        impFontReq++;
     }
     else{
         //
@@ -1649,20 +1655,20 @@ for (var i = 0; i < transferResources.length; i++) {
     
 
 if (imFontSize === 0){
-        imFontLabel = 'Your imported font files are cached!';
-        medRec1.push(imFontLabel);
+        //imFontLabel = 'Your imported font files are cached!';
+        //medRec1.push(imFontLabel);
 }  else if(imFontSize/1024/1024/1024 > 1){
         imFontLabel = (((imFontSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
-        medRec1.push("Your imported fonts equate to "+ imFontLabel +" of your transfer size<br>");
+        medRec1.push("Your imported fonts equate to "+ imFontLabel +', or '+((imFontSize/transferSize1)*100).toFixed(2)+'% of your total transfered size.<br>');
  } else if (imFontSize/1024/1024 > 1){
         imFontLabel = (((imFontSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
-        medRec1.push("Your imported fonts equate to "+ imFontLabel +" of your transfer size<br>");
+        medRec1.push("Your imported fonts equate to "+ imFontLabel +', or '+((imFontSize/transferSize1)*100)+'% of your total transfered size.<br>');
  } else if (imFontSize/1024 > 1){
         imFontLabel = (((imFontSize/1024).toFixed(2)).toString() + arrayLabel[1]);
-        medRec1.push("Your imported fonts equate to "+ imFontLabel +" of your transfer size<br>");
+        medRec1.push("Your imported fonts equate to "+ imFontLabel +', or '+((imFontSize/transferSize1)*100).toFixed(2)+'% of your total transfered size.<br>');
  } else if (imFontSize > 1){
         imFontLabel = (((imFontSize).toFixed(2)).toString() + arrayLabel[0]);
-        medRec1.push("Your imported fonts equate to "+ imFontLabel +" of your transfer size<br>");
+        medRec1.push("Your imported fonts equate to "+ imFontLabel +', or '+((imFontSize/transferSize1)*100).toFixed(2)+'% of your total transfered size.<br>');
  }
    else{
         imFontLabel = (imFontSize).toString() + arrayLabel[0];
@@ -1672,7 +1678,8 @@ if (imFontSize === 0){
     else{
        // highRec1.push('');
     }
-    
+
+//JS Heapsize Function
 if(highRec.includes(103)){
     highRec1.push(jsFunction())
 }
@@ -1704,13 +1711,13 @@ function transferFunction(){
         transFuncVar ='Your largest Trans Size is a javascript file.<br><br>';
     }
         else if(largeTransSrc.match(importedFontTransReq)){
-        transFuncVar ='Your largest Trans Size is an imported font file.<br><br>';
+        transFuncVar ='Your largest Trans Size is an imported font file. All together, imported fonts required '+imFontLabel+' in transfered data.<br><br>';
     }
         else if(largeTransSrc.match(imageTransReq)){
-        transFuncVar ='Your largest Trans Size is an image. Jeezus christ.<br><br>';
+        transFuncVar ='Your largest Transfered Request is an image. Have you considered using an image compression tool? There are a lot found online, and they make a significant difference in image size.<br><br>';
     }
          else{
-        transFuncVar = 'This is your largest Transfer Request '+largeTransSrc+' <br><br>';
+        //transFuncVar = 'This is your largest Transfer Request '+largeTransSrc+' <br><br>';
     }
     
     return transFuncVar;
@@ -1722,7 +1729,7 @@ var loadFuncVar;
 //Transfer Function
 function loadTimeFunction(){
     if (largeLoadRequest.match(cssTransReq)){
-        loadFuncVar = 'Your longest loading request is a stylesheet.<br><br>';
+        loadFuncVar = 'Your longest loading request is an external stylesheet.<br><br>';
     }
         else if(largeLoadRequest.match(apiTransReq)){
         loadFuncVar ='Your longest loading request  is an api request.<br><br>';
@@ -1731,13 +1738,13 @@ function loadTimeFunction(){
         loadFuncVar ='Your longest loading request is a javascript file.<br><br>';
     }
         else if(largeLoadRequest.match(importedFontTransReq)){
-        loadFuncVar ='Your longest loading request is an imported font file.<br><br>';
+        loadFuncVar ='Your longest loading request is an imported font file. In total, Imported Fonts required ' +impFontReq +' seperate requests. <br><br>';
     }
         else if(largeLoadRequest.match(imageTransReq)){
-        loadFuncVar ='Your longest loading request is an image. Jeezus christ.<br><br>';
+        loadFuncVar ='Your longest loading request is an image. Have you considered using an image compression tool? There are a lot found online, and they make a significant difference in image size.<br><br>';
     }
          else{
-            loadFuncVar = 'This is your longest loading request Request '+largeLoadRequest+' <br><br>';
+            //loadFuncVar = 'This is your longest loading request Request '+largeLoadRequest+' <br><br>';
     }
     
     return loadFuncVar;
@@ -1810,7 +1817,7 @@ if (jsTransSize === 0){
      jsFuncVar = 'The total amount of transfered Javascript Requests: '+jsTransLabel+' <br><br>';
  }
     
-   
+ //If their JS is high and their transfersize is low then it must mean that they have a lot of Analytics and Ads running  
         
    return jsFuncVar; 
 }
