@@ -1681,7 +1681,7 @@ switch (cookieLen >= 0){
         document.getElementById('cookieTextA').innerHTML = x.cookiesList;
         document.getElementById('cookieTextA').style.display = "block";
         document.getElementById('cookieHeader').innerHTML = 'Cookies Found:';
-        document.getElementById("cookDiv").style.background = 'rgba(241, 137, 49, .3)'; 
+        document.getElementById("cookDiv").style.background = 'rgba(241, 137, 49, .5)'; 
         break;
     case cookieLen <= 10:
         document.getElementById("cookieBar").innerHTML = cookieLen;

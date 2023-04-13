@@ -1585,6 +1585,9 @@ if (cssTransSize === 0){
 /*console.log(cssTransLabel);
 console.log('Css Requests: '+v);*/
 // v variable is the amount of Css Requests
+    
+    
+//Here starts Recommendation Engine
 
 var imFontSize = 0;
 var imFontLabel;
@@ -1694,10 +1697,6 @@ if(highRec.includes(103)){
     }
     
     
-    
-    
-    
-    
 var transFuncVar;   
 //Transfer Function
 function transferFunction(){
@@ -1732,7 +1731,7 @@ function loadTimeFunction(){
         loadFuncVar = 'Your longest loading request is an external stylesheet.<br><br>';
     }
         else if(largeLoadRequest.match(apiTransReq)){
-        loadFuncVar ='Your longest loading request  is an api request.<br><br>';
+        loadFuncVar ='Your longest loading request is an api request.<br><br>';
     }
         else if(largeLoadRequest.match(jsTransReq)){
         loadFuncVar ='Your longest loading request is a javascript file.<br><br>';
@@ -1823,47 +1822,6 @@ if (jsTransSize === 0){
         
    return jsFuncVar; 
 }
-    
-/*var imFontSize = 0;
-var imFontLabel;
-var imFontHREF;
-//Imported Font Function
-function imFontFunction(){
-
-for (var i = 0; i < transferResources.length; i++) {
-
-    imFontHREF = transferResources[i].name; 
-    
-    if (imFontHREF.match(importedFontTransReq)){
-        imFontSize += transferResources[i].transferSize;
-        console.log(transferResources[i].transferSize);
-        console.log(imFontSize);
-    }
-    else{
-        //
-    }
-}
-    
-    console.log('ImFont: '+imFontSize);
-
-if (imFontSize === 0){
-   imFontLabel = 'Your imported font files are cached!' 
-}  else if(imFontSize/1024/1024/1024 > 1){
- imFontLabel = (((imFontSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
- } else if (imFontSize/1024/1024 > 1){
- imFontLabel = (((imFontSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
- } else if (imFontSize/1024 > 1){
- imFontLabel = (((imFontSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (imFontSize > 1){
- imFontLabel = (((imFontSize).toFixed(2)).toString() + arrayLabel[0]);
- }
-   else{
-     imFontLabel = (imFontSize).toString() + arrayLabel[0];
- }
-    
-    return imFontLabel;
-    
-}*/
  
     
 
