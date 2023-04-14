@@ -1440,6 +1440,17 @@ switch (numStyleSheet >= 0){
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extSSDiv').style.display = 'none';
         break;
+    case x.cssTransLabel === 'All style sheets cached!':
+        document.getElementById("numStyleBar").innerHTML = x.cssTransLabel;
+        document.getElementById("numStyleBar").style.width = "240px";
+        document.getElementById("numStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("numStyleBar").style.border = '1px solid green';
+        document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
+        document.getElementById('extStyleTextA').style.display = "block";
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
+        document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById('extStyleTextA').rows = "3";
+        break;
     case numStyleSheet == 1:
         document.getElementById("numStyleBar").innerHTML = "1";
         document.getElementById("numStyleBar").style.width = "240px";
