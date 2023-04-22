@@ -153,7 +153,7 @@ for (var i = 0; i < transferResources.length; i++) {
    netB.push(transferResources[i].transferSize);
    netC.push(transferResources[i].duration);
 
-    transferTotal += transferResources[i].transferSize;
+    transferTotal += parseFloat(transferResources[i].transferSize);
 
     fullTotal += parseFloat(transferResources[i].decodedBodySize);
 
@@ -221,9 +221,9 @@ var num1TotName;
 var num2TotName;
 var num3TotName;
 
-var num1TransSize;
-var num2TransSize;
-var num3TransSize;
+var num1TransSize  = 0;
+var num2TransSize  = 0;
+var num3TransSize  = 0;
 var num1TransName;
 var num2TransName;
 var num3TransName;
@@ -250,6 +250,8 @@ for (var i = 0; i < transferResources.length; i++) {
     }
 }
 
+if (transferTotal > 0){
+
 for (var i = 0; i < transferResources.length; i++) {
 
     if (netB[0] == transferResources[i].transferSize){
@@ -264,6 +266,14 @@ for (var i = 0; i < transferResources.length; i++) {
         num3TransSize = transferResources[i].transferSize;
         num3TransName = transferResources[i].name;
     }
+}
+}
+else{
+
+    num1TransName = 'All cached';
+    num2TransName = 'All cached';
+    num3TransName = 'All cached';
+
 }
 
 var num1TotSizeLab;
@@ -317,9 +327,9 @@ console.log('transferTotal'+transferTotal);
 
 console.log('fullTotal'+fullTotal);
 
-console.log(num1TransName+num1TransSize);
-console.log(num2TransName+num2TransSize);
-console.log(num3TransName+num3TransSize);
+console.log(num1TransName+' '+num1TransSize);
+console.log(num2TransName+' '+num2TransSize);
+console.log(num3TransName+' '+num3TransSize);
 
 console.log('CSS Trans: '+cssTransSize);
 console.log('API Tot: '+apiTransSize);
