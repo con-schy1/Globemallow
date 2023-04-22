@@ -276,6 +276,9 @@ else{
 
 }
 
+//////////////////////////////////////////////////////////////////////
+//Total Labeling
+
 var num1TotSizeLab;
 var num2TotSizeLab;
 var num3TotSizeLab;
@@ -320,6 +323,7 @@ if (num3TotSize/1024/1024/1024 > 1){
  }
 
 //////////////////////////////////////////////////////////////////////
+//Transfer Labeling
 
 var num1TransSizeLab;
 var num2TransSizeLab;
@@ -376,19 +380,43 @@ else{
 
 }
 
-console.log(num1TotName+' '+num1TotSizeLab);
-console.log(num2TotName+' '+num2TotSizeLab);
-console.log(num3TotName+' '+num3TotSizeLab);
 
-console.log('transferTotal'+transferTotal);
+//////////////////////////////////////////////////////////////////////
+//CSS Transfer Labeling
 
-console.log('fullTotal'+fullTotal);
+var CSSSizeLab;
+
+ if (cssTransSize/1024/1024/1024 > 1){
+ CSSSizeLab = (((cssTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (cssTransSize/1024/1024 > 1){
+ CSSSizeLab = (((cssTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (cssTransSize/1024 > 1){
+ CSSSizeLab = (((cssTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (cssTransSize > 1){
+ CSSSizeLab = (((cssTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     CSSSizeLab = (cssTransSize).toString() + arrayLabel[0];
+ }
+
+
+
+
+
+console.log(num1TotName+' '+num1TotSize+' '+num1TotSizeLab);
+console.log(num2TotName+' '+num2TotSize+' '+num2TotSizeLab);
+console.log(num3TotName+' '+num3TotSize+' '+num3TotSizeLab);
+
+
+console.log('transferTotal '+transferTotal);
+
+console.log('fullTotal '+fullTotal);
 
 console.log(num1TransName+' '+num1TransSize+' '+num1TransSizeLab);
 console.log(num2TransName+' '+num2TransSize+' '+num2TransSizeLab);
 console.log(num3TransName+' '+num3TransSize+' '+num3TransSizeLab);
 
-console.log('CSS Trans: '+cssTransSize);
+console.log('CSS Trans: '+cssTransSize+' '+CSSSizeLab);
 console.log('API Trans: '+apiTransSize);
 console.log('JS Trans: '+jsTransSize);
 console.log('Imported Font Trans: '+importedFontTransSize);
@@ -399,6 +427,5 @@ console.log('API Tot: '+apiTotSize);
 console.log('JS Tot: '+jsTotSize);
 console.log('Imported Font Tot: '+importedFontTotSize);
 console.log('Image Tot: '+imageTotSize);
-
 
 
