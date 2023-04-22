@@ -219,9 +219,11 @@ transferSize1 = parseFloat(transferSize1);
 
 netA.sort(function(a, b){return b - a});
 netB.sort(function(a, b){return b - a});
+netC.sort(function(a, b){return b - a});
 
 console.log('NetA: '+netA);
 console.log('NetB: '+netB);
+console.log('NetC: '+netC);
 
 var largeTotalOneThree = [];
 var num1TotSize;
@@ -237,6 +239,16 @@ var num3TransSize  = 0;
 var num1TransName;
 var num2TransName;
 var num3TransName;
+
+var num1LoadLength  = 0;
+var num2LoadLength  = 0;
+var num3LoadLength  = 0;
+var num1LoadName;
+var num2LoadName;
+var num3LoadName;
+
+
+//Find the Total Largest Loading Request and match them
 
 for (var i = 0; i < transferResources.length; i++) {
 
@@ -259,6 +271,9 @@ for (var i = 0; i < transferResources.length; i++) {
         num3TotName = transferResources[i].name;
     }
 }
+
+
+//Find the Transfered Largest Loading Request and match them. If 0, skip because everything is cached.
 
 if (transferTotal > 0){
 
@@ -284,6 +299,25 @@ else{
     num2TransName = 'All cached';
     num3TransName = 'All cached';
 
+}
+
+
+//Find the Longest Loading Requests and match them
+
+for (var i = 0; i < transferResources.length; i++) {
+
+    if (netC[0] == transferResources[i].duration){
+        num1LoadLength = transferResources[i].duration;
+        num1LoadName = transferResources[i].name;
+    }
+    else if (netC[1] == transferResources[i].duration){
+        num2LoadLength = transferResources[i].duration;
+        num2LoadName = transferResources[i].name;
+    }
+    else if (netC[2] == transferResources[i].duration){
+        num3LoadLength = transferResources[i].duration;
+        num3LoadName = transferResources[i].name;
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -661,6 +695,10 @@ console.log(num1TransName+' '+num1TransSize+' '+num1TransSizeLab);
 console.log(num2TransName+' '+num2TransSize+' '+num2TransSizeLab);
 console.log(num3TransName+' '+num3TransSize+' '+num3TransSizeLab);
 
+console.log(num1LoadName+' '+num1LoadLength);
+console.log(num2LoadName+' '+num2LoadLength);
+console.log(num3LoadName+' '+num3LoadLength);
+
 console.log('CSS Trans: '+cssTransSize+' '+CSSSizeLab);
 console.log('API Trans: '+apiTransSize+' '+APISizeLab);
 console.log('JS Trans: '+jsTransSize+' '+jsSizeLab);
@@ -676,6 +714,7 @@ console.log('Imported Font Tot: '+importedFontTotSize+' '+impFontLab);
 console.log('Image Tot: '+imageTotSize+' '+imageLab);
 console.log('Video Tot: '+videoTotSize+' '+videoLab);
 console.log('Other Tot: '+otherTotSize+' '+otherLab);
+
 
 
 
