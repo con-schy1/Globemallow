@@ -126,6 +126,7 @@ var jsTransSize = 0;
 var importedFontTransSize = 0;
 var imageTransSize = 0;
 var videoTransSize = 0;
+var otherTransSize = 0;
 var cssTransLabel;
 var apiTransLabel;
 var jsTransLabel;
@@ -138,6 +139,7 @@ var jsTotSize = 0;
 var importedFontTotSize = 0;
 var imageTotSize = 0;
 var videoTotSize = 0;
+var otherTotSize = 0;
 
 var transferTotal = 0;
 var fullTotal = 0;
@@ -188,7 +190,8 @@ for (var i = 0; i < transferResources.length; i++) {
         videoTotSize += transferResources[i].decodedBodySize;
     }
     else{
-        //
+        otherTransSize += transferResources[i].transferSize;
+        otherTotSize += transferResources[i].decodedBodySize;
     }
     
     //just do the import fonts script in here if it matches the regex it is true, and then if it's false just run the script to look in the header. Saving time. 
@@ -500,6 +503,24 @@ var videoTransSizeLab;
  }
 
 //////////////////////////////////////////////////////////////////////
+//Other Transfer Labeling
+
+var otherTransSizeLab;
+
+ if (otherTransSize/1024/1024/1024 > 1){
+ otherTransSizeLab = (((otherTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (otherTransSize/1024/1024 > 1){
+ otherTransSizeLab = (((otherTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (otherTransSize/1024 > 1){
+ otherTransSizeLab = (((otherTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (otherTransSize > 1){
+ otherTransSizeLab = (((otherTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     otherTransSizeLab = (otherTransSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
 //CSS Total Labeling
 
 var cssTotLab;
@@ -608,6 +629,24 @@ var videoLab;
      videoLab = (videoTotSize).toString() + arrayLabel[0];
  }
 
+//////////////////////////////////////////////////////////////////////
+//Other Total Labeling
+
+var otherLab;
+
+ if (otherTotSize/1024/1024/1024 > 1){
+ otherLab = (((otherTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (otherTotSize/1024/1024 > 1){
+ otherLab = (((otherTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (otherTotSize/1024 > 1){
+ otherLab = (((otherTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (otherTotSize > 1){
+ otherLab = (((otherTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     otherLab = (otherTotSize).toString() + arrayLabel[0];
+ }
+
 
 console.log(num1TotName+' '+num1TotSize+' '+num1TotSizeLab);
 console.log(num2TotName+' '+num2TotSize+' '+num2TotSizeLab);
@@ -628,6 +667,7 @@ console.log('JS Trans: '+jsTransSize+' '+jsSizeLab);
 console.log('Imported Font Trans: '+importedFontTransSize+' '+importedFontSizeLab);
 console.log('Image Trans: '+imageTransSize+' '+imgTransSizeLab);
 console.log('Video Trans: '+videoTransSize+' '+videoTransSizeLab);
+console.log('Other Trans: '+otherTransSize+' '+otherTransSizeLab);
 
 console.log('CSS Tot: '+cssTotSize+' '+cssTotLab);
 console.log('API Tot: '+apiTotSize+' '+apiTotLab);
@@ -635,6 +675,8 @@ console.log('JS Tot: '+jsTotSize+' '+jsTotLab);
 console.log('Imported Font Tot: '+importedFontTotSize+' '+impFontLab);
 console.log('Image Tot: '+imageTotSize+' '+imageLab);
 console.log('Video Tot: '+videoTotSize+' '+videoLab);
+console.log('Other Tot: '+otherTotSize+' '+otherLab);
+
 
 
 
