@@ -320,6 +320,31 @@ for (var i = 0; i < transferResources.length; i++) {
     }
 }
 
+var num1LoadLab;
+var num2LoadLab;
+var num3LoadLab;
+
+if (num1LoadLength/1000 >= 1){
+   num1LoadLab = (num1LoadLength/1000).toFixed(2).toString() + " secs"; 
+}
+    else{
+       num1LoadLab = num1LoadLength.toString() + " ms"; 
+    }
+
+if (num2LoadLength/1000 >= 1){
+   num2LoadLab = (num2LoadLength/1000).toFixed(2).toString() + " secs"; 
+}
+    else{
+       num2LoadLab = num2LoadLength.toString() + " ms"; 
+    }
+
+if (num3LoadLength/1000 >= 1){
+   num3LoadLab = (num3LoadLength/1000).toFixed(2).toString() + " secs"; 
+}
+    else{
+       num3LoadLab = num3LoadLength.toString() + " ms"; 
+    }
+
 //////////////////////////////////////////////////////////////////////
 //Total Labeling
 
@@ -695,9 +720,9 @@ console.log(num1TransName+' '+num1TransSize+' '+num1TransSizeLab);
 console.log(num2TransName+' '+num2TransSize+' '+num2TransSizeLab);
 console.log(num3TransName+' '+num3TransSize+' '+num3TransSizeLab);
 
-console.log(num1LoadName+' '+num1LoadLength);
-console.log(num2LoadName+' '+num2LoadLength);
-console.log(num3LoadName+' '+num3LoadLength);
+console.log(num1LoadName+' '+num1LoadLength+' '+num1LoadLab);
+console.log(num2LoadName+' '+num2LoadLength+' '+num2LoadLab);
+console.log(num3LoadName+' '+num3LoadLength+' '+num3LoadLab);
 
 console.log('CSS Trans: '+cssTransSize+' '+CSSSizeLab);
 console.log('API Trans: '+apiTransSize+' '+APISizeLab);
@@ -714,6 +739,8 @@ console.log('Imported Font Tot: '+importedFontTotSize+' '+impFontLab);
 console.log('Image Tot: '+imageTotSize+' '+imageLab);
 console.log('Video Tot: '+videoTotSize+' '+videoLab);
 console.log('Other Tot: '+otherTotSize+' '+otherLab);
+
+
 
 
 
