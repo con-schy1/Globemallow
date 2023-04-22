@@ -473,6 +473,98 @@ var imgTransSizeLab;
      imgTransSizeLab = (imageTransSize).toString() + arrayLabel[0];
  }
 
+//////////////////////////////////////////////////////////////////////
+//CSS Total Labeling
+
+var cssTotLab;
+
+ if (cssTotSize/1024/1024/1024 > 1){
+ cssTotLab = (((cssTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (cssTotSize/1024/1024 > 1){
+ cssTotLab = (((cssTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (cssTotSize/1024 > 1){
+ cssTotLab = (((cssTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (cssTotSize > 1){
+ cssTotLab = (((cssTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     cssTotLab = (cssTotSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
+//API Total Labeling
+
+var apiTotLab;
+
+ if (apiTotSize/1024/1024/1024 > 1){
+ apiTotLab = (((apiTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (apiTotSize/1024/1024 > 1){
+ apiTotLab = (((apiTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (apiTotSize/1024 > 1){
+ apiTotLab = (((apiTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (apiTotSize > 1){
+ apiTotLab = (((apiTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     apiTotLab = (apiTotSize).toString() + arrayLabel[0];
+ }
+
+
+//////////////////////////////////////////////////////////////////////
+//JS Total Labeling
+
+var jsTotLab;
+
+ if (jsTotSize/1024/1024/1024 > 1){
+ jsTotLab = (((jsTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (jsTotSize/1024/1024 > 1){
+ jsTotLab = (((jsTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (jsTotSize/1024 > 1){
+ jsTotLab = (((jsTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (jsTotSize > 1){
+ jsTotLab = (((jsTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     jsTotLab = (jsTotSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
+//Import Font Total Labeling
+
+var impFontLab;
+
+ if (importedFontTotSize/1024/1024/1024 > 1){
+ impFontLab = (((importedFontTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (importedFontTotSize/1024/1024 > 1){
+ impFontLab = (((importedFontTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (importedFontTotSize/1024 > 1){
+ impFontLab = (((importedFontTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (importedFontTotSize > 1){
+ impFontLab = (((importedFontTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     impFontLab = (importedFontTotSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
+//Image Total Labeling
+
+var imageLab;
+
+ if (imageTotSize/1024/1024/1024 > 1){
+ imageLab = (((imageTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (imageTotSize/1024/1024 > 1){
+ imageLab = (((imageTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (imageTotSize/1024 > 1){
+ imageLab = (((imageTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (imageTotSize > 1){
+ imageLab = (((imageTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     imageLab = (imageTotSize).toString() + arrayLabel[0];
+ }
+
+
 console.log(num1TotName+' '+num1TotSize+' '+num1TotSizeLab);
 console.log(num2TotName+' '+num2TotSize+' '+num2TotSizeLab);
 console.log(num3TotName+' '+num3TotSize+' '+num3TotSizeLab);
@@ -492,11 +584,12 @@ console.log('JS Trans: '+jsTransSize+' '+jsSizeLab);
 console.log('Imported Font Trans: '+importedFontTransSize+' '+importedFontSizeLab);
 console.log('Image Trans: '+imageTransSize+' '+imgTransSizeLab);
 
-console.log('CSS Tot: '+cssTotSize);
-console.log('API Tot: '+apiTotSize);
-console.log('JS Tot: '+jsTotSize);
-console.log('Imported Font Tot: '+importedFontTotSize);
-console.log('Image Tot: '+imageTotSize);
+console.log('CSS Tot: '+cssTotSize+' '+cssTotLab);
+console.log('API Tot: '+apiTotSize+' '+apiTotLab);
+console.log('JS Tot: '+jsTotSize+' '+jsTotLab);
+console.log('Imported Font Tot: '+importedFontTotSize+' '+impFontLab);
+console.log('Image Tot: '+imageTotSize+' '+imageLab);
+
 
 
 
