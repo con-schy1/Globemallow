@@ -210,8 +210,8 @@ transferSize1 = parseFloat(transferSize1);
 netA.sort(function(a, b){return b - a});
 netB.sort(function(a, b){return b - a});
 
-console.log(netA);
-console.log(netB);
+console.log('NetA: '+netA);
+console.log('NetB: '+netB);
 
 var largeTotalOneThree = [];
 var num1TotSize;
@@ -319,6 +319,63 @@ if (num3TotSize/1024/1024/1024 > 1){
      num3TotSizeLab = (num3TotSize).toString() + arrayLabel[0];
  }
 
+//////////////////////////////////////////////////////////////////////
+
+var num1TransSizeLab;
+var num2TransSizeLab;
+var num3TransSizeLab;
+
+if (transferTotal > 0){
+
+ if (num1TransSize/1024/1024/1024 > 1){
+ num1TransSizeLab = (((num1TransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (num1TransSize/1024/1024 > 1){
+ num1TransSizeLab = (((num1TransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (num1TransSize/1024 > 1){
+ num1TransSizeLab = (((num1TransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (num1TransSize > 1){
+ num1TransSizeLab = (((num1TransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     num1TransSizeLab = (num1TransSize).toString() + arrayLabel[0];
+ }
+
+if (num2TransSize/1024/1024/1024 > 1){
+ num2TransSizeLab = (((num2TransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (num2TransSize/1024/1024 > 1){
+ num2TransSizeLab = (((num2TransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (num2TransSize/1024 > 1){
+ num2TransSizeLab = (((num2TransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (num2TransSize > 1){
+ num2TransSizeLab = (((num2TransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     num2TransSizeLab = (num2TransSize).toString() + arrayLabel[0];
+ }
+
+if (num3TransSize/1024/1024/1024 > 1){
+ num3TransSizeLab = (((num3TransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (num3TransSize/1024/1024 > 1){
+ num3TransSizeLab = (((num3TransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (num3TransSize/1024 > 1){
+ num3TransSizeLab = (((num3TransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (num3TransSize > 1){
+ num3TransSizeLab = (((num3TransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     num3TransSizeLab = (num3TransSize).toString() + arrayLabel[0];
+ }
+
+}
+
+else{
+
+    num1TransSizeLab = 'Cached';
+    num2TransSizeLab = 'Cached';
+    num3TransSizeLab = 'Cached';
+
+}
+
 console.log(num1TotName+' '+num1TotSizeLab);
 console.log(num2TotName+' '+num2TotSizeLab);
 console.log(num3TotName+' '+num3TotSizeLab);
@@ -327,20 +384,21 @@ console.log('transferTotal'+transferTotal);
 
 console.log('fullTotal'+fullTotal);
 
-console.log(num1TransName+' '+num1TransSize);
-console.log(num2TransName+' '+num2TransSize);
-console.log(num3TransName+' '+num3TransSize);
+console.log(num1TransName+' '+num1TransSize+' '+num1TransSizeLab);
+console.log(num2TransName+' '+num2TransSize+' '+num2TransSizeLab);
+console.log(num3TransName+' '+num3TransSize+' '+num3TransSizeLab);
 
 console.log('CSS Trans: '+cssTransSize);
-console.log('API Tot: '+apiTransSize);
-console.log('JS Tot: '+jsTransSize);
-console.log('Imported Font Tot: '+importedFontTransSize);
-console.log('Image Tot: '+imageTransSize);
+console.log('API Trans: '+apiTransSize);
+console.log('JS Trans: '+jsTransSize);
+console.log('Imported Font Trans: '+importedFontTransSize);
+console.log('Image Trans: '+imageTransSize);
 
 console.log('CSS Tot: '+cssTotSize);
 console.log('API Tot: '+apiTotSize);
 console.log('JS Tot: '+jsTotSize);
 console.log('Imported Font Tot: '+importedFontTotSize);
 console.log('Image Tot: '+imageTotSize);
+
 
 
