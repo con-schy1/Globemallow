@@ -399,8 +399,42 @@ var CSSSizeLab;
      CSSSizeLab = (cssTransSize).toString() + arrayLabel[0];
  }
 
+//////////////////////////////////////////////////////////////////////
+//API Transfer Labeling
+
+var APISizeLab;
+
+ if (apiTransSize/1024/1024/1024 > 1){
+ APISizeLab = (((apiTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (apiTransSize/1024/1024 > 1){
+ APISizeLab = (((apiTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (apiTransSize/1024 > 1){
+ APISizeLab = (((apiTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (apiTransSize > 1){
+ APISizeLab = (((apiTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     APISizeLab = (apiTransSize).toString() + arrayLabel[0];
+ }
 
 
+//////////////////////////////////////////////////////////////////////
+//JS Transfer Labeling
+
+var jsSizeLab;
+
+ if (jsTransSize/1024/1024/1024 > 1){
+ jsSizeLab = (((jsTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (jsTransSize/1024/1024 > 1){
+ jsSizeLab = (((jsTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (jsTransSize/1024 > 1){
+ jsSizeLab = (((jsTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (jsTransSize > 1){
+ jsSizeLab = (((jsTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     jsSizeLab = (jsTransSize).toString() + arrayLabel[0];
+ }
 
 
 console.log(num1TotName+' '+num1TotSize+' '+num1TotSizeLab);
@@ -417,8 +451,8 @@ console.log(num2TransName+' '+num2TransSize+' '+num2TransSizeLab);
 console.log(num3TransName+' '+num3TransSize+' '+num3TransSizeLab);
 
 console.log('CSS Trans: '+cssTransSize+' '+CSSSizeLab);
-console.log('API Trans: '+apiTransSize);
-console.log('JS Trans: '+jsTransSize);
+console.log('API Trans: '+apiTransSize+' '+APISizeLab);
+console.log('JS Trans: '+jsTransSize+' '+jsSizeLab);
 console.log('Imported Font Trans: '+importedFontTransSize);
 console.log('Image Trans: '+imageTransSize);
 
