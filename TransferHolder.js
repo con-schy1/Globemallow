@@ -436,6 +436,42 @@ var jsSizeLab;
      jsSizeLab = (jsTransSize).toString() + arrayLabel[0];
  }
 
+//////////////////////////////////////////////////////////////////////
+//imported Font Transfer Labeling
+
+var importedFontSizeLab;
+
+ if (importedFontTransSize/1024/1024/1024 > 1){
+ importedFontSizeLab = (((importedFontTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (importedFontTransSize/1024/1024 > 1){
+ importedFontSizeLab = (((importedFontTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (importedFontTransSize/1024 > 1){
+ importedFontSizeLab = (((importedFontTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (importedFontTransSize > 1){
+ importedFontSizeLab = (((importedFontTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     importedFontSizeLab = (importedFontTransSize).toString() + arrayLabel[0];
+ }
+
+
+//////////////////////////////////////////////////////////////////////
+//Image Transfer Labeling
+
+var imgTransSizeLab;
+
+ if (imageTransSize/1024/1024/1024 > 1){
+ imgTransSizeLab = (((imageTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (imageTransSize/1024/1024 > 1){
+ imgTransSizeLab = (((imageTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (imageTransSize/1024 > 1){
+ imgTransSizeLab = (((imageTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (imageTransSize > 1){
+ imgTransSizeLab = (((imageTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     imgTransSizeLab = (imageTransSize).toString() + arrayLabel[0];
+ }
 
 console.log(num1TotName+' '+num1TotSize+' '+num1TotSizeLab);
 console.log(num2TotName+' '+num2TotSize+' '+num2TotSizeLab);
@@ -453,13 +489,14 @@ console.log(num3TransName+' '+num3TransSize+' '+num3TransSizeLab);
 console.log('CSS Trans: '+cssTransSize+' '+CSSSizeLab);
 console.log('API Trans: '+apiTransSize+' '+APISizeLab);
 console.log('JS Trans: '+jsTransSize+' '+jsSizeLab);
-console.log('Imported Font Trans: '+importedFontTransSize);
-console.log('Image Trans: '+imageTransSize);
+console.log('Imported Font Trans: '+importedFontTransSize+' '+importedFontSizeLab);
+console.log('Image Trans: '+imageTransSize+' '+imgTransSizeLab);
 
 console.log('CSS Tot: '+cssTotSize);
 console.log('API Tot: '+apiTotSize);
 console.log('JS Tot: '+jsTotSize);
 console.log('Imported Font Tot: '+importedFontTotSize);
 console.log('Image Tot: '+imageTotSize);
+
 
 
