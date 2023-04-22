@@ -115,15 +115,17 @@ var arrayLabel = [' bytes','kb','mb','gb'];
 
 var cssTransReq = /(.css)/;
 var apiTransReq = /(api?s)/;
-var jsTransReq = /(.js)/;
+var jsTransReq = /(.js)|(.json)/;
 var importedFontTransReq = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)/;
 var imageTransReq = /(.png)|(.jpeg)|(.gif)|(.jpg)|(.tiff)|(.svg)|(webp)|(avif)|(.ico)/;
+var videoTransReq = /(mp4)|(swf)|(f4v)|(flv)/;
 //Transfer size of External Style Sheets
 var cssTransSize = 0;
 var apiTransSize = 0;
 var jsTransSize = 0;
 var importedFontTransSize = 0;
 var imageTransSize = 0;
+var videoTransSize = 0;
 var cssTransLabel;
 var apiTransLabel;
 var jsTransLabel;
@@ -135,6 +137,7 @@ var apiTotSize = 0;
 var jsTotSize = 0;
 var importedFontTotSize = 0;
 var imageTotSize = 0;
+var videoTotSize = 0;
 
 var transferTotal = 0;
 var fullTotal = 0;
@@ -179,6 +182,10 @@ for (var i = 0; i < transferResources.length; i++) {
     else if (requestMatch.match(imageTransReq)){
         imageTransSize += transferResources[i].transferSize;
         imageTotSize += transferResources[i].decodedBodySize;
+    }
+    else if (requestMatch.match(videoTransReq)){
+        videoTransSize += transferResources[i].transferSize;
+        videoTotSize += transferResources[i].decodedBodySize;
     }
     else{
         //
@@ -473,6 +480,25 @@ var imgTransSizeLab;
      imgTransSizeLab = (imageTransSize).toString() + arrayLabel[0];
  }
 
+
+//////////////////////////////////////////////////////////////////////
+//Video Transfer Labeling
+
+var videoTransSizeLab;
+
+ if (videoTransSize/1024/1024/1024 > 1){
+ videoTransSizeLab = (((videoTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (videoTransSize/1024/1024 > 1){
+ videoTransSizeLab = (((videoTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (videoTransSize/1024 > 1){
+ videoTransSizeLab = (((videoTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (videoTransSize > 1){
+ videoTransSizeLab = (((videoTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     videoTransSizeLab = (videoTransSize).toString() + arrayLabel[0];
+ }
+
 //////////////////////////////////////////////////////////////////////
 //CSS Total Labeling
 
@@ -564,6 +590,24 @@ var imageLab;
      imageLab = (imageTotSize).toString() + arrayLabel[0];
  }
 
+//////////////////////////////////////////////////////////////////////
+//Video Total Labeling
+
+var videoLab;
+
+ if (videoTotSize/1024/1024/1024 > 1){
+ videoLab = (((videoTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (videoTotSize/1024/1024 > 1){
+ videoLab = (((videoTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (videoTotSize/1024 > 1){
+ videoLab = (((videoTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (videoTotSize > 1){
+ videoLab = (((videoTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     videoLab = (videoTotSize).toString() + arrayLabel[0];
+ }
+
 
 console.log(num1TotName+' '+num1TotSize+' '+num1TotSizeLab);
 console.log(num2TotName+' '+num2TotSize+' '+num2TotSizeLab);
@@ -583,12 +627,18 @@ console.log('API Trans: '+apiTransSize+' '+APISizeLab);
 console.log('JS Trans: '+jsTransSize+' '+jsSizeLab);
 console.log('Imported Font Trans: '+importedFontTransSize+' '+importedFontSizeLab);
 console.log('Image Trans: '+imageTransSize+' '+imgTransSizeLab);
+console.log('Video Trans: '+videoTransSize+' '+videoTransSizeLab);
 
 console.log('CSS Tot: '+cssTotSize+' '+cssTotLab);
 console.log('API Tot: '+apiTotSize+' '+apiTotLab);
 console.log('JS Tot: '+jsTotSize+' '+jsTotLab);
 console.log('Imported Font Tot: '+importedFontTotSize+' '+impFontLab);
 console.log('Image Tot: '+imageTotSize+' '+imageLab);
+console.log('Video Tot: '+videoTotSize+' '+videoLab);
+
+
+
+
 
 
 
