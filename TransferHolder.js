@@ -97,7 +97,6 @@ console.log(largeTransSrc);*/
 //Updated Script for all
 //Largest Total, Largest Transfer and longest loading
 
-
 //Transfer Size
 
 var netA = [];
@@ -131,6 +130,14 @@ var jsTransLabel;
 var requestMatch;
 //var v = 0;
 var impFontReq = 0;
+var cssTotSize = 0;
+var apiTotSize = 0;
+var jsTotSize = 0;
+var importedFontTotSize = 0;
+var imageTotSize = 0;
+
+var transferTotal = 0;
+var fullTotal = 0;
 
 const transferResources = performance.getEntriesByType('resource');
     
@@ -146,23 +153,32 @@ for (var i = 0; i < transferResources.length; i++) {
    netB.push(transferResources[i].transferSize);
    netC.push(transferResources[i].duration);
 
+    transferTotal += transferResources[i].transferSize;
+
+    fullTotal += parseFloat(transferResources[i].decodedBodySize);
+
     requestMatch = transferResources[i].name; 
 
     if (requestMatch.match(cssTransReq)){
         //v++;
-        cssTransSize += transferResources[i].transferSize;      
+        cssTransSize += transferResources[i].transferSize;
+        cssTotSize += transferResources[i].decodedBodySize;
     }
     else if (requestMatch.match(apiTransReq)){
         apiTransSize += transferResources[i].transferSize;
+        apiTotSize += transferResources[i].decodedBodySize;
     }
     else if (requestMatch.match(jsTransSize)){
         jsTransSize += transferResources[i].transferSize;
+        jsTotSize += transferResources[i].decodedBodySize;
     }
     else if (requestMatch.match(importedFontTransReq)){
         importedFontTransSize += transferResources[i].transferSize;
+        importedFontTotSize += transferResources[i].decodedBodySize;
     }
     else if (requestMatch.match(imageTransReq)){
         imageTransSize += transferResources[i].transferSize;
+        imageTotSize += transferResources[i].decodedBodySize;
     }
     else{
         //
@@ -188,9 +204,14 @@ for (let i in netB){
    }
 transferSize1 = parseFloat(transferSize1);
 
+
+//Ascending Order Arrays of largest to smallest
+
 netA.sort(function(a, b){return b - a});
+netB.sort(function(a, b){return b - a});
 
 console.log(netA);
+console.log(netB);
 
 var largeTotalOneThree = [];
 var num1TotSize;
@@ -199,6 +220,13 @@ var num3TotSize;
 var num1TotName;
 var num2TotName;
 var num3TotName;
+
+var num1TransSize;
+var num2TransSize;
+var num3TransSize;
+var num1TransName;
+var num2TransName;
+var num3TransName;
 
 for (var i = 0; i < transferResources.length; i++) {
 
@@ -219,6 +247,22 @@ for (var i = 0; i < transferResources.length; i++) {
         //largeTotalOneThree.splice(5, 0, transferResources[i].decodedBodySize);
         num3TotSize = transferResources[i].decodedBodySize;
         num3TotName = transferResources[i].name;
+    }
+}
+
+for (var i = 0; i < transferResources.length; i++) {
+
+    if (netB[0] == transferResources[i].transferSize){
+        num1TransSize = transferResources[i].transferSize;
+        num1TransName = transferResources[i].name;
+    }
+    else if (netB[1] == transferResources[i].transferSize){
+        num2TransSize = transferResources[i].transferSize;
+        num2TransName = transferResources[i].name;
+    }
+    else if (netB[2] == transferResources[i].transferSize){
+        num3TransSize = transferResources[i].transferSize;
+        num3TransName = transferResources[i].name;
     }
 }
 
@@ -269,8 +313,24 @@ console.log(num1TotName+' '+num1TotSizeLab);
 console.log(num2TotName+' '+num2TotSizeLab);
 console.log(num3TotName+' '+num3TotSizeLab);
 
-console.log(cssTransSize);
-console.log(apiTransSize);
-console.log(jsTransSize);
-console.log(importedFontTransSize);
-console.log(imageTransSize);
+console.log('transferTotal'+transferTotal);
+
+console.log('fullTotal'+fullTotal);
+
+console.log(num1TransName+num1TransSize);
+console.log(num2TransName+num2TransSize);
+console.log(num3TransName+num3TransSize);
+
+console.log('CSS Trans: '+cssTransSize);
+console.log('API Tot: '+apiTransSize);
+console.log('JS Tot: '+jsTransSize);
+console.log('Imported Font Tot: '+importedFontTransSize);
+console.log('Image Tot: '+imageTransSize);
+
+console.log('CSS Tot: '+cssTotSize);
+console.log('API Tot: '+apiTotSize);
+console.log('JS Tot: '+jsTotSize);
+console.log('Imported Font Tot: '+importedFontTotSize);
+console.log('Image Tot: '+imageTotSize);
+
+
