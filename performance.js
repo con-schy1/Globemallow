@@ -10,8 +10,10 @@ chrome.runtime.onMessage.addListener(msg=> {
 /*window.addEventListener ("load", greenFunction, false);*/
 
 function greenFunction(){
-//decodedSize
-var imgA = [];
+    
+    
+//Total Size
+/*var imgA = [];
 var decodedSize = 0;
 var answerArray = [];
 
@@ -40,17 +42,711 @@ var sizeLabel = '';
      sizeLabel = (decodedSize).toString() + arrayLabel[0];
  }
 
-answerArray.push(parseFloat(decodedSize));
+answerArray.push(parseFloat(decodedSize));*/
+    
+  //Updated Script for all
+////This function does the Transfer, Total (Page Size) and matching different requests to what they are. Largest Total, Largest Transfer and longest loading
+
+//Transfer Size
+
+var netA = [];
+var netB = [];
+var netC = [];
+var transferSize1 = 0;
+var largeTrans = 0;
+var largeTransArray = [];
+var largeTransSrc;
+var largeLoadRequest;
+var largeTransSize;
+var largeLoadTime;
+var largeTotalSize;
+var largeTotalSrc;
+var arrayLabel = [' bytes','kb','mb','gb'];
+
+var cssTransReq = /(.css)/;
+var apiTransReq = /(api?s)/;
+var jsTransReq = /(.js)|(.json)/;
+var importedFontTransReq = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)/;
+var imageTransReq = /(.png)|(.jpeg)|(.gif)|(.jpg)|(.tiff)|(.svg)|(webp)|(avif)|(.ico)/;
+var videoTransReq = /(mp4)|(swf)|(f4v)|(flv)/;
+//Transfer size of External Style Sheets
+var cssTransSize = 0;
+var apiTransSize = 0;
+var jsTransSize = 0;
+var importedFontTransSize = 0;
+var imageTransSize = 0;
+var videoTransSize = 0;
+var otherTransSize = 0;
+var cssTransLabel;
+var apiTransLabel;
+var jsTransLabel;
+var requestMatch;
+//var v = 0;
+var impFontReq = 0;
+var cssTotSize = 0;
+var apiTotSize = 0;
+var jsTotSize = 0;
+var importedFontTotSize = 0;
+var imageTotSize = 0;
+var videoTotSize = 0;
+var otherTotSize = 0;
+
+var transferTotal = 0;
+var fullTotal = 0;
+
+const transferResources = performance.getEntriesByType('resource');
+    
+var maxTotal = transferResources[0].decodedBodySize;    
+var maxTrans = transferResources[0].transferSize;
+var maxDur = transferResources[0].duration;
+var maxTotalIndex = 0;
+var maxTransIndex = 0;
+var maxIndexDur = 0;
+
+for (var i = 0; i < transferResources.length; i++) {
+   netA.push(transferResources[i].decodedBodySize);
+   netB.push(transferResources[i].transferSize);
+   netC.push(transferResources[i].duration);
+
+    transferTotal += parseFloat(transferResources[i].transferSize);
+
+    fullTotal += parseFloat(transferResources[i].decodedBodySize);
+
+    requestMatch = transferResources[i].name; 
+
+    if (requestMatch.match(cssTransReq)){
+        //v++;
+        cssTransSize += transferResources[i].transferSize;
+        cssTotSize += transferResources[i].decodedBodySize;
+    }
+    else if (requestMatch.match(apiTransReq)){
+        apiTransSize += transferResources[i].transferSize;
+        apiTotSize += transferResources[i].decodedBodySize;
+    }
+    else if (requestMatch.match(jsTransSize)){
+        jsTransSize += transferResources[i].transferSize;
+        jsTotSize += transferResources[i].decodedBodySize;
+    }
+    else if (requestMatch.match(importedFontTransReq)){
+        importedFontTransSize += transferResources[i].transferSize;
+        importedFontTotSize += transferResources[i].decodedBodySize;
+    }
+    else if (requestMatch.match(imageTransReq)){
+        imageTransSize += transferResources[i].transferSize;
+        imageTotSize += transferResources[i].decodedBodySize;
+    }
+    else if (requestMatch.match(videoTransReq)){
+        videoTransSize += transferResources[i].transferSize;
+        videoTotSize += transferResources[i].decodedBodySize;
+    }
+    else{
+        otherTransSize += transferResources[i].transferSize;
+        otherTotSize += transferResources[i].decodedBodySize;
+    }
+    
+    //just do the import fonts script in here if it matches the regex it is true, and then if it's false just run the script to look in the header. Saving time. 
+
+   }
+
+
+largeTotalSize = transferResources[maxTotalIndex].decodedBodySize;
+largeTotalSrc = transferResources[maxTotalIndex].name;
+largeTransSrc = transferResources[maxTransIndex].name;
+largeTransSize = transferResources[maxTransIndex].transferSize;
+largeLoadRequest = transferResources[maxIndexDur].name;
+largeLoadTime = transferResources[maxIndexDur].duration;
+    
+largeLoadTime = largeLoadTime.toFixed(2);
+    
+//Put this in the above for loop to get the totals.    
+for (let i in netB){
+   transferSize1 += netB[i];
+   }
+transferSize1 = parseFloat(transferSize1);
+
+
+//Ascending Order Arrays of largest to smallest
+
+netA.sort(function(a, b){return b - a});
+netB.sort(function(a, b){return b - a});
+netC.sort(function(a, b){return b - a});
+
+console.log('NetA: '+netA);
+console.log('NetB: '+netB);
+console.log('NetC: '+netC);
+
+var largeTotalOneThree = [];
+var num1TotSize;
+var num2TotSize;
+var num3TotSize;
+var num1TotName;
+var num2TotName;
+var num3TotName;
+
+var num1TransSize  = 0;
+var num2TransSize  = 0;
+var num3TransSize  = 0;
+var num1TransName;
+var num2TransName;
+var num3TransName;
+
+var num1LoadLength  = 0;
+var num2LoadLength  = 0;
+var num3LoadLength  = 0;
+var num1LoadName;
+var num2LoadName;
+var num3LoadName;
+
+
+//Find the Total Largest Loading Request and match them
+
+for (var i = 0; i < transferResources.length; i++) {
+
+    if (netA[0] == transferResources[i].decodedBodySize){
+        //largeTotalOneThree.splice(0, 0, transferResources[i].name);
+        //largeTotalOneThree.splice(1, 0, transferResources[i].decodedBodySize);
+        num1TotSize = transferResources[i].decodedBodySize;
+        num1TotName = transferResources[i].name;
+    }
+    else if (netA[1] == transferResources[i].decodedBodySize){
+        //largeTotalOneThree.splice(2, 0, transferResources[i].name);
+        //largeTotalOneThree.splice(3, 0, transferResources[i].decodedBodySize);
+        num2TotSize = transferResources[i].decodedBodySize;
+        num2TotName = transferResources[i].name;
+    }
+    else if (netA[2] == transferResources[i].decodedBodySize){
+        //largeTotalOneThree.splice(4, 0, transferResources[i].name);
+        //largeTotalOneThree.splice(5, 0, transferResources[i].decodedBodySize);
+        num3TotSize = transferResources[i].decodedBodySize;
+        num3TotName = transferResources[i].name;
+    }
+}
+
+
+//Find the Transfered Largest Loading Request and match them. If 0, skip because everything is cached.
+
+if (transferTotal > 0){
+
+for (var i = 0; i < transferResources.length; i++) {
+
+    if (netB[0] == transferResources[i].transferSize){
+        num1TransSize = transferResources[i].transferSize;
+        num1TransName = transferResources[i].name;
+    }
+    else if (netB[1] == transferResources[i].transferSize){
+        num2TransSize = transferResources[i].transferSize;
+        num2TransName = transferResources[i].name;
+    }
+    else if (netB[2] == transferResources[i].transferSize){
+        num3TransSize = transferResources[i].transferSize;
+        num3TransName = transferResources[i].name;
+    }
+}
+}
+else{
+
+    num1TransName = 'All cached';
+    num2TransName = 'All cached';
+    num3TransName = 'All cached';
+
+}
+
+
+//Find the Longest Loading Requests and match them
+
+for (var i = 0; i < transferResources.length; i++) {
+
+    if (netC[0] == transferResources[i].duration){
+        num1LoadLength = transferResources[i].duration;
+        num1LoadName = transferResources[i].name;
+    }
+    else if (netC[1] == transferResources[i].duration){
+        num2LoadLength = transferResources[i].duration;
+        num2LoadName = transferResources[i].name;
+    }
+    else if (netC[2] == transferResources[i].duration){
+        num3LoadLength = transferResources[i].duration;
+        num3LoadName = transferResources[i].name;
+    }
+}
+
+var num1LoadLab;
+var num2LoadLab;
+var num3LoadLab;
+
+if (num1LoadLength/1000 >= 1){
+   num1LoadLab = (num1LoadLength/1000).toFixed(2).toString() + " secs"; 
+}
+    else{
+       num1LoadLab = num1LoadLength.toFixed(2).toString() + " ms"; 
+    }
+
+if (num2LoadLength/1000 >= 1){
+   num2LoadLab = (num2LoadLength/1000).toFixed(2).toString() + " secs"; 
+}
+    else{
+       num2LoadLab = num2LoadLength.toFixed(2).toString() + " ms"; 
+    }
+
+if (num3LoadLength/1000 >= 1){
+   num3LoadLab = (num3LoadLength/1000).toFixed(2).toString() + " secs"; 
+}
+    else{
+       num3LoadLab = num3LoadLength.toFixed(2).toString() + " ms"; 
+    }
+
+
+
+//////////////////////////////////////////////////////////////////////
+//Total Page Size Labeling
+
+
+var transferLabel;
+    
+ if (transferTotal/1024/1024/1024 > 1){
+ transferLabel = (((transferTotal/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (transferTotal/1024/1024 > 1){
+ transferLabel = (((transferTotal/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (transferTotal/1024 > 1){
+ transferLabel = (((transferTotal/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (transferTotal > 1){
+ transferLabel = (((transferTotal).toFixed(2)).toString() + arrayLabel[0]);
+ }
+   else{
+     transferLabel = (transferTotal).toString() + arrayLabel[0];
+ }
+
+
+
+//////////////////////////////////////////////////////////////////////
+//Total Transfer Size Labeling
+
+
+ if (fullTotal/1024/1024/1024 > 1){
+ sizeLabel = (((fullTotal/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (fullTotal/1024/1024 > 1){
+ sizeLabel = (((fullTotal/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (fullTotal/1024 > 1){
+ sizeLabel = (((fullTotal/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (fullTotal > 1){
+ sizeLabel = (((fullTotal).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     sizeLabel = (fullTotal).toString() + arrayLabel[0];
+ }
+
+
+
+//////////////////////////////////////////////////////////////////////
+//Total top 3 request Labeling
+
+var num1TotSizeLab;
+var num2TotSizeLab;
+var num3TotSizeLab;
+
+ if (num1TotSize/1024/1024/1024 > 1){
+ num1TotSizeLab = (((num1TotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (num1TotSize/1024/1024 > 1){
+ num1TotSizeLab = (((num1TotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (num1TotSize/1024 > 1){
+ num1TotSizeLab = (((num1TotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (num1TotSize > 1){
+ num1TotSizeLab = (((num1TotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     num1TotSizeLab = (num1TotSize).toString() + arrayLabel[0];
+ }
+
+if (num2TotSize/1024/1024/1024 > 1){
+ num2TotSizeLab = (((num2TotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (num2TotSize/1024/1024 > 1){
+ num2TotSizeLab = (((num2TotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (num2TotSize/1024 > 1){
+ num2TotSizeLab = (((num2TotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (num2TotSize > 1){
+ num2TotSizeLab = (((num2TotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     num2TotSizeLab = (num2TotSize).toString() + arrayLabel[0];
+ }
+
+if (num3TotSize/1024/1024/1024 > 1){
+ num3TotSizeLab = (((num3TotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (num3TotSize/1024/1024 > 1){
+ num3TotSizeLab = (((num3TotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (num3TotSize/1024 > 1){
+ num3TotSizeLab = (((num3TotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (num3TotSize > 1){
+ num3TotSizeLab = (((num3TotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     num3TotSizeLab = (num3TotSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
+//Transfer top 3 request Labeling
+
+var num1TransSizeLab;
+var num2TransSizeLab;
+var num3TransSizeLab;
+
+if (transferTotal > 0){
+
+ if (num1TransSize/1024/1024/1024 > 1){
+ num1TransSizeLab = (((num1TransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (num1TransSize/1024/1024 > 1){
+ num1TransSizeLab = (((num1TransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (num1TransSize/1024 > 1){
+ num1TransSizeLab = (((num1TransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (num1TransSize > 1){
+ num1TransSizeLab = (((num1TransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     num1TransSizeLab = (num1TransSize).toString() + arrayLabel[0];
+ }
+
+if (num2TransSize/1024/1024/1024 > 1){
+ num2TransSizeLab = (((num2TransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (num2TransSize/1024/1024 > 1){
+ num2TransSizeLab = (((num2TransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (num2TransSize/1024 > 1){
+ num2TransSizeLab = (((num2TransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (num2TransSize > 1){
+ num2TransSizeLab = (((num2TransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     num2TransSizeLab = (num2TransSize).toString() + arrayLabel[0];
+ }
+
+if (num3TransSize/1024/1024/1024 > 1){
+ num3TransSizeLab = (((num3TransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (num3TransSize/1024/1024 > 1){
+ num3TransSizeLab = (((num3TransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (num3TransSize/1024 > 1){
+ num3TransSizeLab = (((num3TransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (num3TransSize > 1){
+ num3TransSizeLab = (((num3TransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     num3TransSizeLab = (num3TransSize).toString() + arrayLabel[0];
+ }
+
+}
+
+else{
+
+    num1TransSizeLab = 'Cached';
+    num2TransSizeLab = 'Cached';
+    num3TransSizeLab = 'Cached';
+
+}
+
+
+//////////////////////////////////////////////////////////////////////
+//CSS Transfer Labeling
+
+var CSSSizeLab;
+
+ if (cssTransSize/1024/1024/1024 > 1){
+ CSSSizeLab = (((cssTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (cssTransSize/1024/1024 > 1){
+ CSSSizeLab = (((cssTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (cssTransSize/1024 > 1){
+ CSSSizeLab = (((cssTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (cssTransSize > 1){
+ CSSSizeLab = (((cssTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     CSSSizeLab = (cssTransSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
+//API Transfer Labeling
+
+var APISizeLab;
+
+ if (apiTransSize/1024/1024/1024 > 1){
+ APISizeLab = (((apiTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (apiTransSize/1024/1024 > 1){
+ APISizeLab = (((apiTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (apiTransSize/1024 > 1){
+ APISizeLab = (((apiTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (apiTransSize > 1){
+ APISizeLab = (((apiTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     APISizeLab = (apiTransSize).toString() + arrayLabel[0];
+ }
+
+
+//////////////////////////////////////////////////////////////////////
+//JS Transfer Labeling
+
+var jsSizeLab;
+
+ if (jsTransSize/1024/1024/1024 > 1){
+ jsSizeLab = (((jsTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (jsTransSize/1024/1024 > 1){
+ jsSizeLab = (((jsTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (jsTransSize/1024 > 1){
+ jsSizeLab = (((jsTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (jsTransSize > 1){
+ jsSizeLab = (((jsTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     jsSizeLab = (jsTransSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
+//imported Font Transfer Labeling
+
+var importedFontSizeLab;
+
+ if (importedFontTransSize/1024/1024/1024 > 1){
+ importedFontSizeLab = (((importedFontTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (importedFontTransSize/1024/1024 > 1){
+ importedFontSizeLab = (((importedFontTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (importedFontTransSize/1024 > 1){
+ importedFontSizeLab = (((importedFontTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (importedFontTransSize > 1){
+ importedFontSizeLab = (((importedFontTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     importedFontSizeLab = (importedFontTransSize).toString() + arrayLabel[0];
+ }
+
+
+//////////////////////////////////////////////////////////////////////
+//Image Transfer Labeling
+
+var imgTransSizeLab;
+
+ if (imageTransSize/1024/1024/1024 > 1){
+ imgTransSizeLab = (((imageTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (imageTransSize/1024/1024 > 1){
+ imgTransSizeLab = (((imageTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (imageTransSize/1024 > 1){
+ imgTransSizeLab = (((imageTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (imageTransSize > 1){
+ imgTransSizeLab = (((imageTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     imgTransSizeLab = (imageTransSize).toString() + arrayLabel[0];
+ }
+
+
+//////////////////////////////////////////////////////////////////////
+//Video Transfer Labeling
+
+var videoTransSizeLab;
+
+ if (videoTransSize/1024/1024/1024 > 1){
+ videoTransSizeLab = (((videoTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (videoTransSize/1024/1024 > 1){
+ videoTransSizeLab = (((videoTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (videoTransSize/1024 > 1){
+ videoTransSizeLab = (((videoTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (videoTransSize > 1){
+ videoTransSizeLab = (((videoTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     videoTransSizeLab = (videoTransSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
+//Other Transfer Labeling
+
+var otherTransSizeLab;
+
+ if (otherTransSize/1024/1024/1024 > 1){
+ otherTransSizeLab = (((otherTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (otherTransSize/1024/1024 > 1){
+ otherTransSizeLab = (((otherTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (otherTransSize/1024 > 1){
+ otherTransSizeLab = (((otherTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (otherTransSize > 1){
+ otherTransSizeLab = (((otherTransSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     otherTransSizeLab = (otherTransSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
+//CSS Total Labeling
+
+var cssTotLab;
+
+ if (cssTotSize/1024/1024/1024 > 1){
+ cssTotLab = (((cssTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (cssTotSize/1024/1024 > 1){
+ cssTotLab = (((cssTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (cssTotSize/1024 > 1){
+ cssTotLab = (((cssTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (cssTotSize > 1){
+ cssTotLab = (((cssTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     cssTotLab = (cssTotSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
+//API Total Labeling
+
+var apiTotLab;
+
+ if (apiTotSize/1024/1024/1024 > 1){
+ apiTotLab = (((apiTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (apiTotSize/1024/1024 > 1){
+ apiTotLab = (((apiTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (apiTotSize/1024 > 1){
+ apiTotLab = (((apiTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (apiTotSize > 1){
+ apiTotLab = (((apiTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     apiTotLab = (apiTotSize).toString() + arrayLabel[0];
+ }
+
+
+//////////////////////////////////////////////////////////////////////
+//JS Total Labeling
+
+var jsTotLab;
+
+ if (jsTotSize/1024/1024/1024 > 1){
+ jsTotLab = (((jsTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (jsTotSize/1024/1024 > 1){
+ jsTotLab = (((jsTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (jsTotSize/1024 > 1){
+ jsTotLab = (((jsTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (jsTotSize > 1){
+ jsTotLab = (((jsTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     jsTotLab = (jsTotSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
+//Import Font Total Labeling
+
+var impFontLab;
+
+ if (importedFontTotSize/1024/1024/1024 > 1){
+ impFontLab = (((importedFontTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (importedFontTotSize/1024/1024 > 1){
+ impFontLab = (((importedFontTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (importedFontTotSize/1024 > 1){
+ impFontLab = (((importedFontTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (importedFontTotSize > 1){
+ impFontLab = (((importedFontTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     impFontLab = (importedFontTotSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
+//Image Total Labeling
+
+var imageLab;
+
+ if (imageTotSize/1024/1024/1024 > 1){
+ imageLab = (((imageTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (imageTotSize/1024/1024 > 1){
+ imageLab = (((imageTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (imageTotSize/1024 > 1){
+ imageLab = (((imageTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (imageTotSize > 1){
+ imageLab = (((imageTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     imageLab = (imageTotSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
+//Video Total Labeling
+
+var videoLab;
+
+ if (videoTotSize/1024/1024/1024 > 1){
+ videoLab = (((videoTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (videoTotSize/1024/1024 > 1){
+ videoLab = (((videoTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (videoTotSize/1024 > 1){
+ videoLab = (((videoTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (videoTotSize > 1){
+ videoLab = (((videoTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     videoLab = (videoTotSize).toString() + arrayLabel[0];
+ }
+
+//////////////////////////////////////////////////////////////////////
+//Other Total Labeling
+
+var otherLab;
+
+ if (otherTotSize/1024/1024/1024 > 1){
+ otherLab = (((otherTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (otherTotSize/1024/1024 > 1){
+ otherLab = (((otherTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (otherTotSize/1024 > 1){
+ otherLab = (((otherTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (otherTotSize > 1){
+ otherLab = (((otherTotSize).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     otherLab = (otherTotSize).toString() + arrayLabel[0];
+ }
+
+
+console.log(num1TotName+' '+num1TotSize+' '+num1TotSizeLab);
+console.log(num2TotName+' '+num2TotSize+' '+num2TotSizeLab);
+console.log(num3TotName+' '+num3TotSize+' '+num3TotSizeLab);
+
+
+console.log('transferTotal '+transferTotal+' '+transferLabel);
+
+console.log('fullTotal '+fullTotal+' '+sizeLabel);
+
+console.log(num1TransName+' '+num1TransSize+' '+num1TransSizeLab);
+console.log(num2TransName+' '+num2TransSize+' '+num2TransSizeLab);
+console.log(num3TransName+' '+num3TransSize+' '+num3TransSizeLab);
+
+console.log(num1LoadName+' '+num1LoadLength+' '+num1LoadLab);
+console.log(num2LoadName+' '+num2LoadLength+' '+num2LoadLab);
+console.log(num3LoadName+' '+num3LoadLength+' '+num3LoadLab);
+
+console.log('CSS Trans: '+cssTransSize+' '+CSSSizeLab);
+console.log('API Trans: '+apiTransSize+' '+APISizeLab);
+console.log('JS Trans: '+jsTransSize+' '+jsSizeLab);
+console.log('Imported Font Trans: '+importedFontTransSize+' '+importedFontSizeLab);
+console.log('Image Trans: '+imageTransSize+' '+imgTransSizeLab);
+console.log('Video Trans: '+videoTransSize+' '+videoTransSizeLab);
+console.log('Other Trans: '+otherTransSize+' '+otherTransSizeLab);
+
+console.log('CSS Tot: '+cssTotSize+' '+cssTotLab);
+console.log('API Tot: '+apiTotSize+' '+apiTotLab);
+console.log('JS Tot: '+jsTotSize+' '+jsTotLab);
+console.log('Imported Font Tot: '+importedFontTotSize+' '+impFontLab);
+console.log('Image Tot: '+imageTotSize+' '+imageLab);
+console.log('Video Tot: '+videoTotSize+' '+videoLab);
+console.log('Other Tot: '+otherTotSize+' '+otherLab);
+    
+    
+    
+////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////
-
 // Images that are lazy loaded
+
 var xArray = [];
 var imgNotLLArray = [];
 var imgCount = document.getElementsByTagName("img");
 let x1 = document.querySelector('html').outerHTML;
 var regEX = /(loading="lazy")|(class="lozad")|(class="b-lazy")|(class="lazyloaded)|(class="lazy")/;
 var result = "";
+    
+var lazyLoadVal = 0;
 
 //5 is the best suggested number
 if (imgCount.length > 5){
@@ -65,15 +761,17 @@ imgNotLLArray.push(imgCount[i].src);
 }
 }
 var ratioLL = xArray.length/imgCount.length;
-answerArray.push(ratioLL);
+lazyLoadVal = ratioLL;
 }
 else{
-answerArray.push(1.1);
+lazyLoadVal = 1.1;
 }
 
 //Gets the images and puts them in report. uncomment out else statement above
 /*var joinLLString = imgNotLLArray.join(",");
 console.log(joinLLString);*/
+    
+////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////
 //Responsive & low-load images
@@ -89,6 +787,8 @@ console.log(joinLLString);*/
  var numAVIF = 0;
     
 var imgNotGoodFormat = [];
+    
+var susFormatVal = 0;
 
 //5 is the best suggested number
 if(imgs.length > 5){
@@ -111,18 +811,19 @@ imgNotGoodFormat.push(pencil);
 }
 }
 var ratioSVG = numSVG/imgs.length;
-answerArray.push(ratioSVG);
+susFormatVal = ratioSVG;
 }
 else{
-answerArray.push(1.1);
+susFormatVal = 1.1;
 }
+    
+////////////////////////////////////////////////////
     
 /////////////////////////////////////////////////////
 //JS HeapSize
 
 var JSHeapSize = window.performance.memory.usedJSHeapSize;
 
-answerArray.push(JSHeapSize);
 
 var jssSizeLabel = '';
 
@@ -135,6 +836,8 @@ var jssSizeLabel = '';
  } else if (JSHeapSize > 1){
  jssSizeLabel = (((JSHeapSize).toPrecision(3)).toString() + arrayLabel[0]);
  }
+    
+////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////
 // Length of Page
@@ -150,7 +853,9 @@ lengthArray = ['mil', 'k'];
  } else {
  pagebytesLabel = (((pagebytes/1000).toPrecision(3)).toString() + lengthArray[1]);
  }
-answerArray.push(pagebytes);
+//answerArray.push(pagebytes);
+    
+////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////
 //Page Load time
@@ -161,9 +866,7 @@ var duration = (timing.loadEventStart / 1000).toPrecision(2);
 
 duration = parseFloat(duration);
 
-
-answerArray.push(duration);
-
+//answerArray.push(duration);
 
 
 ////////////////////////////////////////////////////
@@ -177,11 +880,11 @@ var fontBoolean = 0;
 
 if (headText.match(fontRegex)){
 fontBoolean = 1;
-answerArray.push(fontBoolean);
+//answerArray.push(fontBoolean);
 }
 else{
 fontBoolean = 0;
-answerArray.push(fontBoolean);
+//answerArray.push(fontBoolean);
 }
 
 
@@ -191,7 +894,7 @@ answerArray.push(fontBoolean);
 ////////////////////////////////////////////////////
     
 //Transfer Size
-    
+/*    
 var imgB = [];
 var imgC = [];
 var transferSize1 = 0;
@@ -279,7 +982,7 @@ if (largeLoadTime/1000 >= 1){
        largeLoadLabel = largeLoadTime.toString() + " ms"; 
     }
 
-/*console.log(transferResources);
+console.log(transferResources);
 console.log(largeTransSrc);*/
     
 //if you see that issue 3.34xe1 it's from the toPrecision rounding it off - 10/19/22 changed to toFixed
@@ -297,10 +1000,12 @@ var regSRC = /srcset/;
 var ratio1 = 0;
     
 var imgNotRes = [];
+var resImgArray = [];
 
 if (picTagCount > 0){
 ratio1 = picTagCount/img1Count.length;
-answerArray.push(ratio1);
+//answerArray.push(ratio1);
+resImgArray.push(ratio1);
 
 }
 else if (img1Count.length >= 1){
@@ -314,14 +1019,17 @@ var y = img1Count[i].outerHTML;
         }
     }
 var ratioSS = x1Array.length/img1Count.length;
-answerArray.push(ratioSS);
+//answerArray.push(ratioSS);
+resImgArray.push(ratioSS);
 
 }
 else{
 imgNotRes.push(img1Count);
-answerArray.push(1.1);
+//answerArray.push(1.1);
+    resImgArray.push(1.1);
 }   
 
+////////////////////////////////////////////////////
 
 ////////////////////////////////////////////
 //Internal Stylesheets
@@ -335,9 +1043,10 @@ var intStyleSheetTags = document.getElementsByTagName('style')[0].outerHTML;
         //
     }
     
-answerArray.push(intStyleSheet);
+//answerArray.push(intStyleSheet);
 //console.log(intStyleSheetTags);
     
+////////////////////////////////////////////////////
 
 ////////////////////////////////////////////
 //# of Style Sheets Files Found
@@ -355,16 +1064,19 @@ var styleSheetSources = styleSheetArray.toString();
     
 //console.log(styleSheetSources);
 
-answerArray.push(numStyleSheet); 
+//answerArray.push(numStyleSheet); 
 
-    
+////////////////////////////////////////////////////
+   
 ////////////////////////////////////////////
 //Site Redirects
     
 var redirects = window.performance.navigation.redirectCount;
 
-answerArray.push(redirects);
+//answerArray.push(redirects);
     
+////////////////////////////////////////////////////
+   
 ////////////////////////////////////////////
 //Amount of Cookies
     
@@ -378,14 +1090,15 @@ var cookieLen = 0;
     }
     
 cookieLen = cookieArray.length;
-answerArray.push(cookieLen);
+//answerArray.push(cookieLen);
     
 var cookiesList = document.cookie;
 
 //console.log(cookiesList);
     
     
-    
+////////////////////////////////////////////////////
+   
 ////////////////////////////////////////////
 //Amount of Empty URLs
 //var emptyURL = document.querySelectorAll('img[src=""]').length + document.querySelectorAll('script[src=""]').length + document.querySelectorAll('link[rel=stylesheet][href=""]').length + document.querySelectorAll('button[href=""]').length + document.querySelectorAll('a[href=""]').length;
@@ -444,16 +1157,19 @@ var emptySRCVal = emptySRCArray.toString();
 var emptyURL = emptySRCArray.length;
 
     
-answerArray.push(emptyURL);
+//answerArray.push(emptyURL);
  
 
     
     
 ////////////////////////////////////////
+    
 ////////////////////////////////////////
 //Cached
     
 try{
+var answerArray = [];
+    
 var req = new XMLHttpRequest();
 
 req.open('GET', document.location, false);
@@ -660,6 +1376,7 @@ var cacheSeconds = Math.floor((cacheTime-((cacheDays*day)+(cacheHours*hour)+(cac
     
 
 /////////////////////////////////////////
+    
 ///////////////////////////////////////// 
 //Background Color    
 
@@ -756,20 +1473,21 @@ else{
     
 //Identify File of Largest Transfer Size
     
-var cssTransReq = /(.css)/;
+/*var cssTransReq = /(.css)/;
 var apiTransReq = /(api?s)/;
 var jsTransReq = /(.js)/;
 var importedFontTransReq = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)/;
 var imageTransReq = /(.png)|(.jpeg)|(.gif)|(.jpg)|(.tiff)|(.svg)|(webp)|(avif)|(.ico)/;
 var imgFormatType = 0;
     
-    
+   */ 
 //Transfer size of External Style Sheets
+/*
 var cssTransSize = 0;
-/*var apiTransSize = 0;*/
+var apiTransSize = 0;
 var jsTransSize = 0;
 var cssTransLabel;
-/*var apiTransLabel;*/
+var apiTransLabel;
 var jsTransLabel;
 var cssHREF;
 //var v = 0;
@@ -783,12 +1501,12 @@ for (var i = 0; i < transferResources.length; i++) {
         //v++;
         cssTransSize += transferResources[i].transferSize;      
     }
-   /* else if (cssHREF.match(apiTransReq)){
+    else if (cssHREF.match(apiTransReq)){
         apiTransSize += transferResources[i].transferSize;
     }
     else if (cssHREF.match(jsTransSize)){
         jsTransSize += transferResources[i].transferSize;
-    }*/
+    }
     else{
         //
     }
@@ -808,6 +1526,7 @@ if (cssTransSize === 0){
    else{
      cssTransLabel = (cssTransSize).toString() + arrayLabel[0];
  }
+*/
 
 
 //console.log('Css Requests: '+v);
@@ -835,105 +1554,105 @@ var finalScore = 0;
 
 // Decoded Body Size
 var sizeWeight = 0;
-switch (answerArray[0] >= 0){
+switch (fullTotal >= 0){
         
-case answerArray[0] <= 150000:
+case fullTotal <= 150000:
     finalScore += 3;
     sizeWeight = 3;
     break;
-case answerArray[0] <= 500000:
+case fullTotal <= 500000:
     finalScore += 2.9;
     sizeWeight = 2.9;
     break;
-case answerArray[0] <= 650000:
+case fullTotal <= 650000:
     finalScore += 2.8;
     sizeWeight = 2.8;
     break;
-case answerArray[0] <= 850000:
+case fullTotal <= 850000:
     finalScore += 2.7;
     sizeWeight = 2.7;
     break;
-case answerArray[0] <= 1076398:
+case fullTotal <= 1076398:
     finalScore += 2.6;
     sizeWeight = 2.6;
     lowRec.push(300);
     break;
-case answerArray[0] <= 1376398:
+case fullTotal <= 1376398:
     finalScore += 2.5;
     sizeWeight = 2.5;
     lowRec.push(300);
     break;
-case answerArray[0] <= 1572864:
+case fullTotal <= 1572864:
     finalScore += 2.4;
     sizeWeight = 2.4;
     medRec.push(200);
     break;
-case answerArray[0] <= 1750000:
+case fullTotal <= 1750000:
     finalScore += 2.3;
     sizeWeight = 2.3;
     medRec.push(200);
     break;
-case answerArray[0] <= 2000000:
+case fullTotal <= 2000000:
     finalScore += 2.2;
     sizeWeight = 2.2;
     medRec.push(200);
     break;
-case answerArray[0] <= 2300000:
+case fullTotal <= 2300000:
     finalScore += 2.1;
     sizeWeight = 2.1;
     medRec.push(200);
     break;
-case answerArray[0] > 2600000:
+case fullTotal > 2600000:
     finalScore += 2;
     sizeWeight = 2;
     medRec.push(200);
     break;
-case answerArray[0] <= 3200000:
+case fullTotal <= 3200000:
     finalScore += 1.9;
     sizeWeight = 1.9;
     medRec.push(200);
     break;
-case answerArray[0] <= 3800000:
+case fullTotal <= 3800000:
     finalScore += 1.8;
     sizeWeight = 1.8;
     medRec.push(200);
     break;
-case answerArray[0] <= 4400000:
+case fullTotal <= 4400000:
     finalScore += 1.7;
     sizeWeight = 1.7;
     highRec.push(100);
     break;
-case answerArray[0] <= 5000000:
+case fullTotal <= 5000000:
     finalScore += 1.6;
     sizeWeight = 1.6;
     highRec.push(100);
     break;
-case answerArray[0] <= 5600000:
+case fullTotal <= 5600000:
     finalScore += 1.5;
     sizeWeight = 1.5;
     highRec.push(100);
     break;
-case answerArray[0] <= 6200000:
+case fullTotal <= 6200000:
     finalScore += 1.4;
     sizeWeight = 1.4;
     highRec.push(100);
     break;
-case answerArray[0] > 6800000:
+case fullTotal > 6800000:
     finalScore += 1.3;
     sizeWeight = 1.3;
     highRec.push(100);
     break;
-case answerArray[0] <= 7400000:
+case fullTotal <= 7400000:
     finalScore += 1.2;
     sizeWeight = 1.2;
     highRec.push(100);
     break;
-case answerArray[0] <= 8000000:
+case fullTotal <= 8000000:
     finalScore += 1.1;
     sizeWeight = 1.1;
     highRec.push(100);
     break;
-case answerArray[0] > 8000001:
+case fullTotal > 8000001:
     finalScore += 1;
     sizeWeight = 1;
     highRec.push(100);
@@ -945,28 +1664,28 @@ case answerArray[0] > 8000001:
 
 //Lazy Loaded Image
 var LazyLoadWeight = 0;
-switch (answerArray[1] >= 0){
+switch (lazyLoadVal >= 0){
 
-    case answerArray[1] >= .65:
+    case lazyLoadVal >= .65:
         finalScore += .4;
         LazyLoadWeight = .4;
         break;
-    case answerArray[1] >= .40:
+    case lazyLoadVal >= .40:
         finalScore += .3;
         LazyLoadWeight = .3;
         lowRec.push(301);
         break;
-   case answerArray[1] >= .25:
+   case lazyLoadVal >= .25:
         finalScore += .2;
         LazyLoadWeight = .2;
         medRec.push(201);
         break;
-   case answerArray[1] > 0:
+   case lazyLoadVal > 0:
         finalScore += .1;
         LazyLoadWeight = .1;
         medRec.push(201);
         break;
-   case answerArray[1] == 0:
+   case lazyLoadVal == 0:
         finalScore += 0;
         highRec.push(101);
         break;
@@ -975,28 +1694,28 @@ switch (answerArray[1] >= 0){
 
 //Ratio of SVG Images
 var imgTypeWeight = 0;
-switch (answerArray[2] >= 0){
+switch (susFormatVal >= 0){
 
-    case answerArray[2] >= .7:
+    case susFormatVal >= .7:
         finalScore += .4;
         imgTypeWeight = .4;
         break;
-    case answerArray[2] >= .5:
+    case susFormatVal >= .5:
         finalScore += .3;
         imgTypeWeight = .3;
         lowRec.push(302);
         break;
-   case answerArray[2] >= .25:
+   case susFormatVal >= .25:
         finalScore += .2;
         imgTypeWeight = .2;
         medRec.push(202);
         break;
-   case answerArray[2] > 0:
+   case susFormatVal > 0:
         finalScore += .1;
         imgTypeWeight = .1;
         medRec.push(202);
         break;
-   case answerArray[2] == 0:
+   case susFormatVal == 0:
         finalScore += 0;
         highRec.push(102);
         break;
@@ -1005,38 +1724,38 @@ switch (answerArray[2] >= 0){
 
 //JS Heapsize
 var jsWeight = 0;
-switch (answerArray[3] >= 0){
+switch (JSHeapSize >= 0){
 
-    case answerArray[3] <= 10000000:
+    case JSHeapSize <= 10000000:
         finalScore += 2;
         jsWeight = 2;
         break;
-    case answerArray[3] <= 15000000:
+    case JSHeapSize <= 15000000:
         finalScore += 1.75;
         jsWeight = 1.75;
         lowRec.push(303);
         break;
-    case answerArray[3] <= 20000000:
+    case JSHeapSize <= 20000000:
         finalScore += 1.5;
         jsWeight = 1.5;
         lowRec.push(303);
         break;
-   case answerArray[3] <= 25000000:
+   case JSHeapSize <= 25000000:
         finalScore += 1;
         jsWeight = 1;
         medRec.push(203);
         break;
-    case answerArray[3] <= 30000000:
+    case JSHeapSize <= 30000000:
         finalScore += .75;
         jsWeight = .75;
         medRec.push(203);
         break;
-   case answerArray[3] <= 40000000:
+   case JSHeapSize <= 40000000:
         finalScore += .5;
         jsWeight = .5;
         highRec.push(103);
         break;
-   case answerArray[3] > 40000000:
+   case JSHeapSize > 40000000:
         finalScore += .25;
         jsWeight = .25;
         highRec.push(103);
@@ -1046,38 +1765,38 @@ switch (answerArray[3] >= 0){
 
 //HTML Length of Page
 var lengthWeight = 0;
-switch (answerArray[4] >= 0){
+switch (pagebytes >= 0){
 
-    case answerArray[4] <= 250000:
+    case pagebytes <= 250000:
         finalScore += 1;
         lengthWeight = 1;
         break;
-    case answerArray[4] <= 350000:
+    case pagebytes <= 350000:
         finalScore += .85;
         lengthWeight = .85;
         lowRec.push(304);
         break;
-    case answerArray[4] <= 500000:
+    case pagebytes <= 500000:
         finalScore += .75;
         lengthWeight = .75;
         lowRec.push(304);
         break;
-    case answerArray[4] <= 750000:
+    case pagebytes <= 750000:
         finalScore += .65;
         lengthWeight = .65;
         medRec.push(204);
         break;
-   case answerArray[4] <= 1000000:
+   case pagebytes <= 1000000:
         finalScore += .5;
         lengthWeight = .5;
         medRec.push(204);
         break;
-   case answerArray[4] <= 4000000:
+   case pagebytes <= 4000000:
         finalScore += .25;
         lengthWeight = .25;
         highRec.push(104);
         break;
-   case answerArray[4] > 4000000:
+   case pagebytes > 4000000:
         finalScore += .1;
         lengthWeight = .1;
         highRec.push(104);
@@ -1087,33 +1806,33 @@ switch (answerArray[4] >= 0){
 
 //Page Loadtime
 var timeWeight = 0;
-switch (answerArray[5] >= 0){
+switch (duration >= 0){
 
-    case answerArray[5] <= 2:
+    case duration <= 2:
         finalScore += 2;
         timeWeight = 2;
         break;
-    case answerArray[5] <= 3.5:
+    case duration <= 3.5:
         finalScore += 1.75;
         timeWeight = 1.75;
         lowRec.push(305);
         break;
-    case answerArray[5] <= 5:
+    case duration <= 5:
         finalScore += 1.5;
         timeWeight = 1.5;
         medRec.push(205);
         break;
-   case answerArray[5] <= 6:
+   case duration <= 6:
         finalScore += 1;
         timeWeight = 1;
         medRec.push(205);
         break;
-   case answerArray[5] <= 8:
+   case duration <= 8:
         finalScore += .75;
         timeWeight = .75;
         highRec.push(105);
         break;
-   case answerArray[5] > 8:
+   case duration > 8:
         finalScore += .5;
         timeWeight = .5;
         highRec.push(105);
@@ -1123,13 +1842,13 @@ switch (answerArray[5] >= 0){
 
 //Imported Fonts
 var fontWeight = 0;
-switch (answerArray[6] >= 0){
+switch (fontBoolean >= 0){
 
-    case answerArray[6] == 0:
+    case fontBoolean == 0:
         finalScore += .4;
         fontWeight = .4;
         break;
-    case answerArray[6] == 1:
+    case fontBoolean == 1:
         finalScore += .1;
         fontWeight = .1;
         medRec.push(206);
@@ -1140,47 +1859,47 @@ switch (answerArray[6] >= 0){
   
 // Transfer Size
 var transWeight = 0;
-switch (answerArray[7] >= 0){
+switch (transferTotal >= 0){
 
-case answerArray[7] <= 150000:
+case transferTotal <= 150000:
     finalScore += 4;
     transWeight = 4;
     break;
-case answerArray[7] <= 600000:
+case transferTotal <= 600000:
     finalScore += 3.75;
     transWeight = 3.75;
     break;
-case answerArray[7] <= 850000:
+case transferTotal <= 850000:
     finalScore += 3.5;
     transWeight = 3.5;
     lowRec.push(307);
     break;
-case answerArray[7] <= 1048576:
+case transferTotal <= 1048576:
     finalScore += 3.25;
     transWeight = 3.25;
     lowRec.push(307);
     break;
-case answerArray[7] <= 1572864:
+case transferTotal <= 1572864:
     finalScore += 3;
     transWeight = 3;
     medRec.push(207);
     break;
-case answerArray[7] <= 2621440:
+case transferTotal <= 2621440:
     finalScore += 2.75;
     transWeight = 2.75;
     medRec.push(207);
     break;
-case answerArray[7] <= 3670016:
+case transferTotal <= 3670016:
     finalScore += 2.5;
     transWeight = 2.5;
     highRec.push(107);
     break;
-case answerArray[7] <= 5242880:
+case transferTotal <= 5242880:
     finalScore += 2.25;
     transWeight = 2.25;
     highRec.push(107);
     break;
-case answerArray[7] > 5242880:
+case transferTotal > 5242880:
     finalScore += 2;
     transWeight = 2;
     highRec.push(107);
@@ -1190,28 +1909,28 @@ case answerArray[7] > 5242880:
     
 // Responsive Images
 var resWeight = 0;
-switch (answerArray[8] >= 0){
+switch (resImgArray[0] >= 0){
 
-case answerArray[8] >= .7:
+case resImgArray[0] >= .7:
     finalScore += .4;
     resWeight = .4;
     break;
-case answerArray[8] >= .5:
+case resImgArray[0] >= .5:
     finalScore += .35;
     resWeight = .35;
     lowRec.push(308);
     break;
-case answerArray[8] >= .3:
+case resImgArray[0] >= .3:
     finalScore += .3;
     resWeight = .3;
     lowRec.push(308);
     break;
-case answerArray[8] > 0:
+case resImgArray[0] > 0:
     finalScore += .25;
     resWeight = .25;
     medRec.push(208);
     break;
-case answerArray[8] == 0:
+case resImgArray[0] == 0:
     finalScore += .2;
     resWeight = .2;
     highRec.push(108);
@@ -1220,18 +1939,18 @@ case answerArray[8] == 0:
     
 // Internal Stylesheets
 var intSSWeight = 0;
-switch (answerArray[9] >= 0){
+switch (intStyleSheet >= 0){
 
-case answerArray[9] <= 2:
+case intStyleSheet <= 2:
     finalScore += .2;
     intSSWeight = .2;
     break;
-case answerArray[9] <= 5:
+case intStyleSheet <= 5:
     finalScore += .1;
     intSSWeight = .1;
     lowRec.push(309);
     break;
-case answerArray[9] >= 5:
+case intStyleSheet >= 5:
     finalScore += 0;
     medRec.push(209);
     break;
@@ -1239,22 +1958,22 @@ case answerArray[9] >= 5:
     
 // Number of Stylesheet Files
 var ssFileWeight = 0;
-switch (answerArray[10] >= 0){
+switch (numStyleSheet >= 0){
         
 case cssTransLabel === 'All style sheets cached!':
     finalScore += .2;
     ssFileWeight = .2;
     break;
-case answerArray[10] <= 2:
+case numStyleSheet <= 2:
     finalScore += .2;
     ssFileWeight = .2;
     break;
-case answerArray[10] <= 5:
+case numStyleSheet <= 5:
     finalScore += .15;
     ssFileWeight = .15;
     lowRec.push(310);
     break;
-case answerArray[10] >= 5:
+case numStyleSheet >= 5:
     finalScore += .5;
     medRec.push(210);
     break;
@@ -1262,13 +1981,13 @@ case answerArray[10] >= 5:
     
 // Number of Redirects
 var redirectWeight = 0;
-switch (answerArray[11] >= 0){
+switch (redirects >= 0){
 
-case answerArray[11] == 0:
+case redirects == 0:
     finalScore += .1;
     redirectWeight = .1;
     break;
-case answerArray[11] <= 1:
+case redirects <= 1:
     finalScore += 0;
     lowRec.push(311);
     break;
@@ -1276,28 +1995,28 @@ case answerArray[11] <= 1:
 
  // Amount of Cookies
 var cookieWeight = 0;
-switch (answerArray[12] >= 0){
+switch (cookieLen >= 0){
 
-case answerArray[12] <=3:
+case cookieLen <=3:
     finalScore += .4;
     cookieWeight = .4;
     break;
-case answerArray[12] <= 7:
+case cookieLen <= 7:
     finalScore += .3;
     cookieWeight = .3;
     lowRec.push(312);
     break;
-case answerArray[12] <= 10:
+case cookieLen <= 10:
     finalScore += .2;
     cookieWeight = .2;
     medRec.push(212);
     break;
-case answerArray[12] <= 15:
+case cookieLen <= 15:
     finalScore += .1;
     cookieWeight = .1;
     medRec.push(212);
     break;
-case answerArray[12] >= 16:
+case cookieLen >= 16:
     finalScore += 0;
     highRec.push(112);
     break;
@@ -1306,18 +2025,18 @@ case answerArray[12] >= 16:
     
  // Empty SRC Tags
 var emptySRCWeight = 0;
-switch (answerArray[13] >= 0){
+switch (emptyURL >= 0){
 
-case answerArray[13] <= 2:
+case emptyURL <= 2:
     finalScore += .2;
     emptySRCWeight = .2;
     break;
-case answerArray[13] <= 4:
+case emptyURL <= 4:
     finalScore += .1;
     emptySRCWeight = .1;
     lowRec.push(313);
     break;
-case answerArray[13] >= 5:
+case emptyURL >= 5:
     finalScore += 0;
     medRec.push(213);
     break;
@@ -1329,30 +2048,30 @@ var cacheWeight = 0;
 
 switch (true){
 
-case answerArray[14] >= 31536000:
+case answerArray[0] >= 31536000:
     finalScore += .4;
     cacheWeight = .4;
     break;
-case answerArray[14] >= 86400:
+case answerArray[0] >= 86400:
     finalScore += .35;
     cacheWeight = .35;
     break;
-case answerArray[14] >= 3600:
+case answerArray[0] >= 3600:
     finalScore += .3;
     cacheWeight += .3;
     lowRec.push(314);
     break;
-case answerArray[14] >= 600:
+case answerArray[0] >= 600:
     finalScore += .25;
     cacheWeight += .25;
     medRec.push(214);
     break;
-case answerArray[14] >= 0:
+case answerArray[0] >= 0:
     finalScore += .2;
     cacheWeight += .2;
     highRec.push(114);
     break;
-case answerArray[14] == .5:
+case answerArray[0] == .5:
     finalScore += .4;
     cacheWeight += .4;
     break;
@@ -1511,17 +2230,16 @@ switch (finalScore >= 0){
         break;
 }
 
-var decodedBodySizeChart = answerArray[0];
-var lazyLoadChart = (answerArray[1]*100);
-var svgChart = (answerArray[2]*100);
-var jsChart = answerArray[3];
-var htmlChart = answerArray[4];
-var loadTimeChart = answerArray[5];
-var importChart = answerArray[6];
-var transferSizeChart = answerArray[7];
+var decodedBodySizeChart = fullTotal;
+var lazyLoadChart = (lazyLoadVal*100);
+var svgChart = (susFormatVal*100);
+var jsChart = JSHeapSize;
+var htmlChart = pagebytes;
+var loadTimeChart = duration;
+var importChart = fontBoolean;
+var transferSizeChart = transferTotal;
 var lengthK = pagebytesLabel;
-var resImgChart = (answerArray[8]*100);
-//var resImgChart = (answerArray[8]*100).toPrecision(3);
+var resImgChart = (resImgArray[0]*100);
 var cacheChart = cacheScore;
 var colorChart = colorScore;
 
@@ -1572,13 +2290,13 @@ else if(lazyLoadChart > 1 && lazyLoadChart < 111){
 
 //Sustainable Remediations
     
-if (answerArray[1] === 1.1){
+if (lazyLoadVal === 1.1){
     imgNotLLArray.push("Less than 6 images on page.");
     }
     else if(imgNotLLArray.length === 0){
     imgNotLLArray.push("0 Found");
     }
-if (answerArray[2] === 1.1){
+if (susFormatVal === 1.1){
     imgNotGoodFormat.push("Less than 6 images on page.");
     }
     else if(imgNotGoodFormat.length === 0){
@@ -1832,7 +2550,10 @@ if (jsTransSize === 0){
    return jsFuncVar; 
 }
  
-    
+//Placeholders just for testing
+var cssTransLabel = 1;
+var largeLoadLabel = 1;
+var transferSizeLabel = transferLabel;
 
     
 //performance.getEntries(); For Web Vitals  

@@ -788,9 +788,54 @@ var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart
 
 
 
+cssTransLabel = 1;
+largeLoadLabel = 1;
 
 
 
+      <table border = "0" width = "500px">
+         <thead>
+            <tr>
+               <td colspan = "5">Head</td>
+            </tr>
+         </thead>
+         
+         <tfoot>
+           <tr>
+               <td colspan = "5">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan = "5">Largest Requests:</td>
+            </tr>
+                       <tr>
+               <td colspan = "5">https://codepen.io/pen/123</td>
+            </tr>
+                      <tr>
+               <td colspan = "5">https://codepen.io/pen/456</td>
+            </tr>
+                      <tr>
+               <td colspan = "5">https://codepen.io/pen/789</td>
+            </tr>
+         </tfoot>
+         
+         <tbody>
+            <tr>
+               <td>10%</td>
+               <td>12%</td>
+               <td>30%</td>
+               <td>40%</td>
+               <td>8%</td>
+            </tr>
+                        <tr>
+               <td>JS</td>
+               <td>Img Video</td>
+               <td>CSS</td>
+               <td>Import Font</td>
+               <td>Other</td>
+            </tr>
+         </tbody>
+         
+      </table>
 
 
 
