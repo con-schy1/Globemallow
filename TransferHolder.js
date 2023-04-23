@@ -808,13 +808,16 @@ largeLoadLabel = 1;
                <td colspan = "5">Largest Requests:</td>
             </tr>
                        <tr>
-               <td colspan = "5">https://codepen.io/pen/123</td>
+               <td colspan = "4">https://codepen.io/pen/123</td>
+               <td>10%</td>
             </tr>
                       <tr>
-               <td colspan = "5">https://codepen.io/pen/456</td>
+               <td colspan = "4">https://codepen.io/pen/456</td>
+               <td>10%</td>
             </tr>
                       <tr>
-               <td colspan = "5">https://codepen.io/pen/789</td>
+               <td colspan = "4">https://codepen.io/pen/789</td>
+               <td>10%</td>
             </tr>
          </tfoot>
          
@@ -836,6 +839,18 @@ largeLoadLabel = 1;
          </tbody>
          
       </table>
+
+
+table{
+    table-layout: fixed;
+    width: 500px;
+    
+}
+
+tbody{
+text-align: center;
+}
+
 
 
 

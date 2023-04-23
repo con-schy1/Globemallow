@@ -285,7 +285,55 @@ Report View </button>
   </div>      
     
    
-<!--    /////////////// Page Reports -->  
+<!--    /////////////// Page Reports --> 
+ 
+      <table border = "0" width = "670px">
+         <thead>
+            <tr>
+               <td colspan = "5">Head</td>
+            </tr>
+         </thead>
+         
+         <tfoot>
+           <tr>
+               <td colspan = "5">&nbsp;</td>
+            </tr>
+            <tr>
+               <td colspan = "5">Largest Transfered Requests:</td>
+            </tr>
+                       <tr>
+               <td id="num1TransNameID" colspan = "4">https://codepen.io/pen/123</td>
+               <td id="num1TransSizeLabID">10%</td>
+            </tr>
+                      <tr>
+               <td id="num2TransNameID" colspan = "4">https://codepen.io/pen/456</td>
+               <td id="num2TransSizeLabID">10%</td>
+            </tr>
+                      <tr>
+               <td id="num3TransNameID" colspan = "4"><textarea>https://codepen.io/pen/789</textarea></td>
+               <td id="num3TransSizeLabID">10%</td>
+            </tr>
+         </tfoot>
+         
+         <tbody>
+            <tr>
+               <td id="jsTableVal">10%</td>
+               <td id="imgTableVal">12%</td>
+               <td id="cssTableVal">30%</td>
+               <td id="importTableVal">40%</td>
+               <td id="otherTableVal">8%</td>
+            </tr>
+                        <tr>
+               <td>JS</td>
+               <td>Images</td>
+               <td>CSS</td>
+               <td>Import Font</td>
+               <td>Other</td>
+            </tr>
+         </tbody>
+         
+      </table>
+
 
 <!--    ///////////////Largest Transfer Request -->
 <div class='textAreaDiv' id='transferDIV'>
@@ -307,10 +355,10 @@ Report View </button>
  </div> 
     
 <!--    /////////////// Int Style Sheets --> 
-<div class='textAreaDiv' id="intSSDiv">
+<!--<div class='textAreaDiv' id="intSSDiv">
 <p class='textAreaHeaders' id='intStyleHeader'></p>
 <textarea class = "textAreaClass" id= "intStyleTextA" style = "display:none"  rows="10" cols="83"></textarea>
-     </div> 
+     </div> -->
     
 <!--    /////////////// Ext Style Sheets Sources --> 
 <div class='textAreaDiv' id="extSSDiv">

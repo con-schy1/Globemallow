@@ -1071,6 +1071,7 @@ switch (htmlChart >= 0){
          
         break;
 }
+            
         
 var transferSizeChart = x.transferSizeChart;
 
@@ -1086,6 +1087,17 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferTextA").innerHTML = "All transfer requests are cached!";
         document.getElementById('transferTextA').style.display = "block";
         document.getElementById("transferDIV").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("num1TransSizeLabID").innerHTML = x.num1TransSizeLab;
+        document.getElementById("num2TransSizeLabID").innerHTML = x.num2TransSizeLab;
+        document.getElementById("num3TransSizeLabID").innerHTML = x.num3TransSizeLab;
+        document.getElementById("num1TransNameID").innerHTML = x.num1TransName;
+        document.getElementById("num2TransNameID").innerHTML = x.num2TransName;
+        document.getElementById("num3TransNameID").innerHTML = x.num3TransName;
+        document.getElementById("jsTableVal").innerHTML = x.jsSizeLab;
+        document.getElementById("imgTableVal").innerHTML = x.imgTransSizeLab;
+        document.getElementById("cssTableVal").innerHTML = x.CSSSizeLab;
+        document.getElementById("importTableVal").innerHTML = x.importedFontSizeLab;
+        document.getElementById("otherTableVal").innerHTML = x.otherTransSizeLab;
         break;
     case transferSizeChart <= 100000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1097,6 +1109,17 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
         document.getElementById("transferDIV").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("num1TransSizeLabID").innerHTML = x.num1TransSizeLab;
+        document.getElementById("num2TransSizeLabID").innerHTML = x.num2TransSizeLab;
+        document.getElementById("num3TransSizeLabID").innerHTML = x.num3TransSizeLab;
+        document.getElementById("num1TransNameID").innerHTML = x.num1TransName;
+        document.getElementById("num2TransNameID").innerHTML = x.num2TransName;
+        document.getElementById("num3TransNameID").innerHTML = x.num3TransName;
+        document.getElementById("jsTableVal").innerHTML = x.jsSizeLab;
+        document.getElementById("imgTableVal").innerHTML = x.imgTransSizeLab;
+        document.getElementById("cssTableVal").innerHTML = x.CSSSizeLab;
+        document.getElementById("importTableVal").innerHTML = x.importedFontSizeLab;
+        document.getElementById("otherTableVal").innerHTML = x.otherTransSizeLab;
         break;
     case transferSizeChart <= 200000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1108,6 +1131,17 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
         document.getElementById("transferDIV").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("num1TransSizeLabID").innerHTML = x.num1TransSizeLab;
+        document.getElementById("num2TransSizeLabID").innerHTML = x.num2TransSizeLab;
+        document.getElementById("num3TransSizeLabID").innerHTML = x.num3TransSizeLab;
+        document.getElementById("num1TransNameID").innerHTML = x.num1TransName;
+        document.getElementById("num2TransNameID").innerHTML = x.num2TransName;
+        document.getElementById("num3TransNameID").innerHTML = x.num3TransName;
+        document.getElementById("jsTableVal").innerHTML = x.jsSizeLab;
+        document.getElementById("imgTableVal").innerHTML = x.imgTransSizeLab;
+        document.getElementById("cssTableVal").innerHTML = x.CSSSizeLab;
+        document.getElementById("importTableVal").innerHTML = x.importedFontSizeLab;
+        document.getElementById("otherTableVal").innerHTML = x.otherTransSizeLab;
         break;
     case transferSizeChart <= 400000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1119,6 +1153,17 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
         document.getElementById("transferDIV").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("num1TransSizeLabID").innerHTML = x.num1TransSizeLab;
+        document.getElementById("num2TransSizeLabID").innerHTML = x.num2TransSizeLab;
+        document.getElementById("num3TransSizeLabID").innerHTML = x.num3TransSizeLab;
+        document.getElementById("num1TransNameID").innerHTML = x.num1TransName;
+        document.getElementById("num2TransNameID").innerHTML = x.num2TransName;
+        document.getElementById("num3TransNameID").innerHTML = x.num3TransName;
+        document.getElementById("jsTableVal").innerHTML = x.jsSizeLab;
+        document.getElementById("imgTableVal").innerHTML = x.imgTransSizeLab;
+        document.getElementById("cssTableVal").innerHTML = x.CSSSizeLab;
+        document.getElementById("importTableVal").innerHTML = x.importedFontSizeLab;
+        document.getElementById("otherTableVal").innerHTML = x.otherTransSizeLab;
         break;
     case transferSizeChart <= 600000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1129,6 +1174,17 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request: "+x.transferSizeLabel;
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
+        document.getElementById("num1TransSizeLabID").innerHTML = x.num1TransSizeLab;
+        document.getElementById("num2TransSizeLabID").innerHTML = x.num2TransSizeLab;
+        document.getElementById("num3TransSizeLabID").innerHTML = x.num3TransSizeLab;
+        document.getElementById("num1TransNameID").innerHTML = x.num1TransName;
+        document.getElementById("num2TransNameID").innerHTML = x.num2TransName;
+        document.getElementById("num3TransNameID").innerHTML = x.num3TransName;
+        document.getElementById("jsTableVal").innerHTML = x.jsSizeLab;
+        document.getElementById("imgTableVal").innerHTML = x.imgTransSizeLab;
+        document.getElementById("cssTableVal").innerHTML = x.CSSSizeLab;
+        document.getElementById("importTableVal").innerHTML = x.importedFontSizeLab;
+        document.getElementById("otherTableVal").innerHTML = x.otherTransSizeLab;
         break;
     case transferSizeChart <= 850000:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1139,6 +1195,17 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
         document.getElementById("transferDIV").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("num1TransSizeLabID").innerHTML = x.num1TransSizeLab;
+        document.getElementById("num2TransSizeLabID").innerHTML = x.num2TransSizeLab;
+        document.getElementById("num3TransSizeLabID").innerHTML = x.num3TransSizeLab;
+        document.getElementById("num1TransNameID").innerHTML = x.num1TransName;
+        document.getElementById("num2TransNameID").innerHTML = x.num2TransName;
+        document.getElementById("num3TransNameID").innerHTML = x.num3TransName;
+        document.getElementById("jsTableVal").innerHTML = x.jsSizeLab;
+        document.getElementById("imgTableVal").innerHTML = x.imgTransSizeLab;
+        document.getElementById("cssTableVal").innerHTML = x.CSSSizeLab;
+        document.getElementById("importTableVal").innerHTML = x.importedFontSizeLab;
+        document.getElementById("otherTableVal").innerHTML = x.otherTransSizeLab;
         break;
     case transferSizeChart <= 1048576:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1149,6 +1216,17 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
         document.getElementById("transferDIV").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("num1TransSizeLabID").innerHTML = x.num1TransSizeLab;
+        document.getElementById("num2TransSizeLabID").innerHTML = x.num2TransSizeLab;
+        document.getElementById("num3TransSizeLabID").innerHTML = x.num3TransSizeLab;
+        document.getElementById("num1TransNameID").innerHTML = x.num1TransName;
+        document.getElementById("num2TransNameID").innerHTML = x.num2TransName;
+        document.getElementById("num3TransNameID").innerHTML = x.num3TransName;
+        document.getElementById("jsTableVal").innerHTML = x.jsSizeLab;
+        document.getElementById("imgTableVal").innerHTML = x.imgTransSizeLab;
+        document.getElementById("cssTableVal").innerHTML = x.CSSSizeLab;
+        document.getElementById("importTableVal").innerHTML = x.importedFontSizeLab;
+        document.getElementById("otherTableVal").innerHTML = x.otherTransSizeLab;
         break
     case transferSizeChart <= 1348576:
     document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1158,7 +1236,18 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request: "+x.transferSizeLabel;
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
-        document.getElementById("transferDIV").style.background = 'rgba(235, 220, 61, 0.5)';         
+        document.getElementById("transferDIV").style.background = 'rgba(235, 220, 61, 0.5)'; 
+        document.getElementById("num1TransSizeLabID").innerHTML = x.num1TransSizeLab;
+        document.getElementById("num2TransSizeLabID").innerHTML = x.num2TransSizeLab;
+        document.getElementById("num3TransSizeLabID").innerHTML = x.num3TransSizeLab;
+        document.getElementById("num1TransNameID").innerHTML = x.num1TransName;
+        document.getElementById("num2TransNameID").innerHTML = x.num2TransName;
+        document.getElementById("num3TransNameID").innerHTML = x.num3TransName;
+        document.getElementById("jsTableVal").innerHTML = x.jsSizeLab;
+        document.getElementById("imgTableVal").innerHTML = x.imgTransSizeLab;
+        document.getElementById("cssTableVal").innerHTML = x.CSSSizeLab;
+        document.getElementById("importTableVal").innerHTML = x.importedFontSizeLab;
+        document.getElementById("otherTableVal").innerHTML = x.otherTransSizeLab;
         break;
     case transferSizeChart <= 1572864:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1169,6 +1258,17 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
         document.getElementById("transferDIV").style.background = 'rgba(235, 220, 61, 0.5)'; 
+        document.getElementById("num1TransSizeLabID").innerHTML = x.num1TransSizeLab;
+        document.getElementById("num2TransSizeLabID").innerHTML = x.num2TransSizeLab;
+        document.getElementById("num3TransSizeLabID").innerHTML = x.num3TransSizeLab;
+        document.getElementById("num1TransNameID").innerHTML = x.num1TransName;
+        document.getElementById("num2TransNameID").innerHTML = x.num2TransName;
+        document.getElementById("num3TransNameID").innerHTML = x.num3TransName;
+        document.getElementById("jsTableVal").innerHTML = x.jsSizeLab;
+        document.getElementById("imgTableVal").innerHTML = x.imgTransSizeLab;
+        document.getElementById("cssTableVal").innerHTML = x.CSSSizeLab;
+        document.getElementById("importTableVal").innerHTML = x.importedFontSizeLab;
+        document.getElementById("otherTableVal").innerHTML = x.otherTransSizeLab;
         break;
     case transferSizeChart <= 2621440:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1178,7 +1278,18 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request: "+x.transferSizeLabel;
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
-        document.getElementById("transferDIV").style.background = 'rgba(235, 220, 61, 0.5)'; 
+        document.getElementById("transferDIV").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("num1TransSizeLabID").innerHTML = x.num1TransSizeLab;
+        document.getElementById("num2TransSizeLabID").innerHTML = x.num2TransSizeLab;
+        document.getElementById("num3TransSizeLabID").innerHTML = x.num3TransSizeLab;
+        document.getElementById("num1TransNameID").innerHTML = x.num1TransName;
+        document.getElementById("num2TransNameID").innerHTML = x.num2TransName;
+        document.getElementById("num3TransNameID").innerHTML = x.num3TransName;
+        document.getElementById("jsTableVal").innerHTML = x.jsSizeLab;
+        document.getElementById("imgTableVal").innerHTML = x.imgTransSizeLab;
+        document.getElementById("cssTableVal").innerHTML = x.CSSSizeLab;
+        document.getElementById("importTableVal").innerHTML = x.importedFontSizeLab;
+        document.getElementById("otherTableVal").innerHTML = x.otherTransSizeLab;
         break;
     case transferSizeChart <= 3670016:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1188,7 +1299,18 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request: "+x.transferSizeLabel;
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
-        document.getElementById("transferDIV").style.background = 'rgba(235, 220, 61, 0.5)'; 
+        document.getElementById("transferDIV").style.background = 'rgba(235, 220, 61, 0.5)';
+        document.getElementById("num1TransSizeLabID").innerHTML = x.num1TransSizeLab;
+        document.getElementById("num2TransSizeLabID").innerHTML = x.num2TransSizeLab;
+        document.getElementById("num3TransSizeLabID").innerHTML = x.num3TransSizeLab;
+        document.getElementById("num1TransNameID").innerHTML = x.num1TransName;
+        document.getElementById("num2TransNameID").innerHTML = x.num2TransName;
+        document.getElementById("num3TransNameID").innerHTML = x.num3TransName;
+        document.getElementById("jsTableVal").innerHTML = x.jsSizeLab;
+        document.getElementById("imgTableVal").innerHTML = x.imgTransSizeLab;
+        document.getElementById("cssTableVal").innerHTML = x.CSSSizeLab;
+        document.getElementById("importTableVal").innerHTML = x.importedFontSizeLab;
+        document.getElementById("otherTableVal").innerHTML = x.otherTransSizeLab;
         break;
     case transferSizeChart <= 5242880:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1198,7 +1320,18 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request: "+x.transferSizeLabel;
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
-        document.getElementById("transferDIV").style.background = 'rgba(241, 137, 49, 0.5)'; 
+        document.getElementById("transferDIV").style.background = 'rgba(241, 137, 49, 0.5)';
+        document.getElementById("num1TransSizeLabID").innerHTML = x.num1TransSizeLab;
+        document.getElementById("num2TransSizeLabID").innerHTML = x.num2TransSizeLab;
+        document.getElementById("num3TransSizeLabID").innerHTML = x.num3TransSizeLab;
+        document.getElementById("num1TransNameID").innerHTML = x.num1TransName;
+        document.getElementById("num2TransNameID").innerHTML = x.num2TransName;
+        document.getElementById("num3TransNameID").innerHTML = x.num3TransName;
+        document.getElementById("jsTableVal").innerHTML = x.jsSizeLab;
+        document.getElementById("imgTableVal").innerHTML = x.imgTransSizeLab;
+        document.getElementById("cssTableVal").innerHTML = x.CSSSizeLab;
+        document.getElementById("importTableVal").innerHTML = x.importedFontSizeLab;
+        document.getElementById("otherTableVal").innerHTML = x.otherTransSizeLab;
         break;
     case transferSizeChart > 5242880:
         document.getElementById("transferBar").innerHTML = x.transferLabel;
@@ -1208,7 +1341,18 @@ switch (transferSizeChart >= 0){
         document.getElementById("transferHeader").innerHTML = "Largest Transfer Data Request: "+x.transferSizeLabel;
         document.getElementById("transferTextA").innerHTML = x.largeTransSrc;
         document.getElementById('transferTextA').style.display = "block";
-        document.getElementById("transferDIV").style.background = 'rgba(241, 137, 49, 0.5)'; 
+        document.getElementById("transferDIV").style.background = 'rgba(241, 137, 49, 0.5)';
+        document.getElementById("num1TransSizeLabID").innerHTML = x.num1TransSizeLab;
+        document.getElementById("num2TransSizeLabID").innerHTML = x.num2TransSizeLab;
+        document.getElementById("num3TransSizeLabID").innerHTML = x.num3TransSizeLab;
+        document.getElementById("num1TransNameID").innerHTML = x.num1TransName;
+        document.getElementById("num2TransNameID").innerHTML = x.num2TransName;
+        document.getElementById("num3TransNameID").innerHTML = x.num3TransName;
+        document.getElementById("jsTableVal").innerHTML = x.jsSizeLab;
+        document.getElementById("imgTableVal").innerHTML = x.imgTransSizeLab;
+        document.getElementById("cssTableVal").innerHTML = x.CSSSizeLab;
+        document.getElementById("importTableVal").innerHTML = x.importedFontSizeLab;
+        document.getElementById("otherTableVal").innerHTML = x.otherTransSizeLab;
         break;
 }
             
@@ -1312,119 +1456,119 @@ switch (intStyleSheet >= 0){
         document.getElementById("intStyleBar").style.width = "240px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
-        document.getElementById("intSSDiv").style.display = 'none';
+        /*document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
+        document.getElementById("intSSDiv").style.display = 'none';*/
         break;
     case intStyleSheet == 1:
         document.getElementById("intStyleBar").innerHTML = "1";
         document.getElementById("intStyleBar").style.width = "240px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
-        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+//        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
+        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
         document.getElementById('intStyleTextA').style.display = "block";
-        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
+        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';*/
         break;
     case intStyleSheet == 2:
         document.getElementById("intStyleBar").innerHTML = "2";
         document.getElementById("intStyleBar").style.width = "230px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
         document.getElementById('intStyleTextA').style.display = "block";
         document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';*/
         break;
     case intStyleSheet == 3:
         document.getElementById("intStyleBar").innerHTML = "3";
         document.getElementById("intStyleBar").style.width = "220px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
-        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.3)';
+        //document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.3)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
         document.getElementById('intStyleTextA').style.display = "block";
         document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';*/
         break;
     case intStyleSheet == 4:
         document.getElementById("intStyleBar").innerHTML = "4";
         document.getElementById("intStyleBar").style.width = "200px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
         document.getElementById('intStyleTextA').style.display = "block";
         document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';*/
         break;
     case intStyleSheet == 5:
         document.getElementById("intStyleBar").innerHTML = "5";
         document.getElementById("intStyleBar").style.width = "140px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
         document.getElementById('intStyleTextA').style.display = "block";
         document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
+        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';*/
         break;
     case intStyleSheet == 6:
         document.getElementById("intStyleBar").innerHTML = "6";
         document.getElementById("intStyleBar").style.width = "120px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
-        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
         document.getElementById('intStyleTextA').style.display = "block";
         document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(235, 220, 61, 0.5)'; 
+        document.getElementById("intSSDiv").style.background = 'rgba(235, 220, 61, 0.5)'; */
         break;
     case intStyleSheet == 7:
         document.getElementById("intStyleBar").innerHTML = "7";
         document.getElementById("intStyleBar").style.width = "100px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
-        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
         document.getElementById('intStyleTextA').style.display = "block";
         document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(235, 220, 61, 0.5)'; 
+        document.getElementById("intSSDiv").style.background = 'rgba(235, 220, 61, 0.5)'; */
         break;
     case intStyleSheet == 8:
         document.getElementById("intStyleBar").innerHTML = "8";
         document.getElementById("intStyleBar").style.width = "80px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
-        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
         document.getElementById('intStyleTextA').style.display = "block";
         document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(235, 220, 61, 0.5)'; 
+        document.getElementById("intSSDiv").style.background = 'rgba(235, 220, 61, 0.5)';*/ 
         break;
     case intStyleSheet == 9:
         document.getElementById("intStyleBar").innerHTML = "9";
         document.getElementById("intStyleBar").style.width = "60px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
-        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
         document.getElementById('intStyleTextA').style.display = "block";
         document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(235, 220, 61, 0.5)'; 
+        document.getElementById("intSSDiv").style.background = 'rgba(235, 220, 61, 0.5)';*/ 
         break;
     case intStyleSheet == 10:
         document.getElementById("intStyleBar").innerHTML = "10";
         document.getElementById("intStyleBar").style.width = "50px";
         document.getElementById("intStyleBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("intStyleBar").style.border = '1px solid orange';
-        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
         document.getElementById('intStyleTextA').style.display = "block";
         document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(241, 137, 49, .5)'; 
+        document.getElementById("intSSDiv").style.background = 'rgba(241, 137, 49, .5)'; */
         break;
     case intStyleSheet > 10:
         document.getElementById("intStyleBar").innerHTML = ">10";
         document.getElementById("intStyleBar").style.width = "30px";
         document.getElementById("intStyleBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("intStyleBar").style.border = '1px solid orange';
-        document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
+        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
         document.getElementById('intStyleTextA').style.display = "block";
         document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(241, 137, 49, .5)'; 
+        document.getElementById("intSSDiv").style.background = 'rgba(241, 137, 49, .5)'; */
         break;
 }
             

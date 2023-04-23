@@ -123,7 +123,7 @@ for (var i = 0; i < transferResources.length; i++) {
         apiTransSize += transferResources[i].transferSize;
         apiTotSize += transferResources[i].decodedBodySize;
     }
-    else if (requestMatch.match(jsTransSize)){
+    else if (requestMatch.match(jsTransReq)){
         jsTransSize += transferResources[i].transferSize;
         jsTotSize += transferResources[i].decodedBodySize;
     }
@@ -2556,9 +2556,10 @@ var largeLoadLabel = 1;
 var transferSizeLabel = transferLabel;
 
     
-//performance.getEntries(); For Web Vitals  
+//performance.getEntries(); For Web Vitals 
+// intStyleSheetTags, 
     
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, largeLoadRequest, transferSizeLabel, largeLoadLabel, highRec1, medRec1, lowRec1, cssTransLabel}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, largeLoadRequest, transferSizeLabel, largeLoadLabel, highRec1, medRec1, lowRec1, cssTransLabel, num1TransSizeLab, num2TransSizeLab, num3TransSizeLab, num1TransName, num2TransName, num3TransName, CSSSizeLab, jsSizeLab, importedFontSizeLab, imgTransSizeLab, otherTransSizeLab}
 
 chrome.runtime.sendMessage(counts);
     
