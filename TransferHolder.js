@@ -1,4 +1,4 @@
-//Transfer Size
+//This function does the Transfer, Total (Page Size) and matching different requests to what they are
     
 var imgB = [];
 var imgC = [];
@@ -95,7 +95,7 @@ console.log(largeTransSrc);*/
 
 
 //Updated Script for all
-//Largest Total, Largest Transfer and longest loading
+////This function does the Transfer, Total (Page Size) and matching different requests to what they are. Largest Total, Largest Transfer and longest loading
 
 //Transfer Size
 
@@ -328,25 +328,67 @@ if (num1LoadLength/1000 >= 1){
    num1LoadLab = (num1LoadLength/1000).toFixed(2).toString() + " secs"; 
 }
     else{
-       num1LoadLab = num1LoadLength.toString() + " ms"; 
+       num1LoadLab = num1LoadLength.toFixed(2).toString() + " ms"; 
     }
 
 if (num2LoadLength/1000 >= 1){
    num2LoadLab = (num2LoadLength/1000).toFixed(2).toString() + " secs"; 
 }
     else{
-       num2LoadLab = num2LoadLength.toString() + " ms"; 
+       num2LoadLab = num2LoadLength.toFixed(2).toString() + " ms"; 
     }
 
 if (num3LoadLength/1000 >= 1){
    num3LoadLab = (num3LoadLength/1000).toFixed(2).toString() + " secs"; 
 }
     else{
-       num3LoadLab = num3LoadLength.toString() + " ms"; 
+       num3LoadLab = num3LoadLength.toFixed(2).toString() + " ms"; 
     }
 
+
+
 //////////////////////////////////////////////////////////////////////
-//Total Labeling
+//Total Page Size Labeling
+
+
+var transferLabel;
+    
+ if (transferTotal/1024/1024/1024 > 1){
+ transferLabel = (((transferTotal/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (transferTotal/1024/1024 > 1){
+ transferLabel = (((transferTotal/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (transferTotal/1024 > 1){
+ transferLabel = (((transferTotal/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (transferTotal > 1){
+ transferLabel = (((transferTotal).toFixed(2)).toString() + arrayLabel[0]);
+ }
+   else{
+     transferLabel = (transferTotal).toString() + arrayLabel[0];
+ }
+
+
+
+//////////////////////////////////////////////////////////////////////
+//Total Transfer Size Labeling
+
+
+ if (fullTotal/1024/1024/1024 > 1){
+ sizeLabel = (((fullTotal/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ } else if (fullTotal/1024/1024 > 1){
+ sizeLabel = (((fullTotal/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ } else if (fullTotal/1024 > 1){
+ sizeLabel = (((fullTotal/1024).toFixed(2)).toString() + arrayLabel[1]);
+ } else if (fullTotal > 1){
+ sizeLabel = (((fullTotal).toFixed(2)).toString() + arrayLabel[0]);
+ }
+ else{
+     sizeLabel = (fullTotal).toString() + arrayLabel[0];
+ }
+
+
+
+//////////////////////////////////////////////////////////////////////
+//Total top 3 request Labeling
 
 var num1TotSizeLab;
 var num2TotSizeLab;
@@ -392,7 +434,7 @@ if (num3TotSize/1024/1024/1024 > 1){
  }
 
 //////////////////////////////////////////////////////////////////////
-//Transfer Labeling
+//Transfer top 3 request Labeling
 
 var num1TransSizeLab;
 var num2TransSizeLab;
@@ -712,9 +754,9 @@ console.log(num2TotName+' '+num2TotSize+' '+num2TotSizeLab);
 console.log(num3TotName+' '+num3TotSize+' '+num3TotSizeLab);
 
 
-console.log('transferTotal '+transferTotal);
+console.log('transferTotal '+transferTotal+' '+transferLabel);
 
-console.log('fullTotal '+fullTotal);
+console.log('fullTotal '+fullTotal+' '+sizeLabel);
 
 console.log(num1TransName+' '+num1TransSize+' '+num1TransSizeLab);
 console.log(num2TransName+' '+num2TransSize+' '+num2TransSizeLab);
@@ -741,6 +783,8 @@ console.log('Video Tot: '+videoTotSize+' '+videoLab);
 console.log('Other Tot: '+otherTotSize+' '+otherLab);
 
 
+
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, intStyleSheetTags, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, largeLoadRequest, transferSizeLabel, largeLoadLabel, highRec1, medRec1, lowRec1, cssTransLabel}
 
 
 
