@@ -75,9 +75,6 @@ body {
     letter-spacing: .75px;
 }
 
-
-
-
 .ScoreGraph{
      /* For button text center */
     position: absolute;          /* Position absolute */
@@ -316,15 +313,45 @@ table .row{
   color: #606060;
 }
 
-
-#footer{
-  padding-top: 13px;
-  display: flex;
-  bottom: 0;
-  width: 100%;
-  height: 2rem;   
+#pageTable{
+    
+  table-layout: fixed;
+  background-color: #f2f2f2;
+  border-radius: 6px;
+  margin-top: 15px;
+  padding: 5px;
+    
 }
 
+#pageTable tbody{
+    
+  text-align: center;  
+    
+}
+
+#largeRequestTable{
+    
+    font-weight: 550;
+    font-size: 15px;
+    border: 1px;
+    border-color: #F77616; 
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 4px;
+    border-radius: 4px;
+}
+
+.loadRequests{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+
+#num1TransSizeLabID, #num2TransSizeLabID, #num3TransSizeLabID{
+    
+    text-align: right;
+    
+}
 
 #donate{
   padding-left: 12px;
@@ -459,7 +486,7 @@ table .row{
 
 
 #footer{
-/*  padding-top: 5px;*/
+  padding-top: 10px;
   display: flex;
   bottom: 0;
   width: 100%;
@@ -468,8 +495,6 @@ table .row{
   height: 51px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-     
-  
 }
 
 #donate{

@@ -287,7 +287,7 @@ Report View </button>
    
 <!--    /////////////// Page Reports --> 
  
-      <table border = "0" width = "670px">
+      <table id='pageTable' border = "0" width = "676px">
          <thead>
             <tr>
                <td colspan = "5">Head</td>
@@ -298,20 +298,20 @@ Report View </button>
            <tr>
                <td colspan = "5">&nbsp;</td>
             </tr>
-            <tr>
+            <tr id='largeRequestTable'>
                <td colspan = "5">Largest Transfered Requests:</td>
             </tr>
                        <tr>
-               <td id="num1TransNameID" colspan = "4">https://codepen.io/pen/123</td>
-               <td id="num1TransSizeLabID">10%</td>
+               <td class='loadRequests' id="num1TransNameID" colspan = "4">https://codepen.io/pen/123</td>
+               <td class='loadRequests' id="num1TransSizeLabID">10%</td>
             </tr>
                       <tr>
-               <td id="num2TransNameID" colspan = "4">https://codepen.io/pen/456</td>
-               <td id="num2TransSizeLabID">10%</td>
+               <td class='loadRequests' id="num2TransNameID" colspan = "4">https://codepen.io/pen/456</td>
+               <td class='loadRequests' id="num2TransSizeLabID">10%</td>
             </tr>
                       <tr>
-               <td id="num3TransNameID" colspan = "4"><textarea>https://codepen.io/pen/789</textarea></td>
-               <td id="num3TransSizeLabID">10%</td>
+               <td class='loadRequests'class='loadRequests'  id="num3TransNameID" colspan = "4">https://codepen.io/pen/789</td>
+               <td class='loadRequests' id="num3TransSizeLabID">10%</td>
             </tr>
          </tfoot>
          
