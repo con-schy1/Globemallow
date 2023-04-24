@@ -329,6 +329,10 @@ table .row{
     
 }
 
+tbody{
+  font-size: 15px;  
+}
+
 #largeRequestTable{
     
     font-weight: 550;
@@ -336,21 +340,31 @@ table .row{
     border: 1px;
     border-color: #F77616; 
     padding-top: 15px;
-    padding-bottom: 15px;
     padding-left: 4px;
     border-radius: 4px;
 }
 
 .loadRequests{
-    padding-top: 5px;
+    padding-top: 7px;
     padding-bottom: 5px;
     font-size: 13px;
 }
 
 #num1TransSizeLabID, #num2TransSizeLabID, #num3TransSizeLabID{
     
-    text-align: right;
+    padding-left: 475px;
+    font-size: 14px;
     
+}
+
+.pageTabelLabels{
+    border-top: .5px solid #F77616;
+    border-right: .5px solid #F77616;
+}
+
+.pageTableVal{
+    border-right: .5px solid #F77616;
+    font-size: 16px;
 }
 
 #donate{
