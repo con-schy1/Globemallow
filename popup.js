@@ -754,10 +754,6 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "240px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
-        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
-        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request: "+x.largeLoadLabel;
-        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
-        document.getElementById('longestTextA').style.display = "block";
         document.getElementById("num1LongNameID").innerHTML = x.num1LoadName; 
         document.getElementById("num2LongNameID").innerHTML = x.num2LoadName; 
         document.getElementById("num3LongNameID").innerHTML = x.num3LoadName;
@@ -770,10 +766,6 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "220px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
-        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
-        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request: "+x.largeLoadLabel;
-        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
-        document.getElementById('longestTextA').style.display = "block";
         document.getElementById("num1LongNameID").innerHTML = x.num1LoadName; 
         document.getElementById("num2LongNameID").innerHTML = x.num2LoadName; 
         document.getElementById("num3LongNameID").innerHTML = x.num3LoadName;
@@ -787,10 +779,6 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "200px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
-        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
-        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request: "+x.largeLoadLabel;
-        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
-        document.getElementById('longestTextA').style.display = "block";
         document.getElementById("num1LongNameID").innerHTML = x.num1LoadName; 
         document.getElementById("num2LongNameID").innerHTML = x.num2LoadName; 
         document.getElementById("num3LongNameID").innerHTML = x.num3LoadName;
@@ -804,10 +792,6 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "180px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
-        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
-        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request: "+x.largeLoadLabel;
-        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
-        document.getElementById('longestTextA').style.display = "block";
         document.getElementById("num1LongNameID").innerHTML = x.num1LoadName; 
         document.getElementById("num2LongNameID").innerHTML = x.num2LoadName; 
         document.getElementById("num3LongNameID").innerHTML = x.num3LoadName;
@@ -821,10 +805,6 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "160px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
-        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
-        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request: "+x.largeLoadLabel;
-        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
-        document.getElementById('longestTextA').style.display = "block";
         document.getElementById("num1LongNameID").innerHTML = x.num1LoadName; 
         document.getElementById("num2LongNameID").innerHTML = x.num2LoadName; 
         document.getElementById("num3LongNameID").innerHTML = x.num3LoadName;
@@ -838,10 +818,6 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "140px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
-        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
-        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request: "+x.largeLoadLabel;
-        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
-        document.getElementById('longestTextA').style.display = "block";
         document.getElementById("num1LongNameID").innerHTML = x.num1LoadName; 
         document.getElementById("num2LongNameID").innerHTML = x.num2LoadName; 
         document.getElementById("num3LongNameID").innerHTML = x.num3LoadName;
@@ -854,10 +830,6 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "120px";
         document.getElementById("loadBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid green';
-        document.getElementById("longestDIV").style.background = 'rgba(142, 202, 46, 0.5)'; 
-        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request: "+x.largeLoadLabel;
-        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
-        document.getElementById('longestTextA').style.display = "block";
         document.getElementById("num1LongNameID").innerHTML = x.num1LoadName; 
         document.getElementById("num2LongNameID").innerHTML = x.num2LoadName; 
         document.getElementById("num3LongNameID").innerHTML = x.num3LoadName;
@@ -870,10 +842,6 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "110px";
         document.getElementById("loadBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid yellow';
-        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request: "+x.largeLoadLabel;
-        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
-        document.getElementById("longestTextA").style.display = "block";
-        document.getElementById("longestDIV").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("num1LongNameID").innerHTML = x.num1LoadName; 
         document.getElementById("num2LongNameID").innerHTML = x.num2LoadName; 
         document.getElementById("num3LongNameID").innerHTML = x.num3LoadName;
@@ -887,10 +855,6 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "100px";
         document.getElementById("loadBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid yellow';
-        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request: "+x.largeLoadLabel;
-        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
-        document.getElementById("longestTextA").style.display = "block";
-        document.getElementById("longestDIV").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("num1LongNameID").innerHTML = x.num1LoadName; 
         document.getElementById("num2LongNameID").innerHTML = x.num2LoadName; 
         document.getElementById("num3LongNameID").innerHTML = x.num3LoadName;
@@ -903,10 +867,6 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "80px";
         document.getElementById("loadBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid yellow';
-        ddocument.getElementById("longestHeader").innerHTML = "Longest Loading Data Request: "+x.largeLoadLabel;
-        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
-        document.getElementById("longestTextA").style.display = "block";
-        document.getElementById("longestDIV").style.background = 'rgba(235, 220, 61, 0.5)'; 
         document.getElementById("num1LongNameID").innerHTML = x.num1LoadName; 
         document.getElementById("num2LongNameID").innerHTML = x.num2LoadName; 
         document.getElementById("num3LongNameID").innerHTML = x.num3LoadName;
@@ -919,10 +879,6 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "60px";
         document.getElementById("loadBar").style.background = 'rgba(241, 137, 49, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid orange';
-        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request: "+x.largeLoadLabel;
-        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
-        document.getElementById("longestTextA").style.display = "block";
-        document.getElementById("longestDIV").style.background = 'rgba(241, 137, 49, 0.5)'; 
         document.getElementById("num1LongNameID").innerHTML = x.num1LoadName; 
         document.getElementById("num2LongNameID").innerHTML = x.num2LoadName; 
         document.getElementById("num3LongNameID").innerHTML = x.num3LoadName;
@@ -935,10 +891,6 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "45px";
         document.getElementById("loadBar").style.background = 'rgba(241, 137, 49, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid orange';
-        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request: "+x.largeLoadLabel;
-        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
-        document.getElementById("longestTextA").style.display = "block";
-        document.getElementById("longestDIV").style.background = 'rgba(241, 137, 49, 0.5)'; 
         document.getElementById("num1LongNameID").innerHTML = x.num1LoadName; 
         document.getElementById("num2LongNameID").innerHTML = x.num2LoadName; 
         document.getElementById("num3LongNameID").innerHTML = x.num3LoadName;
@@ -951,10 +903,6 @@ switch (loadTimeChart >= 0){
         document.getElementById("loadBar").style.width = "35px";
         document.getElementById("loadBar").style.background = 'rgba(241, 137, 49, 0.5)';
         document.getElementById("loadBar").style.border = '1px solid orange';
-        document.getElementById("longestHeader").innerHTML = "Longest Loading Data Request: "+x.largeLoadLabel;
-        document.getElementById("longestTextA").innerHTML = x.largeLoadRequest;
-        document.getElementById("longestTextA").style.display = "block";
-        document.getElementById("longestDIV").style.background = 'rgba(241, 137, 49, 0.5)';
         document.getElementById("num1LongNameID").innerHTML = x.num1LoadName; 
         document.getElementById("num2LongNameID").innerHTML = x.num2LoadName; 
         document.getElementById("num3LongNameID").innerHTML = x.num3LoadName;
@@ -1477,123 +1425,78 @@ switch (intStyleSheet >= 0){
         document.getElementById("intStyleBar").style.width = "240px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-        /*document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
-        document.getElementById("intSSDiv").style.display = 'none';*/
         break;
     case intStyleSheet == 1:
         document.getElementById("intStyleBar").innerHTML = "1";
         document.getElementById("intStyleBar").style.width = "240px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-//        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
-        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
-        document.getElementById('intStyleTextA').style.display = "block";
-        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';*/
         break;
     case intStyleSheet == 2:
         document.getElementById("intStyleBar").innerHTML = "2";
         document.getElementById("intStyleBar").style.width = "230px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
-        document.getElementById('intStyleTextA').style.display = "block";
-        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';*/
         break;
     case intStyleSheet == 3:
         document.getElementById("intStyleBar").innerHTML = "3";
         document.getElementById("intStyleBar").style.width = "220px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
-        //document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.3)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
-        document.getElementById('intStyleTextA').style.display = "block";
-        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';*/
         break;
     case intStyleSheet == 4:
         document.getElementById("intStyleBar").innerHTML = "4";
         document.getElementById("intStyleBar").style.width = "200px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
-        document.getElementById('intStyleTextA').style.display = "block";
-        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';*/
         break;
     case intStyleSheet == 5:
         document.getElementById("intStyleBar").innerHTML = "5";
         document.getElementById("intStyleBar").style.width = "140px";
         document.getElementById("intStyleBar").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid green';
-        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
-        document.getElementById('intStyleTextA').style.display = "block";
-        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';*/
         break;
     case intStyleSheet == 6:
         document.getElementById("intStyleBar").innerHTML = "6";
         document.getElementById("intStyleBar").style.width = "120px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
-        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
-        document.getElementById('intStyleTextA').style.display = "block";
-        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(235, 220, 61, 0.5)'; */
         break;
     case intStyleSheet == 7:
         document.getElementById("intStyleBar").innerHTML = "7";
         document.getElementById("intStyleBar").style.width = "100px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
         document.getElementById("intStyleBar").style.border = '1px solid yellow';
-        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
-        document.getElementById('intStyleTextA').style.display = "block";
-        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(235, 220, 61, 0.5)'; */
         break;
     case intStyleSheet == 8:
         document.getElementById("intStyleBar").innerHTML = "8";
         document.getElementById("intStyleBar").style.width = "80px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
-        document.getElementById("intStyleBar").style.border = '1px solid yellow';
-        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
-        document.getElementById('intStyleTextA').style.display = "block";
-        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(235, 220, 61, 0.5)';*/ 
+        document.getElementById("intStyleBar").style.border = '1px solid yellow'; 
         break;
     case intStyleSheet == 9:
         document.getElementById("intStyleBar").innerHTML = "9";
         document.getElementById("intStyleBar").style.width = "60px";
         document.getElementById("intStyleBar").style.background = 'rgba(235, 220, 61, 0.5)';
-        document.getElementById("intStyleBar").style.border = '1px solid yellow';
-        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
-        document.getElementById('intStyleTextA').style.display = "block";
-        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(235, 220, 61, 0.5)';*/ 
+        document.getElementById("intStyleBar").style.border = '1px solid yellow'; 
         break;
     case intStyleSheet == 10:
         document.getElementById("intStyleBar").innerHTML = "10";
         document.getElementById("intStyleBar").style.width = "50px";
         document.getElementById("intStyleBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("intStyleBar").style.border = '1px solid orange';
-        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
-        document.getElementById('intStyleTextA').style.display = "block";
-        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(241, 137, 49, .5)'; */
         break;
     case intStyleSheet > 10:
         document.getElementById("intStyleBar").innerHTML = ">10";
         document.getElementById("intStyleBar").style.width = "30px";
         document.getElementById("intStyleBar").style.background = 'rgba(241, 137, 49, .5)';
         document.getElementById("intStyleBar").style.border = '1px solid orange';
-        /*document.getElementById('intStyleTextA').innerHTML = x.intStyleSheetTags;
-        document.getElementById('intStyleTextA').style.display = "block";
-        document.getElementById('intStyleHeader').innerHTML = 'First Internal Style Sheet:';
-        document.getElementById("intSSDiv").style.background = 'rgba(241, 137, 49, .5)'; */
         break;
 }
             
 var numStyleSheet = x.numStyleSheet;
+            
+//numStyleSheet
 
 switch (numStyleSheet >= 0){
 
@@ -1612,7 +1515,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid green';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + numStyleSheet;
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById('extStyleTextA').rows = "3";
         break;
@@ -1623,7 +1526,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid green';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + numStyleSheet;
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById('extStyleTextA').rows = "3";
         break;
@@ -1634,7 +1537,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid green';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + numStyleSheet;
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById('extStyleTextA').rows = "4";
         break;
@@ -1645,7 +1548,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid green';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + numStyleSheet;
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
         break;
     case numStyleSheet == 4:
@@ -1655,7 +1558,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid green';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + numStyleSheet;
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
         break;
     case numStyleSheet == 5:
@@ -1666,7 +1569,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid green';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + numStyleSheet;
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
         break;
     case numStyleSheet == 6:
@@ -1676,7 +1579,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + numStyleSheet;
         document.getElementById("extSSDiv").style.background = 'rgba(235, 220, 61, 0.5)';  
         break;
     case numStyleSheet == 7:
@@ -1686,7 +1589,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + numStyleSheet;
         document.getElementById("extSSDiv").style.background = 'rgba(235, 220, 61, 0.5)';  
         break;
     case numStyleSheet == 8:
@@ -1696,7 +1599,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + numStyleSheet;
         document.getElementById("extSSDiv").style.background = 'rgba(235, 220, 61, 0.5)';  
         break;
     case numStyleSheet == 9:
@@ -1706,7 +1609,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid yellow';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + numStyleSheet;
         document.getElementById("extSSDiv").style.background = 'rgba(235, 220, 61, 0.5)'; 
         break;
     case numStyleSheet == 10:
@@ -1716,7 +1619,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid orange';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + numStyleSheet;
         document.getElementById("extSSDiv").style.background = 'rgba(241, 137, 49, .5)'; 
         break;
     case numStyleSheet > 10:
@@ -1726,7 +1629,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid orange';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + x.cssTransLabel;
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + numStyleSheet;
         document.getElementById("extSSDiv").style.background = 'rgba(241, 137, 49, .5)';
         break;
 }

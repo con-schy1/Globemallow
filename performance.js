@@ -55,7 +55,6 @@ var netC = [];
 var transferSize1 = 0;
 var largeTrans = 0;
 var largeTransArray = [];
-var largeLoadRequest;
 var largeTransSize;
 var largeLoadTime;
 var largeTotalSize;
@@ -153,7 +152,6 @@ for (var i = 0; i < transferResources.length; i++) {
 largeTotalSize = transferResources[maxTotalIndex].decodedBodySize;
 largeTotalSrc = transferResources[maxTotalIndex].name;
 largeTransSize = transferResources[maxTransIndex].transferSize;
-largeLoadRequest = transferResources[maxIndexDur].name;
 largeLoadTime = transferResources[maxIndexDur].duration;
     
 largeLoadTime = largeLoadTime.toFixed(2);
@@ -1036,15 +1034,6 @@ imgNotRes.push(img1Count);
     
 var intStyleSheet = document.getElementsByTagName('style').length;
     
-if(intStyleSheet > 0){
-var intStyleSheetTags = document.getElementsByTagName('style')[0].outerHTML;
-}
-    else{
-        //
-    }
-    
-//answerArray.push(intStyleSheet);
-//console.log(intStyleSheetTags);
     
 ////////////////////////////////////////////////////
 
@@ -2454,19 +2443,19 @@ function transferFunction(){
 var loadFuncVar;
 //Transfer Function
 function loadTimeFunction(){
-    if (largeLoadRequest.match(cssTransReq)){
+    if (num1LoadName.match(cssTransReq)){
         loadFuncVar = 'Your longest loading request is an external stylesheet.<br><br>';
     }
-        else if(largeLoadRequest.match(apiTransReq)){
+        else if(num1LoadName.match(apiTransReq)){
         loadFuncVar ='Your longest loading request is an api request.<br><br>';
     }
-        else if(largeLoadRequest.match(jsTransReq)){
+        else if(num1LoadName.match(jsTransReq)){
         loadFuncVar ='Your longest loading request is a javascript file.<br><br>';
     }
-        else if(largeLoadRequest.match(importedFontTransReq)){
+        else if(num1LoadName.match(importedFontTransReq)){
         loadFuncVar ='Your longest loading request is an imported font file. In total, Imported Fonts required ' +impFontReq +' seperate requests. <br><br>';
     }
-        else if(largeLoadRequest.match(imageTransReq)){
+        else if(num1LoadName.match(imageTransReq)){
         loadFuncVar ='Your longest loading request is an image. Have you considered using an image compression tool? There are a lot found online, and they make a significant difference in image size.<br><br>';
     }
          else{
@@ -2552,7 +2541,6 @@ if (jsTransSize === 0){
  
 //Placeholders just for testing
 var cssTransLabel = 1;
-var largeLoadLabel = 1;
     
     
 console.log(num1LoadName+' '+num1LoadLength+' '+num1LoadLab);
@@ -2561,9 +2549,8 @@ console.log(num3LoadName+' '+num3LoadLength+' '+num3LoadLab);
 
     
 //performance.getEntries(); For Web Vitals 
-// intStyleSheetTags, 
     
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, largeLoadRequest, largeLoadLabel, highRec1, medRec1, lowRec1, cssTransLabel, num1TransSizeLab, num2TransSizeLab, num3TransSizeLab, num1TransName, num2TransName, num3TransName, CSSSizeLab, jsSizeLab, importedFontSizeLab, imgTransSizeLab, otherTransSizeLab, num1LoadName, num2LoadName, num3LoadName, num1LoadLab, num2LoadLab, num3LoadLab}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, highRec1, medRec1, lowRec1, cssTransLabel, num1TransSizeLab, num2TransSizeLab, num3TransSizeLab, num1TransName, num2TransName, num3TransName, CSSSizeLab, jsSizeLab, importedFontSizeLab, imgTransSizeLab, otherTransSizeLab, num1LoadName, num2LoadName, num3LoadName, num1LoadLab, num2LoadLab, num3LoadLab}
 
 chrome.runtime.sendMessage(counts);
     
