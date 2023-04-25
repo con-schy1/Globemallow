@@ -55,7 +55,6 @@ var netC = [];
 var transferSize1 = 0;
 var largeTrans = 0;
 var largeTransArray = [];
-var largeTransSrc;
 var largeLoadRequest;
 var largeTransSize;
 var largeLoadTime;
@@ -118,6 +117,7 @@ for (var i = 0; i < transferResources.length; i++) {
         //v++;
         cssTransSize += transferResources[i].transferSize;
         cssTotSize += transferResources[i].decodedBodySize;
+        console.log('CSS:'+transferResources[i].name);
     }
     else if (requestMatch.match(apiTransReq)){
         apiTransSize += transferResources[i].transferSize;
@@ -130,6 +130,7 @@ for (var i = 0; i < transferResources.length; i++) {
     else if (requestMatch.match(importedFontTransReq)){
         importedFontTransSize += transferResources[i].transferSize;
         importedFontTotSize += transferResources[i].decodedBodySize;
+        console.log(transferResources[i].name);
     }
     else if (requestMatch.match(imageTransReq)){
         imageTransSize += transferResources[i].transferSize;
@@ -151,7 +152,6 @@ for (var i = 0; i < transferResources.length; i++) {
 
 largeTotalSize = transferResources[maxTotalIndex].decodedBodySize;
 largeTotalSrc = transferResources[maxTotalIndex].name;
-largeTransSrc = transferResources[maxTransIndex].name;
 largeTransSize = transferResources[maxTransIndex].transferSize;
 largeLoadRequest = transferResources[maxIndexDur].name;
 largeLoadTime = transferResources[maxIndexDur].duration;
@@ -2427,19 +2427,19 @@ if(highRec.includes(103)){
 var transFuncVar;   
 //Transfer Function
 function transferFunction(){
-    if (largeTransSrc.match(cssTransReq)){
+    if (num1TransName.match(cssTransReq)){
         transFuncVar = 'Your largest Trans Size is a stylesheet.<br><br>';
     }
-        else if(largeTransSrc.match(apiTransReq)){
+        else if(num1TransName.match(apiTransReq)){
         transFuncVar ='Your largest Trans Size is an api request.<br><br>';
     }
-        else if(largeTransSrc.match(jsTransReq)){
+        else if(num1TransName.match(jsTransReq)){
         transFuncVar ='Your largest Trans Size is a javascript file.<br><br>';
     }
-        else if(largeTransSrc.match(importedFontTransReq)){
+        else if(num1TransName.match(importedFontTransReq)){
         transFuncVar ='Your largest Trans Size is an imported font file. All together, imported fonts required '+imFontLabel+' in transfered data.<br><br>';
     }
-        else if(largeTransSrc.match(imageTransReq)){
+        else if(num1TransName.match(imageTransReq)){
         transFuncVar ='Your largest Transfered Request is an image. Have you considered using an image compression tool? There are a lot found online, and they make a significant difference in image size.<br><br>';
     }
          else{
@@ -2553,13 +2553,17 @@ if (jsTransSize === 0){
 //Placeholders just for testing
 var cssTransLabel = 1;
 var largeLoadLabel = 1;
-var transferSizeLabel = transferLabel;
+    
+    
+console.log(num1LoadName+' '+num1LoadLength+' '+num1LoadLab);
+console.log(num2LoadName+' '+num2LoadLength+' '+num2LoadLab);
+console.log(num3LoadName+' '+num3LoadLength+' '+num3LoadLab);
 
     
 //performance.getEntries(); For Web Vitals 
 // intStyleSheetTags, 
     
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, largeTransSrc, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, largeLoadRequest, transferSizeLabel, largeLoadLabel, highRec1, medRec1, lowRec1, cssTransLabel, num1TransSizeLab, num2TransSizeLab, num3TransSizeLab, num1TransName, num2TransName, num3TransName, CSSSizeLab, jsSizeLab, importedFontSizeLab, imgTransSizeLab, otherTransSizeLab}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, largeLoadRequest, largeLoadLabel, highRec1, medRec1, lowRec1, cssTransLabel, num1TransSizeLab, num2TransSizeLab, num3TransSizeLab, num1TransName, num2TransName, num3TransName, CSSSizeLab, jsSizeLab, importedFontSizeLab, imgTransSizeLab, otherTransSizeLab, num1LoadName, num2LoadName, num3LoadName, num1LoadLab, num2LoadLab, num3LoadLab}
 
 chrome.runtime.sendMessage(counts);
     
