@@ -64,7 +64,7 @@ var arrayLabel = [' bytes','kb','mb','gb'];
 var cssTransReq = /(.css)/;
 var apiTransReq = /(api?s)/;
 var jsTransReq = /(.js)|(.json)/;
-var importedFontTransReq = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)/;
+var importedFontTransReq = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)|(.otf)|(.eot)/;
 var imageTransReq = /(.png)|(.jpeg)|(.gif)|(.jpg)|(.tiff)|(.svg)|(webp)|(avif)|(.ico)/;
 var videoTransReq = /(mp4)|(swf)|(f4v)|(flv)/;
 //Transfer size of External Style Sheets
@@ -872,18 +872,27 @@ duration = parseFloat(duration);
 ////////////////////////////////////////////////////
 
 //Imported Fonts
+    
 var headText = document.head.innerHTML;
-var fontRegex = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)|(otf)|(eot)/;
+//var fontRegex = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)|(otf)|(eot)/;
 var fontBoolean = 0;
+    
 
-if (headText.match(fontRegex)){
-fontBoolean = 1;
-//answerArray.push(fontBoolean);
+    
+if (importedFontTransSize > 0){
+    
+   fontBoolean = 1; 
+    
 }
-else{
-fontBoolean = 0;
-//answerArray.push(fontBoolean);
-}
+    else{
+
+        if (headText.match(importedFontTransReq)){
+        fontBoolean = 1;
+        }
+        else{
+        fontBoolean = 0;
+        }
+    }
 
 
 

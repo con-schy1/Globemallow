@@ -313,13 +313,14 @@ table .row{
   color: #606060;
 }
 
-#pageTable{
+#pageTable, #loadTable{
     
   table-layout: fixed;
   background-color: #f2f2f2;
-  border-radius: 6px;
+  border-radius: 10px;
   margin-top: 15px;
   padding: 5px;
+  border: 1px solid #F77616;
     
 }
 
@@ -333,7 +334,20 @@ table .row{
     
 }
 
-#pageTable tbody{
+#pageLoadHeader{
+    
+  font-size: 15px; 
+  padding-bottom: 10px;
+  font-weight: 550;
+  letter-spacing: .5px;
+  margin-left: 9px;
+  padding-top: 5px;
+
+}
+
+
+
+#pageTable tbody, #loadTable tbody{
     
   text-align: center;  
     
@@ -482,7 +496,7 @@ tbody{
     margin-left: 9px;
     font-weight: 550;
     font-size: 15px;
-    padding-top: 15px;
+    letter-spacing: .5px;
 }
 
 
@@ -491,6 +505,8 @@ tbody{
     padding-bottom: 15px;
     padding-left: 10px;
     border-radius: 10px;
+    border: 1px solid #F77616;
+    margin-top: 15px;
 }
 
 .textAreaClass{
@@ -502,6 +518,7 @@ tbody{
     background-color: #f2f2f2;
     padding: 10px;
     border-radius: 10px;
+    border: 1px solid #F77616;
 }
 
 #reco1, #reco2, #reco3{
@@ -519,7 +536,7 @@ tbody{
   display: flex;
   bottom: 0;
   width: 100%;
-  border-top: 1px solid gray;
+  border-top: 1px solid #F77616;
   background-color: whitesmoke;
   height: 51px;
   border-top-left-radius: 5px;
