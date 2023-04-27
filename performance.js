@@ -1149,8 +1149,6 @@ if (transferTotal === 0){
     cssTransLabel = 'All style sheets cached!';
 }
     
-console.log(cssTransLabel);
-    
 //console.log(styleSheetSources);
 
 //answerArray.push(numStyleSheet); 
