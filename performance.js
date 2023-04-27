@@ -143,8 +143,6 @@ for (var i = 0; i < transferResources.length; i++) {
         otherTransSize += transferResources[i].transferSize;
         otherTotSize += transferResources[i].decodedBodySize;
     }
-    
-    //just do the import fonts script in here if it matches the regex it is true, and then if it's false just run the script to look in the header. Saving time. 
 
    }
 
@@ -219,27 +217,64 @@ for (var i = 0; i < transferResources.length; i++) {
         num3TotName = transferResources[i].name;
     }
 }
+    
+var transArray = [];    
+    
+if (netB[0] == netB[2]){
+            
+    for (var i = 0; i < transferResources.length; i++) {
+                
+         if (transferResources[i].transferSize == netB[0]){
+             
+            transArray.push(transferResources[i].name)
+                
+            }
+        else{
+            //
+        }
+                
+    }
+            
+}
+    
+    console.log("New Array: "+transArray);
+
 
 
 //Find the Transfered Largest Loading Request and match them. If 0, skip because everything is cached.
 
 if (transferTotal > 0){
+    
+    if (netB[0] == netB[2]){
+       num1TransName = transArray[0];
+       num2TransName = transArray[1];
+       num3TransName = transArray[2];
+       num1TransSize = netB[0];
+       num2TransSize = netB[1];
+       num3TransSize = netB[2];
+    }
+    else{
 
-for (var i = 0; i < transferResources.length; i++) {
+    for (var i = 0; i < transferResources.length; i++) {
 
-    if (netB[0] == transferResources[i].transferSize){
-        num1TransSize = transferResources[i].transferSize;
-        num1TransName = transferResources[i].name;
+        if (netB[0] == transferResources[i].transferSize){
+            num1TransSize = transferResources[i].transferSize;
+            num1TransName = transferResources[i].name;
+        }
+        if (netB[1] == transferResources[i].transferSize && netB[1] > 0){
+              num2TransSize = transferResources[i].transferSize;
+              num2TransName = transferResources[i].name;
+        }
+        if (netB[2] == transferResources[i].transferSize && netB[2] > 0){
+             num3TransSize = transferResources[i].transferSize;
+             num3TransName = transferResources[i].name;
+        }
+        else{
+            //
+        }
+        
     }
-    else if (netB[1] == transferResources[i].transferSize){
-        num2TransSize = transferResources[i].transferSize;
-        num2TransName = transferResources[i].name;
-    }
-    else if (netB[2] == transferResources[i].transferSize){
-        num3TransSize = transferResources[i].transferSize;
-        num3TransName = transferResources[i].name;
-    }
-}
+  }
 }
 else{
 
@@ -307,11 +342,11 @@ var transferLabel;
  transferLabel = (((transferTotal/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (transferTotal/1024 > 1){
  transferLabel = (((transferTotal/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (transferTotal > 1){
+ } else if (transferTotal >= 1){
  transferLabel = (((transferTotal).toFixed(2)).toString() + arrayLabel[0]);
  }
    else{
-     transferLabel = (transferTotal).toString() + arrayLabel[0];
+     transferLabel = "0 bytes";
  }
 
 
@@ -326,11 +361,11 @@ var transferLabel;
  sizeLabel = (((fullTotal/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (fullTotal/1024 > 1){
  sizeLabel = (((fullTotal/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (fullTotal > 1){
+ } else if (fullTotal >= 1){
  sizeLabel = (((fullTotal).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     sizeLabel = (fullTotal).toString() + arrayLabel[0];
+     sizeLabel = "0 bytes";
  }
 
 
@@ -348,11 +383,11 @@ var num3TotSizeLab;
  num1TotSizeLab = (((num1TotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (num1TotSize/1024 > 1){
  num1TotSizeLab = (((num1TotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (num1TotSize > 1){
+ } else if (num1TotSize >= 1){
  num1TotSizeLab = (((num1TotSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     num1TotSizeLab = (num1TotSize).toString() + arrayLabel[0];
+     num1TotSizeLab = "0 bytes";
  }
 
 if (num2TotSize/1024/1024/1024 > 1){
@@ -361,12 +396,13 @@ if (num2TotSize/1024/1024/1024 > 1){
  num2TotSizeLab = (((num2TotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (num2TotSize/1024 > 1){
  num2TotSizeLab = (((num2TotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (num2TotSize > 1){
+ } else if (num2TotSize >= 1){
  num2TotSizeLab = (((num2TotSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     num2TotSizeLab = (num2TotSize).toString() + arrayLabel[0];
+     num2TotSizeLab = "0 bytes";
  }
+
 
 if (num3TotSize/1024/1024/1024 > 1){
  num3TotSizeLab = (((num3TotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
@@ -374,11 +410,11 @@ if (num3TotSize/1024/1024/1024 > 1){
  num3TotSizeLab = (((num3TotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (num3TotSize/1024 > 1){
  num3TotSizeLab = (((num3TotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (num3TotSize > 1){
+ } else if (num3TotSize >= 1){
  num3TotSizeLab = (((num3TotSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     num3TotSizeLab = (num3TotSize).toString() + arrayLabel[0];
+     num3TotSizeLab = "0 bytes";
  }
 
 //////////////////////////////////////////////////////////////////////
@@ -396,11 +432,11 @@ if (transferTotal > 0){
  num1TransSizeLab = (((num1TransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (num1TransSize/1024 > 1){
  num1TransSizeLab = (((num1TransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (num1TransSize > 1){
+ } else if (num1TransSize >= 1){
  num1TransSizeLab = (((num1TransSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     num1TransSizeLab = (num1TransSize).toString() + arrayLabel[0];
+     num1TransSizeLab = "0 bytes";
  }
 
 if (num2TransSize/1024/1024/1024 > 1){
@@ -409,11 +445,11 @@ if (num2TransSize/1024/1024/1024 > 1){
  num2TransSizeLab = (((num2TransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (num2TransSize/1024 > 1){
  num2TransSizeLab = (((num2TransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (num2TransSize > 1){
+ } else if (num2TransSize >= 1){
  num2TransSizeLab = (((num2TransSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     num2TransSizeLab = (num2TransSize).toString() + arrayLabel[0];
+     num2TransSizeLab = "0 bytes";
  }
 
 if (num3TransSize/1024/1024/1024 > 1){
@@ -422,11 +458,11 @@ if (num3TransSize/1024/1024/1024 > 1){
  num3TransSizeLab = (((num3TransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (num3TransSize/1024 > 1){
  num3TransSizeLab = (((num3TransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (num3TransSize > 1){
+ } else if (num3TransSize >= 1){
  num3TransSizeLab = (((num3TransSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     num3TransSizeLab = (num3TransSize).toString() + arrayLabel[0];
+     num3TransSizeLab = "0 bytes";
  }
 
 }
@@ -451,11 +487,11 @@ var CSSSizeLab;
  CSSSizeLab = (((cssTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (cssTransSize/1024 > 1){
  CSSSizeLab = (((cssTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (cssTransSize > 1){
+ } else if (cssTransSize >= 1){
  CSSSizeLab = (((cssTransSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     CSSSizeLab = (cssTransSize).toString() + arrayLabel[0];
+     CSSSizeLab = "0 bytes";
  }
 
 //////////////////////////////////////////////////////////////////////
@@ -469,11 +505,11 @@ var APISizeLab;
  APISizeLab = (((apiTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (apiTransSize/1024 > 1){
  APISizeLab = (((apiTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (apiTransSize > 1){
+ } else if (apiTransSize >= 1){
  APISizeLab = (((apiTransSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     APISizeLab = (apiTransSize).toString() + arrayLabel[0];
+     APISizeLab = "0 bytes";
  }
 
 
@@ -488,11 +524,11 @@ var jsSizeLab;
  jsSizeLab = (((jsTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (jsTransSize/1024 > 1){
  jsSizeLab = (((jsTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (jsTransSize > 1){
+ } else if (jsTransSize >= 1){
  jsSizeLab = (((jsTransSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     jsSizeLab = (jsTransSize).toString() + arrayLabel[0];
+     jsSizeLab = "0 bytes";
  }
 
 //////////////////////////////////////////////////////////////////////
@@ -506,11 +542,11 @@ var importedFontSizeLab;
  importedFontSizeLab = (((importedFontTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (importedFontTransSize/1024 > 1){
  importedFontSizeLab = (((importedFontTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (importedFontTransSize > 1){
+ } else if (importedFontTransSize >= 1){
  importedFontSizeLab = (((importedFontTransSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     importedFontSizeLab = (importedFontTransSize).toString() + arrayLabel[0];
+     importedFontSizeLab = "0 bytes";
  }
 
 
@@ -525,11 +561,11 @@ var imgTransSizeLab;
  imgTransSizeLab = (((imageTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (imageTransSize/1024 > 1){
  imgTransSizeLab = (((imageTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (imageTransSize > 1){
+ } else if (imageTransSize >= 1){
  imgTransSizeLab = (((imageTransSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     imgTransSizeLab = (imageTransSize).toString() + arrayLabel[0];
+     imgTransSizeLab = "0 bytes";
  }
 
 
@@ -544,11 +580,11 @@ var videoTransSizeLab;
  videoTransSizeLab = (((videoTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (videoTransSize/1024 > 1){
  videoTransSizeLab = (((videoTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (videoTransSize > 1){
+ } else if (videoTransSize >= 1){
  videoTransSizeLab = (((videoTransSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     videoTransSizeLab = (videoTransSize).toString() + arrayLabel[0];
+     videoTransSizeLab = "0 bytes";
  }
 
 //////////////////////////////////////////////////////////////////////
@@ -562,11 +598,11 @@ var otherTransSizeLab;
  otherTransSizeLab = (((otherTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (otherTransSize/1024 > 1){
  otherTransSizeLab = (((otherTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (otherTransSize > 1){
+ } else if (otherTransSize >= 1){
  otherTransSizeLab = (((otherTransSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     otherTransSizeLab = (otherTransSize).toString() + arrayLabel[0];
+     otherTransSizeLab = "0 bytes";
  }
 
 //////////////////////////////////////////////////////////////////////
@@ -580,11 +616,11 @@ var cssTotLab;
  cssTotLab = (((cssTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (cssTotSize/1024 > 1){
  cssTotLab = (((cssTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (cssTotSize > 1){
+ } else if (cssTotSize >= 1){
  cssTotLab = (((cssTotSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     cssTotLab = (cssTotSize).toString() + arrayLabel[0];
+     cssTotLab = "0 bytes";
  }
 
 //////////////////////////////////////////////////////////////////////
@@ -598,11 +634,11 @@ var apiTotLab;
  apiTotLab = (((apiTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (apiTotSize/1024 > 1){
  apiTotLab = (((apiTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (apiTotSize > 1){
+ } else if (apiTotSize >= 1){
  apiTotLab = (((apiTotSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     apiTotLab = (apiTotSize).toString() + arrayLabel[0];
+     apiTotLab = "0 bytes";
  }
 
 
@@ -617,11 +653,11 @@ var jsTotLab;
  jsTotLab = (((jsTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (jsTotSize/1024 > 1){
  jsTotLab = (((jsTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (jsTotSize > 1){
+ } else if (jsTotSize >= 1){
  jsTotLab = (((jsTotSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     jsTotLab = (jsTotSize).toString() + arrayLabel[0];
+     jsTotLab = "0 bytes";
  }
 
 //////////////////////////////////////////////////////////////////////
@@ -635,11 +671,11 @@ var impFontLab;
  impFontLab = (((importedFontTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (importedFontTotSize/1024 > 1){
  impFontLab = (((importedFontTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (importedFontTotSize > 1){
+ } else if (importedFontTotSize >= 1){
  impFontLab = (((importedFontTotSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     impFontLab = (importedFontTotSize).toString() + arrayLabel[0];
+     impFontLab = "0 bytes";
  }
 
 //////////////////////////////////////////////////////////////////////
@@ -653,11 +689,11 @@ var imageLab;
  imageLab = (((imageTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (imageTotSize/1024 > 1){
  imageLab = (((imageTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (imageTotSize > 1){
+ } else if (imageTotSize >= 1){
  imageLab = (((imageTotSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     imageLab = (imageTotSize).toString() + arrayLabel[0];
+     imageLab = "0 bytes";
  }
 
 //////////////////////////////////////////////////////////////////////
@@ -671,11 +707,11 @@ var videoLab;
  videoLab = (((videoTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (videoTotSize/1024 > 1){
  videoLab = (((videoTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (videoTotSize > 1){
+ } else if (videoTotSize >= 1){
  videoLab = (((videoTotSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     videoLab = (videoTotSize).toString() + arrayLabel[0];
+     videoLab = "0 bytes";
  }
 
 //////////////////////////////////////////////////////////////////////
@@ -689,11 +725,11 @@ var otherLab;
  otherLab = (((otherTotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
  } else if (otherTotSize/1024 > 1){
  otherLab = (((otherTotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (otherTotSize > 1){
+ } else if (otherTotSize >= 1){
  otherLab = (((otherTotSize).toFixed(2)).toString() + arrayLabel[0]);
  }
  else{
-     otherLab = (otherTotSize).toString() + arrayLabel[0];
+     otherLab = "0 bytes";
  }
 
 
