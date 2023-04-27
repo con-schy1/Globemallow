@@ -376,13 +376,14 @@ tbody{
 
 #num1TransSizeLabID, #num2TransSizeLabID, #num3TransSizeLabID{
     
-    padding-left: 475px;
+    padding-left: 467px;
     font-size: 14px;
+    
     
 }
 
 #num1LongLabID, #num2LongLabID, #num3LongLabID{ 
-    padding-left: 475px;
+    padding-left: 470px;
     font-size: 14px;  
 }
 
@@ -527,9 +528,6 @@ tbody{
     border-color: #F77616;
     border-width: 2px;
 }
-
-
-
 
 #footer{
   padding-top: 10px;
