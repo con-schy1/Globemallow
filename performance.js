@@ -236,6 +236,39 @@ if (netB[0] == netB[2]){
     }
             
 }
+    else if (netB[0] == netB[1]){
+            
+        for (var i = 0; i < transferResources.length; i++) {
+
+             if (transferResources[i].transferSize == netB[0]){
+
+                transArray.push(transferResources[i].name)
+
+                }
+            else{
+                //
+            }
+
+        }
+            
+}
+    else if (netB[1] == netB[2]){
+            
+        for (var i = 0; i < transferResources.length; i++) {
+
+             if (transferResources[i].transferSize == netB[1]){
+
+                transArray.push(transferResources[i].name)
+
+                }
+            else{
+                //
+            }
+
+        }
+            
+}
+  
     
     console.log("New Array: "+transArray);
 
@@ -244,7 +277,7 @@ if (netB[0] == netB[2]){
 //Find the Transfered Largest Loading Request and match them. If 0, skip because everything is cached.
 
 if (transferTotal > 0){
-    
+//if all transfer sizes for the 3 largest are the same
     if (netB[0] == netB[2]){
        num1TransName = transArray[0];
        num2TransName = transArray[1];
@@ -269,12 +302,31 @@ if (transferTotal > 0){
              num3TransSize = transferResources[i].transferSize;
              num3TransName = transferResources[i].name;
         }
-        else{
-            //
-        }
-        
     }
   }
+// If the 1st and 2nd largest Transfer sizes match in size
+  if (netB[0] == netB[1]){
+      num1TransName = transArray[0];
+      num2TransName = transArray[1];
+      num1TransSize = netB[0];
+      num2TransSize = netB[1];
+     
+  }
+  else{
+      //
+  }
+// If the 2nd and 3rd largest Transfer sizes match in size
+  if (netB[1] == netB[2]){
+      num1TransName = transArray[0];
+      num2TransName = transArray[1];
+      num1TransSize = netB[1];
+      num2TransSize = netB[2];
+     
+  }
+  else{
+      //
+  }
+  
 }
 else{
 
