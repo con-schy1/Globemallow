@@ -1528,7 +1528,7 @@ switch (numStyleSheet >= 0){
         document.getElementById("numStyleBar").style.border = '1px solid green';
         document.getElementById('extStyleTextA').innerHTML = x.styleSheetSources;
         document.getElementById('extStyleTextA').style.display = "block";
-        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + numStyleSheet;
+        document.getElementById('extStyleHeader').innerHTML = 'External Style Sheet Sources: ' + 'All style sheets cached!';
         document.getElementById("extSSDiv").style.background = 'rgba(142, 202, 46, 0.5)';
         document.getElementById('extStyleTextA').rows = "3";
         break;

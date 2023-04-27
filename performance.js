@@ -64,7 +64,7 @@ var arrayLabel = [' bytes','kb','mb','gb'];
 var cssTransReq = /(.css)/;
 var apiTransReq = /(api?s)/;
 var jsTransReq = /(.js)|(.json)/;
-var importedFontTransReq = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)|(.otf)|(.eot)/;
+var importedFontTransReq = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)|(.otf)|(.eot)|(webfonts)/;
 var imageTransReq = /(.png)|(.jpeg)|(.gif)|(.jpg)|(.tiff)|(.svg)|(webp)|(avif)|(.ico)/;
 var videoTransReq = /(mp4)|(swf)|(f4v)|(flv)/;
 //Transfer size of External Style Sheets
@@ -116,29 +116,27 @@ for (var i = 0; i < transferResources.length; i++) {
         //v++;
         cssTransSize += transferResources[i].transferSize;
         cssTotSize += transferResources[i].decodedBodySize;
-        console.log('CSS:'+transferResources[i].name);
     }
-    else if (requestMatch.match(apiTransReq)){
+    /*else if (requestMatch.match(apiTransReq)){
         apiTransSize += transferResources[i].transferSize;
         apiTotSize += transferResources[i].decodedBodySize;
+    }*/
+    else if (requestMatch.match(importedFontTransReq)){
+        importedFontTransSize += transferResources[i].transferSize;
+        importedFontTotSize += transferResources[i].decodedBodySize;
     }
     else if (requestMatch.match(jsTransReq)){
         jsTransSize += transferResources[i].transferSize;
         jsTotSize += transferResources[i].decodedBodySize;
     }
-    else if (requestMatch.match(importedFontTransReq)){
-        importedFontTransSize += transferResources[i].transferSize;
-        importedFontTotSize += transferResources[i].decodedBodySize;
-        console.log(transferResources[i].name);
-    }
     else if (requestMatch.match(imageTransReq)){
         imageTransSize += transferResources[i].transferSize;
         imageTotSize += transferResources[i].decodedBodySize;
     }
-    else if (requestMatch.match(videoTransReq)){
+    /*else if (requestMatch.match(videoTransReq)){
         videoTransSize += transferResources[i].transferSize;
         videoTotSize += transferResources[i].decodedBodySize;
-    }
+    }*/
     else{
         otherTransSize += transferResources[i].transferSize;
         otherTotSize += transferResources[i].decodedBodySize;
@@ -167,9 +165,9 @@ netA.sort(function(a, b){return b - a});
 netB.sort(function(a, b){return b - a});
 netC.sort(function(a, b){return b - a});
 
-console.log('NetA: '+netA);
+/*console.log('NetA: '+netA);
 console.log('NetB: '+netB);
-console.log('NetC: '+netC);
+console.log('NetC: '+netC);*/
 
 var largeTotalOneThree = [];
 var num1TotSize;
@@ -270,7 +268,7 @@ if (netB[0] == netB[2]){
 }
   
     
-    console.log("New Array: "+transArray);
+    //console.log("New Array: "+transArray);
 
 
 
@@ -785,7 +783,7 @@ var otherLab;
  }
 
 
-console.log(num1TotName+' '+num1TotSize+' '+num1TotSizeLab);
+/*console.log(num1TotName+' '+num1TotSize+' '+num1TotSizeLab);
 console.log(num2TotName+' '+num2TotSize+' '+num2TotSizeLab);
 console.log(num3TotName+' '+num3TotSize+' '+num3TotSizeLab);
 
@@ -816,7 +814,7 @@ console.log('JS Tot: '+jsTotSize+' '+jsTotLab);
 console.log('Imported Font Tot: '+importedFontTotSize+' '+impFontLab);
 console.log('Image Tot: '+imageTotSize+' '+imageLab);
 console.log('Video Tot: '+videoTotSize+' '+videoLab);
-console.log('Other Tot: '+otherTotSize+' '+otherLab);
+console.log('Other Tot: '+otherTotSize+' '+otherLab);*/
     
     
     
@@ -962,7 +960,6 @@ duration = parseFloat(duration);
 //Imported Fonts
     
 var headText = document.head.innerHTML;
-//var fontRegex = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)|(otf)|(eot)/;
 var fontBoolean = 0;
     
 
@@ -1147,6 +1144,12 @@ var styleSheetSrcs;
 }
 
 var styleSheetSources = styleSheetArray.toString();
+    
+if (transferTotal === 0){
+    cssTransLabel = 'All style sheets cached!';
+}
+    
+console.log(cssTransLabel);
     
 //console.log(styleSheetSources);
 
@@ -2635,14 +2638,8 @@ if (jsTransSize === 0){
         
    return jsFuncVar; 
 }
- 
-//Placeholders just for testing
-var cssTransLabel = 1;
     
-    
-console.log(num1LoadName+' '+num1LoadLength+' '+num1LoadLab);
-console.log(num2LoadName+' '+num2LoadLength+' '+num2LoadLab);
-console.log(num3LoadName+' '+num3LoadLength+' '+num3LoadLab);
+
 
     
 //performance.getEntries(); For Web Vitals 
