@@ -428,26 +428,26 @@ var num2TotSizeLab;
 var num3TotSizeLab;
 
  if (num1TotSize/1024/1024/1024 > 1){
- num1TotSizeLab = (((num1TotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ num1TotSizeLab = (((num1TotSize/1024/1024/1024).toFixed(2)).toString() +'<br>'+ arrayLabel[3]);
  } else if (num1TotSize/1024/1024 > 1){
- num1TotSizeLab = (((num1TotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ num1TotSizeLab = (((num1TotSize/1024/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[2]);
  } else if (num1TotSize/1024 > 1){
- num1TotSizeLab = (((num1TotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ num1TotSizeLab = (((num1TotSize/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[1]);
  } else if (num1TotSize >= 1){
- num1TotSizeLab = (((num1TotSize).toFixed(2)).toString() + arrayLabel[0]);
+ num1TotSizeLab = (((num1TotSize).toFixed(2)).toString() +'<br>'+  arrayLabel[0]);
  }
  else{
      num1TotSizeLab = "0 bytes";
  }
 
 if (num2TotSize/1024/1024/1024 > 1){
- num2TotSizeLab = (((num2TotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ num2TotSizeLab = (((num2TotSize/1024/1024/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[3]);
  } else if (num2TotSize/1024/1024 > 1){
- num2TotSizeLab = (((num2TotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ num2TotSizeLab = (((num2TotSize/1024/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[2]);
  } else if (num2TotSize/1024 > 1){
- num2TotSizeLab = (((num2TotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ num2TotSizeLab = (((num2TotSize/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[1]);
  } else if (num2TotSize >= 1){
- num2TotSizeLab = (((num2TotSize).toFixed(2)).toString() + arrayLabel[0]);
+ num2TotSizeLab = (((num2TotSize).toFixed(2)).toString() +'<br>'+  arrayLabel[0]);
  }
  else{
      num2TotSizeLab = "0 bytes";
@@ -455,13 +455,13 @@ if (num2TotSize/1024/1024/1024 > 1){
 
 
 if (num3TotSize/1024/1024/1024 > 1){
- num3TotSizeLab = (((num3TotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ num3TotSizeLab = (((num3TotSize/1024/1024/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[3]);
  } else if (num3TotSize/1024/1024 > 1){
- num3TotSizeLab = (((num3TotSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ num3TotSizeLab = (((num3TotSize/1024/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[2]);
  } else if (num3TotSize/1024 > 1){
- num3TotSizeLab = (((num3TotSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ num3TotSizeLab = (((num3TotSize/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[1]);
  } else if (num3TotSize >= 1){
- num3TotSizeLab = (((num3TotSize).toFixed(2)).toString() + arrayLabel[0]);
+ num3TotSizeLab = (((num3TotSize).toFixed(2)).toString() +'<br>'+  arrayLabel[0]);
  }
  else{
      num3TotSizeLab = "0 bytes";
@@ -477,39 +477,39 @@ var num3TransSizeLab;
 if (transferTotal > 0){
 
  if (num1TransSize/1024/1024/1024 > 1){
- num1TransSizeLab = (((num1TransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ num1TransSizeLab = (((num1TransSize/1024/1024/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[3]);
  } else if (num1TransSize/1024/1024 > 1){
- num1TransSizeLab = (((num1TransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ num1TransSizeLab = (((num1TransSize/1024/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[2]);
  } else if (num1TransSize/1024 > 1){
- num1TransSizeLab = (((num1TransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ num1TransSizeLab = (((num1TransSize/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[1]);
  } else if (num1TransSize >= 1){
- num1TransSizeLab = (((num1TransSize).toFixed(2)).toString() + arrayLabel[0]);
+ num1TransSizeLab = (((num1TransSize).toFixed(2)).toString() +'<br>'+  arrayLabel[0]);
  }
  else{
      num1TransSizeLab = "0 bytes";
  }
 
 if (num2TransSize/1024/1024/1024 > 1){
- num2TransSizeLab = (((num2TransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ num2TransSizeLab = (((num2TransSize/1024/1024/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[3]);
  } else if (num2TransSize/1024/1024 > 1){
- num2TransSizeLab = (((num2TransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ num2TransSizeLab = (((num2TransSize/1024/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[2]);
  } else if (num2TransSize/1024 > 1){
- num2TransSizeLab = (((num2TransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ num2TransSizeLab = (((num2TransSize/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[1]);
  } else if (num2TransSize >= 1){
- num2TransSizeLab = (((num2TransSize).toFixed(2)).toString() + arrayLabel[0]);
+ num2TransSizeLab = (((num2TransSize).toFixed(2)).toString() +'<br>'+  arrayLabel[0]);
  }
  else{
      num2TransSizeLab = "0 bytes";
  }
 
 if (num3TransSize/1024/1024/1024 > 1){
- num3TransSizeLab = (((num3TransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
+ num3TransSizeLab = (((num3TransSize/1024/1024/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[3]);
  } else if (num3TransSize/1024/1024 > 1){
- num3TransSizeLab = (((num3TransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
+ num3TransSizeLab = (((num3TransSize/1024/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[2]);
  } else if (num3TransSize/1024 > 1){
- num3TransSizeLab = (((num3TransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
+ num3TransSizeLab = (((num3TransSize/1024).toFixed(2)).toString() +'<br>'+  arrayLabel[1]);
  } else if (num3TransSize >= 1){
- num3TransSizeLab = (((num3TransSize).toFixed(2)).toString() + arrayLabel[0]);
+ num3TransSizeLab = (((num3TransSize).toFixed(2)).toString() +'<br>'+  arrayLabel[0]);
  }
  else{
      num3TransSizeLab = "0 bytes";
