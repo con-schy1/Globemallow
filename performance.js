@@ -7,42 +7,10 @@ chrome.runtime.onMessage.addListener(msg=> {
         window.addEventListener('load', greenFunction);
     }
 });
-/*window.addEventListener ("load", greenFunction, false);*/
+
+
 
 function greenFunction(){
-    
-    
-//Total Size
-/*var imgA = [];
-var decodedSize = 0;
-var answerArray = [];
-
-const imgTag = performance.getEntriesByType('resource');
-
-for (var i = 0; i < imgTag.length; i++) {
-        imgA.push(imgTag[i].decodedBodySize);
-}
-for (let i in imgA){
-decodedSize += imgA[i];
-}
-
-var arrayLabel = [' bytes','kb','mb','gb'];
-var sizeLabel = '';
-
- if (decodedSize/1024/1024/1024 > 1){
- sizeLabel = (((decodedSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
- } else if (decodedSize/1024/1024 > 1){
- sizeLabel = (((decodedSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
- } else if (decodedSize/1024 > 1){
- sizeLabel = (((decodedSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (decodedSize > 1){
- sizeLabel = (((decodedSize).toFixed(2)).toString() + arrayLabel[0]);
- }
- else{
-     sizeLabel = (decodedSize).toString() + arrayLabel[0];
- }
-
-answerArray.push(parseFloat(decodedSize));*/
     
   //Updated Script for all
 ////This function does the Transfer, Total (Page Size) and matching different requests to what they are. Largest Total, Largest Transfer and longest loading
@@ -52,13 +20,7 @@ answerArray.push(parseFloat(decodedSize));*/
 var netA = [];
 var netB = [];
 var netC = [];
-var transferSize1 = 0;
-var largeTrans = 0;
-var largeTransArray = [];
-var largeTransSize;
-var largeLoadTime;
-var largeTotalSize;
-var largeTotalSrc;
+
 var arrayLabel = [' bytes','kb','mb','gb'];
 
 var cssTransReq = /(.css)/;
@@ -93,13 +55,7 @@ var transferTotal = 0;
 var fullTotal = 0;
 
 const transferResources = performance.getEntriesByType('resource');
-    
-var maxTotal = transferResources[0].decodedBodySize;    
-var maxTrans = transferResources[0].transferSize;
-var maxDur = transferResources[0].duration;
-var maxTotalIndex = 0;
-var maxTransIndex = 0;
-var maxIndexDur = 0;
+      
 
 for (var i = 0; i < transferResources.length; i++) {
    netA.push(transferResources[i].decodedBodySize);
@@ -143,20 +99,6 @@ for (var i = 0; i < transferResources.length; i++) {
     }
 
    }
-
-
-largeTotalSize = transferResources[maxTotalIndex].decodedBodySize;
-largeTotalSrc = transferResources[maxTotalIndex].name;
-largeTransSize = transferResources[maxTransIndex].transferSize;
-largeLoadTime = transferResources[maxIndexDur].duration;
-    
-largeLoadTime = largeLoadTime.toFixed(2);
-    
-//Put this in the above for loop to get the totals.    
-for (let i in netB){
-   transferSize1 += netB[i];
-   }
-transferSize1 = parseFloat(transferSize1);
 
 
 //Ascending Order Arrays of largest to smallest
@@ -547,7 +489,7 @@ var CSSSizeLab;
 //////////////////////////////////////////////////////////////////////
 //API Transfer Labeling
 
-var APISizeLab;
+/*var APISizeLab;
 
  if (apiTransSize/1024/1024/1024 > 1){
  APISizeLab = (((apiTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
@@ -560,7 +502,7 @@ var APISizeLab;
  }
  else{
      APISizeLab = "0 bytes";
- }
+ }*/
 
 
 //////////////////////////////////////////////////////////////////////
@@ -622,7 +564,7 @@ var imgTransSizeLab;
 //////////////////////////////////////////////////////////////////////
 //Video Transfer Labeling
 
-var videoTransSizeLab;
+/*var videoTransSizeLab;
 
  if (videoTransSize/1024/1024/1024 > 1){
  videoTransSizeLab = (((videoTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
@@ -635,7 +577,7 @@ var videoTransSizeLab;
  }
  else{
      videoTransSizeLab = "0 bytes";
- }
+ }*/
 
 //////////////////////////////////////////////////////////////////////
 //Other Transfer Labeling
@@ -676,7 +618,7 @@ var cssTotLab;
 //////////////////////////////////////////////////////////////////////
 //API Total Labeling
 
-var apiTotLab;
+/*var apiTotLab;
 
  if (apiTotSize/1024/1024/1024 > 1){
  apiTotLab = (((apiTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
@@ -689,7 +631,7 @@ var apiTotLab;
  }
  else{
      apiTotLab = "0 bytes";
- }
+ }*/
 
 
 //////////////////////////////////////////////////////////////////////
@@ -749,7 +691,7 @@ var imageLab;
 //////////////////////////////////////////////////////////////////////
 //Video Total Labeling
 
-var videoLab;
+/*var videoLab;
 
  if (videoTotSize/1024/1024/1024 > 1){
  videoLab = (((videoTotSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
@@ -762,7 +704,7 @@ var videoLab;
  }
  else{
      videoLab = "0 bytes";
- }
+ }*/
 
 //////////////////////////////////////////////////////////////////////
 //Other Total Labeling
@@ -979,106 +921,6 @@ if (importedFontTransSize > 0){
         }
     }
 
-
-
-////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////
-    
-//Transfer Size
-/*    
-var imgB = [];
-var imgC = [];
-var transferSize1 = 0;
-var largeTrans = 0;
-var largeTransArray = [];
-var largeTransSrc;
-var largeLoadRequest;
-
-const transferResources = performance.getEntriesByType('resource');
-    
-    
-var max = transferResources[0].transferSize;
-var maxDur = transferResources[0].duration;
-var maxIndex = 0;
-var maxIndexDur = 0;
-
-for (var i = 0; i < transferResources.length; i++) {
-   imgB.push(transferResources[i].transferSize);
-   imgC.push(transferResources[i].duration);
-   
-    if(imgB[i] > max){
-            maxIndex = i;
-            max = imgB[i];
-            
-        }
-    if(imgC[i] > maxDur){
-            maxIndexDur = i;
-            maxDur = imgC[i];
-            
-        }
-
-   }
-    
-largeTransSrc = transferResources[maxIndex].name;
-var largeTransSize = transferResources[maxIndex].transferSize;
-largeLoadRequest = transferResources[maxIndexDur].name;
-var largeLoadTime = transferResources[maxIndexDur].duration;
-    
-largeLoadTime = largeLoadTime.toFixed(2);
-    
-    
-for (let i in imgB){
-   transferSize1 += imgB[i];
-   }
-transferSize1 = parseFloat(transferSize1);
-
-answerArray.push(transferSize1);
- 
-var transferLabel = 0;
-    
- if (transferSize1/1024/1024/1024 > 1){
- transferLabel = (((transferSize1/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
- } else if (transferSize1/1024/1024 > 1){
- transferLabel = (((transferSize1/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
- } else if (transferSize1/1024 > 1){
- transferLabel = (((transferSize1/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (transferSize1 > 1){
- transferLabel = (((transferSize1).toFixed(2)).toString() + arrayLabel[0]);
- }
-   else{
-     transferLabel = (transferSize1).toString() + arrayLabel[0];
- }
-    
- var transferSizeLabel;
-    
- if (largeTransSize/1024/1024/1024 > 1){
- transferSizeLabel = (((largeTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
- } else if (largeTransSize/1024/1024 > 1){
- transferSizeLabel = (((largeTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
- } else if (largeTransSize/1024 > 1){
- transferSizeLabel = (((largeTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (largeTransSize > 1){
- transferSizeLabel = (((largeTransSize).toFixed(2)).toString() + arrayLabel[0]);
- }
-   else{
-     transferSizeLabel = (transferSize1).toString() + arrayLabel[0];
- }
-    
-var largeLoadLabel;
-    
-if (largeLoadTime/1000 >= 1){
-   largeLoadLabel = (largeLoadTime/1000).toFixed(2).toString() + " secs"; 
-}
-    else{
-       largeLoadLabel = largeLoadTime.toString() + " ms"; 
-    }
-
-console.log(transferResources);
-console.log(largeTransSrc);*/
-    
-//if you see that issue 3.34xe1 it's from the toPrecision rounding it off - 10/19/22 changed to toFixed
-
 ////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////
@@ -1151,8 +993,6 @@ if (transferTotal === 0){
     
 //console.log(styleSheetSources);
 
-//answerArray.push(numStyleSheet); 
-
 ////////////////////////////////////////////////////
    
 ////////////////////////////////////////////
@@ -1160,7 +1000,6 @@ if (transferTotal === 0){
     
 var redirects = window.performance.navigation.redirectCount;
 
-//answerArray.push(redirects);
     
 ////////////////////////////////////////////////////
    
@@ -1177,7 +1016,6 @@ var cookieLen = 0;
     }
     
 cookieLen = cookieArray.length;
-//answerArray.push(cookieLen);
     
 var cookiesList = document.cookie;
 
@@ -1397,7 +1235,6 @@ if (parseInt(header) === 0){
 }
 else {
     
-//made a change here in 3.1- it used to just have // in this else statement
 exactCacheArray.push(6);
 
 }
@@ -1555,73 +1392,6 @@ else{
 }
 
 //console.log(backGroundColor);
-    
- //Transfer Size of Stylesheets, but could be more
-    
-//Identify File of Largest Transfer Size
-    
-/*var cssTransReq = /(.css)/;
-var apiTransReq = /(api?s)/;
-var jsTransReq = /(.js)/;
-var importedFontTransReq = /(@font-face)|(woff?2)|(fonts.googleapis)|(.tff)|(fonts.shopifycdn)|(cloud.typography)/;
-var imageTransReq = /(.png)|(.jpeg)|(.gif)|(.jpg)|(.tiff)|(.svg)|(webp)|(avif)|(.ico)/;
-var imgFormatType = 0;
-    
-   */ 
-//Transfer size of External Style Sheets
-/*
-var cssTransSize = 0;
-var apiTransSize = 0;
-var jsTransSize = 0;
-var cssTransLabel;
-var apiTransLabel;
-var jsTransLabel;
-var cssHREF;
-//var v = 0;
-var impFontReq = 0;
-
-for (var i = 0; i < transferResources.length; i++) {
-
-    cssHREF = transferResources[i].name; 
-
-    if (cssHREF.match(cssTransReq)){
-        //v++;
-        cssTransSize += transferResources[i].transferSize;      
-    }
-    else if (cssHREF.match(apiTransReq)){
-        apiTransSize += transferResources[i].transferSize;
-    }
-    else if (cssHREF.match(jsTransSize)){
-        jsTransSize += transferResources[i].transferSize;
-    }
-    else{
-        //
-    }
-}
-
-if (cssTransSize === 0){
-   cssTransLabel = 'All style sheets cached!' 
-}  else if(cssTransSize/1024/1024/1024 > 1){
- cssTransLabel = (((cssTransSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
- } else if (cssTransSize/1024/1024 > 1){
- cssTransLabel = (((cssTransSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
- } else if (cssTransSize/1024 > 1){
- cssTransLabel = (((cssTransSize/1024).toFixed(2)).toString() + arrayLabel[1]);
- } else if (cssTransSize > 1){
- cssTransLabel = (((cssTransSize).toFixed(2)).toString() + arrayLabel[0]);
- }
-   else{
-     cssTransLabel = (cssTransSize).toString() + arrayLabel[0];
- }
-*/
-
-
-//console.log('Css Requests: '+v);
-// v variable is the amount of Css Requests
-    
-    
-    
-    
     
 
 //Recommendation Arrays
@@ -2476,16 +2246,16 @@ if (imFontSize === 0){
         //medRec1.push(imFontLabel);
 }  else if(imFontSize/1024/1024/1024 > 1){
         imFontLabel = (((imFontSize/1024/1024/1024).toFixed(2)).toString() + arrayLabel[3]);
-        medRec1.push("Your imported fonts equate to "+ imFontLabel +', or '+((imFontSize/transferSize1)*100).toFixed(2)+'% of your total transfered size.<br>');
+        medRec1.push("Your imported fonts equate to "+ imFontLabel +', or '+((imFontSize/transferTotal)*100).toFixed(2)+'% of your total transfered size.<br>');
  } else if (imFontSize/1024/1024 > 1){
         imFontLabel = (((imFontSize/1024/1024).toFixed(2)).toString() + arrayLabel[2]);
-        medRec1.push("Your imported fonts equate to "+ imFontLabel +', or '+((imFontSize/transferSize1)*100)+'% of your total transfered size.<br>');
+        medRec1.push("Your imported fonts equate to "+ imFontLabel +', or '+((imFontSize/transferTotal)*100)+'% of your total transfered size.<br>');
  } else if (imFontSize/1024 > 1){
         imFontLabel = (((imFontSize/1024).toFixed(2)).toString() + arrayLabel[1]);
-        medRec1.push("Your imported fonts equate to "+ imFontLabel +', or '+((imFontSize/transferSize1)*100).toFixed(2)+'% of your total transfered size.<br>');
+        medRec1.push("Your imported fonts equate to "+ imFontLabel +', or '+((imFontSize/transferTotal)*100).toFixed(2)+'% of your total transfered size.<br>');
  } else if (imFontSize > 1){
         imFontLabel = (((imFontSize).toFixed(2)).toString() + arrayLabel[0]);
-        medRec1.push("Your imported fonts equate to "+ imFontLabel +', or '+((imFontSize/transferSize1)*100).toFixed(2)+'% of your total transfered size.<br>');
+        medRec1.push("Your imported fonts equate to "+ imFontLabel +', or '+((imFontSize/transferTotal)*100).toFixed(2)+'% of your total transfered size.<br>');
  }
    else{
         imFontLabel = (imFontSize).toString() + arrayLabel[0];
@@ -2637,8 +2407,6 @@ if (jsTransSize === 0){
    return jsFuncVar; 
 }
     
-
-
     
 //performance.getEntries(); For Web Vitals 
     
