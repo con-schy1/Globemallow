@@ -108,6 +108,12 @@ document.getElementById("Lab1ValBytes").innerHTML = x.num1TransSizeLab;
 document.getElementById("Lab2ValBytes").innerHTML = x.num2TransSizeLab;
 document.getElementById("Lab3ValBytes").innerHTML = x.num3TransSizeLab;
             
+document.getElementById("jsValPercent").innerHTML = x.percentJS;
+document.getElementById("imgValPercent").innerHTML = x.percentImg;
+document.getElementById("cssValPercent").innerHTML = x.percentCSS;
+document.getElementById("importValPercent").innerHTML = x.percentImFont;
+document.getElementById("otherValPercent").innerHTML = x.otherImg;
+            
 
             
 //Put this here so the square in background color doesn't display while opening / closing the app. Only pushing the button displays it.           
@@ -2566,23 +2572,23 @@ document.getElementById('byteButton').onclick = function(evt) {
     document.getElementById("byteButton").style.background = '#E25B10';
     document.getElementById("byteButton").style.border = '1px solid #F77616';
     
-    document.getElementById("jsTableVal").innerHTML = '1 bytes';
+    //document.getElementById("jsTableVal").innerHTML = '1 bytes';
     
     //document.getElementById("tableHeaderDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
 
 }
 document.getElementById('percentButton').onclick = function(evt) {
     
-    var jsBytes = document.getElementById("jsValBytes").innerHTML;
-    document.getElementById("jsTableVal").innerHTML= '10%';
-    var imgBytes = document.getElementById("imgValBytes").innerHTML;
-    document.getElementById("imgTableVal").innerHTML= '10%';
-    var cssBytes = document.getElementById("cssValBytes").innerHTML;
-    document.getElementById("cssTableVal").innerHTML= '10%';
-    var importBytes = document.getElementById("importValBytes").innerHTML;
-    document.getElementById("importTableVal").innerHTML= '10%';
-    var otherBytes = document.getElementById("otherValBytes").innerHTML;
-    document.getElementById("otherTableVal").innerHTML= '10%';
+    var js1 = document.getElementById("jsValPercent").innerHTML;
+    document.getElementById("jsTableVal").innerHTML= js1;
+    var img1 = document.getElementById("imgValPercent").innerHTML;
+    document.getElementById("imgTableVal").innerHTML= img1;
+    var css1 = document.getElementById("cssValPercent").innerHTML;
+    document.getElementById("cssTableVal").innerHTML= css1;
+    var import1 = document.getElementById("importValBytes").innerHTML;
+    document.getElementById("importTableVal").innerHTML= import1;
+    var other1 = document.getElementById("otherValPercent").innerHTML;
+    document.getElementById("otherTableVal").innerHTML= other1;
             
     var lab1Bytes = document.getElementById("Lab1ValBytes").innerHTML;
     document.getElementById("num1TransSizeLabID").innerHTML= '10%';
@@ -2599,7 +2605,7 @@ document.getElementById('percentButton').onclick = function(evt) {
     document.getElementById("percentButton").style.background = '#E25B10';
     document.getElementById("percentButton").style.border = '1px solid #F77616';   
     
-    document.getElementById("jsTableVal").innerHTML = '2 %';
+    //document.getElementById("jsTableVal").innerHTML = '2 %';
     
     //document.getElementById("tableHeaderDiv").style.background = 'rgba(241, 137, 49, .5)'; 
 

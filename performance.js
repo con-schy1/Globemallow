@@ -2407,10 +2407,17 @@ if (jsTransSize === 0){
    return jsFuncVar; 
 }
     
+
+var percentCSS = (((CSSSizeLab/transferTotal)*100).toFixed(2)).toString();
+var percentJS = (((jsSizeLab/transferTotal)*100).toFixed(2)).toString();
+var percentImFont = (((importedFontSizeLab/transferTotal)*100).toFixed(2)).toString();
+var percentImg = (((imgTransSizeLab/transferTotal)*100).toFixed(2)).toString();
+var otherImg = (((otherTransSizeLab/transferTotal)*100).toFixed(2)).toString();
+    
     
 //performance.getEntries(); For Web Vitals 
     
-var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, highRec1, medRec1, lowRec1, cssTransLabel, num1TransSizeLab, num2TransSizeLab, num3TransSizeLab, num1TransName, num2TransName, num3TransName, CSSSizeLab, jsSizeLab, importedFontSizeLab, imgTransSizeLab, otherTransSizeLab, num1LoadName, num2LoadName, num3LoadName, num1LoadLab, num2LoadLab, num3LoadLab}
+var counts = {finalGrade, sizeLabel, lazyLoadChart, svgChart, jsChart, htmlChart, loadTimeChart, importChart, decodedBodySizeChart, jssSizeLabel, duration, finalScore, transferSizeChart, lengthK, resImgChart, transferLabel, intStyleSheet, numStyleSheet, cookieLen, emptyURL, cookiesList, styleSheetSources, emptySRCVal, LazyLoadMax, emptySrcMax, cookieMax, redirectMax, ssFileMax, intSSMax, resMax, transMax, fontMax, timeMax, lengthMax, imgTypeMax, jsMax, sizeMax, cacheMax, cacheChart, cacheSeconds, cacheMinutes, cacheHours, cacheDays, colorScore, backGroundColor, colorMax, storedAt, hostURL, Sustainability, Score, imgNotLLArray, emptySRCArray, imgNotGoodFormat, imgNotRes, highRec1, medRec1, lowRec1, cssTransLabel, num1TransSizeLab, num2TransSizeLab, num3TransSizeLab, num1TransName, num2TransName, num3TransName, CSSSizeLab, jsSizeLab, importedFontSizeLab, imgTransSizeLab, otherTransSizeLab, num1LoadName, num2LoadName, num3LoadName, num1LoadLab, num2LoadLab, num3LoadLab, percentCSS, percentJS, percentImFont, percentImg, otherImg}
 
 chrome.runtime.sendMessage(counts);
     
