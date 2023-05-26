@@ -725,17 +725,35 @@ var otherLab;
  }
      
     
-//This is for the percentages in the Transfer Table - had to move them up here because I was reusing variables below that were messing with it.  
+//This is for the percentages in the Transfer Table - had to move them up here because I was reusing variables below that were messing with it.
     
-var percentCSS = (((cssTransSize/transferTotal)*100).toFixed(2)).toString() + '%';
-var percentJS = (((jsTransSize/transferTotal)*100).toFixed(2)).toString() + '%';
-var percentImFont = (((importedFontTransSize/transferTotal)*100).toFixed(2)).toString() + '%';
-var percentImg = (((imageTransSize/transferTotal)*100).toFixed(2)).toString() + '%';
-var otherImg = (((otherTransSize/transferTotal)*100).toFixed(2)).toString() + '%';
+
+if (transferTotal > 0){
+    var percentCSS = (((cssTransSize/transferTotal)*100).toFixed(2)).toString() + '%';
+    var percentJS = (((jsTransSize/transferTotal)*100).toFixed(2)).toString() + '%';
+    var percentImFont = (((importedFontTransSize/transferTotal)*100).toFixed(2)).toString() + '%';
+    var percentImg = (((imageTransSize/transferTotal)*100).toFixed(2)).toString() + '%';
+    var otherImg = (((otherTransSize/transferTotal)*100).toFixed(2)).toString() + '%';
+
+    var num1TransSizePercent = (((num1TransSize/transferTotal)*100).toFixed(2)).toString() + '%';
+    var num2TransSizePercent = (((num2TransSize/transferTotal)*100).toFixed(2)).toString() + '%';
+    var num3TransSizePercent = (((num3TransSize/transferTotal)*100).toFixed(2)).toString() + '%';
+}
+
+else{
     
-var num1TransSizePercent = (((num1TransSize/transferTotal)*100).toFixed(2)).toString() + '%';
-var num2TransSizePercent = (((num2TransSize/transferTotal)*100).toFixed(2)).toString() + '%';
-var num3TransSizePercent = (((num3TransSize/transferTotal)*100).toFixed(2)).toString() + '%';
+    var percentCSS = '0 %';
+    var percentJS = '0 %';
+    var percentImFont = '0 %';
+    var percentImg = '0 %';
+    var otherImg = '0 %';
+
+    num1TransSizeLab = 'Cached';
+    num2TransSizeLab = 'Cached';
+    num3TransSizeLab = 'Cached';
+
+}   
+
 
 
 /*console.log(num1TotName+' '+num1TotSize+' '+num1TotSizeLab);

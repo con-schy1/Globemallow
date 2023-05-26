@@ -2549,6 +2549,8 @@ document.getElementById('colorButton').onclick = function(evt) {
 
 document.getElementById('byteButton').onclick = function(evt) {
     
+    localStorage.setItem('selectedToggle', 'byteButton');
+    
     var jsBytes = document.getElementById("jsValBytes").innerHTML;
     document.getElementById("jsTableVal").innerHTML= jsBytes;
     var imgBytes = document.getElementById("imgValBytes").innerHTML;
@@ -2583,6 +2585,8 @@ document.getElementById('byteButton').onclick = function(evt) {
 }
 document.getElementById('percentButton').onclick = function(evt) {
     
+    localStorage.setItem('selectedToggle', 'percentButton');
+    
     var js1 = document.getElementById("jsValPercent").innerHTML;
     document.getElementById("jsTableVal").innerHTML= js1;
     var img1 = document.getElementById("imgValPercent").innerHTML;
@@ -2616,7 +2620,7 @@ document.getElementById('percentButton').onclick = function(evt) {
 
 }
 
-//Sets a default
+//Sets a default for Metric Info
 var selectedTab1 = localStorage.getItem('selectedButtonId1');  
 if(selectedTab1){
 	document.getElementById(selectedTab1).click();
@@ -2625,6 +2629,15 @@ if(selectedTab1){
 else{
 	document.getElementById('htmlButton').click();
     document.getElementById('htmlButton').focus();
+}
+
+//Sets a default for Byte / Percent Info
+var selectedTab1 = localStorage.getItem('selectedToggle');  
+if(selectedTab1){
+	document.getElementById(selectedTab1).click();
+}
+else{
+	document.getElementById('byteButton').click();
 }
 
 document.querySelector('#go-to-options').addEventListener('click', function() {
