@@ -114,6 +114,10 @@ document.getElementById("cssValPercent").innerHTML = x.percentCSS;
 document.getElementById("importValPercent").innerHTML = x.percentImFont;
 document.getElementById("otherValPercent").innerHTML = x.otherImg;
             
+document.getElementById("Lab1ValPercent").innerHTML = x.num1TransSizePercent;
+document.getElementById("Lab2ValPercent").innerHTML = x.num2TransSizePercent;
+document.getElementById("Lab3ValPercent").innerHTML = x.num3TransSizePercent;
+            
 
             
 //Put this here so the square in background color doesn't display while opening / closing the app. Only pushing the button displays it.           
@@ -2585,17 +2589,18 @@ document.getElementById('percentButton').onclick = function(evt) {
     document.getElementById("imgTableVal").innerHTML= img1;
     var css1 = document.getElementById("cssValPercent").innerHTML;
     document.getElementById("cssTableVal").innerHTML= css1;
-    var import1 = document.getElementById("importValBytes").innerHTML;
+    var import1 = document.getElementById("importValPercent").innerHTML;
     document.getElementById("importTableVal").innerHTML= import1;
     var other1 = document.getElementById("otherValPercent").innerHTML;
     document.getElementById("otherTableVal").innerHTML= other1;
             
-    var lab1Bytes = document.getElementById("Lab1ValBytes").innerHTML;
-    document.getElementById("num1TransSizeLabID").innerHTML= '10%';
-    var lab2Bytes = document.getElementById("Lab2ValBytes").innerHTML;
-    document.getElementById("num2TransSizeLabID").innerHTML= '10%';
-    var lab3Bytes = document.getElementById("Lab3ValBytes").innerHTML;
-    document.getElementById("num3TransSizeLabID").innerHTML= '10%';
+    var lab1Per = document.getElementById("Lab1ValPercent").innerHTML;
+    document.getElementById("num1TransSizeLabID").innerHTML= lab1Per;
+    var lab2Per = document.getElementById("Lab2ValPercent").innerHTML;
+    document.getElementById("num2TransSizeLabID").innerHTML= lab2Per;
+    var lab3Per = document.getElementById("Lab3ValPercent").innerHTML;
+    document.getElementById("num3TransSizeLabID").innerHTML= lab3Per;
+
     
     document.getElementById("byteButton").style.color = 'black';
     document.getElementById("byteButton").style.background = '#EAEAEA';
