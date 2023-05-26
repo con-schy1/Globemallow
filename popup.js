@@ -96,6 +96,18 @@ document.getElementById('cacheVal').innerHTML = x.cacheMax;
 document.getElementById('colorVal').innerHTML = x.colorMax;
 document.getElementById('backGrndVal').innerHTML = x.backGroundColor;
             
+//This is for the Transfer Table Breakdown Toggle
+            
+document.getElementById("jsValBytes").innerHTML = x.jsSizeLab;
+document.getElementById("imgValBytes").innerHTML = x.imgTransSizeLab;
+document.getElementById("cssValBytes").innerHTML = x.CSSSizeLab;
+document.getElementById("importValBytes").innerHTML = x.importedFontSizeLab;
+document.getElementById("otherValBytes").innerHTML = x.otherTransSizeLab;
+            
+document.getElementById("Lab1ValBytes").innerHTML = x.num1TransSizeLab;
+document.getElementById("Lab2ValBytes").innerHTML = x.num2TransSizeLab;
+document.getElementById("Lab3ValBytes").innerHTML = x.num3TransSizeLab;
+            
 
             
 //Put this here so the square in background color doesn't display while opening / closing the app. Only pushing the button displays it.           
@@ -2523,6 +2535,74 @@ document.getElementById('colorButton').onclick = function(evt) {
     else{
         document.getElementById("mLL").style.display = 'none';
     }
+}
+
+document.getElementById('byteButton').onclick = function(evt) {
+    
+    var jsBytes = document.getElementById("jsValBytes").innerHTML;
+    document.getElementById("jsTableVal").innerHTML= jsBytes;
+    var imgBytes = document.getElementById("imgValBytes").innerHTML;
+    document.getElementById("imgTableVal").innerHTML= imgBytes;
+    var cssBytes = document.getElementById("cssValBytes").innerHTML;
+    document.getElementById("cssTableVal").innerHTML= cssBytes;
+    var importBytes = document.getElementById("importValBytes").innerHTML;
+    document.getElementById("importTableVal").innerHTML= importBytes;
+    var otherBytes = document.getElementById("otherValBytes").innerHTML;
+    document.getElementById("otherTableVal").innerHTML= otherBytes;
+            
+    var lab1Bytes = document.getElementById("Lab1ValBytes").innerHTML;
+    document.getElementById("num1TransSizeLabID").innerHTML= lab1Bytes;
+    var lab2Bytes = document.getElementById("Lab2ValBytes").innerHTML;
+    document.getElementById("num2TransSizeLabID").innerHTML= lab2Bytes;
+    var lab3Bytes = document.getElementById("Lab3ValBytes").innerHTML;
+    document.getElementById("num3TransSizeLabID").innerHTML= lab3Bytes;
+    
+    
+    document.getElementById("percentButton").style.color = 'black';
+    document.getElementById("percentButton").style.background = '#EAEAEA';
+    document.getElementById("percentButton").style.border = '1px solid #F77616';
+    
+    document.getElementById("byteButton").style.color = 'white';
+    document.getElementById("byteButton").style.background = '#E25B10';
+    document.getElementById("byteButton").style.border = '1px solid #F77616';
+    
+    document.getElementById("jsTableVal").innerHTML = '1 bytes';
+    
+    //document.getElementById("tableHeaderDiv").style.background = 'rgba(142, 202, 46, 0.5)'; 
+
+}
+document.getElementById('percentButton').onclick = function(evt) {
+    
+    var jsBytes = document.getElementById("jsValBytes").innerHTML;
+    document.getElementById("jsTableVal").innerHTML= '10%';
+    var imgBytes = document.getElementById("imgValBytes").innerHTML;
+    document.getElementById("imgTableVal").innerHTML= '10%';
+    var cssBytes = document.getElementById("cssValBytes").innerHTML;
+    document.getElementById("cssTableVal").innerHTML= '10%';
+    var importBytes = document.getElementById("importValBytes").innerHTML;
+    document.getElementById("importTableVal").innerHTML= '10%';
+    var otherBytes = document.getElementById("otherValBytes").innerHTML;
+    document.getElementById("otherTableVal").innerHTML= '10%';
+            
+    var lab1Bytes = document.getElementById("Lab1ValBytes").innerHTML;
+    document.getElementById("num1TransSizeLabID").innerHTML= '10%';
+    var lab2Bytes = document.getElementById("Lab2ValBytes").innerHTML;
+    document.getElementById("num2TransSizeLabID").innerHTML= '10%';
+    var lab3Bytes = document.getElementById("Lab3ValBytes").innerHTML;
+    document.getElementById("num3TransSizeLabID").innerHTML= '10%';
+    
+    document.getElementById("byteButton").style.color = 'black';
+    document.getElementById("byteButton").style.background = '#EAEAEA';
+    document.getElementById("byteButton").style.border = '1px solid #F77616';
+    
+    document.getElementById("percentButton").style.color = 'white';
+    document.getElementById("percentButton").style.background = '#E25B10';
+    document.getElementById("percentButton").style.border = '1px solid #F77616';   
+    
+    document.getElementById("jsTableVal").innerHTML = '2 %';
+    
+    //document.getElementById("tableHeaderDiv").style.background = 'rgba(241, 137, 49, .5)'; 
+
 }
 
 //Sets a default

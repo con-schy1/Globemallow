@@ -74,6 +74,24 @@ Report View </button>
     
     
     
+<p id='jsValBytes' style="display:none"></p>
+<p id='imgValBytes' style="display:none"></p>
+<p id='cssValBytes' style="display:none"></p>
+<p id='importValBytes' style="display:none"></p>
+<p id='otherValBytes' style="display:none"></p>
+    
+<p id='Lab1ValBytes' style="display:none"></p>
+<p id='Lab2ValBytes' style="display:none"></p>
+<p id='Lab3ValBytes' style="display:none"></p>
+    
+<p id='jsValPercent' style="display:none"></p>
+<p id='imgValPercent' style="display:none"></p>
+<p id='cssValPercent' style="display:none"></p>
+<p id='importValPercent' style="display:none"></p>
+<p id='otherValPercent' style="display:none"></p>
+    
+    
+    
   <div1 class="ScoreGraph">
 <div class="item">
 <h2 id = "scoreHTML">Reload Page</h2>
@@ -285,12 +303,72 @@ Report View </button>
   </div>      
     
    
-<!--    /////////////// Page Reports --> 
+<!--    /////////////// Transfer Report -->
+    
+    
+<div id='tableHeaderDiv'>
+  
+  <p id='transferedHeader'>Transfered Request Breakdown (returning users)</p>
  
-      <table id='pageTable' border = "0" width = "676px">
+  <button id="byteButton" class="transferToggle">bytes</button>
+
+  <button id="percentButton" class="transferToggle">%</button>
+ 
+</div>
+
+<table id='pageTable' border = "0" width = "676px">   
+     <tfoot>
+       <tr>
+           <td colspan = "5">&nbsp;</td>
+        </tr>
+        <tr id='largeRequestTable'>
+           <td colspan = "5">Largest Transfered Requests:</td>
+        </tr>
+        <tr>
+           <td><textarea class='loadRequests' id="num1TransNameID"  rows="2" cols="74">https://</textarea></td>
+           <td class='loadRequests' id="num1TransSizeLabID">0 ms</td>
+        </tr>
+        <tr>
+           <td><textarea class='loadRequests' id="num2TransNameID"  rows="2" cols="74">https://</textarea></td>
+           <td class='loadRequests' id="num2TransSizeLabID">0 ms</td>
+        </tr>
+        <tr>
+           <td><textarea class='loadRequests' id="num3TransNameID" rows="2" cols="74">https://</textarea></td>
+           <td class='loadRequests' id="num3TransSizeLabID">0 ms</td>
+        </tr>
+     </tfoot>
+     <tbody>
+        <tr>
+           <td class="pageTableVal" id="jsTableVal">0</td>
+           <td class="pageTableVal" id="imgTableVal">0</td>
+           <td class="pageTableVal" id="cssTableVal">0</td>
+           <td class="pageTableVal" id="importTableVal">0</td>
+           <td class="pageTableVal" id="otherTableVal">0</td>
+        </tr>
+        <tr>
+           <td class="pageTabelLabels">JS</td>
+           <td class="pageTabelLabels">Images</td>
+           <td class="pageTabelLabels">CSS</td>
+           <td class="pageTabelLabels">Imported Font</td>
+           <td class="pageTabelLabels">Other</td>
+        </tr>
+     </tbody>
+         
+</table>
+ 
+ <!--     <table id='pageTable' border = "0" width = "676px">
          <thead>
             <tr>
                <td id='transferedHeader' colspan = "5">Transfered Request Breakdown (returning users)</td>
+                
+                <td>
+                <p id='numberSwitch'>bytes</p>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                <p id='percentSwitch'>%</p>
+                </td>
             </tr>
          </thead>
          
@@ -302,25 +380,25 @@ Report View </button>
                <td colspan = "5">Largest Transfered Requests:</td>
             </tr>
             <tr>
-               <td><textarea class='loadRequests' id="num1TransNameID"  rows="2" cols="74">https://codepen.io/pen/123</textarea></td>
-               <td class='loadRequests' id="num1TransSizeLabID">10%</td>
+               <td><textarea class='loadRequests' id="num1TransNameID"  rows="2" cols="74">https://</textarea></td>
+               <td class='loadRequests' id="num1TransSizeLabID">0 bytes</td>
             </tr>
             <tr>
-               <td><textarea class='loadRequests' id="num2TransNameID"  rows="2" cols="74">https://codepen.io/pen/456</textarea></td>
-               <td class='loadRequests' id="num2TransSizeLabID">10%</td>
+               <td><textarea class='loadRequests' id="num2TransNameID"  rows="2" cols="74">https://</textarea></td>
+               <td class='loadRequests' id="num2TransSizeLabID">0 bytes</td>
             </tr>
             <tr>
-               <td><textarea class='loadRequests' id="num3TransNameID" rows="2" cols="74">https://codepen.io/pen/789</textarea></td>
-               <td class='loadRequests' id="num3TransSizeLabID">10%</td>
+               <td><textarea class='loadRequests' id="num3TransNameID" rows="2" cols="74">https://</textarea></td>
+               <td class='loadRequests' id="num3TransSizeLabID">0 bytes</td>
             </tr>
          </tfoot>
          <tbody>
             <tr>
-               <td class="pageTableVal" id="jsTableVal">10%</td>
-               <td class="pageTableVal" id="imgTableVal">12%</td>
-               <td class="pageTableVal" id="cssTableVal">30%</td>
-               <td class="pageTableVal" id="importTableVal">40%</td>
-               <td class="pageTableVal" id="otherTableVal">8%</td>
+               <td class="pageTableVal" id="jsTableVal">0</td>
+               <td class="pageTableVal" id="imgTableVal">0</td>
+               <td class="pageTableVal" id="cssTableVal">0</td>
+               <td class="pageTableVal" id="importTableVal">0</td>
+               <td class="pageTableVal" id="otherTableVal">0</td>
             </tr>
             <tr>
                <td class="pageTabelLabels">JS</td>
@@ -331,7 +409,7 @@ Report View </button>
             </tr>
          </tbody>
          
-      </table>
+      </table>-->
     
     
     <!--    /////////////// Page Reports --> 
@@ -345,16 +423,16 @@ Report View </button>
          
          <tfoot>
             <tr>
-               <td><textarea class='loadRequests' id="num1LongNameID"  rows="2" cols="74">https://codepen.io/pen/123</textarea></td>
-               <td class='loadRequests' id="num1LongLabID">10%</td>
+               <td><textarea class='loadRequests' id="num1LongNameID"  rows="2" cols="74">https://</textarea></td>
+               <td class='loadRequests' id="num1LongLabID">0 bytes</td>
             </tr>
             <tr>
-               <td><textarea class='loadRequests' id="num2LongNameID"  rows="2" cols="74">https://codepen.io/pen/456</textarea></td>
-               <td class='loadRequests' id="num2LongLabID">10%</td>
+               <td><textarea class='loadRequests' id="num2LongNameID"  rows="2" cols="74">https://</textarea></td>
+               <td class='loadRequests' id="num2LongLabID">0 bytes</td>
             </tr>
             <tr>
-               <td><textarea class='loadRequests' id="num3LongNameID" rows="2" cols="74">https://codepen.io/pen/789</textarea></td>
-               <td class='loadRequests' id="num3LongLabID">10%</td>
+               <td><textarea class='loadRequests' id="num3LongNameID" rows="2" cols="74">https://</textarea></td>
+               <td class='loadRequests' id="num3LongLabID">0 bytes</td>
             </tr>
          </tfoot>         
       </table>
@@ -394,8 +472,7 @@ Report View </button>
   <div id= "footer">    
 
 <a title="Donate" href='https://ko-fi.com/U6U46R9FA' target='_blank'><img id="donate" height='30' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-      
-   <p id="testIDPage">12</p>   
+        
    
   </div>
     </div>   

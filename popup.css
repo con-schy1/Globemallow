@@ -313,44 +313,96 @@ table .row{
   color: #606060;
 }
 
-#pageTable, #loadTable{
-    
+/*////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////*/
+
+
+#tableHeaderDiv{
+  display: flex;
+  table-layout: fixed;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 5px;
+  border-top: 1px solid #F77616;
+  border-left: 1px solid #F77616;
+  border-right: 1px solid #F77616;
+  width: 664.5px;
+  margin-bottom: 0px;
+  line-height: 0;
+  padding-bottom: 30px;
+}
+
+#pageTable{
+  table-layout: fixed;
+  background-color: #f2f2f2;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 5px;
+  border-left: 1px solid #F77616;
+  border-bottom: 1px solid #F77616;
+  border-right: 1px solid #F77616;
+  margin-top: -10px;
+}
+
+.transferToggle{
+  margin-top: 5px;
+}
+
+#percentButton:hover, #byteButton:hover{
+  cursor: pointer;
+  background-color: #E25B10;
+  color: white;
+}
+
+#byteButton{
+  margin-left: 185px;
+  border: none;
+  background-color: #E25B10;
+  color: white;
+  height: 25px;
+  width: 42px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+#percentButton{ 
+  color: black;
+  background-color: #EAEAEA;
+  border: 1px solid #F77616;
+  height: 25px;
+  width: 40px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#loadTable{ 
   table-layout: fixed;
   background-color: #f2f2f2;
   border-radius: 10px;
   margin-top: 15px;
   padding: 5px;
   border: 1px solid #F77616;
-    
 }
 
 #transferedHeader{
-    
   font-size: 17px; 
-  padding-bottom: 15px;
-  font-weight: 550;
-  letter-spacing: .5px;
-  
-    
+  font-weight: 550; 
 }
 
 #pageLoadHeader{
-    
   font-size: 15px; 
   padding-bottom: 10px;
   font-weight: 550;
   letter-spacing: .5px;
   margin-left: 9px;
   padding-top: 5px;
-
 }
 
 
 
 #pageTable tbody, #loadTable tbody{
-    
   text-align: center;  
-    
 }
 
 tbody{
@@ -358,7 +410,6 @@ tbody{
 }
 
 #largeRequestTable{
-    
     font-weight: 550;
     letter-spacing: .4px;
     font-size: 15px;
@@ -374,12 +425,9 @@ tbody{
     font-size: 13px;
 }
 
-#num1TransSizeLabID, #num2TransSizeLabID, #num3TransSizeLabID{
-    
+#num1TransSizeLabID, #num2TransSizeLabID, #num3TransSizeLabID{  
     padding-left: 482px;
     font-size: 14px;
-    
-    
 }
 
 #num1LongLabID, #num2LongLabID, #num3LongLabID{ 
@@ -396,6 +444,70 @@ tbody{
     border-right: .5px solid #F77616;
     font-size: 16px;
 }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-top: 5px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////*/
 
 #donate{
   padding-left: 12px;
