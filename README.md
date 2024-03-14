@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://www.globemallow.io"><img src="https://user-images.githubusercontent.com/25206214/232239552-1e012a0f-5a70-4498-be91-5cfbf739659b.jpg" alt="Analytics and Ad Blocker" width="200"></a>
+  <a href="https://www.globemallow.io"><img src="https://avatars.githubusercontent.com/u/25206214?v=4" alt="Analytics and Ad Blocker" width="200"></a>
   <br>
   Globemallow
   <br>
