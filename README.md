@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://www.globemallow.io"><img src="https://user-images.githubusercontent.com/25206214/232239552-1e012a0f-5a70-4498-be91-5cfbf739659b.jpg" alt="Analytics and Ad Blocker" width="200"></a>)
+  <a href="https://www.globemallow.io"><img src="https://user-images.githubusercontent.com/25206214/232239552-1e012a0f-5a70-4498-be91-5cfbf739659b.jpg" alt="Analytics and Ad Blocker" width="200"></a>
   <br>
   Globemallow
   <br>
@@ -31,8 +31,6 @@
     <a href="#credits">Credits</a> •
   <a href="#license">License</a>
 </p>
-
-[comment]: <> (![veed](https://user-images.githubusercontent.com/25206214/232251234-c60f33ae-774d-4d92-a257-5d07be8d2b75.gif))
 
 ## Key Features
 
@@ -77,12 +75,6 @@
 * https://www.websitecarbon.com/
 
 * https://www.thegreenwebfoundation.org/
-
-## Rules
-<h4>There's a couple project rules:</h4>
-1) No Blocking Cookie Consent Banners and their technologies  <br>
-2) No Blocking Chat Bots  <br>
-3) Don't use *main_frame* as a Resource Type in your rules
 
 ## Download
 
