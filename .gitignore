@@ -255,3 +255,4 @@ marimo/_lsp/
 __marimo__/
 server/assets/fkey.json
 dist.zip
+/src/popup - Copy
