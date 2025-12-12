@@ -16,6 +16,6 @@
   "background": {
     "service_worker": "background.bundle.js"
   },
-  "permissions": ["storage", "activeTab"],
-  "host_permissions": ["https://admin.thegreenwebfoundation.org/*"]
+  "devtools_page": "devtools.html",
+  "permissions": ["storage", "activeTab"]
 }

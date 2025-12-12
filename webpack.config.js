@@ -14,6 +14,8 @@ module.exports = {
     },
   },
   entry: {
+    devtools: "./src/devtools/script.js", // Entry point for script.js
+    panel: "./src/devtools/panel.js", // Entry point for script.js
     popup: "./src/popup/popup.js", // Entry point for script.js
     options: "./src/options/myscripts.js", // Entry point for script.js
     content: "./src/content.js", // Entry point for script.js
@@ -55,6 +57,10 @@ module.exports = {
       patterns: [
         { from: "src/popup/popup.html", to: "popup.html" },
         { from: "src/popup/popup.css", to: "popup.css" },
+
+        { from: "src/devtools/index.html", to: "devtools.html" },
+        { from: "src/devtools/panel.html", to: "panel.html" },
+        { from: "src/devtools/panel.css", to: "panel.css" },
 
         { from: "src/options/options.html", to: "options.html" },
         { from: "src/options/options.css", to: "options.css" },

@@ -1,9 +1,18 @@
 // changes made(global variable for sites)
 const MAXSITES = 12;
 
-chrome.runtime.onInstalled.addListener((details) => {
+chrome.runtime.onInstalled.addListener(function (object) {
   chrome.storage.session.clear();
+  chrome.storage.local.clear();
+  let externalUrl = "https://ko-fi.com/globemallow#paypalModal";
+
+  if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+    chrome.tabs.create({ url: externalUrl }, function (tab) {
+      //console.log("New tab launched with http://yoursite.com/");
+    });
+  }
 });
+
 chrome.tabs.onUpdated.addListener((tabId, tab) => {
   if (tab.status == "complete") {
     chrome.tabs.sendMessage(tabId, { start: true });
@@ -36,60 +45,40 @@ async function postData(url = "", data, contentType) {
 }
 ////////////////////////
 
-chrome.runtime.onMessage.addListener(async (request, sender) => {
-  // changes made(only store 10 sites data) -harshit
-  let data = await chrome.storage.session.get(null),
-    storedAt = 99999999999999999999999,
-    toRemove = null;
-  if (Object.keys(data).length >= MAXSITES) {
-    for (z in data) {
-      if (data[z].storedAt < storedAt) {
-        storedAt = data[z].storedAt;
-        toRemove = z;
-      }
-    }
+// background.js - Service Worker for badge updates
 
-    chrome.storage.session.remove(toRemove);
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.type === "ANALYSIS_COMPLETE") {
+    const data = message.data;
+    const score = data.auditData.finalScore;
+    const grade = data.auditData.finalGrade;
+
+    // Set badge color based on score
+    let color = "#ff0d21"; // Red (F)
+    if (score >= 92)
+      color = "#32a852"; // Green (A)
+    else if (score >= 78)
+      color = "#8ECA2E"; // Light green (B)
+    else if (score >= 67)
+      color = "#f4e03a"; // Yellow (C)
+    else if (score >= 55) color = "#F77616"; // Orange (D)
+
+    // Update badge
+    if (sender.tab) {
+      chrome.action.setBadgeBackgroundColor({
+        color: color,
+        tabId: sender.tab.id,
+      });
+
+      chrome.action.setBadgeText({
+        text: grade,
+        tabId: sender.tab.id,
+      });
+    }
   }
-
-  chrome.storage.session.set({ ["tab" + sender.tab.id]: request });
-  chrome.storage.session.get("tab" + sender.tab.id).then((dat) => {
-    if (request.finalScore >= 92) {
-      var colorString = "#32a852";
-    } else if (request.finalScore >= 78) {
-      var colorString = "#8ECA2E";
-    } else if (request.finalScore >= 67) {
-      var colorString = "#f4e03a";
-    } else if (request.finalScore >= 55) {
-      var colorString = "#F77616";
-    } else {
-      var colorString = "#ff0d21";
-    }
-
-    chrome.action.setBadgeBackgroundColor({
-      color: colorString,
-      tabId: sender.tab.id,
-    });
-    chrome.action.setBadgeText({
-      text: request.finalGrade,
-      tabId: sender.tab.id,
-    });
-  });
 });
 
-// Clear Cache
+// Clear badge when tab is closed
 chrome.tabs.onRemoved.addListener((tabId) => {
-  chrome.storage.session.get("tab" + tabId).then((data) => {
-    delete data["tab" + tabId];
-  });
-});
-
-chrome.runtime.onInstalled.addListener(function (object) {
-  let externalUrl = "https://ko-fi.com/globemallow#paypalModal";
-
-  if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
-    chrome.tabs.create({ url: externalUrl }, function (tab) {
-      //console.log("New tab launched with http://yoursite.com/");
-    });
-  }
+  chrome.action.setBadgeText({ text: "", tabId });
 });

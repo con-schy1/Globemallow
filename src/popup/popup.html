@@ -10,49 +10,49 @@
     </head>
     <body>
         <!-- HEADER -->
-        <div class="header">
-            <div class="header-title">Globemallow</div>
-            <div class="header-meta">
-                Web Sustainability & Performance Audit
-            </div>
-        </div>
+        <header class="header">
+            <h1 class="header-title">Globemallow</h1>
+            <p class="header-meta">
+                Web Sustainability &amp; Performance Audit
+            </p>
+        </header>
 
         <!-- SUMMARY CARD -->
-        <div class="summary-card">
-            <div class="summary-item">
-                <div class="summary-value">B+</div>
-                <div class="summary-label">Overall Grade</div>
-            </div>
-            <div class="summary-item">
-                <div class="summary-value">75</div>
-                <div class="summary-label">Score</div>
-            </div>
-            <div class="summary-item">
-                <div class="summary-value">2.4g</div>
-                <div class="summary-label">CO₂ Emitted</div>
-            </div>
-        </div>
+        <section class="summary-card" aria-label="Overall summary">
+            <article class="summary-item">
+                <p class="summary-value" id="summaryGrade">B+</p>
+                <p class="summary-label">Overall Grade</p>
+            </article>
+            <article class="summary-item">
+                <p class="summary-value" id="summaryScore">75</p>
+                <p class="summary-label">Score</p>
+            </article>
+            <article class="summary-item">
+                <p class="summary-value" id="summaryCO2">2.4g</p>
+                <p class="summary-label">CO₂ Emitted</p>
+            </article>
+        </section>
 
-        <div class="container">
+        <main class="container" aria-label="Audit details">
             <!-- PERFORMANCE AUDIT -->
-            <div class="audit-section open">
-                <div class="section-header open">
+            <section class="audit-section open" aria-label="Performance audit">
+                <header class="section-header open" role="button" tabindex="0">
                     <div class="section-header-left">
                         <div class="section-header-title">
                             <span class="section-name">Performance</span>
                             <span class="section-score good">82</span>
                         </div>
-                        <div class="section-description">
+                        <p class="section-description">
                             Core loading and responsiveness metrics for this
                             page.
-                        </div>
+                        </p>
                     </div>
                     <div class="section-header-right">
                         <span class="section-badge pass">Good</span>
                         <span class="section-count">4 checks</span>
-                        <div class="expand-toggle">▸</div>
+                        <span class="expand-toggle" aria-hidden="true">▸</span>
                     </div>
-                </div>
+                </header>
 
                 <div class="section-content">
                     <div class="section-items">
@@ -63,52 +63,55 @@
                             </span>
                         </div>
 
-                        <div class="audit-item pass" data-metric="fcp">
-                            <span class="audit-item-label">
+                        <article class="audit-item pass" data-metric="fcp">
+                            <h3 class="audit-item-label">
                                 First Contentful Paint
-                            </span>
-                            <div>
+                            </h3>
+                            <p>
                                 <span class="audit-item-value">1.2</span>
                                 <span class="audit-item-unit">s</span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div class="audit-item pass" data-metric="lcp">
-                            <span class="audit-item-label">
+                        <article class="audit-item pass" data-metric="lcp">
+                            <h3 class="audit-item-label">
                                 Largest Contentful Paint
-                            </span>
-                            <div>
+                            </h3>
+                            <p>
                                 <span class="audit-item-value">2.3</span>
                                 <span class="audit-item-unit">s</span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div class="audit-item pass" data-metric="cls">
-                            <span class="audit-item-label">
+                        <article class="audit-item pass" data-metric="cls">
+                            <h3 class="audit-item-label">
                                 Cumulative Layout Shift
-                            </span>
-                            <div>
+                            </h3>
+                            <p>
                                 <span class="audit-item-value">0.05</span>
                                 <span class="audit-item-unit"></span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div class="audit-item warn" data-metric="tbt">
-                            <span class="audit-item-label">
+                        <article class="audit-item warn" data-metric="tbt">
+                            <h3 class="audit-item-label">
                                 Total Blocking Time
-                            </span>
-                            <div>
+                            </h3>
+                            <p>
                                 <span class="audit-item-value">150</span>
                                 <span class="audit-item-unit">ms</span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- RESOURCE OPTIMIZATION -->
-            <div class="audit-section open">
-                <div class="section-header open">
+            <section
+                class="audit-section open"
+                aria-label="Resource optimization"
+            >
+                <header class="section-header open" role="button" tabindex="0">
                     <div class="section-header-left">
                         <div class="section-header-title">
                             <span class="section-name">
@@ -116,17 +119,17 @@
                             </span>
                             <span class="section-score fair">68</span>
                         </div>
-                        <div class="section-description">
+                        <p class="section-description">
                             Image compression, format, and delivery
                             optimization.
-                        </div>
+                        </p>
                     </div>
                     <div class="section-header-right">
                         <span class="section-badge warn">Fair</span>
                         <span class="section-count">5 checks</span>
-                        <div class="expand-toggle">▸</div>
+                        <span class="expand-toggle" aria-hidden="true">▸</span>
                     </div>
-                </div>
+                </header>
 
                 <div class="section-content">
                     <div class="section-items">
@@ -137,92 +140,94 @@
                             </span>
                         </div>
 
-                        <div
+                        <article
                             class="audit-item pass"
                             data-metric="modern-images"
                         >
-                            <span class="audit-item-label">
+                            <h3 class="audit-item-label">
                                 Modern Image Formats
-                            </span>
-                            <div>
+                            </h3>
+                            <p>
                                 <span class="audit-item-value">40%</span>
                                 <span class="audit-item-unit">
                                     WebP / AVIF
                                 </span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div
+                        <article
                             class="audit-item warn"
                             data-metric="image-compression"
                         >
-                            <span class="audit-item-label">
-                                Image Compression
-                            </span>
-                            <div>
+                            <h3 class="audit-item-label">Image Compression</h3>
+                            <p>
                                 <span class="audit-item-value">630</span>
                                 <span class="audit-item-unit">
                                     KB could be saved
                                 </span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div class="audit-item warn" data-metric="lazy-loading">
-                            <span class="audit-item-label">
+                        <article
+                            class="audit-item warn"
+                            data-metric="lazy-loading"
+                        >
+                            <h3 class="audit-item-label">
                                 Lazy Loading Images
-                            </span>
-                            <div>
+                            </h3>
+                            <p>
                                 <span class="audit-item-value">45%</span>
                                 <span class="audit-item-unit">
                                     not optimized
                                 </span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div
+                        <article
                             class="audit-item fail"
                             data-metric="responsive-images"
                         >
-                            <span class="audit-item-label">
-                                Responsive Images
-                            </span>
-                            <div>
+                            <h3 class="audit-item-label">Responsive Images</h3>
+                            <p>
                                 <span class="audit-item-value">0%</span>
                                 <span class="audit-item-unit">
                                     srcset usage
                                 </span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div class="audit-item pass" data-metric="css-usage">
-                            <span class="audit-item-label">CSS Usage</span>
-                            <div>
+                        <article
+                            class="audit-item pass"
+                            data-metric="css-usage"
+                        >
+                            <h3 class="audit-item-label">CSS Usage</h3>
+                            <p>
                                 <span class="audit-item-value">78%</span>
                                 <span class="audit-item-unit">used</span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- CODE EFFICIENCY -->
-            <div class="audit-section">
-                <div class="section-header">
+            <section class="audit-section" aria-label="Code efficiency">
+                <header class="section-header" role="button" tabindex="0">
                     <div class="section-header-left">
                         <div class="section-header-title">
                             <span class="section-name">Code Efficiency</span>
                             <span class="section-score poor">56</span>
                         </div>
-                        <div class="section-description">
+                        <p class="section-description">
                             JavaScript optimization and bundle analysis.
-                        </div>
+                        </p>
                     </div>
                     <div class="section-header-right">
                         <span class="section-badge fail">Poor</span>
                         <span class="section-count">4 checks</span>
-                        <div class="expand-toggle">▸</div>
+                        <span class="expand-toggle" aria-hidden="true">▸</span>
                     </div>
-                </div>
+                </header>
 
                 <div class="section-content">
                     <div class="section-items">
@@ -233,72 +238,77 @@
                             </span>
                         </div>
 
-                        <div class="audit-item fail" data-metric="bundle-size">
-                            <span class="audit-item-label">
-                                Main Bundle Size
-                            </span>
-                            <div>
+                        <article
+                            class="audit-item fail"
+                            data-metric="bundle-size"
+                        >
+                            <h3 class="audit-item-label">Main Bundle Size</h3>
+                            <p>
                                 <span class="audit-item-value">450</span>
                                 <span class="audit-item-unit">
                                     KB (minified)
                                 </span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div class="audit-item fail" data-metric="unused-js">
-                            <span class="audit-item-label">
-                                Unused JavaScript
-                            </span>
-                            <div>
+                        <article
+                            class="audit-item fail"
+                            data-metric="unused-js"
+                        >
+                            <h3 class="audit-item-label">Unused JavaScript</h3>
+                            <p>
                                 <span class="audit-item-value">180</span>
-                                <span class="audit-item-unit"> KB unused </span>
-                            </div>
-                        </div>
+                                <span class="audit-item-unit">KB unused</span>
+                            </p>
+                        </article>
 
-                        <div
+                        <article
                             class="audit-item fail"
                             data-metric="third-party-scripts"
                         >
-                            <span class="audit-item-label">
+                            <h3 class="audit-item-label">
                                 Third-party Scripts
-                            </span>
-                            <div>
+                            </h3>
+                            <p>
                                 <span class="audit-item-value">15</span>
                                 <span class="audit-item-unit">
                                     external scripts
                                 </span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div class="audit-item pass" data-metric="minification">
-                            <span class="audit-item-label">Minification</span>
-                            <div>
+                        <article
+                            class="audit-item pass"
+                            data-metric="minification"
+                        >
+                            <h3 class="audit-item-label">Minification</h3>
+                            <p>
                                 <span class="audit-item-value">✓</span>
                                 <span class="audit-item-unit">enabled</span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- BEST PRACTICES -->
-            <div class="audit-section">
-                <div class="section-header">
+            <section class="audit-section" aria-label="Best practices">
+                <header class="section-header" role="button" tabindex="0">
                     <div class="section-header-left">
                         <div class="section-header-title">
                             <span class="section-name">Best Practices</span>
                             <span class="section-score good">78</span>
                         </div>
-                        <div class="section-description">
+                        <p class="section-description">
                             Caching, security, and optimization standards.
-                        </div>
+                        </p>
                     </div>
                     <div class="section-header-right">
                         <span class="section-badge pass">Good</span>
                         <span class="section-count">6 checks</span>
-                        <div class="expand-toggle">▸</div>
+                        <span class="expand-toggle" aria-hidden="true">▸</span>
                     </div>
-                </div>
+                </header>
 
                 <div class="section-content">
                     <div class="section-items">
@@ -309,88 +319,93 @@
                             </span>
                         </div>
 
-                        <div
+                        <article
                             class="audit-item pass"
                             data-metric="browser-caching"
                         >
-                            <span class="audit-item-label">
-                                Browser Caching
-                            </span>
-                            <div>
+                            <h3 class="audit-item-label">Browser Caching</h3>
+                            <p>
                                 <span class="audit-item-value">30 days</span>
                                 <span class="audit-item-unit">
                                     cache duration
                                 </span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div class="audit-item warn" data-metric="cookie-count">
-                            <span class="audit-item-label">Cookie Count</span>
-                            <div>
+                        <article
+                            class="audit-item warn"
+                            data-metric="cookie-count"
+                        >
+                            <h3 class="audit-item-label">Cookie Count</h3>
+                            <p>
                                 <span class="audit-item-value">8</span>
                                 <span class="audit-item-unit">
                                     cookies (reduce to &lt;4)
                                 </span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div class="audit-item pass" data-metric="gzip">
-                            <span class="audit-item-label">
-                                GZIP Compression
-                            </span>
-                            <div>
+                        <article class="audit-item pass" data-metric="gzip">
+                            <h3 class="audit-item-label">GZIP Compression</h3>
+                            <p>
                                 <span class="audit-item-value">✓</span>
                                 <span class="audit-item-unit">enabled</span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div class="audit-item pass" data-metric="https">
-                            <span class="audit-item-label">HTTPS</span>
-                            <div>
+                        <article class="audit-item pass" data-metric="https">
+                            <h3 class="audit-item-label">HTTPS</h3>
+                            <p>
                                 <span class="audit-item-value">✓</span>
                                 <span class="audit-item-unit">secure</span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div class="audit-item pass" data-metric="redirects">
-                            <span class="audit-item-label">Redirects</span>
-                            <div>
+                        <article
+                            class="audit-item pass"
+                            data-metric="redirects"
+                        >
+                            <h3 class="audit-item-label">Redirects</h3>
+                            <p>
                                 <span class="audit-item-value">1</span>
                                 <span class="audit-item-unit">
                                     redirect found
                                 </span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div class="audit-item pass" data-metric="page-size">
-                            <span class="audit-item-label">Page Size</span>
-                            <div>
+                        <article
+                            class="audit-item pass"
+                            data-metric="page-size"
+                        >
+                            <h3 class="audit-item-label">Page Size</h3>
+                            <p>
                                 <span class="audit-item-value">1.2</span>
                                 <span class="audit-item-unit">MB total</span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- SUSTAINABILITY IMPACT -->
-            <div class="audit-section">
-                <div class="section-header">
+            <section class="audit-section" aria-label="Sustainability">
+                <header class="section-header" role="button" tabindex="0">
                     <div class="section-header-left">
                         <div class="section-header-title">
                             <span class="section-name">Sustainability</span>
                             <span class="section-score good">72</span>
                         </div>
-                        <div class="section-description">
+                        <p class="section-description">
                             Environmental impact and green hosting.
-                        </div>
+                        </p>
                     </div>
                     <div class="section-header-right">
                         <span class="section-badge pass">Good</span>
                         <span class="section-count">3 checks</span>
-                        <div class="expand-toggle">▸</div>
+                        <span class="expand-toggle" aria-hidden="true">▸</span>
                     </div>
-                </div>
+                </header>
 
                 <div class="section-content">
                     <div class="section-items">
@@ -401,268 +416,220 @@
                             </span>
                         </div>
 
-                        <div
+                        <article
                             class="audit-item pass"
                             data-metric="green-hosting"
                         >
-                            <span class="audit-item-label">Green Hosting</span>
-                            <div>
+                            <h3 class="audit-item-label">Green Hosting</h3>
+                            <p>
                                 <span class="audit-item-value">✓</span>
                                 <span class="audit-item-unit">
                                     renewable energy
                                 </span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div class="audit-item warn" data-metric="co2-per-view">
-                            <span class="audit-item-label">
-                                CO₂ per Page View
-                            </span>
-                            <div>
+                        <article
+                            class="audit-item warn"
+                            data-metric="co2-per-view"
+                        >
+                            <h3 class="audit-item-label">CO₂ per Page View</h3>
+                            <p>
                                 <span class="audit-item-value">2.4g</span>
                                 <span class="audit-item-unit">
                                     could be 1.8g
                                 </span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
 
-                        <div
+                        <article
                             class="audit-item warn"
                             data-metric="transfer-size"
                         >
-                            <span class="audit-item-label">Transfer Size</span>
-                            <div>
+                            <h3 class="audit-item-label">Transfer Size</h3>
+                            <p>
                                 <span class="audit-item-value">1.2 MB</span>
                                 <span class="audit-item-unit">
                                     could be 0.7 MB
                                 </span>
-                            </div>
-                        </div>
+                            </p>
+                        </article>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- SUSTAINABILITY IMPACT SUMMARY -->
-            <div class="impact-section">
-                <div class="impact-title">Environmental Impact Summary</div>
+            <section
+                class="impact-section"
+                aria-label="Environmental impact summary"
+            >
+                <h2 class="impact-title">Environmental Impact Summary</h2>
                 <div class="impact-grid">
-                    <div class="impact-item">
-                        <div class="impact-label">CO₂ per Page Load</div>
-                        <div class="impact-value">2.4g</div>
-                        <div class="impact-context">
+                    <article class="impact-item">
+                        <h3 class="impact-label">CO₂ per Page Load</h3>
+                        <p class="impact-value">2.4g</p>
+                        <p class="impact-context">
                             Equal to charging a phone for 0.5 hrs
-                        </div>
-                    </div>
-                    <div class="impact-item">
-                        <div class="impact-label">Energy Consumed</div>
-                        <div class="impact-value">0.0012 kWh</div>
-                        <div class="impact-context">
-                            0.5% of daily device usage
-                        </div>
-                    </div>
-                    <div class="impact-item">
-                        <div class="impact-label">Potential Savings</div>
-                        <div class="impact-value">-0.6g CO₂</div>
-                        <div class="impact-context">
+                        </p>
+                    </article>
+                    <article class="impact-item">
+                        <h3 class="impact-label">Energy Consumed</h3>
+                        <p class="impact-value">0.0012 kWh</p>
+                        <p class="impact-context">0.5% of daily device usage</p>
+                    </article>
+                    <article class="impact-item">
+                        <h3 class="impact-label">Potential Savings</h3>
+                        <p class="impact-value">-0.6g CO₂</p>
+                        <p class="impact-context">
                             With recommended optimizations
-                        </div>
-                    </div>
-                    <div class="impact-item">
-                        <div class="impact-label">Monthly CO₂</div>
-                        <div class="impact-value">12 kg</div>
-                        <div class="impact-context">
-                            For 5,000 monthly visitors
-                        </div>
-                    </div>
+                        </p>
+                    </article>
+                    <article class="impact-item">
+                        <h3 class="impact-label">Monthly CO₂</h3>
+                        <p class="impact-value">12 kg</p>
+                        <p class="impact-context">For 5,000 monthly visitors</p>
+                    </article>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
 
         <!-- ACTION FOOTER -->
-        <div class="action-footer">
+        <footer class="action-footer">
             <!-- METRIC DETAIL PANEL -->
-            <div class="metric-detail">
-                <div class="metric-detail-title" id="metricTitle">
+            <aside
+                class="metric-detail"
+                aria-label="Metric explanation"
+                aria-live="polite"
+            >
+                <h2 class="metric-detail-title" id="metricTitle">
                     Click any metric to see what it means
-                </div>
-                <div class="metric-detail-body" id="metricBody">
+                </h2>
+                <p class="metric-detail-body" id="metricBody">
                     This area explains metrics in everyday language so
                     non‑technical teammates can follow along.
-                </div>
-            </div>
-            <button class="btn btn-primary" id="exportReportBtn">
+                </p>
+            </aside>
+            <button class="btn btn-primary" id="exportBtn" type="button">
                 📊 Export Report
             </button>
-            <button class="btn btn-secondary" id="optimizationsBtn">
+            <button
+                class="btn btn-secondary"
+                id="optimizationsBtn"
+                type="button"
+            >
                 Optimizations
             </button>
-        </div>
+            <button
+                class="btn btn-secondary"
+                id="openDevToolsBtn"
+                style="display: none"
+            >
+                🔧 Open DevTools
+            </button>
+        </footer>
 
-        <!-- SLIDE-IN OPTIMIZATION PANEL -->
-        <div class="panel-overlay" id="panelOverlay"></div>
+        <!-- ===================== TEMPLATES (for JS) ===================== -->
 
-        <div class="optimization-panel" id="optimizationPanel">
-            <div class="panel-header">
-                <div class="panel-title">Optimization Tasks</div>
-                <button class="panel-close-btn" id="panelCloseBtn">✕</button>
-            </div>
+        <!-- Template for a summary item -->
+        <template id="summary-item-template">
+            <article class="summary-item">
+                <p class="summary-value" data-field="value"></p>
+                <p class="summary-label" data-field="label"></p>
+            </article>
+        </template>
 
-            <div class="panel-content">
-                <!-- Summary -->
-                <div class="panel-section">
-                    <div class="panel-section-title">Quick Summary</div>
-                    <div
-                        style="
-                            font-size: 13px;
-                            color: var(--text-secondary);
-                            line-height: 1.6;
-                        "
-                    >
-                        Based on your audit, there are several high‑impact
-                        optimization opportunities that can reduce energy use
-                        and emissions per page view.
+        <!-- Template for an audit section -->
+        <template id="audit-section-template">
+            <section class="audit-section">
+                <header class="section-header" role="button" tabindex="0">
+                    <div class="section-header-left">
+                        <div class="section-header-title">
+                            <span class="section-name" data-field="name"></span>
+                            <span
+                                class="section-score"
+                                data-field="score"
+                            ></span>
+                        </div>
+                        <p
+                            class="section-description"
+                            data-field="description"
+                        ></p>
+                    </div>
+                    <div class="section-header-right">
+                        <span class="section-badge" data-field="badge"></span>
+                        <span class="section-count" data-field="count"></span>
+                        <span class="expand-toggle" aria-hidden="true">▸</span>
+                    </div>
+                </header>
+                <div class="section-content">
+                    <div class="section-items">
+                        <div class="section-summary">
+                            <span class="summary-label-text">Summary</span>
+                            <span
+                                class="summary-result"
+                                data-field="summary"
+                            ></span>
+                        </div>
+                        <!-- dynamic audit items go here -->
+                        <div class="audit-items-root"></div>
                     </div>
                 </div>
+            </section>
+        </template>
 
-                <!-- Task 1 -->
-                <div class="panel-section">
-                    <div class="task-card critical">
-                        <div class="task-header">
-                            <span class="task-name">
-                                Convert Images to WebP/AVIF
-                            </span>
-                            <span class="task-badge critical">Critical</span>
+        <!-- Template for an audit item -->
+        <template id="audit-item-template">
+            <article class="audit-item" data-metric="">
+                <h3 class="audit-item-label" data-field="label"></h3>
+                <p>
+                    <span class="audit-item-value" data-field="value"></span>
+                    <span class="audit-item-unit" data-field="unit"></span>
+                </p>
+            </article>
+        </template>
+
+        <!-- Template for an impact item -->
+        <template id="impact-item-template">
+            <article class="impact-item">
+                <h3 class="impact-label" data-field="label"></h3>
+                <p class="impact-value" data-field="value"></p>
+                <p class="impact-context" data-field="context"></p>
+            </article>
+        </template>
+
+        <!-- Template for an optimization task -->
+        <template id="task-card-template">
+            <section class="panel-section">
+                <article class="task-card" data-severity="">
+                    <header class="task-header">
+                        <h3 class="task-name" data-field="name"></h3>
+                        <span class="task-badge" data-field="badge"></span>
+                    </header>
+                    <dl class="task-meta">
+                        <div class="task-meta-item">
+                            <dt class="task-meta-label">Impact</dt>
+                            <dd
+                                class="task-meta-value"
+                                data-field="impact"
+                            ></dd>
                         </div>
-                        <div class="task-meta">
-                            <div class="task-meta-item">
-                                <div class="task-meta-label">Impact</div>
-                                <div class="task-meta-value">-650 KB</div>
-                            </div>
-                            <div class="task-meta-item">
-                                <div class="task-meta-label">Effort</div>
-                                <div class="task-meta-value">2–3 h</div>
-                            </div>
+                        <div class="task-meta-item">
+                            <dt class="task-meta-label">Effort</dt>
+                            <dd
+                                class="task-meta-value"
+                                data-field="effort"
+                            ></dd>
                         </div>
-                        <div class="task-description">
-                            Convert large PNG and JPEG assets to modern formats
-                            like WebP or AVIF to shrink file size without
-                            visible quality loss.
-                        </div>
-                        <div class="task-action">
-                            <button class="btn-primary">Learn</button>
-                            <button class="btn-secondary">Details</button>
-                        </div>
+                    </dl>
+                    <p class="task-description" data-field="description"></p>
+                    <div class="task-action">
+                        <button class="btn-primary" type="button">Learn</button>
+                        <button class="btn-secondary" type="button">
+                            Details
+                        </button>
                     </div>
-                </div>
-
-                <!-- Task 2 -->
-                <div class="panel-section">
-                    <div class="task-card poor">
-                        <div class="task-header">
-                            <span class="task-name">
-                                Code Split JavaScript Bundle
-                            </span>
-                            <span class="task-badge poor">High</span>
-                        </div>
-                        <div class="task-meta">
-                            <div class="task-meta-item">
-                                <div class="task-meta-label">Impact</div>
-                                <div class="task-meta-value">-500 KB</div>
-                            </div>
-                            <div class="task-meta-item">
-                                <div class="task-meta-label">Effort</div>
-                                <div class="task-meta-value">4–6 h</div>
-                            </div>
-                        </div>
-                        <div class="task-description">
-                            Split large JavaScript bundles so only the code
-                            needed for the first screen loads initially, and the
-                            rest loads later.
-                        </div>
-                        <div class="task-action">
-                            <button class="btn-primary">Learn</button>
-                            <button class="btn-secondary">Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Task 3 -->
-                <div class="panel-section">
-                    <div class="task-card fair">
-                        <div class="task-header">
-                            <span class="task-name">
-                                Lazy Load Below-Fold Images
-                            </span>
-                            <span class="task-badge fair">Medium</span>
-                        </div>
-                        <div class="task-meta">
-                            <div class="task-meta-item">
-                                <div class="task-meta-label">Impact</div>
-                                <div class="task-meta-value">
-                                    Faster first view
-                                </div>
-                            </div>
-                            <div class="task-meta-item">
-                                <div class="task-meta-label">Effort</div>
-                                <div class="task-meta-value">1–2 h</div>
-                            </div>
-                        </div>
-                        <div class="task-description">
-                            Use lazy loading so images that appear lower on the
-                            page only load when users scroll near them.
-                        </div>
-                        <div class="task-action">
-                            <button class="btn-primary">Learn</button>
-                            <button class="btn-secondary">Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Task 4 -->
-                <div class="panel-section">
-                    <div class="task-card fair">
-                        <div class="task-header">
-                            <span class="task-name">
-                                Reduce Cookies (8 → 4)
-                            </span>
-                            <span class="task-badge fair">Medium</span>
-                        </div>
-                        <div class="task-meta">
-                            <div class="task-meta-item">
-                                <div class="task-meta-label">Impact</div>
-                                <div class="task-meta-value">
-                                    Less data per visit
-                                </div>
-                            </div>
-                            <div class="task-meta-item">
-                                <div class="task-meta-label">Effort</div>
-                                <div class="task-meta-value">~1 h</div>
-                            </div>
-                        </div>
-                        <div class="task-description">
-                            Remove non‑essential cookies and keep only those
-                            strictly needed for core functionality or
-                            compliance.
-                        </div>
-                        <div class="task-action">
-                            <button class="btn-primary">Learn</button>
-                            <button class="btn-secondary">Details</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    style="
-                        text-align: center;
-                        padding: var(--sp-lg) 0;
-                        font-size: 12px;
-                        color: var(--text-secondary);
-                    "
-                >
-                    Completing these tasks will lower page weight and emissions
-                    while improving perceived performance.
-                </div>
-            </div>
-        </div>
+                </article>
+            </section>
+        </template>
     </body>
 </html>
