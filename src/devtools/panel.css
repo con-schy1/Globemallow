@@ -16,17 +16,14 @@
     --bg-tertiary: #f3f3f3;
     --border-color: #e0e0e0;
     --border-light: #eeeeee;
-
     /* Status Colors */
     --status-excellent: #1d7874;
     --status-good: #4caf50;
     --status-fair: #ff9800;
     --status-poor: #e74c3c;
     --status-critical: #c0152f;
-
     /* Accent */
     --accent: #1d7874;
-
     /* Spacing */
     --sp-xs: 4px;
     --sp-sm: 8px;
@@ -244,12 +241,20 @@ body {
     padding-bottom: var(--sp-lg);
     border-bottom: 1px solid var(--border-light);
 }
+.metric-group--overflow {
+    max-block-size: 200px;
+    overflow: auto;
+}
 
 .metric-group:last-child {
     border-bottom: none;
 }
 
 .metric-group h3 {
+    position: sticky;
+    top: 0px;
+    z-index: 9;
+    background-color: white;
     font-size: 14px;
     font-weight: 600;
     color: var(--text-primary);
@@ -265,6 +270,19 @@ body {
     border-radius: 4px;
     border-left: 3px solid var(--border-light);
     margin-bottom: var(--sp-sm);
+    cursor: pointer;
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.metric-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.metric-item:active {
+    transform: translateY(0);
 }
 
 .metric-item.good {
@@ -304,6 +322,32 @@ body {
 
 .metric-value.poor {
     color: var(--status-poor);
+}
+
+/* ========== METRIC DETAIL PANEL ========== */
+.metric-detail {
+    position: sticky;
+    bottom: 3px;
+    background: var(--bg-primary);
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    padding: var(--sp-lg);
+    margin: var(--sp-lg);
+    animation: fadeIn 0.3s;
+    z-index: 99;
+}
+
+.metric-detail-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--sp-sm);
+}
+
+.metric-detail-body {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 /* ========== EMPTY STATE ========== */
@@ -355,12 +399,14 @@ body {
     color: var(--status-good);
 }
 
-.badge.fair {
+.badge.fair,
+.badge.medium {
     background: rgba(255, 152, 0, 0.15);
     color: var(--status-fair);
 }
 
-.badge.poor {
+.badge.poor,
+.badge.high {
     background: rgba(231, 76, 60, 0.15);
     color: var(--status-poor);
 }
@@ -368,4 +414,9 @@ body {
 .badge.critical {
     background: rgba(192, 21, 47, 0.15);
     color: var(--status-critical);
+}
+
+.badge.low {
+    background: rgba(76, 175, 80, 0.15);
+    color: var(--status-good);
 }

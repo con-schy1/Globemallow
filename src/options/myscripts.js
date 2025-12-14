@@ -1,5 +1,4 @@
-// changes below -harshit
-const AVERAGE = 70;
+const AVERAGE = 0;
 const MAX = AVERAGE * 2;
 
 const ctx = document.querySelector("#myChart").getContext("2d");
@@ -37,99 +36,51 @@ class Dataset {
   }
 }
 
+function normalizeRecord(rec) {
+  if (!rec || typeof rec !== "object") return null;
+
+  const audit = rec.auditData || {};
+  console.log(audit, audit.finalScore);
+  return {
+    time: audit.storedAt ?? rec.timestamp ?? Date.now(),
+    url: rec.url ?? rec.hostURL ?? rec.domain ?? "Unknown",
+    // Use finalScore as "Score"
+    Score: typeof audit.finalScore === "number" ? audit.finalScore : 0,
+    // You don't have Sustainability in the new object; pick a definition:
+    // Option A: use finalScore again (so chart shows overall score trend)
+    // Sustainability: typeof audit.finalScore === "number" ? audit.finalScore : 0,
+    // Option B (better): compute from emissions/transfer, if you want—ask and I’ll wire it.
+  };
+}
+
 function chartConfig(storageData) {
   hosts.length = 0;
-  for (z in storageData) {
-    if (!hosts.length) {
-      hosts.push(
-        new Hosts(
-          storageData[z].storedAt,
-          storageData[z].hostURL,
-          storageData[z].Score,
-          storageData[z].Sustainability,
-        ),
-      );
 
-      continue;
-    }
+  for (const k in storageData) {
+    const n = normalizeRecord(storageData[k]);
+    if (!n) continue;
 
-    let added = false;
-    for (let i = 0; i < hosts.length; i++) {
-      let y = hosts[i];
-      if (storageData[z].storedAt < y.time) {
-        let firstHalf = hosts.splice(0, i);
-        firstHalf.push(
-          new Hosts(
-            storageData[z].storedAt,
-            storageData[z].hostURL,
-            storageData[z].Score,
-            storageData[z].Sustainability,
-          ),
-        );
-        hosts = firstHalf.concat(hosts);
-
-        added = true;
-        break;
-      }
-    }
-
-    if (!added) {
-      hosts.push(
-        new Hosts(
-          storageData[z].storedAt,
-          storageData[z].hostURL,
-          storageData[z].Score,
-          storageData[z].Sustainability,
-        ),
-      );
-    }
+    hosts.push(new Hosts(n.time, n.url, n.Sustainability, n.Score));
   }
 
-  const labels = ["Sustainability", "Score"];
-  const dataTotal = [];
-  hosts.forEach((z) => {
-    let temp = 0;
-    let tempLabel = "";
-    labels.forEach((y) => {
-      temp += z[y];
-    });
-    dataTotal.push(temp);
-  });
+  // Sort by time ascending (simple + reliable)
+  hosts.sort((a, b) => a.time - b.time);
 
-  const data = {
-    labels: hosts.map((z) => z.url),
-    datasets: [new Dataset(labels.join(" "), dataTotal)],
-  };
+  const labels = ["Score"];
+  const dataTotal = hosts.map((h) => (h.Sustainability || 0) + (h.Score || 0));
 
-  const config = {
+  return {
     type: "bar",
-    data: data,
+    data: {
+      labels: hosts.map((h) => h.url),
+      datasets: [new Dataset(labels.join(" "), dataTotal)],
+    },
     options: {
       responsive: true,
-      plugins: {
-        legend: {
-          display: false,
-          position: "top",
-        },
-        title: {
-          display: false,
-          text: "Chart.js Bar Chart",
-        },
-      },
-      scales: {
-        x: {},
-        y: {
-          min: 30,
-          max: 100,
-          ticks: {
-            stepSize: 5,
-          },
-        },
-      },
+      plugins: { legend: { display: false } },
+      scales: { y: { min: 30, max: 100, ticks: { stepSize: 5 } } },
     },
   };
-
-  return config;
 }
 
 function createChart(callback, storageData) {
@@ -146,26 +97,37 @@ function updateChartData(x) {
 }
 
 let chart = null;
-chrome.storage.session.get(null).then((data) => {
+function isReportObject(v) {
+  return (
+    v &&
+    typeof v === "object" &&
+    typeof v.url === "string" &&
+    typeof v.timestamp === "number"
+  );
+}
+
+async function loadAllReports() {
+  // If your data truly is session-only, keep session; otherwise local is the usual correct place.
+  const data = await chrome.storage.local.get(null); // <-- key change
+  console.log(data);
+  const onlyReports = {};
+
+  for (const k in data) {
+    if (isReportObject(data[k])) onlyReports[k] = data[k];
+  }
+  return onlyReports;
+}
+
+loadAllReports().then((data) => {
   chart = createChart(chartConfig, data);
 });
 
-chrome.storage.onChanged.addListener((changes, namespace) => {
-  chrome.storage.session.get(null).then((data) => {
-    chart.destroy();
-    chart = createChart(chartConfig, data);
+chrome.storage.onChanged.addListener((_changes, namespace) => {
+  if (namespace !== "local") return; // <-- matches the storage area above
 
-    if (window.location.hash == "#Requests") {
-      requestDiv.innerHTML = "";
-      for (x in data) {
-        listSiteInfo(
-          data[x].hostURL,
-          data[x].imgNotLLArray,
-          data[x].imgNotGoodFormat,
-          data[x].imgNotRes,
-        );
-      }
-    }
+  loadAllReports().then((data) => {
+    if (chart) chart.destroy();
+    chart = createChart(chartConfig, data);
   });
 });
 
@@ -209,27 +171,3 @@ function listSiteInfo(name, notLL, format, notResp) {
     requestDiv.appendChild(clone);
   } catch (e) {}
 }
-
-//Chart Code to display requestDiv and hide chartDiv
-window.addEventListener("hashchange", async function () {
-  if (location.hash === "#Requests") {
-    document.getElementById("chartDiv").style.display = "none";
-    document.getElementById("requestDiv").style.display = "block";
-
-    // changes below -harshit
-    requestDiv.innerHTML = "";
-    await chrome.storage.session.get(null).then((data) => {
-      for (x in data) {
-        listSiteInfo(
-          data[x].hostURL,
-          data[x].imgNotLLArray,
-          data[x].imgNotGoodFormat,
-          data[x].imgNotRes,
-        );
-      }
-    });
-  } else {
-    document.getElementById("chartDiv").style.display = "block";
-    document.getElementById("requestDiv").style.display = "none";
-  }
-});

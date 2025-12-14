@@ -1,104 +1,299 @@
-body {
-    font-family: veranda, sans-serif;
-    font-size: 12px;
-    background-color: white;
-    margin: 0;
-    padding: 0;
-    block-size: 97vh;
-    color: #606060;
+/* options.css - Restyled to match panel.css design system (no functionality changes) */
+
+/* Design tokens (match panel.css) */
+:root {
+    --text-primary: #2c3e50;
+    --text-secondary: #666666;
+    --text-tertiary: #999999;
+
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9f9f9;
+    --bg-tertiary: #f3f3f3;
+
+    --border-color: #e0e0e0;
+    --border-light: #eeeeee;
+
+    --status-excellent: #1d7874;
+    --status-good: #4caf50;
+    --status-fair: #ff9800;
+    --status-poor: #e74c3c;
+
+    --accent: #1d7874;
+
+    --sp-xs: 4px;
+    --sp-sm: 8px;
+    --sp-md: 12px;
+    --sp-lg: 16px;
+    --sp-xl: 24px;
 }
 
-#title {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+        sans-serif;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Layout wrappers */
+.panel-container {
+    min-height: 100vh;
+}
+
+/* Header */
+.panel-header {
+    background: var(--text-primary);
+    color: #fff;
+    padding: var(--sp-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-row {
     display: flex;
-    font-size: 20px;
-    padding-left: 10px;
-    padding-top: 5px;
-    /*    line-height: 0;*/
-    letter-spacing: 0.1em;
+    align-items: center;
+    gap: var(--sp-md);
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 #gbTitle {
-    margin-left: 10px;
-    margin-bottom: 10px;
-    line-height: 0;
-    margin-bottom: 2px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
 }
 
-#titleDiv {
+.subtitle {
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+/* header now contains nav */
+.panel-header {
+    background: var(--text-primary);
+    color: #fff;
+    padding: var(--sp-lg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Tabs row inside header */
+.header-nav {
     display: flex;
-    width: 100%;
-    justify-content: center;
-    line-height: 0;
+    gap: var(--sp-sm);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-inline-start: 30px;
 }
 
-#chartTitle {
-    font-size: 19px;
-    line-height: 0;
+/* Header tabs (contrast on dark header) */
+.header-tab {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 8px var(--sp-md);
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    transition:
+        background 0.2s,
+        border-color 0.2s,
+        transform 0.2s;
 }
 
+.header-tab:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.75);
+    transform: translateY(-1px);
+}
+
+/* Info tooltip (keep existing ids) */
 .info-icon {
-    margin-left: 70%;
-    border-radius: 50%;
-    width: 9px;
-    height: 9px;
-    padding: 3px;
-    background: #fff;
-    border: 1.5px solid #606060;
-    color: #606060;
-    text-align: center;
-    font-size: 9px;
-    font-weight: 550;
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    background: transparent;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
 }
 
 #infoTip {
     display: none;
-}
-
-.info-icon:hover + #infoTip {
-    display: block;
-    width: 240px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
     position: absolute;
-    z-index: 1;
-    font-size: 11px;
-    margin-left: 80%;
-    overflow-x: visible;
+    right: 0;
+    top: calc(100% + 8px);
+    width: 240px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.78);
+    color: #fff;
+    font-size: 12px;
+    z-index: 10;
 }
 
-#menuBar {
+.info-icon:hover + #infoTip,
+.info-icon:focus + #infoTip {
+    display: block;
+}
+
+/* Action bar / tabs (keeps #menuBar) */
+.action-bar {
     display: flex;
-    width: 100%;
-    justify-content: center;
+    gap: var(--sp-sm);
+    align-items: center;
+    padding: var(--sp-lg);
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
 }
 
-#requests {
-    margin-left: 10px;
+.tab-link {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 12px;
+    padding: 10px var(--sp-md);
+    border-radius: 4px;
+    border: 1px solid var(--accent);
+    background: #fff;
+    transition: all 0.2s;
 }
 
-/* max-inline-size used to be 100%*/
-canvas {
-    max-inline-size: 90% !important;
-    block-size: 90% !important;
-    margin-left: 5%;
+.tab-link:hover {
+    background: rgba(29, 120, 116, 0.05);
 }
 
-#requestDiv {
-    padding-inline: 10px;
+/* Content */
+.content {
+    padding: var(--sp-lg);
+    display: grid;
+    gap: var(--sp-lg);
+}
+
+/* Card surface (panel-like) */
+.card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: var(--sp-md) var(--sp-lg);
+    border-bottom: 1px solid var(--border-light);
+    background: var(--bg-primary);
+}
+
+.card-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-tertiary);
+    font-weight: 700;
+}
+
+.card-body {
+    padding: var(--sp-lg);
+}
+
+/* Let Chart.js manage canvas size; size the container instead */
+#chartDiv {
+    padding: var(--sp-lg);
+    height: 85vh; /* or whatever you want */
+    overflow: auto;
+}
+
+/* Canvas should fill width, height derived by aspect ratio unless you opt out */
+#myChart {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Requests / remediation list */
+.site-info {
+    border-left: 3px solid var(--border-light);
+    background: var(--bg-secondary);
+    border-radius: 4px;
+    padding: var(--sp-md);
+    margin-bottom: var(--sp-sm);
+}
+
+.site-info-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-md);
+}
+
+.site-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .site-more {
     background: transparent;
     border: none;
     cursor: pointer;
+    color: var(--text-secondary);
+    padding: 4px;
+    border-radius: 4px;
 }
+
+.site-more:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
 .site-more-rotated {
     transform: rotate(90deg);
 }
 
+/* Keep your existing JS behavior: .list-sections means hidden */
 .list-sections {
     display: none;
+    margin-top: var(--sp-md);
+    padding-top: var(--sp-md);
+    border-top: 1px solid var(--border-light);
+}
+
+.site-info h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--sp-xs);
+}
+
+.site-info ul {
+    padding-left: 18px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.site-info li {
+    margin-bottom: 4px;
+    word-break: break-word;
 }

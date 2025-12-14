@@ -18,7 +18,6 @@ module.exports = {
     panel: "./src/devtools/panel.js", // Entry point for script.js
     popup: "./src/popup/popup.js", // Entry point for script.js
     options: "./src/options/myscripts.js", // Entry point for script.js
-    content: "./src/content.js", // Entry point for script.js
     background: "./src/background.js", // Entry point for script.js
   },
   output: {
@@ -67,7 +66,7 @@ module.exports = {
 
         { from: "src/chart.js", to: "chart.js" },
         { from: "manifest.json", to: "manifest.json" },
-        // { from: "src/assets", to: "assets" },
+        { from: "src/assets", to: "assets" },
       ],
     }),
     new webpack.IgnorePlugin({

@@ -4,18 +4,19 @@
   "version": "1.0.0",
   "manifest_version": 3,
   "options_page": "options.html",
-  "action": {
-    "default_popup": "popup.html"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.bundle.js", "chart.js"]
-    }
-  ],
+  "devtools_page": "devtools.html",
   "background": {
     "service_worker": "background.bundle.js"
   },
-  "devtools_page": "devtools.html",
-  "permissions": ["storage", "activeTab"]
+  "icons": {
+    "32": "assets/logo.png"
+  },
+  "permissions": ["storage", "activeTab", "debugger"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Globemallow",
+    "default_icon": {
+      "32": "./assets/logo.png"
+    }
+  }
 }

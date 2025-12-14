@@ -20,6 +20,14 @@
                     <span class="btn-icon">🔍</span>
                     Analyze Page
                 </button>
+                <button
+                    id="exportBtn"
+                    class="btn btn-secondary"
+                    style="display: none"
+                >
+                    <span class="btn-icon">📥</span>
+                    Export Report
+                </button>
                 <div class="status-indicator">
                     <span id="statusText">Ready to analyze</span>
                 </div>
@@ -40,7 +48,7 @@
             >
                 <!-- Summary Card -->
                 <div class="summary-section">
-                    <h2>Summary</h2>
+                    <!--<h2>Summary</h2>-->
                     <div class="summary-grid">
                         <div class="summary-card">
                             <div class="summary-label">Overall Grade</div>
@@ -64,9 +72,24 @@
                 <!-- Detailed Metrics -->
                 <div class="metrics-section">
                     <div id="metricsContent">
-                        <!-- Metrics will be injected here by panel.js -->
+                        <!-- Metrics will be injected here -->
                     </div>
                 </div>
+
+                <!-- Metric Detail Panel -->
+                <aside
+                    class="metric-detail"
+                    aria-label="Metric explanation"
+                    aria-live="polite"
+                >
+                    <h2 class="metric-detail-title" id="metricTitle">
+                        Click any metric to see what it means
+                    </h2>
+                    <p class="metric-detail-body" id="metricBody">
+                        This area explains metrics in everyday language so
+                        non-technical teammates can follow along.
+                    </p>
+                </aside>
             </div>
 
             <!-- Empty State -->
@@ -79,6 +102,84 @@
                 </p>
             </div>
         </div>
+
+        <!-- HTML TEMPLATES -->
+        <template id="metric-group-template">
+            <div class="metric-group">
+                <h3 data-title></h3>
+                <div data-metrics></div>
+            </div>
+        </template>
+
+        <template id="metric-item-template">
+            <div class="metric-item">
+                <span class="metric-label" data-label></span>
+                <span class="metric-value" data-value></span>
+            </div>
+        </template>
+
+        <template id="impact-card-template">
+            <div
+                style="
+                    background: var(--bg-primary);
+                    padding: var(--sp-md);
+                    border-radius: 4px;
+                "
+            >
+                <div
+                    style="
+                        font-size: 11px;
+                        color: var(--text-tertiary);
+                        margin-bottom: 4px;
+                    "
+                    data-label
+                ></div>
+                <div
+                    style="
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: var(--text-primary);
+                        margin-bottom: 4px;
+                    "
+                    data-value
+                ></div>
+                <div
+                    style="font-size: 10px; color: var(--text-secondary)"
+                    data-context
+                ></div>
+            </div>
+        </template>
+
+        <template id="recommendation-template">
+            <div class="metric-item">
+                <div style="width: 100%">
+                    <div
+                        style="
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-bottom: 4px;
+                        "
+                    >
+                        <span
+                            class="metric-label"
+                            style="font-weight: 600"
+                            data-title
+                        ></span>
+                        <span class="badge" data-priority></span>
+                    </div>
+                    <div
+                        style="
+                            font-size: 11px;
+                            color: var(--text-secondary);
+                            line-height: 1.4;
+                        "
+                        data-description
+                    ></div>
+                    <div data-images></div>
+                </div>
+            </div>
+        </template>
 
         <script src="panel.bundle.js"></script>
     </body>

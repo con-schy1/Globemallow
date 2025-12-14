@@ -1,84 +1,190 @@
-// changes made(global variable for sites)
-const MAXSITES = 12;
+// background.js (fixed + exact unused JS via chrome.debugger)
 
-chrome.runtime.onInstalled.addListener(function (object) {
+const MAXSITES = 12;
+const DEBUGGER_PROTOCOL_VERSION = "1.3";
+
+chrome.runtime.onInstalled.addListener((details) => {
   chrome.storage.session.clear();
   chrome.storage.local.clear();
-  let externalUrl = "https://ko-fi.com/globemallow#paypalModal";
 
-  if (object.reason === chrome.runtime.OnInstalledReason.INSTALL) {
-    chrome.tabs.create({ url: externalUrl }, function (tab) {
-      //console.log("New tab launched with http://yoursite.com/");
-    });
+  const externalUrl = "https://ko-fi.com/globemallow#paypalModal";
+  if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+    chrome.tabs.create({ url: externalUrl });
   }
 });
 
-chrome.tabs.onUpdated.addListener((tabId, tab) => {
-  if (tab.status == "complete") {
-    chrome.tabs.sendMessage(tabId, { start: true });
-  }
-});
+// Optional helper (kept)
+async function postData(url = "", data, contentType = "json") {
+  let body = data;
+  let cType = "application/x-www-form-urlencoded";
 
-//////////////////////
-async function postData(url = "", data, contentType) {
-  if (contentType == "json") {
-    var datastringfy = JSON.stringify(data);
-    data = datastringfy.replace(/[\r\n]+/gm, "");
+  if (contentType === "json") {
+    body = JSON.stringify(data).replace(/[\r\n]+/gm, "");
     cType = "application/json";
-  } else {
-    cType = "application/x-www-form-urlencoded";
   }
-  // Default options are marked with *
+
   const response = await fetch(url, {
-    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    method: "POST",
     credentials: "include",
     mode: "cors",
-    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    cache: "no-cache",
     headers: {
       "Content-Type": cType,
       "Access-Control-Allow-Origin": "*",
     },
-    referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-    body: data, // body data type must match "Content-Type" header
+    referrerPolicy: "no-referrer",
+    body,
   });
-  return response.json(); // parses JSON response into native JavaScript objects
+
+  return response.json();
 }
-////////////////////////
 
-// background.js - Service Worker for badge updates
+function sendCommand(target, method, params = {}) {
+  return new Promise((resolve, reject) => {
+    chrome.debugger.sendCommand(target, method, params, (result) => {
+      const err = chrome.runtime.lastError;
+      if (err) reject(new Error(err.message));
+      else resolve(result);
+    });
+  });
+}
 
+function attachDebugger(target) {
+  return new Promise((resolve, reject) => {
+    chrome.debugger.attach(target, DEBUGGER_PROTOCOL_VERSION, () => {
+      const err = chrome.runtime.lastError;
+      if (err) reject(new Error(err.message));
+      else resolve();
+    });
+  });
+}
+
+function detachDebugger(target) {
+  return new Promise((resolve) => {
+    chrome.debugger.detach(target, () => resolve());
+  });
+}
+
+// Computes exact unused JS bytes for the current tab session using precise coverage.
+async function computeExactUnusedJsBytes(tabId) {
+  const target = { tabId };
+
+  await attachDebugger(target);
+
+  try {
+    // Enable profiler + start precise coverage.
+    await sendCommand(target, "Profiler.enable");
+    await sendCommand(target, "Profiler.startPreciseCoverage", {
+      callCount: false,
+      detailed: true,
+    });
+
+    // Wait a moment to let the page execute startup code (panel already triggers a reload).
+    await new Promise((r) => setTimeout(r, 2500));
+
+    const { result } = await sendCommand(
+      target,
+      "Profiler.takePreciseCoverage",
+    );
+
+    // Stop coverage to reduce overhead.
+    await sendCommand(target, "Profiler.stopPreciseCoverage");
+    await sendCommand(target, "Profiler.disable");
+
+    let totalBytes = 0;
+    let usedBytes = 0;
+
+    for (const script of result || []) {
+      // Ignore anonymous/extension/internal scripts.
+      if (!script.url || script.url.startsWith("chrome-extension://")) continue;
+
+      for (const fn of script.functions || []) {
+        for (const range of fn.ranges || []) {
+          const bytes = Math.max(
+            0,
+            (range.endOffset ?? 0) - (range.startOffset ?? 0),
+          );
+          totalBytes += bytes;
+          if ((range.count ?? 0) > 0) usedBytes += bytes;
+        }
+      }
+    }
+
+    const unusedBytes = Math.max(0, totalBytes - usedBytes);
+
+    return {
+      totalBytes,
+      usedBytes,
+      unusedBytes,
+    };
+  } finally {
+    await detachDebugger(target);
+  }
+}
+
+// Listen for messages from panel.js
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.type === "ANALYSIS_COMPLETE") {
-    const data = message.data;
-    const score = data.auditData.finalScore;
-    const grade = data.auditData.finalGrade;
+  // Panel should call this BEFORE/AROUND reload if you want startup coverage.
+  // If you can't change panel yet, this still gives coverage for "post-load" window.
+  if (
+    message?.type === "REQUEST_UNUSED_JS" &&
+    Number.isInteger(message.tabId)
+  ) {
+    const tabId = message.tabId;
+    // attach debugger to { tabId }
+    (async () => {
+      try {
+        const coverage = await computeExactUnusedJsBytes(tabId);
 
-    // Set badge color based on score
-    let color = "#ff0d21"; // Red (F)
-    if (score >= 92)
-      color = "#32a852"; // Green (A)
-    else if (score >= 78)
-      color = "#8ECA2E"; // Light green (B)
-    else if (score >= 67)
-      color = "#f4e03a"; // Yellow (C)
-    else if (score >= 55) color = "#F77616"; // Orange (D)
+        chrome.runtime.sendMessage({
+          type: "UNUSED_JS_RESULT",
+          data: {
+            tabId,
+            unusedJSBytes: coverage.unusedBytes,
+            usedJSBytes: coverage.usedBytes,
+            totalJSBytes: coverage.totalBytes,
+          },
+        });
+      } catch (e) {
+        chrome.runtime.sendMessage({
+          type: "UNUSED_JS_RESULT",
+          error: e.message || String(e),
+        });
+      }
+    })();
 
-    // Update badge
-    if (sender.tab) {
-      chrome.action.setBadgeBackgroundColor({
-        color: color,
-        tabId: sender.tab.id,
-      });
+    // async
+    return true;
+  }
 
-      chrome.action.setBadgeText({
-        text: grade,
-        tabId: sender.tab.id,
-      });
+  if (message?.type === "ANALYSIS_COMPLETE" && message.data) {
+    try {
+      const data = message.data;
+
+      const score = data.score ?? data.auditData?.finalScore ?? "N/A";
+      const grade = data.grade ?? data.auditData?.finalGrade ?? "N/A";
+      const co2 = data.co2 ?? data.co2Total ?? "N/A";
+      const greenHosting =
+        data.greenHosting !== undefined ? data.greenHosting : null;
+      const url = data.url || "unknown";
+
+      console.log("Analysis complete for:", url);
+      console.log(" Score:", score);
+      console.log(" Grade:", grade);
+      console.log(" CO₂:", co2);
+      console.log(" Green Hosting:", greenHosting);
+    } catch (error) {
+      console.error("Error processing analysis data:", error);
     }
   }
+
+  return false;
 });
 
-// Clear badge when tab is closed
-chrome.tabs.onRemoved.addListener((tabId) => {
-  chrome.action.setBadgeText({ text: "", tabId });
-});
+function getBadgeColor(grade) {
+  if (grade === "A+" || grade === "A" || grade === "A-") return "#1d7874";
+  if (grade === "B+" || grade === "B" || grade === "B-") return "#4caf50";
+  if (grade === "C+" || grade === "C" || grade === "C-") return "#ff9800";
+  if (grade === "D+" || grade === "D" || grade === "D-") return "#e74c3c";
+  return "#999999";
+}

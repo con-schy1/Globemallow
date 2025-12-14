@@ -3,7 +3,7 @@
 // Create a DevTools panel
 chrome.devtools.panels.create(
   "Globemallow",
-  "icons/icon48.png",
+  "assets/logo.png",
   "panel.html",
   (panel) => {
     let panelWindow = null;
