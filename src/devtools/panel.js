@@ -1261,6 +1261,13 @@ function generateRecommendations(metrics) {
     });
   }
 
+  [...highRec, ...medRec, ...lowRec].forEach((z) => {
+    METRIC_EXPLANATIONS[z.title] = {
+      title: z.title,
+      description: z.description,
+    };
+  });
+
   return {
     high: highRec,
     medium: medRec,
@@ -1304,6 +1311,7 @@ async function notifyBackground(analysis) {
   try {
     await chrome.runtime.sendMessage({
       type: "ANALYSIS_COMPLETE",
+      tabId: chrome.devtools.inspectedWindow.tabId,
       data: {
         url: analysis.url,
         score: analysis.auditData.finalScore,
@@ -1382,6 +1390,7 @@ function setupMetricClickHandlers() {
 
       // Find explanation in our dictionary
       const explanation = METRIC_EXPLANATIONS[labelText];
+      console.log(labelText, METRIC_EXPLANATIONS, "des");
 
       if (explanation) {
         metricDetailTitle.textContent = explanation.title;

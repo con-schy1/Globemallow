@@ -44,6 +44,10 @@ body {
 }
 
 .popup-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
     background: var(--text-primary);
     color: #fff;
     padding: var(--sp-lg);
@@ -54,7 +58,7 @@ body {
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.3px;
-    margin-bottom: 4px;
+    margin: 0;
 }
 
 .popup-subtitle {
@@ -124,4 +128,8 @@ kbd {
     margin-top: var(--sp-md);
     font-size: 12px;
     color: var(--text-secondary);
+}
+
+.kofi-button {
+    margin-left: auto;
 }

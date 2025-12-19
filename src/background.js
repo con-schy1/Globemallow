@@ -160,6 +160,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message?.type === "ANALYSIS_COMPLETE" && message.data) {
     try {
       const data = message.data;
+      const tabId = message.tabId || sender.tab?.id;
 
       const score = data.score ?? data.auditData?.finalScore ?? "N/A";
       const grade = data.grade ?? data.auditData?.finalGrade ?? "N/A";
@@ -173,6 +174,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       console.log(" Grade:", grade);
       console.log(" CO₂:", co2);
       console.log(" Green Hosting:", greenHosting);
+
+      // ✨ UPDATE BADGE WITH GRADE
+      if (grade !== "N/A" && tabId) {
+        updateBadge(tabId, grade);
+      }
     } catch (error) {
       console.error("Error processing analysis data:", error);
     }
@@ -188,3 +194,26 @@ function getBadgeColor(grade) {
   if (grade === "D+" || grade === "D" || grade === "D-") return "#e74c3c";
   return "#999999";
 }
+
+// ✨ NEW FUNCTION: Update badge with grade
+function updateBadge(tabId, grade) {
+  const badgeText = grade.substring(0, 2); // Truncate to 2 chars for display
+  const badgeColor = getBadgeColor(grade);
+
+  chrome.action.setBadgeText({
+    tabId: tabId,
+    text: badgeText,
+  });
+
+  chrome.action.setBadgeBackgroundColor({
+    tabId: tabId,
+    color: badgeColor,
+  });
+}
+
+// ✨ OPTIONAL: Clear badge when navigating away
+chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
+  if (changeInfo.status === "loading") {
+    chrome.action.setBadgeText({ tabId: tabId, text: "" });
+  }
+});

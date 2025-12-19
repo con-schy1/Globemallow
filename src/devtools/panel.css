@@ -50,6 +50,10 @@ body {
 
 /* ========== HEADER ========== */
 .panel-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
     background: var(--text-primary);
     color: white;
     padding: var(--sp-lg);
